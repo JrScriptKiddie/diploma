@@ -1,0 +1,10 @@
+.:53 {
+  log
+  errors
+  # Serve local zone
+  file /etc/coredns/layer8.ag.db layer8.ag
+  # Cache responses briefly
+  cache 30
+  # Forward all other queries to public resolvers
+  forward . 1.1.1.1 8.8.8.8
+}

@@ -1,0 +1,256 @@
+
+services:
+  fw:
+    hostname: fw
+    build: ./fw
+    container_name: branch_fw
+    privileged: true
+    cap_add: [ "NET_ADMIN" ]
+    restart: always
+    sysctls:
+      net.ipv4.ip_forward: 1    
+      net.ipv4.conf.all.src_valid_mark: 1              
+    networks:
+      uplink_net:
+        ipv4_address: ${SUBNET_UPLINK}.254
+      users_net:
+        ipv4_address: ${SUBNET_USERS}.254
+      dmz_net:
+        ipv4_address: ${SUBNET_DMZ}.254
+      servers_net:
+        ipv4_address: ${SUBNET_SERVERS}.254
+      admin_net:
+        ipv4_address: ${SUBNET_ADMIN}.254      
+      infosec_net:
+        ipv4_address: ${SUBNET_INFOSEC}.254
+      dev_net:
+        ipv4_address: ${SUBNET_DEV}.254
+    volumes:
+      - ./fw/nftables-branch.conf:/etc/nftables.conf:rw
+    environment:
+      SVC_IB_ADMIN_PASSWORD: ${SVC_IB_ADMIN_PASSWORD}
+      GATEWAY_IP: ${SUBNET_UPLINK}.1
+      SUBNET_UPLINK: ${SUBNET_UPLINK}
+      SUBNET_ADMIN: ${SUBNET_ADMIN}
+      SUBNET_DMZ: ${SUBNET_DMZ}
+      SUBNET_INFOSEC: ${SUBNET_INFOSEC}
+      SUBNET_SERVERS: ${SUBNET_SERVERS}
+      SUBNET_USERS: ${SUBNET_USERS}
+      SUBNET_DEV: ${SUBNET_DEV}
+      VPN_SRV_IP: ${VPN_SRV_IP}
+    dns:
+      - ${SUBNET_SERVERS}.${DNS_SRV_IP}      
+
+  srv_dns:
+    hostname: srv_dns
+    depends_on: [ fw ]
+    build: ./srv_dns
+    container_name: srv_dns
+    cap_add: [ "NET_ADMIN" ]
+    restart: always
+    networks:
+      servers_net:
+        ipv4_address: ${SUBNET_SERVERS}.${DNS_SRV_IP}
+    volumes:
+      - ./srv_dns/Corefile:/etc/coredns/Corefile:ro
+      - ./srv_dns/layer8.ag.db:/etc/coredns/layer8.ag.db:ro
+    dns: ["1.1.1.1", "8.8.8.8"]
+    environment:
+      GATEWAY_IP: ${SUBNET_SERVERS}.254
+      DNS_SRV_IP: ${SUBNET_SERVERS}.${DNS_SRV_IP}
+
+  srv_wg_portal:
+    build: ./srv_wg_portal
+    container_name: srv_wg_portal
+    hostname: srv_wg_portal
+    restart: always
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./srv_wg_portal/data:/app/data
+      - ./srv_wg_portal/config:/app/config
+      - ./srv_wg_portal/etc/wireguard:/etc/wireguard   # Конфиги интерфейсов    
+    sysctls:
+      - net.ipv4.ip_forward=1
+      - net.ipv4.conf.all.src_valid_mark=1
+    environment:  
+      WB_ENABLE_NAT: true
+      GATEWAY_IP: ${SUBNET_DMZ}.254
+      LDAP_READONLY_USER_USERNAME: ${LDAP_READONLY_USER_USERNAME}
+      LDAP_READONLY_USER_PASSWORD: ${LDAP_READONLY_USER_PASSWORD}  
+      WG_PORTAL_ADMIN_USERNAME: ${WG_PORTAL_ADMIN_USERNAME}
+      WG_PORTAL_ADMIN_PASSWORD: ${WG_PORTAL_ADMIN_PASSWORD}
+      WAZUH_MANAGER_IP: ${SUBNET_INFOSEC}.${WAZUH_SRV_IP}
+      LDAP_SRV_IP: ${SUBNET_SERVERS}.${LDAP_SRV_IP}
+    networks:
+      dmz_net:
+        ipv4_address: ${SUBNET_DMZ}.${VPN_SRV_IP}
+    dns:
+      - ${SUBNET_SERVERS}.${DNS_SRV_IP}        
+
+  pc_student:
+    build: ./pc
+    hostname: pc_student
+    container_name: pc_student
+    depends_on:
+      - srv_wg_portal
+      - fw
+      - srv_dns
+    cap_add:
+      - NET_ADMIN        
+    volumes:
+      - ./pc_student/home/:/home/student
+      - ./pc_student/wg0.conf:/etc/wireguard/wg0.conf
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd 
+    environment:
+      LDAP_READONLY_USER_USERNAME: ${LDAP_READONLY_USER_USERNAME}
+      LDAP_READONLY_USER_PASSWORD: ${LDAP_READONLY_USER_PASSWORD}  
+      SG_ADMINS: SG-SRV-PC-ADMINS
+      GATEWAY_IP: ${SUBNET_UPLINK}.1
+      LDAP_SRV_IP: ${SUBNET_SERVERS}.${LDAP_SRV_IP}       
+      PC_USERNAME: $PC_USERNAME_STUDENT
+      PC_USERPWD: $PC_USERPWD_STUDENT
+      WAZUH_MANAGER_IP: ${SUBNET_INFOSEC}.${WAZUH_SRV_IP}      
+    dns:
+      - ${SUBNET_SERVERS}.${DNS_SRV_IP}
+    ports:
+      - "33389:3389"
+    networks:
+      uplink_net:
+        ipv4_address: ${SUBNET_UPLINK}.221
+
+  pc_vpupkin:
+    build: ./pc
+    hostname: pc_vpupkin
+    container_name: pc_vpupkin 
+    depends_on:
+      - srv_wg_portal
+      - fw
+      - srv_dns    
+    cap_add:
+      - NET_ADMIN        
+    volumes:
+      - ./pc_vpupkin/home/:/home/vpupkin
+      - ./pc_vpupkin/wg0.conf:/etc/wireguard/wg0.conf
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd 
+    environment:
+      LDAP_READONLY_USER_USERNAME: ${LDAP_READONLY_USER_USERNAME}
+      LDAP_READONLY_USER_PASSWORD: ${LDAP_READONLY_USER_PASSWORD}  
+      SG_ADMINS: SG-SRV-PC-ADMINS
+      GATEWAY_IP: ${SUBNET_UPLINK}.1
+      LDAP_SRV_IP: ${SUBNET_SERVERS}.${LDAP_SRV_IP}       
+      PC_USERNAME: $PC_USERNAME_VPUPKIN
+      PC_USERPWD: $PC_USERPWD_VPUPKIN
+      WAZUH_MANAGER_IP: ${SUBNET_INFOSEC}.${WAZUH_SRV_IP}      
+    dns:
+      - ${SUBNET_SERVERS}.${DNS_SRV_IP}
+    ports:
+      - "53389:3389"
+    networks:
+      uplink_net:
+        ipv4_address: ${SUBNET_UPLINK}.143
+
+  pc_vkrutikov:
+    build: ./pc
+    hostname: pc_vkrutikov
+    container_name: pc_vkrutikov
+    depends_on:
+      - srv_wg_portal
+      - fw
+      - srv_dns    
+    cap_add:
+      - NET_ADMIN        
+    volumes:
+      - ./pc_vkrutikov/scenario.sh:/opt/scenario.sh
+      - ./pc_vkrutikov/wg0.conf:/etc/wireguard/wg0.conf      
+    environment:
+      LDAP_READONLY_USER_USERNAME: ${LDAP_READONLY_USER_USERNAME}
+      LDAP_READONLY_USER_PASSWORD: ${LDAP_READONLY_USER_PASSWORD}  
+      SG_ADMINS: SG-SRV-PC-ADMINS
+      GATEWAY_IP: ${SUBNET_UPLINK}.1
+      PC_USERNAME: $PC_USERNAME_STUDENT
+      PC_USERPWD: $PC_USERPWD_STUDENT
+      LDAP_SUFFIX: $LDAP_SUFFIX      
+      WAZUH_MANAGER_IP: ${SUBNET_INFOSEC}.${WAZUH_SRV_IP}  
+      LDAP_SRV_IP: ${SUBNET_SERVERS}.${LDAP_SRV_IP}    
+      SCENARIO_PERIOD: 1
+    networks:
+      uplink_net:
+        ipv4_address: ${SUBNET_UPLINK}.201   
+    dns:
+      - ${SUBNET_SERVERS}.${DNS_SRV_IP}        
+
+networks:
+  uplink_net:
+    name: uplink_net
+    driver: bridge
+    ipam:
+      config:
+        - subnet: ${SUBNET_UPLINK}.0/24
+    driver_opts:
+      com.docker.network.bridge.enable_icc: "true"
+      com.docker.network.bridge.name: br-uplink
+#      com.docker.network.bridge.enable_ip_masquerade: "false"      
+  dev_net:
+    name: dev_net
+    driver: bridge
+    ipam:
+      config:
+        - subnet: ${SUBNET_DEV}.0/24
+    driver_opts:
+      com.docker.network.bridge.enable_icc: "true"
+      com.docker.network.bridge.name: br-dev
+      com.docker.network.bridge.enable_ip_masquerade: "false"            
+  users_net:
+    name: users_net
+    driver: bridge
+    ipam:
+      config:
+        - subnet: ${SUBNET_USERS}.0/24
+    driver_opts:
+      com.docker.network.bridge.enable_icc: "true"
+      com.docker.network.bridge.name: br-users
+      com.docker.network.bridge.enable_ip_masquerade: "false"            
+  dmz_net:
+    name: dmz_net
+    driver: bridge
+    ipam:
+      config:
+        - subnet: ${SUBNET_DMZ}.0/24
+    driver_opts:
+      com.docker.network.bridge.enable_icc: "true"
+      com.docker.network.bridge.name: br-dmz
+      com.docker.network.bridge.enable_ip_masquerade: "false"            
+  servers_net:
+    name: servers_net
+    driver: bridge
+    ipam:
+      config:
+        - subnet: ${SUBNET_SERVERS}.0/24
+    driver_opts:
+      com.docker.network.bridge.enable_icc: "true"
+      com.docker.network.bridge.name: br-servers
+      com.docker.network.bridge.enable_ip_masquerade: "false"            
+  admin_net:
+    name: admin_net
+    driver: bridge
+    ipam:
+      config:
+        - subnet: ${SUBNET_ADMIN}.0/24
+    driver_opts:
+      com.docker.network.bridge.enable_icc: "true"
+      com.docker.network.bridge.name: br-admin
+      com.docker.network.bridge.enable_ip_masquerade: "false"            
+  infosec_net:
+    name: infosec_net
+    driver: bridge
+    ipam:
+      config:
+        - subnet: ${SUBNET_INFOSEC}.0/24
+    driver_opts:
+      com.docker.network.bridge.enable_icc: "true"
+      com.docker.network.bridge.name: br-infosec
+      com.docker.network.bridge.enable_ip_masquerade: "false"            
+
+volumes:
+  espocrm-storage:

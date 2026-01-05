@@ -1,0 +1,75 @@
+- hosts: all
+  gather_facts: false
+  any_errors_fatal: false
+  vars:
+    ping_target_cmd: "ip route | awk '/^default/ {print $3; exit}'"
+      
+  pre_tasks: 
+    - name: Detect Alpine
+      raw: "test -f /etc/alpine-release && echo alpine || echo other"
+      changed_when: false
+      register: os_detect
+
+    - name: Set OS family fact
+      set_fact:
+        is_alpine: "{{ 'true' if (os_detect.stdout | trim) == 'alpine' else 'false' }}"
+
+    - name: Ensure Python 3 for non-Alpine targets
+      raw: |
+        if command -v python3 >/dev/null 2>&1; then exit 0; fi
+        sudo apt-get update -y >/dev/null 2>&1 || true
+        sudo apt-get install -y python3 >/dev/null 2>&1
+      when: is_alpine == 'false'
+      changed_when: false
+
+    - name: Gather facts (non-Alpine)
+      setup:
+      when: is_alpine == 'false'
+
+    - name: ICMP ping default gateway
+      command: sh -lc "ping -c1 -W1 {{ gw.stdout | default('127.0.0.1') }}"
+      register: icmp
+      changed_when: false
+      failed_when: false
+
+    - name: Collect metrics summary (non-Alpine)
+      set_fact:
+        monitor_summary:
+          hostname: "{{ ansible_facts['hostname'] | default(inventory_hostname) }}"
+          os_family: "{{ ansible_facts['os_family'] | default('debian') }}"
+          uptime_seconds: "{{ ansible_facts['uptime_seconds'] | default('n/a') }}"
+          mem_total_mb: "{{ ansible_facts['memtotal_mb'] | default(ansible_facts['memory_mb']['real']['total'] | default('n/a')) }}"
+          mem_free_mb: "{{ ansible_facts['memfree_mb'] | default(ansible_facts['memory_mb']['real']['free'] | default('n/a')) }}"
+          vcpus: "{{ ansible_facts['processor_vcpus'] | default(ansible_facts['processor_count'] | default('n/a')) }}"
+          icmp_ok: "{{ icmp.rc == 0 }}"
+      when: is_alpine == 'false'
+
+    - name: Collect metrics summary (Alpine via raw)
+      raw: |
+        HOST=$(hostname)
+        UPTIME=$(cut -d' ' -f1 /proc/uptime)
+        MEMTOTAL=$(awk '/MemTotal/ {print int($2/1024)}' /proc/meminfo)
+        MEMFREE=$(awk '/MemAvailable/ {print int($2/1024)}' /proc/meminfo)
+        VCPUS=$(nproc 2>/dev/null || getconf _NPROCESSORS_ONLN)
+        echo "HOST=${HOST} UPTIME=${UPTIME} MEMTOTAL=${MEMTOTAL} MEMFREE=${MEMFREE} VCPUS=${VCPUS}"
+      register: alpine_stats
+      changed_when: false
+      when: is_alpine == 'true'
+
+    - name: Set Alpine summary fact
+      set_fact:
+        monitor_summary:
+          hostname: "{{ (alpine_stats.stdout | regex_search('HOST=([^ ]+)', '\\1')) | default(inventory_hostname) }}"
+          os_family: "alpine"
+          uptime_seconds: "{{ alpine_stats.stdout | regex_search('UPTIME=([^ ]+)', '\\1') | default('n/a') }}"
+          mem_total_mb: "{{ alpine_stats.stdout | regex_search('MEMTOTAL=([^ ]+)', '\\1') | default('n/a') }}"
+          mem_free_mb: "{{ alpine_stats.stdout | regex_search('MEMFREE=([^ ]+)', '\\1') | default('n/a') }}"
+          vcpus: "{{ alpine_stats.stdout | regex_search('VCPUS=([^ ]+)', '\\1') | default('n/a') }}"
+          icmp_ok: "{{ icmp.rc == 0 }}"
+      when: is_alpine == 'true'
+
+    - name: Show summary
+      debug:
+        var: monitor_summary
+
+  

@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Layer 8 Agency — кадровое агентство для IT</title>
+  <meta name="description" content="Layer 8 Agency ищет совместимых с культурой IT-компаний специалистов по протоколу TCP: Trust, Competence, Passion. Бережно относится к данным заказчиков и кандидатов." />
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --bg-soft: #eef1f8;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #4b5563;
+      --brand: #f97316;
+      --accent: #0ea5e9;
+      --ok: #059669;
+      --border: #dbe0ea;
+    }
+    * { box-sizing: border-box }
+    body {
+      margin: 0;
+      font: 15px/1.6 "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 540px at 80% -10%, rgba(14,165,233,0.10), transparent 60%),
+        radial-gradient(900px 520px at 10% -25%, rgba(249,115,22,0.10), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg-soft));
+    }
+    .container { max-width: 1180px; margin: 0 auto; padding: 22px 20px 40px; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 8px 0 18px; }
+    .brand { display: flex; align-items: center; gap: 14px; font-weight: 800; letter-spacing: 0.2px; text-transform: uppercase; }
+    .brand img { width: 72px; height: 72px; border-radius: 14px; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+    nav { display: flex; gap: 16px; flex-wrap: wrap; }
+    nav a { color: var(--muted); text-decoration: none; font-weight: 600; }
+    nav a:hover { color: var(--text); }
+
+    .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: center; padding: 10px 0 20px; }
+    .hero h1 { margin: 0 0 12px; font-size: clamp(28px, 4vw, 44px); line-height: 1.1; }
+    .hero p { margin: 0 0 16px; color: var(--muted); max-width: 620px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary { background: linear-gradient(90deg, var(--brand), #fb923c); color: #0b0f1a; font-weight: 800; padding: 12px 18px; border-radius: 12px; text-decoration: none; display: inline-flex; gap: 8px; align-items: center; box-shadow: 0 10px 24px rgba(249,115,22,0.25); }
+    .btn-ghost { border: 1px solid var(--border); color: var(--text); padding: 12px 18px; border-radius: 12px; text-decoration: none; display: inline-flex; gap: 8px; align-items: center; background: rgba(255,255,255,0.7); backdrop-filter: blur(4px); }
+
+    .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 8px 12px; display: inline-flex; gap: 8px; align-items: center; color: var(--muted); background: rgba(255,255,255,0.8); }
+
+    .hero-art { position: relative; max-width: 520px; justify-self: center; }
+    .hero-art svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 14px 24px rgba(14,165,233,0.18)); }
+    .glow { position: absolute; inset: 12% 10% 0; background: radial-gradient(closest-side, rgba(34,211,238,0.22), transparent 60%); filter: blur(36px); opacity: 0.9; }
+    .ring { position: absolute; inset: 0; border-radius: 50%; border: 1px dashed rgba(15,23,42,0.12); animation: spin 28s linear infinite; }
+    @keyframes spin { to { transform: rotate(1turn); } }
+
+    .section { margin: 26px 0 10px; }
+    .section h2 { margin: 0 0 10px; font-size: clamp(22px, 2.3vw, 30px); }
+    .section p.lead { margin: 0 0 16px; color: var(--muted); max-width: 780px; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: 16px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; box-shadow: 0 8px 24px rgba(15,23,42,0.06); }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(15,23,42,0.12); }
+    .card .body { padding: 18px 18px 16px; }
+    .title { margin: 0 0 8px; font-weight: 800; }
+    .desc { margin: 0; color: var(--muted); font-size: 15px; }
+    .meta { margin-top: 12px; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--accent); font-weight: 700; }
+
+    .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; align-items: start; }
+    .stat { border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; background: rgba(255,255,255,0.8); box-shadow: 0 6px 18px rgba(15,23,42,0.08); }
+    .stat strong { display: block; font-size: 26px; }
+    .stat span { color: var(--muted); }
+
+    .cta { background: linear-gradient(120deg, rgba(34,211,238,0.12), rgba(249,115,22,0.12)); border: 1px solid var(--border); border-radius: 18px; padding: 24px; margin: 34px 0 20px; display: grid; gap: 12px; box-shadow: 0 12px 30px rgba(15,23,42,0.08); }
+    footer { color: var(--muted); border-top: 1px solid var(--border); margin-top: 26px; padding: 16px 0 28px; font-size: 14px; }
+
+    @media (max-width: 880px) {
+      .hero { grid-template-columns: 1fr; }
+      header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <img src="./l8a.jpg" alt="Логотип Layer 8 Agency">
+        <span>Layer 8 Agency</span>
+      </div>
+      <nav aria-label="Главное меню">
+        <a href="#services">Услуги</a>
+        <a href="#tcp">Протокол TCP</a>
+        <a href="#security">Безопасность</a>
+        <a href="/resume.html">Отправить резюме</a>
+        <a href="/contacts.html">Контакты</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Кадровое агентство для IT, где восьмой уровень OSI — люди</h1>
+        <p>Layer 8 Agency соединяет команды и специалистов по протоколу TCP: Trust, Competence, Passion. Мы подбираем людей, совместимых с культурой заказчика, и держим SLA по скорости и качеству поиска.</p>
+        <div class="actions">
+          <a class="btn-primary" href="/contacts.html">Назначить созвон</a>
+          <a class="btn-ghost" href="#process">Как работаем</a>
+        </div>
+        <div class="badge-row">
+          <span class="badge">SLA: первые кандидаты за 12–16 дней</span>
+          <span class="badge">TCP: Trust • Competence • Passion</span>
+          <span class="badge">Фокус: продуктовые IT-компании</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="glow"></div>
+        <div class="ring"></div>
+        <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#22d3ee" stop-opacity=".8"/>
+              <stop offset="1" stop-color="#f97316" stop-opacity=".8"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="120" cy="200" rx="92" ry="26" fill="rgba(0,0,0,.35)"/>
+          <rect x="44" y="78" width="152" height="96" rx="18" fill="url(#grad)" opacity=".18"/>
+          <path d="M52 92h136v64H52Z" fill="rgba(14,165,233,.2)"/>
+          <path d="M60 88h120v-28H60z" fill="rgba(249,115,22,.35)"/>
+          <path d="M60 60h20v-16H60z" fill="#22d3ee"/>
+          <path d="M90 60h20v-24H90z" fill="#0ea5e9"/>
+          <path d="M120 60h20v-12h-20z" fill="#38bdf8"/>
+          <path d="M150 60h20v-20h-20z" fill="#f97316"/>
+          <path d="M70 132h76M70 148h48M70 116h100" stroke="rgba(255,255,255,.55)" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <h2>Что делаем для IT-компаний</h2>
+      <p class="lead">Работаем как встроенный рекрутинг: понимаем продукт и культуру, подбираем совместимых людей, берём на себя воронку и коммуникации.</p>
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <div class="body">
+            <h3 class="title">Поиск ключевых ролей</h3>
+            <p class="desc">Сеньорные инженеры, DevOps, лиды направлений, продакты и CTO. Важны совпадение по ценностям и управляемый time-to-hire.</p>
+            <span class="meta">TCP: Trust + Competence</span>
+          </div>
+        </article>
+        <article class="card" role="listitem">
+          <div class="body">
+            <h3 class="title">Команды под задачи</h3>
+            <p class="desc">Собираем продуктовые и платформенные сквады под запуск фич, миграций, security-проектов. Поддерживаем лидов в онбординге.</p>
+            <span class="meta">Первые кандидаты: 12–16 дней</span>
+          </div>
+        </article>
+        <article class="card" role="listitem">
+          <div class="body">
+            <h3 class="title">Аналитика и воронка</h3>
+            <p class="desc">Прозрачные метрики: конверсия, скорость отклика, доля офферов. Отчёты и пересборка профиля на основе данных.</p>
+            <span class="meta">KPI и SLA зафиксированы</span>
+          </div>
+        </article>
+        <article class="card" role="listitem">
+          <div class="body">
+            <h3 class="title">Культура и бренд</h3>
+            <p class="desc">Передаём культуру заказчика кандидатам: процессы, стек, подход к безопасности. Помогаем выступлениями и контентом.</p>
+            <span class="meta">Passion: вовлечённость</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="tcp">
+      <h2>Наш протокол TCP: Trust • Competence • Passion</h2>
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <div class="body">
+            <h3 class="title">Trust</h3>
+            <p class="desc">Подписываем NDA, не шлём резюме без согласия, честно говорим о рисках. Ведём единый лог решений по каждому кандидату.</p>
+          </div>
+        </article>
+        <article class="card" role="listitem">
+          <div class="body">
+            <h3 class="title">Competence</h3>
+            <p class="desc">Технический скрининг, профильные вопросы, проверка релевантности стеку. Понимаем DevOps, backend, data, product роли.</p>
+          </div>
+        </article>
+        <article class="card" role="listitem">
+          <div class="body">
+            <h3 class="title">Passion</h3>
+            <p class="desc">Отбираем людей, которым интересен домен и культура заказчика. Поддерживаем кандидатов до выхода и в первые недели работы.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="security">
+      <h2>Как заботимся о данных</h2>
+      <p class="lead">Мы храним сведения о заказчиках и кандидатах как продуктовую ценность. Доступы разграничены, треки переписки ведутся и очищаются по срокам.</p>
+      <div class="split">
+        <div class="stat">
+          <strong>Infosec first</strong>
+          <span>Сегментированные хранилища, контроль доступа, аудит действий.</span>
+        </div>
+        <div class="stat">
+          <strong>Никакого спама</strong>
+          <span>Резюме не отправляем без согласия кандидата и заказчика.</span>
+        </div>
+        <div class="stat">
+          <strong>Прозрачность</strong>
+          <span>Отчёты по воронке и SLA, единый канал связи, фиксированные сроки.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <h2>Как мы работаем</h2>
+      <p class="lead">Четыре шага — и вы видите подходящих людей. Без длинных брифов и потери контекста.</p>
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <div class="body">
+            <h3 class="title">1. Диагностика</h3>
+            <p class="desc">Понимаем бизнес-цель, культуру, стек, требования к soft skills. Формируем профиль и SLA.</p>
+          </div>
+        </article>
+        <article class="card" role="listitem">
+          <div class="body">
+            <h3 class="title">2. Поиск и скрининг</h3>
+            <p class="desc">Собираем короткий лист кандидатов, проводим профильные интервью, проверяем мотивацию.</p>
+          </div>
+        </article>
+        <article class="card" role="listitem">
+          <div class="body">
+            <h3 class="title">3. Совместимость</h3>
+            <p class="desc">Согласовываем лучших, готовим к встрече, подчеркиваем совпадение по TCP и культуре.</p>
+          </div>
+        </article>
+        <article class="card" role="listitem">
+          <div class="body">
+            <h3 class="title">4. Оффер и онбординг</h3>
+            <p class="desc">Помогаем с оффером, выходом и первыми неделями. Держим связь с командой и кандидатом.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Нужен человек, который подходит по культуре и стеку?</h2>
+      <p>Напишите нам: обсудим задачу, договоримся о TCP-SLA и покажем первых кандидатов за 12–16 дней.</p>
+      <div class="actions">
+        <a class="btn-primary" href="mailto:hello@layer8.ag">hello@layer8.ag</a>
+        <a class="btn-ghost" href="/contacts.html">Контакты и команда</a>
+      </div>
+    </section>
+
+    <footer>
+      Layer 8 Agency — «восьмой уровень OSI» для IT-команд. Trust • Competence • Passion. 2025
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+$ORIGIN layer8.ag.
+$TTL 300
+@   IN SOA ns.layer8.ag. admin.layer8.ag. (
+        2025091001 ; Serial
+        3600       ; Refresh
+        900        ; Retry
+        604800     ; Expire
+        300 )      ; Minimum
+
+; NS
+@         IN NS ns.layer8.ag.
+
+; APEX and hosts
+;@         IN A 192.168.4.35
+@         IN A 172.56.200.254
+srv_waf         IN A 192.168.4.35
+ns        IN A 192.168.1.24
+mail      IN A 192.168.1.20
+fw        IN A 192.168.1.254
+srv_dns   IN A 192.168.1.24
+crm     IN A 192.168.1.215
+srv_espocrm_db  IN A 192.168.1.45
+espocrm-db      IN A 192.168.1.45
+srv_ldap        IN A 192.168.1.199
+srv_ldap_mgmt   IN A 192.168.5.199
+srv_users       IN A 192.168.2.78
+srv_dev         IN A 192.168.6.78
+srv_bastion_mgmt IN A 192.168.5.78
+srv_bastion_ib  IN A 192.168.3.78
+srv_wg_portal   IN A 192.168.4.200
+srv_wazuh_manager IN A 192.168.3.88
+srv_wazuh_indexer IN A 192.168.3.89
+srv_wazuh_dashboard IN A 192.168.3.90
+wazuh           IN A 192.168.3.90
+wiki            IN A 192.168.1.120
