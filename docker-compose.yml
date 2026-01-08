@@ -162,6 +162,3 @@ networks:
       com.docker.network.bridge.enable_icc: "true"
       com.docker.network.bridge.name: br-infosec
       com.docker.network.bridge.enable_ip_masquerade: "false"            
-
-volumes:
-  espocrm-storage:

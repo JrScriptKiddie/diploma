@@ -1,5 +1,4 @@
-# Local Codex/CLI files
-codex.instructions
+/tasks.md
 
 # Editors / IDE
 .vscode/
@@ -111,7 +110,6 @@ home/.config
 .dbus/
 .gvfs/
 
-# История команд (не нужно в репозитории)
 .bash_history
 .zsh_history
 .lesshst
@@ -123,5 +121,3 @@ home/.config
 users/test*
 
 **/ossec/queue/**
-
-Vulns.xlsx
