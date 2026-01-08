@@ -13,14 +13,19 @@ services:
     networks:
       uplink_net:
         ipv4_address: ${SUBNET_UPLINK}.100
+        gw_priority: 100
       users_net:
         ipv4_address: ${SUBNET_BRANCH_USERS}.1
+        gw_priority: 10
       dmz_net:
         ipv4_address: ${SUBNET_BRANCH_DMZ}.1
+        gw_priority: 10
       servers_net:
         ipv4_address: ${SUBNET_BRANCH_SERVERS}.1
+        gw_priority: 10
       admin_net:
-        ipv4_address: ${SUBNET_BRANCH_ADMIN}.1   
+        ipv4_address: ${SUBNET_BRANCH_ADMIN}.1
+        gw_priority: 10
     ports:
       - "51820:51820/udp"
       - "8888:8888/tcp"  
@@ -32,10 +37,8 @@ services:
       SUBNET_UPLINK: ${SUBNET_UPLINK}
       SUBNET_ADMIN: ${SUBNET_BRANCH_ADMIN}
       SUBNET_DMZ: ${SUBNET_BRANCH_DMZ}
-      SUBNET_INFOSEC: ${SUBNET_BRANCH_INFOSEC}
       SUBNET_SERVERS: ${SUBNET_BRANCH_SERVERS}
       SUBNET_USERS: ${SUBNET_BRANCH_USERS}
-      SUBNET_DEV: ${SUBNET_BRANCH_DEV}
       VPN_SRV_IP: ${VPN_SRV_IP}
     dns:
       - ${SUBNET_SERVERS}.${DNS_SRV_IP}      
@@ -92,7 +95,8 @@ networks:
         - subnet: ${SUBNET_UPLINK}.0/24
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
-      com.docker.network.bridge.name: br-uplink      
+      com.docker.network.bridge.name: br-uplink
+      #com.docker.network.bridge.enable_ip_masquerade: "false"        
   users_net:
     name: users_net
     driver: bridge

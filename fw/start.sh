@@ -6,6 +6,13 @@ echo 'export PATH=/usr/sbin:/sbin:$PATH' > /etc/profile.d/00-sbin.sh
 
 echo "[fw] Renaming interfaces by subnet..."
 # Переименовываем все интерфейсы в понятный вид
+: "${SUBNET_UPLINK:=0.0.0.0}"
+: "${SUBNET_DEV:=0.0.0.0}"
+: "${SUBNET_USERS:=0.0.0.0}"
+: "${SUBNET_DMZ:=0.0.0.0}"
+: "${SUBNET_SERVERS:=0.0.0.0}"
+: "${SUBNET_ADMIN:=0.0.0.0}"
+: "${SUBNET_INFOSEC:=0.0.0.0}"
 while read -r line; do
   dev=$(echo "$line" | awk '{print $2}')
   cidr=$(echo "$line" | awk '{print $4}')
