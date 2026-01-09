@@ -90,7 +90,7 @@ auth:
 
 web:
   listening_address: :8888
-  external_url: http://srv_wg_portal.layer8.ag:8888
+  external_url: http://10.97.24.200:8888
   site_company_name: WireGuard Portal
   site_title: WireGuard Portal
   session_identifier: wgPortalSession

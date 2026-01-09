@@ -5,7 +5,7 @@ set -euo pipefail
 echo 'export PATH=/usr/sbin:/sbin:$PATH' > /etc/profile.d/00-sbin.sh
 
 echo "[fw] Renaming interfaces by subnet..."
-# Переименовываем все интерфейсы в понятный вид
+# Default missing subnet vars to avoid set -u failures.
 : "${SUBNET_UPLINK:=0.0.0.0}"
 : "${SUBNET_DEV:=0.0.0.0}"
 : "${SUBNET_USERS:=0.0.0.0}"
@@ -13,6 +13,7 @@ echo "[fw] Renaming interfaces by subnet..."
 : "${SUBNET_SERVERS:=0.0.0.0}"
 : "${SUBNET_ADMIN:=0.0.0.0}"
 : "${SUBNET_INFOSEC:=0.0.0.0}"
+# Переименовываем все интерфейсы в понятный вид
 while read -r line; do
   dev=$(echo "$line" | awk '{print $2}')
   cidr=$(echo "$line" | awk '{print $4}')

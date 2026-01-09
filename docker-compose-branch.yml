@@ -1,9 +1,9 @@
 
 services:
-  fw:
-    hostname: fw_branch
+  branch_fw:
+    hostname: branch_fw
     build: ./fw
-    container_name: fw_branch
+    container_name: branch_fw
     privileged: true
     cap_add: [ "NET_ADMIN" ]
     restart: always
@@ -28,9 +28,11 @@ services:
         gw_priority: 10
     ports:
       - "51820:51820/udp"
-      - "8888:8888/tcp"  
+      - "8888:8888/tcp"
+      - "33389:33389/tcp"
+      - "33389:33389/udp"
     volumes:
-      - ./fw/nftables-branch.conf:/etc/nftables.conf:rw
+      - ./branch/branch_fw/nftables.conf:/etc/nftables.conf:rw
     environment:
       SVC_IB_ADMIN_PASSWORD: ${SVC_IB_ADMIN_PASSWORD}
       GATEWAY_IP: ${SUBNET_UPLINK}.1
@@ -41,50 +43,81 @@ services:
       SUBNET_USERS: ${SUBNET_BRANCH_USERS}
       VPN_SRV_IP: ${VPN_SRV_IP}
     dns:
-      - ${SUBNET_SERVERS}.${DNS_SRV_IP}      
+      - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}           
 
-  srv_dns:
-    hostname: srv_dns
-    depends_on: [ fw ]
+  srv_branch_dns:
+    hostname: srv_branch_dns
+    depends_on: [ branch_fw ]
     build: ./srv_dns
-    container_name: srv_dns
+    container_name: srv_branch_dns
     cap_add: [ "NET_ADMIN" ]
     restart: always
     networks:
       servers_net:
-        ipv4_address: ${SUBNET_BRANCH_SERVERS}.${DNS_SRV_IP}
+        ipv4_address: ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}
     volumes:
       - ./srv_dns/Corefile:/etc/coredns/Corefile:ro
       - ./srv_dns/layer8.ag.db:/etc/coredns/layer8.ag.db:ro
     dns: ["1.1.1.1", "8.8.8.8"]
     environment:
       GATEWAY_IP: ${SUBNET_BRANCH_SERVERS}.1
-      DNS_SRV_IP: ${SUBNET_BRANCH_SERVERS}.${DNS_SRV_IP}
+      DNS_SRV_IP: ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}
 
-  srv_wg_gate:
-    build: ./srv_wg_gate
-    container_name: srv_wg_gate
-    hostname: srv_wg_gate
+  srv_branch_wg_gate:
+    build: ./srv_wg_portal
+    container_name: srv_branch_wg_gate
+    hostname: srv_branch_wg_gate
     restart: always
     cap_add:
       - NET_ADMIN
     volumes:
-      - ./srv_wg_gate/data:/app/data
-      - ./srv_wg_gate/config:/app/config
-      - ./srv_wg_gate/etc/wireguard:/etc/wireguard   # Конфиги интерфейсов    
+      - ./branch/srv_branch_wg_gate/data:/app/data
+      - ./branch/srv_branch_wg_gate/config:/app/config
+      - ./branch/srv_branch_wg_gate/etc/wireguard:/etc/wireguard   # Конфиги интерфейсов    
     sysctls:
       - net.ipv4.ip_forward=1
       - net.ipv4.conf.all.src_valid_mark=1
     environment:  
       WB_ENABLE_NAT: true
       GATEWAY_IP: ${SUBNET_BRANCH_DMZ}.1
+      LDAP_READONLY_USER_USERNAME: ${LDAP_READONLY_USER_USERNAME}
+      LDAP_READONLY_USER_PASSWORD: ${LDAP_READONLY_USER_PASSWORD}  
       WG_PORTAL_ADMIN_USERNAME: ${WG_PORTAL_ADMIN_USERNAME}
       WG_PORTAL_ADMIN_PASSWORD: ${WG_PORTAL_ADMIN_PASSWORD}
+      WAZUH_MANAGER_IP: ${SUBNET_INFOSEC}.${WAZUH_SRV_IP}
+      LDAP_SRV_IP: ${SUBNET_SERVERS}.${LDAP_SRV_IP}
     networks:
       dmz_net:
-        ipv4_address: ${SUBNET_BRANCH_DMZ}.${BRANCH_WG_GATE_IP}
+        ipv4_address: ${SUBNET_BRANCH_DMZ}.${IP_SRV_BRANCH_WG_GATE}
     dns:
-      - ${SUBNET_BRANCH_SERVERS}.${DNS_SRV_IP}        
+      - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}        
+
+  srv_branch_bastion:
+    build: ./bastion
+    hostname: srv_branch_bastion
+    container_name: srv_branch_bastion
+    cap_add:
+      - NET_ADMIN         
+    volumes:
+      - ./branch/srv_branch_bastion/home/users:/home/users/ # Персистентность данных пользователей
+      #- ./srv_bastion_mgmt/wazuh/var/ossec/etc:/var/ossec/etc
+      #- ./srv_bastion_mgmt/wazuh/var/ossec/queue:/var/ossec/queue
+      #- ./srv_bastion_mgmt/wazuh/etc/filebeat:/etc/filebeat
+      #- ./srv_bastion_mgmt/wazuh/var/lib/filebeat:/var/lib/filebeat     
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI  
+    environment:
+      LDAP_READONLY_USER_USERNAME: ${LDAP_READONLY_USER_USERNAME}
+      LDAP_READONLY_USER_PASSWORD: ${LDAP_READONLY_USER_PASSWORD}  
+      SG_USERS: SG-SRV-MGMT-USERS
+      SG_ADMINS: SG-SRV-MGMT-ADMINS
+      GATEWAY_IP: ${SUBNET_BRANCH_ADMIN}.1
+      #WAZUH_MANAGER_IP: ${SUBNET_INFOSEC}.${WAZUH_SRV_IP}
+      LDAP_SRV_IP: ${SUBNET_SERVERS}.${LDAP_SRV_IP}
+    networks:
+      admin_net:
+        ipv4_address: ${SUBNET_BRANCH_ADMIN}.${IP_SRV_BRANCH_BASTION}
+    dns:
+      - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}         
 
 networks:
   uplink_net:
