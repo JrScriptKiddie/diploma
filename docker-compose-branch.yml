@@ -4,27 +4,27 @@ services:
     hostname: branch_fw
     build: ./fw
     container_name: branch_fw
-    privileged: true
+    #privileged: true
     cap_add: [ "NET_ADMIN" ]
     restart: always
     sysctls:
       net.ipv4.ip_forward: 1    
       net.ipv4.conf.all.src_valid_mark: 1              
     networks:
-      uplink_net:
-        ipv4_address: ${SUBNET_UPLINK}.100
+      1uplink_net:
+        ipv4_address: ${SUBNET_BRANCH_UPLINK}.100
         gw_priority: 100
-      users_net:
-        ipv4_address: ${SUBNET_BRANCH_USERS}.1
+      2users_net:
+        ipv4_address: ${SUBNET_BRANCH_USERS}.254
         gw_priority: 10
-      dmz_net:
-        ipv4_address: ${SUBNET_BRANCH_DMZ}.1
+      3dmz_net:
+        ipv4_address: ${SUBNET_BRANCH_DMZ}.254
         gw_priority: 10
-      servers_net:
-        ipv4_address: ${SUBNET_BRANCH_SERVERS}.1
+      4servers_net:
+        ipv4_address: ${SUBNET_BRANCH_SERVERS}.254
         gw_priority: 10
-      admin_net:
-        ipv4_address: ${SUBNET_BRANCH_ADMIN}.1
+      5admin_net:
+        ipv4_address: ${SUBNET_BRANCH_ADMIN}.254
         gw_priority: 10
     ports:
       - "51820:51820/udp"
@@ -35,8 +35,7 @@ services:
       - ./branch/branch_fw/nftables.conf:/etc/nftables.conf:rw
     environment:
       SVC_IB_ADMIN_PASSWORD: ${SVC_IB_ADMIN_PASSWORD}
-      GATEWAY_IP: ${SUBNET_UPLINK}.1
-      SUBNET_UPLINK: ${SUBNET_UPLINK}
+      SUBNET_UPLINK: ${SUBNET_BRANCH_UPLINK}
       SUBNET_ADMIN: ${SUBNET_BRANCH_ADMIN}
       SUBNET_DMZ: ${SUBNET_BRANCH_DMZ}
       SUBNET_SERVERS: ${SUBNET_BRANCH_SERVERS}
@@ -53,14 +52,14 @@ services:
     cap_add: [ "NET_ADMIN" ]
     restart: always
     networks:
-      servers_net:
+      4servers_net:
         ipv4_address: ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}
     volumes:
       - ./srv_dns/Corefile:/etc/coredns/Corefile:ro
       - ./srv_dns/layer8.ag.db:/etc/coredns/layer8.ag.db:ro
     dns: ["1.1.1.1", "8.8.8.8"]
     environment:
-      GATEWAY_IP: ${SUBNET_BRANCH_SERVERS}.1
+      GATEWAY_IP: ${SUBNET_BRANCH_SERVERS}.254
       DNS_SRV_IP: ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}
 
   srv_branch_wg_gate:
@@ -79,7 +78,7 @@ services:
       - net.ipv4.conf.all.src_valid_mark=1
     environment:  
       WB_ENABLE_NAT: true
-      GATEWAY_IP: ${SUBNET_BRANCH_DMZ}.1
+      GATEWAY_IP: ${SUBNET_BRANCH_DMZ}.254
       LDAP_READONLY_USER_USERNAME: ${LDAP_READONLY_USER_USERNAME}
       LDAP_READONLY_USER_PASSWORD: ${LDAP_READONLY_USER_PASSWORD}  
       WG_PORTAL_ADMIN_USERNAME: ${WG_PORTAL_ADMIN_USERNAME}
@@ -87,7 +86,7 @@ services:
       WAZUH_MANAGER_IP: ${SUBNET_INFOSEC}.${WAZUH_SRV_IP}
       LDAP_SRV_IP: ${SUBNET_SERVERS}.${LDAP_SRV_IP}
     networks:
-      dmz_net:
+      3dmz_net:
         ipv4_address: ${SUBNET_BRANCH_DMZ}.${IP_SRV_BRANCH_WG_GATE}
     dns:
       - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}        
@@ -110,66 +109,82 @@ services:
       LDAP_READONLY_USER_PASSWORD: ${LDAP_READONLY_USER_PASSWORD}  
       SG_USERS: SG-SRV-MGMT-USERS
       SG_ADMINS: SG-SRV-MGMT-ADMINS
-      GATEWAY_IP: ${SUBNET_BRANCH_ADMIN}.1
+      GATEWAY_IP: ${SUBNET_BRANCH_ADMIN}.254
       #WAZUH_MANAGER_IP: ${SUBNET_INFOSEC}.${WAZUH_SRV_IP}
       LDAP_SRV_IP: ${SUBNET_SERVERS}.${LDAP_SRV_IP}
+      LOCALADMIN_PASSWORD: ${LOCALADMIN_PASSWORD}
     networks:
-      admin_net:
+      5admin_net:
         ipv4_address: ${SUBNET_BRANCH_ADMIN}.${IP_SRV_BRANCH_BASTION}
     dns:
       - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}         
+  
+  nat_cleaner:
+    # САНИТАР NAT: Удаляет правила Masquerade, которые ломают Source IP в Docker Desktop (WSL)
+    image: nicolaka/netshoot  
+    container_name: nat_cleaner
+    depends_on: [ branch_fw ]
+    restart: always
+    network_mode: host
+    privileged: true
+    command: |
+      sh -c '
+      echo "Starting NAT Cleaner..."
+      BRIDGES="br-users br-admin br-dmz br-uplink br-servers"
+      for br in $$BRIDGES; do
+        echo "Removing bad NAT rule for $$br"
+        iptables -t nat -D POSTROUTING -o $$br -m addrtype --src-type LOCAL -j MASQUERADE
+      done
+      '
 
 networks:
-  uplink_net:
-    name: uplink_net
+  1uplink_net:
+    name: 1uplink_net
     driver: bridge
     ipam:
       config:
-        - subnet: ${SUBNET_UPLINK}.0/24
+        - subnet: ${SUBNET_BRANCH_UPLINK}.0/24
+          gateway: ${SUBNET_BRANCH_UPLINK}.1         
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
       com.docker.network.bridge.name: br-uplink
       #com.docker.network.bridge.enable_ip_masquerade: "false"        
-  users_net:
-    name: users_net
+  2users_net:
+    name: 2users_net
     driver: bridge
     ipam:
       config:
         - subnet: ${SUBNET_BRANCH_USERS}.0/24
-          gateway: ${SUBNET_BRANCH_USERS}.254 
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
       com.docker.network.bridge.name: br-users
       com.docker.network.bridge.enable_ip_masquerade: "false"            
-  dmz_net:
-    name: dmz_net
+  3dmz_net:
+    name: 3dmz_net
     driver: bridge
     ipam:
       config:
         - subnet: ${SUBNET_BRANCH_DMZ}.0/24
-          gateway: ${SUBNET_BRANCH_DMZ}.254 
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
       com.docker.network.bridge.name: br-dmz
       com.docker.network.bridge.enable_ip_masquerade: "false"            
-  servers_net:
-    name: servers_net
+  4servers_net:
+    name: 4servers_net
     driver: bridge
     ipam:
       config:
-        - subnet: ${SUBNET_BRANCH_SERVERS}.0/24
-          gateway: ${SUBNET_BRANCH_SERVERS}.254        
+        - subnet: ${SUBNET_BRANCH_SERVERS}.0/24     
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
       com.docker.network.bridge.name: br-servers
       com.docker.network.bridge.enable_ip_masquerade: "false"            
-  admin_net:
-    name: admin_net
+  5admin_net:
+    name: 5admin_net
     driver: bridge
     ipam:
       config:
-        - subnet: ${SUBNET_BRANCH_ADMIN}.0/24
-          gateway: ${SUBNET_BRANCH_ADMIN}.254        
+        - subnet: ${SUBNET_BRANCH_ADMIN}.0/24      
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
       com.docker.network.bridge.name: br-admin

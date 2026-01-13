@@ -56,11 +56,6 @@ nft flush chain ip nat POSTROUTING || true
 # Load nftables rules
 nft -f /etc/nftables.conf
 
-#!/bin/bash
-
-#Скрипт выполняет первичную конфиуграцию SSHD и создает пользователя для ansible
-set -euo pipefail
-
 # SSH setup (avoid noisy errors if config dir missing)
 mkdir -p /etc/ssh /run/sshd
 if [ ! -f /etc/ssh/sshd_config ]; then

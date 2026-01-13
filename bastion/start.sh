@@ -16,9 +16,17 @@ if ! grep -q '^account required pam_access.so' /etc/pam.d/common-account; then
     echo 'account required pam_access.so' >> /etc/pam.d/common-account
 fi
 
+# Create local admin account if needed
+if ! id localadmin >/dev/null 2>&1; then
+    useradd -m -s /bin/bash localadmin
+fi
+echo "localadmin:${LOCALADMIN_PASSWORD}" | chpasswd
+usermod -aG sudo localadmin
+
 # Access rules: allow root locally, allow bastion admins/users groups, deny all else
 cat <<'EOF' >> /etc/security/access.conf
 +:root:LOCAL
++:localadmin:ALL
 # Разрешить членам группы ADMINS (имя группы в Linux, не DN!)
 +:SG_ADMINS:ALL
 # Разрешить членам группы USERS
@@ -33,6 +41,7 @@ sed -i "s|SG_ADMINS|$SG_ADMINS|g" /etc/security/access.conf
 touch /etc/sudoers.d/ldap-sudo
 cat <<'EOF' >> /etc/sudoers.d/ldap-sudo
 %SG_ADMINS ALL=(ALL:ALL) ALL
+localadmin ALL=(ALL:ALL) ALL
 EOF
 chown root:root /etc/sudoers.d/ldap-sudo
 chmod 0440 /etc/sudoers.d/ldap-sudo
