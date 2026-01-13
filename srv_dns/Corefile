@@ -2,7 +2,7 @@
   log
   errors
   # Serve local zone
-  file /etc/coredns/layer8.ag.db layer8.ag
+  file /etc/coredns/xxx.ag.db xxx.ag
   # Cache responses briefly
   cache 30
   # Forward all other queries to public resolvers

@@ -4,7 +4,7 @@ services:
     hostname: fw
     build: ./fw
     container_name: fw
-    privileged: true
+    #privileged: true
     cap_add: [ "NET_ADMIN" ]
     restart: always
     sysctls:
@@ -12,21 +12,21 @@ services:
       net.ipv4.conf.all.src_valid_mark: 1              
     networks:
       uplink_net:
-        ipv4_address: ${SUBNET_UPLINK}.254
+        ipv4_address: ${SUBNET_UPLINK}.100
       users_net:
-        ipv4_address: ${SUBNET_USERS}.254
+        ipv4_address: ${SUBNET_USERS}.1
       dmz_net:
-        ipv4_address: ${SUBNET_DMZ}.254
+        ipv4_address: ${SUBNET_DMZ}.1
       servers_net:
-        ipv4_address: ${SUBNET_SERVERS}.254
+        ipv4_address: ${SUBNET_SERVERS}.1
       admin_net:
-        ipv4_address: ${SUBNET_ADMIN}.254      
+        ipv4_address: ${SUBNET_ADMIN}.1      
       infosec_net:
-        ipv4_address: ${SUBNET_INFOSEC}.254
+        ipv4_address: ${SUBNET_INFOSEC}.1
       dev_net:
-        ipv4_address: ${SUBNET_DEV}.254
+        ipv4_address: ${SUBNET_DEV}.1
     ports:
-      - "51820:51820/udp"     
+      - "51820:51820/udp"
     volumes:
       - ./fw/nftables.conf:/etc/nftables.conf:rw
     environment:
@@ -89,75 +89,132 @@ services:
       dmz_net:
         ipv4_address: ${SUBNET_DMZ}.${VPN_SRV_IP}
     dns:
-      - ${SUBNET_SERVERS}.${DNS_SRV_IP}        
+      - ${SUBNET_SERVERS}.${DNS_SRV_IP}
 
-networks:
+  srv_bastion_ib:
+    build: ./bastion
+    hostname: srv_bastion_ib
+    container_name: srv_bastion_ib
+    cap_add: [ "NET_ADMIN" ]
+    volumes:
+      - ./srv_bastion_ib/home/users:/home/users/
+      #- ./srv_bastion_ib/wazuh/var/ossec/etc:/var/ossec/etc
+      #- ./srv_bastion_ib/wazuh/var/ossec/queue:/var/ossec/queue
+      #- ./srv_bastion_ib/wazuh/etc/filebeat:/etc/filebeat
+      #- ./srv_bastion_ib/wazuh/var/lib/filebeat:/var/lib/filebeat      
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI  
+    environment:
+      LDAP_READONLY_USER_USERNAME: ${LDAP_READONLY_USER_USERNAME}
+      LDAP_READONLY_USER_PASSWORD: ${LDAP_READONLY_USER_PASSWORD}  
+      SG_USERS: SG-SRV-BASTION-IB-USERS
+      SG_ADMINS: SG-SRV-BASTION-IB-ADMINS
+      GATEWAY_IP: ${SUBNET_INFOSEC}.254   
+      WAZUH_MANAGER_IP: ${SUBNET_INFOSEC}.${WAZUH_SRV_IP}
+      LDAP_SRV_IP: ${SUBNET_SERVERS}.${LDAP_SRV_IP}      
+    networks:
+      infosec_net:
+        ipv4_address: ${SUBNET_INFOSEC}.${BASTION_IB_IP}
+    dns:
+      - ${SUBNET_SERVERS}.${DNS_SRV_IP}   
+
+  nat_cleaner:
+    # САНИТАР NAT: Удаляет правила Masquerade, которые ломают Source IP в Docker Desktop (WSL)
+    image: nicolaka/netshoot  
+    container_name: nat_cleaner
+    depends_on: [ fw ]
+    restart: no
+    network_mode: host
+    privileged: true
+    command: |
+      sh -c '
+      echo "Starting NAT Cleaner..."
+      BRIDGES="br-users br-admin br-dmz br-uplink br-servers br-infosec"
+      for br in $$BRIDGES; do
+        echo "Removing bad NAT rule for $$br"
+        iptables -t nat -D POSTROUTING -o $$br -m addrtype --src-type LOCAL -j MASQUERADE
+      done
+      '
+
+networks:  
   uplink_net:
     name: uplink_net
     driver: bridge
     ipam:
       config:
         - subnet: ${SUBNET_UPLINK}.0/24
+          gateway: ${SUBNET_UPLINK}.1
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
       com.docker.network.bridge.name: br-uplink
 #      com.docker.network.bridge.enable_ip_masquerade: "false"      
+  
   dev_net:
     name: dev_net
     driver: bridge
     ipam:
       config:
         - subnet: ${SUBNET_DEV}.0/24
+          gateway: ${SUBNET_DEV}.1
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
       com.docker.network.bridge.name: br-dev
       com.docker.network.bridge.enable_ip_masquerade: "false"            
+  
   users_net:
     name: users_net
     driver: bridge
     ipam:
       config:
         - subnet: ${SUBNET_USERS}.0/24
+          gateway: ${SUBNET_USERS}.1
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
       com.docker.network.bridge.name: br-users
       com.docker.network.bridge.enable_ip_masquerade: "false"            
+  
   dmz_net:
     name: dmz_net
     driver: bridge
     ipam:
       config:
         - subnet: ${SUBNET_DMZ}.0/24
+          gateway: ${SUBNET_DMZ}.1        
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
       com.docker.network.bridge.name: br-dmz
-      com.docker.network.bridge.enable_ip_masquerade: "false"            
+      com.docker.network.bridge.enable_ip_masquerade: "false"
+
   servers_net:
     name: servers_net
     driver: bridge
     ipam:
       config:
         - subnet: ${SUBNET_SERVERS}.0/24
+          gateway: ${SUBNET_SERVERS}.1        
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
       com.docker.network.bridge.name: br-servers
-      com.docker.network.bridge.enable_ip_masquerade: "false"            
+      com.docker.network.bridge.enable_ip_masquerade: "false"
+
   admin_net:
     name: admin_net
     driver: bridge
     ipam:
       config:
         - subnet: ${SUBNET_ADMIN}.0/24
+          gateway: ${SUBNET_ADMIN}.1        
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
       com.docker.network.bridge.name: br-admin
       com.docker.network.bridge.enable_ip_masquerade: "false"            
+
   infosec_net:
     name: infosec_net
     driver: bridge
     ipam:
       config:
         - subnet: ${SUBNET_INFOSEC}.0/24
+          gateway: ${SUBNET_INFOSEC}.1        
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
       com.docker.network.bridge.name: br-infosec

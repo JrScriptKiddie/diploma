@@ -1,6 +1,6 @@
-$ORIGIN layer8.ag.
+$ORIGIN xxx.ag.
 $TTL 300
-@   IN SOA ns.layer8.ag. admin.layer8.ag. (
+@   IN SOA ns.xxx.ag. admin.xxx.ag. (
         2025091001 ; Serial
         3600       ; Refresh
         900        ; Retry
@@ -8,7 +8,7 @@ $TTL 300
         300 )      ; Minimum
 
 ; NS
-@         IN NS ns.layer8.ag.
+@         IN NS ns.xxx.ag.
 
 ; APEX and hosts
 ;@         IN A 192.168.4.35
@@ -33,3 +33,7 @@ srv_wazuh_indexer IN A 192.168.3.89
 srv_wazuh_dashboard IN A 192.168.3.90
 wazuh           IN A 192.168.3.90
 wiki            IN A 192.168.1.120
+
+; Branch servers
+srv_branch_wg_gate      IN      A       10.97.24.200
+srv_bastion_ib          IN      A       10.97.26.66

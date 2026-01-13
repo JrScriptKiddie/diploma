@@ -46,8 +46,8 @@ while read -r line; do
 done < <(ip -o -4 addr show)
 
 # Задаем дефолтный маршрут на NAT
-echo "Adding default route via ${SUBNET_UPLINK}.1 on eth_uplink"
-ip route add default via $SUBNET_UPLINK.1 dev eth_uplink || true
+echo "Adding default route via ${GATEWAY_IP} on eth_uplink"
+ip route add default via $GATEWAY_IP dev eth_uplink || true
 ip route add 10.11.0.0/16 via $SUBNET_DMZ.$VPN_SRV_IP
 
 nft flush table inet fw || true
