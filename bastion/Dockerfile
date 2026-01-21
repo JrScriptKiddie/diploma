@@ -4,6 +4,7 @@ USER root
 
 # 1. Добавляем 'nslcd' явно в список пакетов
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    ca-certificates \
     nslcd \
     libnss-ldapd \
     libpam-ldapd \

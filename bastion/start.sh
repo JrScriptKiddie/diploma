@@ -3,10 +3,22 @@
 ip route del default
 ip route add default via $GATEWAY_IP || true
 
-echo "Injecting LDAP password into config..."
+# Trust PolarProxy CA if mounted
+if [ -f /usr/local/share/ca-certificates/proxy_ca.crt ]; then
+  update-ca-certificates || true
+  mkdir -p /etc/firefox/policies
+  cat <<'EOF' > /etc/firefox/policies/policies.json
+{
+  "policies": {
+    "Certificates": {
+      "Install": ["/usr/local/share/ca-certificates/proxy_ca.crt"]
+    }
+  }
+}
+EOF
+fi
 
-# Используем sed для замены.
-# Мы используем разделитель | вместо /, чтобы пароль мог содержать слеши.
+echo "Injecting LDAP password into config..."
 sed -i "s|LDAP_READONLY_USER_USERNAME|$LDAP_READONLY_USER_USERNAME|g" /etc/nslcd.conf
 sed -i "s|LDAP_READONLY_USER_PASSWORD|$LDAP_READONLY_USER_PASSWORD|g" /etc/nslcd.conf
 sed -i "s|LDAP_SRV_IP|$LDAP_SRV_IP|g" /etc/nslcd.conf
