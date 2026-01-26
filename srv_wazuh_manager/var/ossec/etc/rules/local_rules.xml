@@ -29,6 +29,12 @@
   </rule>
 </group>
 
+<group name="local,syslog,">
+  <rule id="100100" level="12">
+    <match>WAZUH_TEST</match>
+    <description>Syslog test message (WAZUH_TEST)</description>
+  </rule>
+</group>
 
 <group name="openldap,syslog,access_control,">
   <rule id="100501" level="15" frequency="3" timeframe="60">

@@ -3407,3 +3407,1256 @@
 2026/01/26 13:16:23 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' can't be replaced since it is not disconnected.
 2026/01/26 13:17:23 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
 2026/01/26 13:17:23 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' can't be replaced since it is not disconnected.
+2026/01/26 13:18:24 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:18:24 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' can't be replaced since it is not disconnected.
+2026/01/26 13:19:24 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:19:24 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' can't be replaced since it is not disconnected.
+2026/01/26 13:20:24 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:20:24 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:21:25 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:21:25 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:22:25 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:22:25 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:23:25 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:23:25 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:24:26 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:24:26 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:25:26 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:25:26 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:26:27 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:26:27 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:27:27 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:27:27 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:28:27 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:28:27 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:29:28 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:29:28 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:29:31 wazuh-agentlessd: INFO: Not configured. Exiting.
+2026/01/26 13:30:28 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:30:28 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:30:39 wazuh-modulesd:router: INFO: Loaded router module.
+2026/01/26 13:30:39 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2026/01/26 13:30:39 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2026/01/26 13:30:39 wazuh-monitord: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 13:30:39 wazuh-logcollector: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 13:30:39 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 13:30:39 wazuh-syscheckd: INFO: (1756): Shutdown received. Releasing resources.
+2026/01/26 13:30:39 wazuh-syscheckd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 13:30:39 wazuh-analysisd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 13:30:39 wazuh-execd: INFO: (1314): Shutdown received. Deleting responses.
+2026/01/26 13:30:39 wazuh-execd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 13:30:39 wazuh-db: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 13:30:39 wazuh-authd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 13:30:40 wazuh-authd: INFO: Exiting...
+2026/01/26 13:30:40 :router: INFO: Stopping server thread
+2026/01/26 13:30:40 wazuh-db: INFO: Graceful process shutdown.
+2026/01/26 13:30:40 wazuh-modulesd: INFO: Shutting down Wazuh modules.
+2026/01/26 13:30:40 wazuh-modulesd:syscollector: INFO: Stop received for Syscollector.
+2026/01/26 13:30:40 wazuh-modulesd:syscollector: INFO: Module finished.
+2026/01/26 13:30:40 wazuh-modulesd:vulnerability-scanner: INFO: Stopping vulnerability_scanner module.
+2026/01/26 13:30:42 wazuh-modulesd:router: INFO: Stopping router module.
+2026/01/26 13:30:42 wazuh-modulesd:content_manager: INFO: Stopping content_manager module.
+2026/01/26 13:30:42 wazuh-modulesd:inventory-harvester: INFO: Stopping inventory_harvester module.
+2026/01/26 13:30:42 logger-helper: INFO: Inventory harvester module stopped.
+2026/01/26 13:31:11 wazuh-csyslogd: INFO: Remote syslog server not configured. Clean exit.
+2026/01/26 13:31:11 wazuh-dbd: INFO: Database not configured. Clean exit.
+2026/01/26 13:31:11 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.
+2026/01/26 13:31:11 wazuh-agentlessd: INFO: Not configured. Exiting.
+2026/01/26 13:31:11 wazuh-authd: INFO: Started (pid: 4926).
+2026/01/26 13:31:11 wazuh-authd: INFO: Accepting connections on port 1515. No password required.
+2026/01/26 13:31:11 wazuh-authd: INFO: Setting network timeout to 1.000000 sec.
+2026/01/26 13:31:11 wazuh-db: INFO: Started (pid: 4939).
+2026/01/26 13:31:11 :router: INFO: Registering GET endpoint: /v1/agents/ids
+2026/01/26 13:31:11 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups/:name
+2026/01/26 13:31:11 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups
+2026/01/26 13:31:11 :router: INFO: Registering GET endpoint: /v1/agents/:agent_id/groups
+2026/01/26 13:31:11 :router: INFO: Registering POST endpoint: /v1/agents/summary
+2026/01/26 13:31:11 :router: INFO: Registering GET endpoint: /v1/agents/sync
+2026/01/26 13:31:11 :router: INFO: Registering POST endpoint: /v1/agents/sync
+2026/01/26 13:31:11 :router: INFO: Registering POST endpoint: /v1/agents/restartinfo
+2026/01/26 13:31:11 :router: INFO: API started successfully
+2026/01/26 13:31:12 wazuh-execd: INFO: Started (pid: 4978).
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: Started (pid: 5000).
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6003): Monitoring path: '/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6003): Monitoring path: '/boot', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6003): Monitoring path: '/etc', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6003): Monitoring path: '/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mtab'
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/hosts.deny'
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mail/statistics'
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random-seed'
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random.seed'
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/adjtime'
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/httpd/logs'
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/utmpx'
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/wtmpx'
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/cups/certs'
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/dumpdates'
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/svc/volatile'
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6207): Ignore 'file' sregex '.log$|.swp$'
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6004): No diff for file: '/etc/ssl/private.key'
+2026/01/26 13:31:12 rootcheck: INFO: Starting rootcheck scan.
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6000): Starting daemon...
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6010): File integrity monitoring scan frequency: 43200 seconds
+2026/01/26 13:31:12 wazuh-syscheckd: INFO: (6008): File integrity monitoring scan started.
+2026/01/26 13:31:13 wazuh-syscheckd: INFO: (6009): File integrity monitoring scan ended.
+2026/01/26 13:31:13 wazuh-syscheckd: INFO: FIM sync module started.
+2026/01/26 13:31:13 wazuh-analysisd: INFO: Total rules enabled: '8454'
+2026/01/26 13:31:13 wazuh-analysisd: INFO: Started (pid: 4990).
+2026/01/26 13:31:13 wazuh-remoted: INFO: Started (pid: 5022). Listening on port 1514/TCP (secure).
+2026/01/26 13:31:13 wazuh-remoted: INFO: Remote syslog allowed from: '0.0.0.0/0'
+2026/01/26 13:31:13 wazuh-remoted: INFO: Started (pid: 5023). Listening on port 514/TCP (syslog).
+2026/01/26 13:31:14 wazuh-analysisd: INFO: (7200): Logtest started
+2026/01/26 13:31:14 wazuh-analysisd: INFO: EPS limit disabled
+2026/01/26 13:31:14 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2026/01/26 13:31:14 wazuh-logcollector: INFO: Monitoring output of command(360): df -P
+2026/01/26 13:31:14 wazuh-logcollector: INFO: Monitoring full output of command(360): netstat -tulpn | sed 's/\([[:alnum:]]\+\)\ \+[[:digit:]]\+\ \+[[:digit:]]\+\ \+\(.*\):\([[:digit:]]*\)\ \+\([0-9\.\:\*]\+\).\+\ \([[:digit:]]*\/[[:alnum:]\-]*\).*/\1 \2 == \3 == \4 \5/' | sort -k 4 -g | sed 's/ == \(.*\) ==/:\1/' | sed 1,2d
+2026/01/26 13:31:14 wazuh-logcollector: INFO: Monitoring full output of command(360): last -n 20
+2026/01/26 13:31:14 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/ossec/logs/active-responses.log'.
+2026/01/26 13:31:14 wazuh-monitord: INFO: Started (pid: 5220).
+2026/01/26 13:31:14 wazuh-logcollector: INFO: Started (pid: 5207).
+2026/01/26 13:31:15 wazuh-modulesd:router: INFO: Loaded router module.
+2026/01/26 13:31:15 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2026/01/26 13:31:15 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2026/01/26 13:31:15 wazuh-modulesd: INFO: Started (pid: 5277).
+2026/01/26 13:31:15 wazuh-modulesd:agent-upgrade: INFO: (8153): Module Agent Upgrade started.
+2026/01/26 13:31:16 wazuh-modulesd:ciscat: INFO: Module disabled. Exiting...
+2026/01/26 13:31:16 wazuh-modulesd:task-manager: INFO: (8200): Module Task Manager started.
+2026/01/26 13:31:16 wazuh-modulesd:osquery: INFO: Module disabled. Exiting...
+2026/01/26 13:31:16 wazuh-modulesd:database: INFO: Module started.
+2026/01/26 13:31:16 wazuh-modulesd:content_manager: INFO: Starting content_manager module.
+2026/01/26 13:31:16 wazuh-modulesd:router: INFO: Starting router module.
+2026/01/26 13:31:16 sca: INFO: Module started.
+2026/01/26 13:31:16 wazuh-modulesd:download: INFO: Module started.
+2026/01/26 13:31:16 wazuh-modulesd:vulnerability-scanner: INFO: Starting vulnerability_scanner module.
+2026/01/26 13:31:16 wazuh-modulesd:control: INFO: Starting control thread.
+2026/01/26 13:31:16 wazuh-modulesd:inventory-harvester: INFO: Starting inventory_harvester module.
+2026/01/26 13:31:16 sca: INFO: Loaded policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 13:31:16 sca: INFO: Starting Security Configuration Assessment scan.
+2026/01/26 13:31:16 sca: INFO: Starting evaluation of policy: '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 13:31:16 wazuh-modulesd:syscollector: INFO: Module started.
+2026/01/26 13:31:16 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2026/01/26 13:31:16 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2026/01/26 13:31:16 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-vulnerabilities-srv_wazuh_manager.
+2026/01/26 13:31:16 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-packages-srv_wazuh_manager.
+2026/01/26 13:31:17 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-system-srv_wazuh_manager.
+2026/01/26 13:31:17 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-processes-srv_wazuh_manager.
+2026/01/26 13:31:17 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-ports-srv_wazuh_manager.
+2026/01/26 13:31:17 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hotfixes-srv_wazuh_manager.
+2026/01/26 13:31:17 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hardware-srv_wazuh_manager.
+2026/01/26 13:31:18 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-protocols-srv_wazuh_manager.
+2026/01/26 13:31:18 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-interfaces-srv_wazuh_manager.
+2026/01/26 13:31:18 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-networks-srv_wazuh_manager.
+2026/01/26 13:31:18 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-users-srv_wazuh_manager.
+2026/01/26 13:31:19 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-groups-srv_wazuh_manager.
+2026/01/26 13:31:19 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-browser-extensions-srv_wazuh_manager.
+2026/01/26 13:31:19 logger-helper: INFO: InventoryHarvesterFacade module started.
+2026/01/26 13:31:19 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-services-srv_wazuh_manager.
+2026/01/26 13:31:19 wazuh-modulesd:vulnerability-scanner: INFO: Vulnerability scanner module started.
+2026/01/26 13:31:21 sca: INFO: Evaluation finished for policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 13:31:21 sca: INFO: Security Configuration Assessment scan finished. Duration: 5 seconds.
+2026/01/26 13:31:29 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:31:29 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:31:38 wazuh-syscheckd: INFO: netstat not available. Skipping port check.
+2026/01/26 13:31:43 rootcheck: INFO: Ending rootcheck scan.
+2026/01/26 13:32:20 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.203.66
+2026/01/26 13:32:20 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '051' can't be replaced since it is not disconnected.
+2026/01/26 13:32:29 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:32:29 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:33:29 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:33:29 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:34:30 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:34:30 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:35:30 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:35:30 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:36:30 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:36:30 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:37:31 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:37:31 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:38:31 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:38:31 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:39:31 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:39:32 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:40:32 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:40:32 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:41:32 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:41:32 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:42:33 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:42:33 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:43:33 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:43:33 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:44:33 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:44:33 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:45:34 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:45:34 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:46:34 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:46:34 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:47:35 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:47:35 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:48:35 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:48:35 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:49:35 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:49:35 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:50:36 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:50:36 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:51:36 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:51:36 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:52:36 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:52:36 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:53:37 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:53:37 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:54:37 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:54:37 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:55:38 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:55:38 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:56:38 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:56:38 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:57:38 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:57:38 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:58:39 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:58:39 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 13:59:39 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 13:59:39 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 14:00:39 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 14:00:39 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 14:01:40 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 14:01:40 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 14:02:40 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 14:02:40 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 14:03:41 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 14:03:41 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 14:04:41 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 14:04:41 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 14:05:41 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 14:05:41 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 14:06:42 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 14:06:42 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 14:07:42 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 14:07:42 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 14:08:42 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 14:08:42 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 14:09:43 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 14:09:43 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 14:10:43 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 14:10:43 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 14:11:44 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 14:11:44 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 14:12:44 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 14:12:44 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 14:13:44 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 14:13:44 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 14:14:45 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 14:14:45 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 14:15:09 wazuh-maild: ERROR: (1235): Invalid value for element 'agents_disconnection_time': 0.
+2026/01/26 14:15:09 wazuh-maild: ERROR: (1202): Configuration error at 'etc/ossec.conf'.
+2026/01/26 14:15:09 wazuh-maild: CRITICAL: (1202): Configuration error at 'etc/ossec.conf'.
+2026/01/26 14:15:45 wazuh-maild: ERROR: (1235): Invalid value for element 'agents_disconnection_time': 0m.
+2026/01/26 14:15:45 wazuh-maild: ERROR: (1202): Configuration error at 'etc/ossec.conf'.
+2026/01/26 14:15:45 wazuh-maild: CRITICAL: (1202): Configuration error at 'etc/ossec.conf'.
+2026/01/26 14:15:45 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 14:15:45 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '048' has not been disconnected long enough to be replaced.
+2026/01/26 14:15:55 wazuh-modulesd:router: INFO: Loaded router module.
+2026/01/26 14:15:55 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2026/01/26 14:15:55 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2026/01/26 14:15:56 wazuh-monitord: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:15:56 wazuh-logcollector: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:15:56 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:15:56 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:15:56 wazuh-syscheckd: INFO: (1756): Shutdown received. Releasing resources.
+2026/01/26 14:15:56 wazuh-analysisd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:15:56 wazuh-syscheckd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:15:56 wazuh-execd: INFO: (1314): Shutdown received. Deleting responses.
+2026/01/26 14:15:56 wazuh-execd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:15:56 wazuh-db: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:15:56 wazuh-authd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:15:56 :router: INFO: Stopping server thread
+2026/01/26 14:15:57 wazuh-modulesd: INFO: Shutting down Wazuh modules.
+2026/01/26 14:15:57 wazuh-modulesd:syscollector: INFO: Stop received for Syscollector.
+2026/01/26 14:15:57 wazuh-authd: INFO: Exiting...
+2026/01/26 14:15:57 wazuh-modulesd:syscollector: INFO: Module finished.
+2026/01/26 14:15:57 wazuh-modulesd:vulnerability-scanner: INFO: Stopping vulnerability_scanner module.
+2026/01/26 14:15:57 wazuh-db: INFO: Graceful process shutdown.
+2026/01/26 14:15:57 wazuh-modulesd:router: INFO: Stopping router module.
+2026/01/26 14:15:57 wazuh-modulesd:content_manager: INFO: Stopping content_manager module.
+2026/01/26 14:15:57 wazuh-modulesd:inventory-harvester: INFO: Stopping inventory_harvester module.
+2026/01/26 14:15:57 logger-helper: INFO: Inventory harvester module stopped.
+2026/01/26 14:16:27 wazuh-csyslogd: INFO: Remote syslog server not configured. Clean exit.
+2026/01/26 14:16:27 wazuh-dbd: INFO: Database not configured. Clean exit.
+2026/01/26 14:16:27 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.
+2026/01/26 14:16:27 wazuh-agentlessd: INFO: Not configured. Exiting.
+2026/01/26 14:16:27 wazuh-authd: INFO: Started (pid: 8233).
+2026/01/26 14:16:27 wazuh-authd: INFO: Accepting connections on port 1515. No password required.
+2026/01/26 14:16:27 wazuh-authd: INFO: Setting network timeout to 1.000000 sec.
+2026/01/26 14:16:27 wazuh-db: INFO: Started (pid: 8246).
+2026/01/26 14:16:27 :router: INFO: Registering GET endpoint: /v1/agents/ids
+2026/01/26 14:16:27 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups/:name
+2026/01/26 14:16:27 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups
+2026/01/26 14:16:27 :router: INFO: Registering GET endpoint: /v1/agents/:agent_id/groups
+2026/01/26 14:16:27 :router: INFO: Registering POST endpoint: /v1/agents/summary
+2026/01/26 14:16:27 :router: INFO: Registering GET endpoint: /v1/agents/sync
+2026/01/26 14:16:27 :router: INFO: Registering POST endpoint: /v1/agents/sync
+2026/01/26 14:16:27 :router: INFO: Registering POST endpoint: /v1/agents/restartinfo
+2026/01/26 14:16:27 :router: INFO: API started successfully
+2026/01/26 14:16:28 wazuh-execd: INFO: Started (pid: 8285).
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: Started (pid: 8307).
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6003): Monitoring path: '/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6003): Monitoring path: '/boot', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6003): Monitoring path: '/etc', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6003): Monitoring path: '/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mtab'
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/hosts.deny'
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mail/statistics'
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random-seed'
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random.seed'
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/adjtime'
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/httpd/logs'
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/utmpx'
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/wtmpx'
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/cups/certs'
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/dumpdates'
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/svc/volatile'
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6207): Ignore 'file' sregex '.log$|.swp$'
+2026/01/26 14:16:28 wazuh-syscheckd: INFO: (6004): No diff for file: '/etc/ssl/private.key'
+2026/01/26 14:16:29 rootcheck: INFO: Starting rootcheck scan.
+2026/01/26 14:16:29 wazuh-syscheckd: INFO: (6000): Starting daemon...
+2026/01/26 14:16:29 wazuh-syscheckd: INFO: (6010): File integrity monitoring scan frequency: 43200 seconds
+2026/01/26 14:16:29 wazuh-syscheckd: INFO: (6008): File integrity monitoring scan started.
+2026/01/26 14:16:29 wazuh-syscheckd: INFO: (6009): File integrity monitoring scan ended.
+2026/01/26 14:16:29 wazuh-syscheckd: INFO: FIM sync module started.
+2026/01/26 14:16:29 wazuh-analysisd: INFO: Total rules enabled: '8454'
+2026/01/26 14:16:29 wazuh-analysisd: INFO: Started (pid: 8297).
+2026/01/26 14:16:29 wazuh-remoted: INFO: Started (pid: 8328). Listening on port 1514/TCP (secure).
+2026/01/26 14:16:29 wazuh-remoted: INFO: Remote syslog allowed from: '0.0.0.0/0'
+2026/01/26 14:16:29 wazuh-remoted: INFO: Started (pid: 8329). Listening on port 514/TCP (syslog).
+2026/01/26 14:16:30 wazuh-analysisd: INFO: (7200): Logtest started
+2026/01/26 14:16:30 wazuh-analysisd: INFO: EPS limit disabled
+2026/01/26 14:16:30 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2026/01/26 14:16:30 wazuh-logcollector: INFO: Monitoring output of command(360): df -P
+2026/01/26 14:16:30 wazuh-logcollector: INFO: Monitoring full output of command(360): netstat -tulpn | sed 's/\([[:alnum:]]\+\)\ \+[[:digit:]]\+\ \+[[:digit:]]\+\ \+\(.*\):\([[:digit:]]*\)\ \+\([0-9\.\:\*]\+\).\+\ \([[:digit:]]*\/[[:alnum:]\-]*\).*/\1 \2 == \3 == \4 \5/' | sort -k 4 -g | sed 's/ == \(.*\) ==/:\1/' | sed 1,2d
+2026/01/26 14:16:30 wazuh-logcollector: INFO: Monitoring full output of command(360): last -n 20
+2026/01/26 14:16:30 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/ossec/logs/active-responses.log'.
+2026/01/26 14:16:30 wazuh-monitord: INFO: Started (pid: 8528).
+2026/01/26 14:16:31 wazuh-logcollector: INFO: Started (pid: 8514).
+2026/01/26 14:16:32 wazuh-modulesd:router: INFO: Loaded router module.
+2026/01/26 14:16:32 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2026/01/26 14:16:32 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2026/01/26 14:16:32 wazuh-modulesd: INFO: Started (pid: 8584).
+2026/01/26 14:16:32 wazuh-modulesd:agent-upgrade: INFO: (8153): Module Agent Upgrade started.
+2026/01/26 14:16:32 wazuh-modulesd:task-manager: INFO: (8200): Module Task Manager started.
+2026/01/26 14:16:32 wazuh-modulesd:ciscat: INFO: Module disabled. Exiting...
+2026/01/26 14:16:32 wazuh-modulesd:osquery: INFO: Module disabled. Exiting...
+2026/01/26 14:16:32 wazuh-modulesd:router: INFO: Starting router module.
+2026/01/26 14:16:32 sca: INFO: Module started.
+2026/01/26 14:16:32 wazuh-modulesd:database: INFO: Module started.
+2026/01/26 14:16:32 wazuh-modulesd:download: INFO: Module started.
+2026/01/26 14:16:32 wazuh-modulesd:vulnerability-scanner: INFO: Starting vulnerability_scanner module.
+2026/01/26 14:16:32 wazuh-modulesd:content_manager: INFO: Starting content_manager module.
+2026/01/26 14:16:32 wazuh-modulesd:inventory-harvester: INFO: Starting inventory_harvester module.
+2026/01/26 14:16:32 sca: INFO: Loaded policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 14:16:32 wazuh-modulesd:control: INFO: Starting control thread.
+2026/01/26 14:16:32 sca: INFO: Starting Security Configuration Assessment scan.
+2026/01/26 14:16:32 sca: INFO: Starting evaluation of policy: '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 14:16:32 wazuh-modulesd:syscollector: INFO: Module started.
+2026/01/26 14:16:32 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2026/01/26 14:16:32 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2026/01/26 14:16:32 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-vulnerabilities-srv_wazuh_manager.
+2026/01/26 14:16:32 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-packages-srv_wazuh_manager.
+2026/01/26 14:16:33 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-system-srv_wazuh_manager.
+2026/01/26 14:16:33 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-processes-srv_wazuh_manager.
+2026/01/26 14:16:34 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-ports-srv_wazuh_manager.
+2026/01/26 14:16:34 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hotfixes-srv_wazuh_manager.
+2026/01/26 14:16:35 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hardware-srv_wazuh_manager.
+2026/01/26 14:16:35 wazuh-modulesd:vulnerability-scanner: INFO: Vulnerability scanner module started.
+2026/01/26 14:16:36 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-protocols-srv_wazuh_manager.
+2026/01/26 14:16:36 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-interfaces-srv_wazuh_manager.
+2026/01/26 14:16:36 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-networks-srv_wazuh_manager.
+2026/01/26 14:16:37 sca: INFO: Evaluation finished for policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 14:16:37 sca: INFO: Security Configuration Assessment scan finished. Duration: 5 seconds.
+2026/01/26 14:16:37 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-users-srv_wazuh_manager.
+2026/01/26 14:16:37 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-groups-srv_wazuh_manager.
+2026/01/26 14:16:37 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-browser-extensions-srv_wazuh_manager.
+2026/01/26 14:16:38 logger-helper: INFO: InventoryHarvesterFacade module started.
+2026/01/26 14:16:38 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-services-srv_wazuh_manager.
+2026/01/26 14:16:46 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 14:16:46 wazuh-authd: INFO: Duplicate name. Removing old agent 'ws000342' (id '048').
+2026/01/26 14:16:46 wazuh-authd: INFO: Agent key generated for 'ws000342' (requested by any)
+2026/01/26 14:16:50 wazuh-remoted: INFO: (1409): Authentication file changed. Updating.
+2026/01/26 14:16:50 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2026/01/26 14:16:56 wazuh-syscheckd: INFO: netstat not available. Skipping port check.
+2026/01/26 14:17:01 rootcheck: INFO: Ending rootcheck scan.
+2026/01/26 14:18:50 wazuh-modulesd:router: INFO: Loaded router module.
+2026/01/26 14:18:50 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2026/01/26 14:18:50 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2026/01/26 14:18:51 wazuh-monitord: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:18:51 wazuh-logcollector: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:18:51 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:18:51 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:18:51 wazuh-syscheckd: INFO: (1756): Shutdown received. Releasing resources.
+2026/01/26 14:18:51 wazuh-syscheckd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:18:51 wazuh-analysisd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:18:51 wazuh-execd: INFO: (1314): Shutdown received. Deleting responses.
+2026/01/26 14:18:51 wazuh-execd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:18:51 wazuh-db: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:18:51 wazuh-authd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:18:52 :router: INFO: Stopping server thread
+2026/01/26 14:18:52 wazuh-modulesd: INFO: Shutting down Wazuh modules.
+2026/01/26 14:18:52 wazuh-modulesd:syscollector: INFO: Stop received for Syscollector.
+2026/01/26 14:18:52 wazuh-modulesd:syscollector: INFO: Module finished.
+2026/01/26 14:18:52 wazuh-modulesd:vulnerability-scanner: INFO: Stopping vulnerability_scanner module.
+2026/01/26 14:18:52 wazuh-authd: INFO: Exiting...
+2026/01/26 14:18:52 wazuh-modulesd:router: INFO: Stopping router module.
+2026/01/26 14:18:52 wazuh-db: INFO: Graceful process shutdown.
+2026/01/26 14:18:52 wazuh-modulesd:content_manager: INFO: Stopping content_manager module.
+2026/01/26 14:18:52 wazuh-modulesd:inventory-harvester: INFO: Stopping inventory_harvester module.
+2026/01/26 14:18:52 logger-helper: INFO: Inventory harvester module stopped.
+2026/01/26 14:19:23 wazuh-csyslogd: INFO: Remote syslog server not configured. Clean exit.
+2026/01/26 14:19:23 wazuh-dbd: INFO: Database not configured. Clean exit.
+2026/01/26 14:19:23 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.
+2026/01/26 14:19:23 wazuh-agentlessd: INFO: Not configured. Exiting.
+2026/01/26 14:19:23 wazuh-authd: INFO: Started (pid: 10873).
+2026/01/26 14:19:23 wazuh-authd: INFO: Accepting connections on port 1515. No password required.
+2026/01/26 14:19:23 wazuh-authd: INFO: Setting network timeout to 1.000000 sec.
+2026/01/26 14:19:23 wazuh-db: INFO: Started (pid: 10886).
+2026/01/26 14:19:23 :router: INFO: Registering GET endpoint: /v1/agents/ids
+2026/01/26 14:19:23 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups/:name
+2026/01/26 14:19:23 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups
+2026/01/26 14:19:23 :router: INFO: Registering GET endpoint: /v1/agents/:agent_id/groups
+2026/01/26 14:19:23 :router: INFO: Registering POST endpoint: /v1/agents/summary
+2026/01/26 14:19:23 :router: INFO: Registering GET endpoint: /v1/agents/sync
+2026/01/26 14:19:23 :router: INFO: Registering POST endpoint: /v1/agents/sync
+2026/01/26 14:19:23 :router: INFO: Registering POST endpoint: /v1/agents/restartinfo
+2026/01/26 14:19:23 :router: INFO: API started successfully
+2026/01/26 14:19:24 wazuh-execd: INFO: Started (pid: 10925).
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: Started (pid: 10947).
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6003): Monitoring path: '/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6003): Monitoring path: '/boot', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6003): Monitoring path: '/etc', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6003): Monitoring path: '/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mtab'
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/hosts.deny'
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mail/statistics'
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random-seed'
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random.seed'
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/adjtime'
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/httpd/logs'
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/utmpx'
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/wtmpx'
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/cups/certs'
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/dumpdates'
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/svc/volatile'
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6207): Ignore 'file' sregex '.log$|.swp$'
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6004): No diff for file: '/etc/ssl/private.key'
+2026/01/26 14:19:24 rootcheck: INFO: Starting rootcheck scan.
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6000): Starting daemon...
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6010): File integrity monitoring scan frequency: 43200 seconds
+2026/01/26 14:19:24 wazuh-syscheckd: INFO: (6008): File integrity monitoring scan started.
+2026/01/26 14:19:25 wazuh-syscheckd: INFO: (6009): File integrity monitoring scan ended.
+2026/01/26 14:19:25 wazuh-syscheckd: INFO: FIM sync module started.
+2026/01/26 14:19:25 wazuh-analysisd: INFO: Total rules enabled: '8454'
+2026/01/26 14:19:25 wazuh-analysisd: INFO: Started (pid: 10937).
+2026/01/26 14:19:25 wazuh-remoted: INFO: Started (pid: 10968). Listening on port 1514/TCP (secure).
+2026/01/26 14:19:25 wazuh-remoted: INFO: Remote syslog allowed from: '0.0.0.0/0'
+2026/01/26 14:19:25 wazuh-remoted: INFO: Started (pid: 10969). Listening on port 514/TCP (syslog).
+2026/01/26 14:19:26 wazuh-analysisd: INFO: (7200): Logtest started
+2026/01/26 14:19:26 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2026/01/26 14:19:26 wazuh-analysisd: INFO: EPS limit disabled
+2026/01/26 14:19:26 wazuh-logcollector: INFO: Monitoring output of command(360): df -P
+2026/01/26 14:19:26 wazuh-logcollector: INFO: Monitoring full output of command(360): netstat -tulpn | sed 's/\([[:alnum:]]\+\)\ \+[[:digit:]]\+\ \+[[:digit:]]\+\ \+\(.*\):\([[:digit:]]*\)\ \+\([0-9\.\:\*]\+\).\+\ \([[:digit:]]*\/[[:alnum:]\-]*\).*/\1 \2 == \3 == \4 \5/' | sort -k 4 -g | sed 's/ == \(.*\) ==/:\1/' | sed 1,2d
+2026/01/26 14:19:26 wazuh-logcollector: INFO: Monitoring full output of command(360): last -n 20
+2026/01/26 14:19:26 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/ossec/logs/active-responses.log'.
+2026/01/26 14:19:26 wazuh-monitord: INFO: Started (pid: 11164).
+2026/01/26 14:19:26 wazuh-logcollector: INFO: Started (pid: 11150).
+2026/01/26 14:19:27 wazuh-modulesd:router: INFO: Loaded router module.
+2026/01/26 14:19:27 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2026/01/26 14:19:27 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2026/01/26 14:19:27 wazuh-modulesd: INFO: Started (pid: 11218).
+2026/01/26 14:19:27 wazuh-modulesd:agent-upgrade: INFO: (8153): Module Agent Upgrade started.
+2026/01/26 14:19:27 wazuh-modulesd:ciscat: INFO: Module disabled. Exiting...
+2026/01/26 14:19:27 wazuh-modulesd:osquery: INFO: Module disabled. Exiting...
+2026/01/26 14:19:27 wazuh-modulesd:task-manager: INFO: (8200): Module Task Manager started.
+2026/01/26 14:19:27 sca: INFO: Module started.
+2026/01/26 14:19:27 wazuh-modulesd:router: INFO: Starting router module.
+2026/01/26 14:19:27 wazuh-modulesd:content_manager: INFO: Starting content_manager module.
+2026/01/26 14:19:27 wazuh-modulesd:inventory-harvester: INFO: Starting inventory_harvester module.
+2026/01/26 14:19:27 wazuh-modulesd:vulnerability-scanner: INFO: Starting vulnerability_scanner module.
+2026/01/26 14:19:27 sca: INFO: Loaded policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 14:19:27 wazuh-modulesd:database: INFO: Module started.
+2026/01/26 14:19:27 wazuh-modulesd:download: INFO: Module started.
+2026/01/26 14:19:28 wazuh-modulesd:control: INFO: Starting control thread.
+2026/01/26 14:19:28 sca: INFO: Starting Security Configuration Assessment scan.
+2026/01/26 14:19:28 sca: INFO: Starting evaluation of policy: '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 14:19:28 wazuh-modulesd:syscollector: INFO: Module started.
+2026/01/26 14:19:28 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2026/01/26 14:19:28 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2026/01/26 14:19:28 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-vulnerabilities-srv_wazuh_manager.
+2026/01/26 14:19:28 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-packages-srv_wazuh_manager.
+2026/01/26 14:19:28 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-system-srv_wazuh_manager.
+2026/01/26 14:19:29 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-processes-srv_wazuh_manager.
+2026/01/26 14:19:29 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-ports-srv_wazuh_manager.
+2026/01/26 14:19:29 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hotfixes-srv_wazuh_manager.
+2026/01/26 14:19:29 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hardware-srv_wazuh_manager.
+2026/01/26 14:19:29 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-protocols-srv_wazuh_manager.
+2026/01/26 14:19:29 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-interfaces-srv_wazuh_manager.
+2026/01/26 14:19:30 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-networks-srv_wazuh_manager.
+2026/01/26 14:19:30 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-users-srv_wazuh_manager.
+2026/01/26 14:19:30 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-groups-srv_wazuh_manager.
+2026/01/26 14:19:30 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-browser-extensions-srv_wazuh_manager.
+2026/01/26 14:19:30 wazuh-modulesd:vulnerability-scanner: INFO: Vulnerability scanner module started.
+2026/01/26 14:19:30 logger-helper: INFO: InventoryHarvesterFacade module started.
+2026/01/26 14:19:30 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-services-srv_wazuh_manager.
+2026/01/26 14:19:32 sca: INFO: Evaluation finished for policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 14:19:32 sca: INFO: Security Configuration Assessment scan finished. Duration: 4 seconds.
+2026/01/26 14:19:55 wazuh-syscheckd: INFO: netstat not available. Skipping port check.
+2026/01/26 14:20:00 rootcheck: INFO: Ending rootcheck scan.
+2026/01/26 14:21:12 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:21:12 wazuh-analysisd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:21:12 wazuh-authd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:21:12 wazuh-execd: INFO: (1314): Shutdown received. Deleting responses.
+2026/01/26 14:21:12 wazuh-syscheckd: INFO: (1756): Shutdown received. Releasing resources.
+2026/01/26 14:21:12 wazuh-logcollector: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:21:12 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:21:12 wazuh-monitord: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:21:12 wazuh-authd: INFO: (1225): SIGNAL [(1)-(Hangup)] Received. Exit Cleaning...
+2026/01/26 14:21:12 wazuh-execd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:21:12 wazuh-syscheckd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:21:12 wazuh-db: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:21:12 wazuh-db: INFO: (1225): SIGNAL [(1)-(Hangup)] Received. Exit Cleaning...
+2026/01/26 14:21:13 wazuh-authd: INFO: Exiting...
+2026/01/26 14:21:19 wazuh-modulesd:router: INFO: Loaded router module.
+2026/01/26 14:21:19 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2026/01/26 14:21:19 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2026/01/26 14:21:22 wazuh-csyslogd: INFO: Remote syslog server not configured. Clean exit.
+2026/01/26 14:21:22 wazuh-dbd: INFO: Database not configured. Clean exit.
+2026/01/26 14:21:22 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.
+2026/01/26 14:21:22 wazuh-agentlessd: INFO: Not configured. Exiting.
+2026/01/26 14:21:22 wazuh-authd: INFO: Started (pid: 440).
+2026/01/26 14:21:22 wazuh-authd: INFO: Accepting connections on port 1515. No password required.
+2026/01/26 14:21:22 wazuh-authd: INFO: Setting network timeout to 1.000000 sec.
+2026/01/26 14:21:22 wazuh-db: INFO: Started (pid: 457).
+2026/01/26 14:21:22 :router: INFO: Registering GET endpoint: /v1/agents/ids
+2026/01/26 14:21:22 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups/:name
+2026/01/26 14:21:22 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups
+2026/01/26 14:21:22 :router: INFO: Registering GET endpoint: /v1/agents/:agent_id/groups
+2026/01/26 14:21:22 :router: INFO: Registering POST endpoint: /v1/agents/summary
+2026/01/26 14:21:22 :router: INFO: Registering GET endpoint: /v1/agents/sync
+2026/01/26 14:21:22 :router: INFO: Registering POST endpoint: /v1/agents/sync
+2026/01/26 14:21:22 :router: INFO: Registering POST endpoint: /v1/agents/restartinfo
+2026/01/26 14:21:22 :router: INFO: API started successfully
+2026/01/26 14:21:23 wazuh-execd: INFO: Started (pid: 496).
+2026/01/26 14:21:24 wazuh-syscheckd: INFO: Started (pid: 521).
+2026/01/26 14:21:24 wazuh-syscheckd: INFO: (6003): Monitoring path: '/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:21:24 wazuh-syscheckd: INFO: (6003): Monitoring path: '/boot', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6003): Monitoring path: '/etc', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6003): Monitoring path: '/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mtab'
+2026/01/26 14:21:25 wazuh-analysisd: INFO: Total rules enabled: '8454'
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/hosts.deny'
+2026/01/26 14:21:25 wazuh-analysisd: INFO: Started (pid: 508).
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mail/statistics'
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random-seed'
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random.seed'
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/adjtime'
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/httpd/logs'
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/utmpx'
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/wtmpx'
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/cups/certs'
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/dumpdates'
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/svc/volatile'
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6207): Ignore 'file' sregex '.log$|.swp$'
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6004): No diff for file: '/etc/ssl/private.key'
+2026/01/26 14:21:25 rootcheck: INFO: Starting rootcheck scan.
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6000): Starting daemon...
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6010): File integrity monitoring scan frequency: 43200 seconds
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6008): File integrity monitoring scan started.
+2026/01/26 14:21:25 wazuh-analysisd: INFO: (7200): Logtest started
+2026/01/26 14:21:25 wazuh-analysisd: INFO: EPS limit disabled
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: (6009): File integrity monitoring scan ended.
+2026/01/26 14:21:25 wazuh-syscheckd: INFO: FIM sync module started.
+2026/01/26 14:21:26 wazuh-remoted: INFO: Started (pid: 675). Listening on port 1514/TCP (secure).
+2026/01/26 14:21:26 wazuh-remoted: INFO: Remote syslog allowed from: '0.0.0.0/0'
+2026/01/26 14:21:26 wazuh-remoted: INFO: Started (pid: 676). Listening on port 514/TCP (syslog).
+2026/01/26 14:21:26 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2026/01/26 14:21:27 wazuh-logcollector: INFO: Monitoring output of command(360): df -P
+2026/01/26 14:21:27 wazuh-logcollector: INFO: Monitoring full output of command(360): netstat -tulpn | sed 's/\([[:alnum:]]\+\)\ \+[[:digit:]]\+\ \+[[:digit:]]\+\ \+\(.*\):\([[:digit:]]*\)\ \+\([0-9\.\:\*]\+\).\+\ \([[:digit:]]*\/[[:alnum:]\-]*\).*/\1 \2 == \3 == \4 \5/' | sort -k 4 -g | sed 's/ == \(.*\) ==/:\1/' | sed 1,2d
+2026/01/26 14:21:27 wazuh-logcollector: INFO: Monitoring full output of command(360): last -n 20
+2026/01/26 14:21:27 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/ossec/logs/active-responses.log'.
+2026/01/26 14:21:27 wazuh-monitord: INFO: Started (pid: 765).
+2026/01/26 14:21:27 wazuh-logcollector: INFO: Started (pid: 752).
+2026/01/26 14:21:27 wazuh-modulesd:router: INFO: Loaded router module.
+2026/01/26 14:21:27 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2026/01/26 14:21:27 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2026/01/26 14:21:27 wazuh-modulesd: INFO: Started (pid: 787).
+2026/01/26 14:21:27 wazuh-modulesd:ciscat: INFO: Module disabled. Exiting...
+2026/01/26 14:21:27 wazuh-modulesd:agent-upgrade: INFO: (8153): Module Agent Upgrade started.
+2026/01/26 14:21:27 wazuh-modulesd:osquery: INFO: Module disabled. Exiting...
+2026/01/26 14:21:27 wazuh-modulesd:content_manager: INFO: Starting content_manager module.
+2026/01/26 14:21:27 wazuh-modulesd:vulnerability-scanner: INFO: Starting vulnerability_scanner module.
+2026/01/26 14:21:27 sca: INFO: Module started.
+2026/01/26 14:21:27 wazuh-modulesd:task-manager: INFO: (8200): Module Task Manager started.
+2026/01/26 14:21:27 wazuh-modulesd:router: INFO: Starting router module.
+2026/01/26 14:21:27 wazuh-modulesd:download: INFO: Module started.
+2026/01/26 14:21:27 wazuh-modulesd:control: INFO: Starting control thread.
+2026/01/26 14:21:27 wazuh-modulesd:database: INFO: Module started.
+2026/01/26 14:21:27 sca: INFO: Loaded policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 14:21:27 wazuh-modulesd:inventory-harvester: INFO: Starting inventory_harvester module.
+2026/01/26 14:21:27 sca: INFO: Starting Security Configuration Assessment scan.
+2026/01/26 14:21:27 sca: INFO: Starting evaluation of policy: '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 14:21:27 wazuh-modulesd:syscollector: INFO: Module started.
+2026/01/26 14:21:27 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2026/01/26 14:21:27 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2026/01/26 14:21:27 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-vulnerabilities-srv_wazuh_manager.
+2026/01/26 14:21:27 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-packages-srv_wazuh_manager.
+2026/01/26 14:21:28 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-system-srv_wazuh_manager.
+2026/01/26 14:21:28 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-processes-srv_wazuh_manager.
+2026/01/26 14:21:28 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-ports-srv_wazuh_manager.
+2026/01/26 14:21:28 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hotfixes-srv_wazuh_manager.
+2026/01/26 14:21:28 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hardware-srv_wazuh_manager.
+2026/01/26 14:21:29 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-protocols-srv_wazuh_manager.
+2026/01/26 14:21:29 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-interfaces-srv_wazuh_manager.
+2026/01/26 14:21:29 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-networks-srv_wazuh_manager.
+2026/01/26 14:21:29 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-users-srv_wazuh_manager.
+2026/01/26 14:21:29 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-groups-srv_wazuh_manager.
+2026/01/26 14:21:29 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-browser-extensions-srv_wazuh_manager.
+2026/01/26 14:21:29 logger-helper: INFO: InventoryHarvesterFacade module started.
+2026/01/26 14:21:29 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-services-srv_wazuh_manager.
+2026/01/26 14:21:29 wazuh-modulesd:vulnerability-scanner: INFO: Vulnerability scanner module started.
+2026/01/26 14:21:32 sca: INFO: Evaluation finished for policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 14:21:32 sca: INFO: Security Configuration Assessment scan finished. Duration: 5 seconds.
+2026/01/26 14:21:48 wazuh-syscheckd: INFO: netstat not available. Skipping port check.
+2026/01/26 14:21:53 rootcheck: INFO: Ending rootcheck scan.
+2026/01/26 14:24:02 wazuh-modulesd:router: INFO: Loaded router module.
+2026/01/26 14:24:02 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2026/01/26 14:24:02 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2026/01/26 14:24:02 wazuh-monitord: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:24:02 wazuh-logcollector: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:24:02 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:24:02 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:24:02 wazuh-syscheckd: INFO: (1756): Shutdown received. Releasing resources.
+2026/01/26 14:24:02 wazuh-syscheckd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:24:02 wazuh-analysisd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:24:02 wazuh-execd: INFO: (1314): Shutdown received. Deleting responses.
+2026/01/26 14:24:02 wazuh-authd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:24:02 wazuh-db: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:24:02 wazuh-execd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:24:02 wazuh-authd: INFO: Exiting...
+2026/01/26 14:24:03 :router: INFO: Stopping server thread
+2026/01/26 14:24:03 wazuh-db: INFO: Graceful process shutdown.
+2026/01/26 14:24:03 wazuh-modulesd: INFO: Shutting down Wazuh modules.
+2026/01/26 14:24:03 wazuh-modulesd:syscollector: INFO: Stop received for Syscollector.
+2026/01/26 14:24:03 wazuh-modulesd:syscollector: INFO: Module finished.
+2026/01/26 14:24:03 wazuh-modulesd:vulnerability-scanner: INFO: Stopping vulnerability_scanner module.
+2026/01/26 14:24:03 wazuh-modulesd:router: INFO: Stopping router module.
+2026/01/26 14:24:03 wazuh-modulesd:content_manager: INFO: Stopping content_manager module.
+2026/01/26 14:24:03 wazuh-modulesd:inventory-harvester: INFO: Stopping inventory_harvester module.
+2026/01/26 14:24:03 logger-helper: INFO: Inventory harvester module stopped.
+2026/01/26 14:24:34 wazuh-csyslogd: INFO: Remote syslog server not configured. Clean exit.
+2026/01/26 14:24:34 wazuh-dbd: INFO: Database not configured. Clean exit.
+2026/01/26 14:24:34 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.
+2026/01/26 14:24:34 wazuh-agentlessd: INFO: Not configured. Exiting.
+2026/01/26 14:24:34 wazuh-authd: INFO: Started (pid: 2996).
+2026/01/26 14:24:34 wazuh-authd: INFO: Accepting connections on port 1515. No password required.
+2026/01/26 14:24:34 wazuh-authd: INFO: Setting network timeout to 1.000000 sec.
+2026/01/26 14:24:35 wazuh-db: INFO: Started (pid: 3012).
+2026/01/26 14:24:35 :router: INFO: Registering GET endpoint: /v1/agents/ids
+2026/01/26 14:24:35 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups/:name
+2026/01/26 14:24:35 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups
+2026/01/26 14:24:35 :router: INFO: Registering GET endpoint: /v1/agents/:agent_id/groups
+2026/01/26 14:24:35 :router: INFO: Registering POST endpoint: /v1/agents/summary
+2026/01/26 14:24:35 :router: INFO: Registering GET endpoint: /v1/agents/sync
+2026/01/26 14:24:35 :router: INFO: Registering POST endpoint: /v1/agents/sync
+2026/01/26 14:24:35 :router: INFO: Registering POST endpoint: /v1/agents/restartinfo
+2026/01/26 14:24:35 :router: INFO: API started successfully
+2026/01/26 14:24:36 wazuh-execd: INFO: Started (pid: 3051).
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: Started (pid: 3073).
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6003): Monitoring path: '/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6003): Monitoring path: '/boot', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6003): Monitoring path: '/etc', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6003): Monitoring path: '/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mtab'
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/hosts.deny'
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mail/statistics'
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random-seed'
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random.seed'
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/adjtime'
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/httpd/logs'
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/utmpx'
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/wtmpx'
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/cups/certs'
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/dumpdates'
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/svc/volatile'
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6207): Ignore 'file' sregex '.log$|.swp$'
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6004): No diff for file: '/etc/ssl/private.key'
+2026/01/26 14:24:36 rootcheck: INFO: Starting rootcheck scan.
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6000): Starting daemon...
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6010): File integrity monitoring scan frequency: 43200 seconds
+2026/01/26 14:24:36 wazuh-syscheckd: INFO: (6008): File integrity monitoring scan started.
+2026/01/26 14:24:37 wazuh-syscheckd: INFO: (6009): File integrity monitoring scan ended.
+2026/01/26 14:24:37 wazuh-syscheckd: INFO: FIM sync module started.
+2026/01/26 14:24:37 wazuh-analysisd: INFO: Total rules enabled: '8454'
+2026/01/26 14:24:37 wazuh-analysisd: INFO: Started (pid: 3063).
+2026/01/26 14:24:37 wazuh-remoted: INFO: Remote syslog allowed from: '0.0.0.0/0'
+2026/01/26 14:24:37 wazuh-remoted: INFO: Started (pid: 3098). Listening on port 1514/TCP (secure).
+2026/01/26 14:24:37 wazuh-remoted: INFO: Started (pid: 3100). Listening on port 514/TCP (syslog).
+2026/01/26 14:24:37 wazuh-analysisd: INFO: (7200): Logtest started
+2026/01/26 14:24:37 wazuh-analysisd: INFO: EPS limit disabled
+2026/01/26 14:24:37 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2026/01/26 14:24:38 wazuh-logcollector: INFO: Monitoring output of command(360): df -P
+2026/01/26 14:24:38 wazuh-logcollector: INFO: Monitoring full output of command(360): netstat -tulpn | sed 's/\([[:alnum:]]\+\)\ \+[[:digit:]]\+\ \+[[:digit:]]\+\ \+\(.*\):\([[:digit:]]*\)\ \+\([0-9\.\:\*]\+\).\+\ \([[:digit:]]*\/[[:alnum:]\-]*\).*/\1 \2 == \3 == \4 \5/' | sort -k 4 -g | sed 's/ == \(.*\) ==/:\1/' | sed 1,2d
+2026/01/26 14:24:38 wazuh-logcollector: INFO: Monitoring full output of command(360): last -n 20
+2026/01/26 14:24:38 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/ossec/logs/active-responses.log'.
+2026/01/26 14:24:38 wazuh-monitord: INFO: Started (pid: 3294).
+2026/01/26 14:24:38 wazuh-logcollector: INFO: Started (pid: 3282).
+2026/01/26 14:24:38 wazuh-modulesd:router: INFO: Loaded router module.
+2026/01/26 14:24:38 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2026/01/26 14:24:38 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2026/01/26 14:24:38 wazuh-modulesd: INFO: Started (pid: 3313).
+2026/01/26 14:24:38 wazuh-modulesd:agent-upgrade: INFO: (8153): Module Agent Upgrade started.
+2026/01/26 14:24:38 wazuh-modulesd:ciscat: INFO: Module disabled. Exiting...
+2026/01/26 14:24:38 wazuh-modulesd:router: INFO: Starting router module.
+2026/01/26 14:24:38 wazuh-modulesd:vulnerability-scanner: INFO: Starting vulnerability_scanner module.
+2026/01/26 14:24:38 sca: INFO: Module started.
+2026/01/26 14:24:38 wazuh-modulesd:task-manager: INFO: (8200): Module Task Manager started.
+2026/01/26 14:24:38 wazuh-modulesd:osquery: INFO: Module disabled. Exiting...
+2026/01/26 14:24:38 wazuh-modulesd:download: INFO: Module started.
+2026/01/26 14:24:38 wazuh-modulesd:database: INFO: Module started.
+2026/01/26 14:24:38 wazuh-modulesd:content_manager: INFO: Starting content_manager module.
+2026/01/26 14:24:38 sca: INFO: Loaded policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 14:24:38 wazuh-modulesd:control: INFO: Starting control thread.
+2026/01/26 14:24:38 wazuh-modulesd:inventory-harvester: INFO: Starting inventory_harvester module.
+2026/01/26 14:24:38 sca: INFO: Starting Security Configuration Assessment scan.
+2026/01/26 14:24:38 sca: INFO: Starting evaluation of policy: '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 14:24:38 wazuh-modulesd:syscollector: INFO: Module started.
+2026/01/26 14:24:38 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2026/01/26 14:24:39 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2026/01/26 14:24:39 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-packages-srv_wazuh_manager.
+2026/01/26 14:24:39 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-vulnerabilities-srv_wazuh_manager.
+2026/01/26 14:24:39 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-system-srv_wazuh_manager.
+2026/01/26 14:24:39 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-processes-srv_wazuh_manager.
+2026/01/26 14:24:39 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-ports-srv_wazuh_manager.
+2026/01/26 14:24:39 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hotfixes-srv_wazuh_manager.
+2026/01/26 14:24:40 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hardware-srv_wazuh_manager.
+2026/01/26 14:24:40 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-protocols-srv_wazuh_manager.
+2026/01/26 14:24:40 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-interfaces-srv_wazuh_manager.
+2026/01/26 14:24:40 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-networks-srv_wazuh_manager.
+2026/01/26 14:24:40 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-users-srv_wazuh_manager.
+2026/01/26 14:24:40 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-groups-srv_wazuh_manager.
+2026/01/26 14:24:40 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-browser-extensions-srv_wazuh_manager.
+2026/01/26 14:24:41 logger-helper: INFO: InventoryHarvesterFacade module started.
+2026/01/26 14:24:41 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-services-srv_wazuh_manager.
+2026/01/26 14:24:41 wazuh-modulesd:vulnerability-scanner: INFO: Vulnerability scanner module started.
+2026/01/26 14:24:43 sca: INFO: Evaluation finished for policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 14:24:43 sca: INFO: Security Configuration Assessment scan finished. Duration: 5 seconds.
+2026/01/26 14:25:01 wazuh-syscheckd: INFO: netstat not available. Skipping port check.
+2026/01/26 14:25:06 rootcheck: INFO: Ending rootcheck scan.
+2026/01/26 14:39:46 wazuh-modulesd:router: INFO: Loaded router module.
+2026/01/26 14:39:46 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2026/01/26 14:39:46 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2026/01/26 14:39:46 wazuh-monitord: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:39:46 wazuh-logcollector: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:39:47 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:39:47 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:39:47 wazuh-syscheckd: INFO: (1756): Shutdown received. Releasing resources.
+2026/01/26 14:39:47 wazuh-analysisd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:39:47 wazuh-syscheckd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:39:47 wazuh-execd: INFO: (1314): Shutdown received. Deleting responses.
+2026/01/26 14:39:47 wazuh-execd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:39:47 wazuh-db: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:39:47 wazuh-authd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 14:39:47 wazuh-authd: INFO: Exiting...
+2026/01/26 14:39:47 :router: INFO: Stopping server thread
+2026/01/26 14:39:47 wazuh-modulesd: INFO: Shutting down Wazuh modules.
+2026/01/26 14:39:47 wazuh-modulesd:syscollector: INFO: Stop received for Syscollector.
+2026/01/26 14:39:47 wazuh-modulesd:syscollector: INFO: Module finished.
+2026/01/26 14:39:47 wazuh-modulesd:vulnerability-scanner: INFO: Stopping vulnerability_scanner module.
+2026/01/26 14:39:48 wazuh-db: INFO: Graceful process shutdown.
+2026/01/26 14:39:48 wazuh-modulesd:router: INFO: Stopping router module.
+2026/01/26 14:39:48 wazuh-modulesd:content_manager: INFO: Stopping content_manager module.
+2026/01/26 14:39:48 wazuh-modulesd:inventory-harvester: INFO: Stopping inventory_harvester module.
+2026/01/26 14:39:48 logger-helper: INFO: Inventory harvester module stopped.
+2026/01/26 14:40:18 wazuh-csyslogd: INFO: Remote syslog server not configured. Clean exit.
+2026/01/26 14:40:18 wazuh-dbd: INFO: Database not configured. Clean exit.
+2026/01/26 14:40:18 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.
+2026/01/26 14:40:18 wazuh-agentlessd: INFO: Not configured. Exiting.
+2026/01/26 14:40:18 wazuh-authd: INFO: Started (pid: 5726).
+2026/01/26 14:40:18 wazuh-authd: INFO: Accepting connections on port 1515. No password required.
+2026/01/26 14:40:18 wazuh-authd: INFO: Setting network timeout to 1.000000 sec.
+2026/01/26 14:40:18 wazuh-db: INFO: Started (pid: 5739).
+2026/01/26 14:40:18 :router: INFO: Registering GET endpoint: /v1/agents/ids
+2026/01/26 14:40:18 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups/:name
+2026/01/26 14:40:18 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups
+2026/01/26 14:40:18 :router: INFO: Registering GET endpoint: /v1/agents/:agent_id/groups
+2026/01/26 14:40:18 :router: INFO: Registering POST endpoint: /v1/agents/summary
+2026/01/26 14:40:18 :router: INFO: Registering GET endpoint: /v1/agents/sync
+2026/01/26 14:40:18 :router: INFO: Registering POST endpoint: /v1/agents/sync
+2026/01/26 14:40:18 :router: INFO: Registering POST endpoint: /v1/agents/restartinfo
+2026/01/26 14:40:18 :router: INFO: API started successfully
+2026/01/26 14:40:19 wazuh-execd: INFO: Started (pid: 5778).
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: Started (pid: 5800).
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: (6003): Monitoring path: '/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: (6003): Monitoring path: '/boot', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: (6003): Monitoring path: '/etc', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: (6003): Monitoring path: '/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mtab'
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/hosts.deny'
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mail/statistics'
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random-seed'
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random.seed'
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/adjtime'
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/httpd/logs'
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/utmpx'
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/wtmpx'
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/cups/certs'
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/dumpdates'
+2026/01/26 14:40:19 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/svc/volatile'
+2026/01/26 14:40:20 wazuh-syscheckd: INFO: (6207): Ignore 'file' sregex '.log$|.swp$'
+2026/01/26 14:40:20 wazuh-syscheckd: INFO: (6004): No diff for file: '/etc/ssl/private.key'
+2026/01/26 14:40:20 rootcheck: INFO: Starting rootcheck scan.
+2026/01/26 14:40:20 wazuh-syscheckd: INFO: (6000): Starting daemon...
+2026/01/26 14:40:20 wazuh-syscheckd: INFO: (6010): File integrity monitoring scan frequency: 43200 seconds
+2026/01/26 14:40:20 wazuh-syscheckd: INFO: (6008): File integrity monitoring scan started.
+2026/01/26 14:40:20 wazuh-syscheckd: INFO: (6009): File integrity monitoring scan ended.
+2026/01/26 14:40:20 wazuh-syscheckd: INFO: FIM sync module started.
+2026/01/26 14:40:20 wazuh-analysisd: INFO: Total rules enabled: '8454'
+2026/01/26 14:40:20 wazuh-analysisd: INFO: Started (pid: 5790).
+2026/01/26 14:40:20 wazuh-remoted: INFO: Remote syslog allowed from: '0.0.0.0/0'
+2026/01/26 14:40:20 wazuh-remoted: INFO: Started (pid: 5821). Listening on port 1514/TCP (secure).
+2026/01/26 14:40:20 wazuh-remoted: INFO: Started (pid: 5822). Listening on port 514/TCP (syslog).
+2026/01/26 14:40:21 wazuh-analysisd: INFO: (7200): Logtest started
+2026/01/26 14:40:21 wazuh-analysisd: INFO: EPS limit disabled
+2026/01/26 14:40:21 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2026/01/26 14:40:21 wazuh-logcollector: INFO: Monitoring output of command(360): df -P
+2026/01/26 14:40:22 wazuh-logcollector: INFO: Monitoring full output of command(360): netstat -tulpn | sed 's/\([[:alnum:]]\+\)\ \+[[:digit:]]\+\ \+[[:digit:]]\+\ \+\(.*\):\([[:digit:]]*\)\ \+\([0-9\.\:\*]\+\).\+\ \([[:digit:]]*\/[[:alnum:]\-]*\).*/\1 \2 == \3 == \4 \5/' | sort -k 4 -g | sed 's/ == \(.*\) ==/:\1/' | sed 1,2d
+2026/01/26 14:40:22 wazuh-logcollector: INFO: Monitoring full output of command(360): last -n 20
+2026/01/26 14:40:22 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/ossec/logs/active-responses.log'.
+2026/01/26 14:40:22 wazuh-monitord: INFO: Started (pid: 6016).
+2026/01/26 14:40:22 wazuh-logcollector: INFO: Started (pid: 6003).
+2026/01/26 14:40:22 wazuh-modulesd:router: INFO: Loaded router module.
+2026/01/26 14:40:22 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2026/01/26 14:40:22 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2026/01/26 14:40:22 wazuh-modulesd: INFO: Started (pid: 6034).
+2026/01/26 14:40:22 wazuh-modulesd:agent-upgrade: INFO: (8153): Module Agent Upgrade started.
+2026/01/26 14:40:22 wazuh-modulesd:ciscat: INFO: Module disabled. Exiting...
+2026/01/26 14:40:22 wazuh-modulesd:router: INFO: Starting router module.
+2026/01/26 14:40:22 wazuh-modulesd:vulnerability-scanner: INFO: Starting vulnerability_scanner module.
+2026/01/26 14:40:22 wazuh-modulesd:osquery: INFO: Module disabled. Exiting...
+2026/01/26 14:40:22 sca: INFO: Module started.
+2026/01/26 14:40:22 wazuh-modulesd:task-manager: INFO: (8200): Module Task Manager started.
+2026/01/26 14:40:22 sca: INFO: Loaded policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 14:40:22 wazuh-modulesd:download: INFO: Module started.
+2026/01/26 14:40:22 wazuh-modulesd:content_manager: INFO: Starting content_manager module.
+2026/01/26 14:40:22 wazuh-modulesd:database: INFO: Module started.
+2026/01/26 14:40:22 wazuh-modulesd:inventory-harvester: INFO: Starting inventory_harvester module.
+2026/01/26 14:40:22 sca: INFO: Starting Security Configuration Assessment scan.
+2026/01/26 14:40:22 wazuh-modulesd:control: INFO: Starting control thread.
+2026/01/26 14:40:22 sca: INFO: Starting evaluation of policy: '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 14:40:22 wazuh-modulesd:syscollector: INFO: Module started.
+2026/01/26 14:40:22 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2026/01/26 14:40:22 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2026/01/26 14:40:22 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-vulnerabilities-srv_wazuh_manager.
+2026/01/26 14:40:22 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-packages-srv_wazuh_manager.
+2026/01/26 14:40:22 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-system-srv_wazuh_manager.
+2026/01/26 14:40:23 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-processes-srv_wazuh_manager.
+2026/01/26 14:40:23 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-ports-srv_wazuh_manager.
+2026/01/26 14:40:23 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hotfixes-srv_wazuh_manager.
+2026/01/26 14:40:23 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hardware-srv_wazuh_manager.
+2026/01/26 14:40:23 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-protocols-srv_wazuh_manager.
+2026/01/26 14:40:24 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-interfaces-srv_wazuh_manager.
+2026/01/26 14:40:24 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-networks-srv_wazuh_manager.
+2026/01/26 14:40:24 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-users-srv_wazuh_manager.
+2026/01/26 14:40:24 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-groups-srv_wazuh_manager.
+2026/01/26 14:40:24 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-browser-extensions-srv_wazuh_manager.
+2026/01/26 14:40:24 logger-helper: INFO: InventoryHarvesterFacade module started.
+2026/01/26 14:40:24 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-services-srv_wazuh_manager.
+2026/01/26 14:40:24 wazuh-modulesd:vulnerability-scanner: INFO: Vulnerability scanner module started.
+2026/01/26 14:40:27 sca: INFO: Evaluation finished for policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 14:40:27 sca: INFO: Security Configuration Assessment scan finished. Duration: 5 seconds.
+2026/01/26 14:40:48 wazuh-syscheckd: INFO: netstat not available. Skipping port check.
+2026/01/26 14:40:53 rootcheck: INFO: Ending rootcheck scan.
+2026/01/26 15:06:30 wazuh-modulesd:router: INFO: Loaded router module.
+2026/01/26 15:06:30 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2026/01/26 15:06:30 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2026/01/26 15:06:31 wazuh-monitord: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 15:06:31 wazuh-logcollector: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 15:06:31 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 15:06:31 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 15:06:31 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 15:06:31 wazuh-syscheckd: INFO: (1756): Shutdown received. Releasing resources.
+2026/01/26 15:06:31 wazuh-syscheckd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 15:06:31 wazuh-analysisd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 15:06:31 wazuh-execd: INFO: (1314): Shutdown received. Deleting responses.
+2026/01/26 15:06:31 wazuh-db: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 15:06:31 wazuh-execd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 15:06:31 wazuh-authd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2026/01/26 15:06:31 wazuh-authd: INFO: Exiting...
+2026/01/26 15:06:32 :router: INFO: Stopping server thread
+2026/01/26 15:06:32 wazuh-db: INFO: Graceful process shutdown.
+2026/01/26 15:06:32 wazuh-modulesd: INFO: Shutting down Wazuh modules.
+2026/01/26 15:06:32 wazuh-modulesd:syscollector: INFO: Stop received for Syscollector.
+2026/01/26 15:06:32 wazuh-modulesd:syscollector: INFO: Module finished.
+2026/01/26 15:06:32 wazuh-modulesd:vulnerability-scanner: INFO: Stopping vulnerability_scanner module.
+2026/01/26 15:06:32 wazuh-modulesd:router: INFO: Stopping router module.
+2026/01/26 15:06:32 wazuh-modulesd:content_manager: INFO: Stopping content_manager module.
+2026/01/26 15:06:32 wazuh-modulesd:inventory-harvester: INFO: Stopping inventory_harvester module.
+2026/01/26 15:06:32 logger-helper: INFO: Inventory harvester module stopped.
+2026/01/26 15:07:03 wazuh-csyslogd: INFO: Remote syslog server not configured. Clean exit.
+2026/01/26 15:07:03 wazuh-dbd: INFO: Database not configured. Clean exit.
+2026/01/26 15:07:03 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.
+2026/01/26 15:07:03 wazuh-agentlessd: INFO: Not configured. Exiting.
+2026/01/26 15:07:03 wazuh-authd: INFO: Started (pid: 8669).
+2026/01/26 15:07:03 wazuh-authd: INFO: Accepting connections on port 1515. No password required.
+2026/01/26 15:07:03 wazuh-authd: INFO: Setting network timeout to 1.000000 sec.
+2026/01/26 15:07:04 wazuh-db: INFO: Started (pid: 8685).
+2026/01/26 15:07:04 :router: INFO: Registering GET endpoint: /v1/agents/ids
+2026/01/26 15:07:04 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups/:name
+2026/01/26 15:07:04 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups
+2026/01/26 15:07:04 :router: INFO: Registering GET endpoint: /v1/agents/:agent_id/groups
+2026/01/26 15:07:04 :router: INFO: Registering POST endpoint: /v1/agents/summary
+2026/01/26 15:07:04 :router: INFO: Registering GET endpoint: /v1/agents/sync
+2026/01/26 15:07:04 :router: INFO: Registering POST endpoint: /v1/agents/sync
+2026/01/26 15:07:04 :router: INFO: Registering POST endpoint: /v1/agents/restartinfo
+2026/01/26 15:07:04 :router: INFO: API started successfully
+2026/01/26 15:07:05 wazuh-execd: INFO: Started (pid: 8724).
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: Started (pid: 8746).
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6003): Monitoring path: '/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6003): Monitoring path: '/boot', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6003): Monitoring path: '/etc', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6003): Monitoring path: '/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mtab'
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/hosts.deny'
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mail/statistics'
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random-seed'
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random.seed'
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/adjtime'
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/httpd/logs'
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/utmpx'
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/wtmpx'
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/cups/certs'
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/dumpdates'
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/svc/volatile'
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6207): Ignore 'file' sregex '.log$|.swp$'
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6004): No diff for file: '/etc/ssl/private.key'
+2026/01/26 15:07:05 rootcheck: INFO: Starting rootcheck scan.
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6000): Starting daemon...
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6010): File integrity monitoring scan frequency: 43200 seconds
+2026/01/26 15:07:05 wazuh-syscheckd: INFO: (6008): File integrity monitoring scan started.
+2026/01/26 15:07:06 wazuh-syscheckd: INFO: (6009): File integrity monitoring scan ended.
+2026/01/26 15:07:06 wazuh-syscheckd: INFO: FIM sync module started.
+2026/01/26 15:07:06 wazuh-analysisd: INFO: Total rules enabled: '8455'
+2026/01/26 15:07:06 wazuh-analysisd: INFO: Started (pid: 8736).
+2026/01/26 15:07:06 wazuh-remoted: INFO: Started (pid: 8771). Listening on port 1514/TCP (secure).
+2026/01/26 15:07:06 wazuh-remoted: INFO: Remote syslog allowed from: '0.0.0.0/0'
+2026/01/26 15:07:06 wazuh-remoted: INFO: Started (pid: 8772). Listening on port 514/TCP (syslog).
+2026/01/26 15:07:06 wazuh-analysisd: INFO: (7200): Logtest started
+2026/01/26 15:07:06 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2026/01/26 15:07:06 wazuh-analysisd: INFO: EPS limit disabled
+2026/01/26 15:07:07 wazuh-logcollector: INFO: Monitoring output of command(360): df -P
+2026/01/26 15:07:07 wazuh-logcollector: INFO: Monitoring full output of command(360): netstat -tulpn | sed 's/\([[:alnum:]]\+\)\ \+[[:digit:]]\+\ \+[[:digit:]]\+\ \+\(.*\):\([[:digit:]]*\)\ \+\([0-9\.\:\*]\+\).\+\ \([[:digit:]]*\/[[:alnum:]\-]*\).*/\1 \2 == \3 == \4 \5/' | sort -k 4 -g | sed 's/ == \(.*\) ==/:\1/' | sed 1,2d
+2026/01/26 15:07:07 wazuh-logcollector: INFO: Monitoring full output of command(360): last -n 20
+2026/01/26 15:07:07 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/ossec/logs/active-responses.log'.
+2026/01/26 15:07:07 wazuh-monitord: INFO: Started (pid: 8966).
+2026/01/26 15:07:07 wazuh-logcollector: INFO: Started (pid: 8951).
+2026/01/26 15:07:07 wazuh-modulesd:router: INFO: Loaded router module.
+2026/01/26 15:07:07 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2026/01/26 15:07:07 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2026/01/26 15:07:07 wazuh-modulesd: INFO: Started (pid: 8984).
+2026/01/26 15:07:07 wazuh-modulesd:agent-upgrade: INFO: (8153): Module Agent Upgrade started.
+2026/01/26 15:07:07 wazuh-modulesd:ciscat: INFO: Module disabled. Exiting...
+2026/01/26 15:07:07 wazuh-modulesd:content_manager: INFO: Starting content_manager module.
+2026/01/26 15:07:07 wazuh-modulesd:vulnerability-scanner: INFO: Starting vulnerability_scanner module.
+2026/01/26 15:07:07 wazuh-modulesd:osquery: INFO: Module disabled. Exiting...
+2026/01/26 15:07:07 wazuh-modulesd:task-manager: INFO: (8200): Module Task Manager started.
+2026/01/26 15:07:07 sca: INFO: Module started.
+2026/01/26 15:07:07 wazuh-modulesd:router: INFO: Starting router module.
+2026/01/26 15:07:07 wazuh-modulesd:control: INFO: Starting control thread.
+2026/01/26 15:07:07 wazuh-modulesd:database: INFO: Module started.
+2026/01/26 15:07:07 wazuh-modulesd:inventory-harvester: INFO: Starting inventory_harvester module.
+2026/01/26 15:07:07 wazuh-modulesd:download: INFO: Module started.
+2026/01/26 15:07:07 sca: INFO: Loaded policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 15:07:07 sca: INFO: Starting Security Configuration Assessment scan.
+2026/01/26 15:07:07 sca: INFO: Starting evaluation of policy: '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 15:07:07 wazuh-modulesd:syscollector: INFO: Module started.
+2026/01/26 15:07:07 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2026/01/26 15:07:08 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2026/01/26 15:07:08 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-vulnerabilities-srv_wazuh_manager.
+2026/01/26 15:07:08 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-packages-srv_wazuh_manager.
+2026/01/26 15:07:08 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-system-srv_wazuh_manager.
+2026/01/26 15:07:08 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-processes-srv_wazuh_manager.
+2026/01/26 15:07:09 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-ports-srv_wazuh_manager.
+2026/01/26 15:07:09 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hotfixes-srv_wazuh_manager.
+2026/01/26 15:07:09 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hardware-srv_wazuh_manager.
+2026/01/26 15:07:09 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-protocols-srv_wazuh_manager.
+2026/01/26 15:07:09 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-interfaces-srv_wazuh_manager.
+2026/01/26 15:07:09 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-networks-srv_wazuh_manager.
+2026/01/26 15:07:09 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-users-srv_wazuh_manager.
+2026/01/26 15:07:10 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-groups-srv_wazuh_manager.
+2026/01/26 15:07:10 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-browser-extensions-srv_wazuh_manager.
+2026/01/26 15:07:10 logger-helper: INFO: InventoryHarvesterFacade module started.
+2026/01/26 15:07:10 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-services-srv_wazuh_manager.
+2026/01/26 15:07:10 wazuh-modulesd:vulnerability-scanner: INFO: Vulnerability scanner module started.
+2026/01/26 15:07:12 sca: INFO: Evaluation finished for policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2026/01/26 15:07:12 sca: INFO: Security Configuration Assessment scan finished. Duration: 5 seconds.
+2026/01/26 15:07:19 wazuh-modulesd:vulnerability-scanner: INFO: Initiating update feed process.
+2026/01/26 15:07:36 wazuh-syscheckd: INFO: netstat not available. Skipping port check.
+2026/01/26 15:07:41 rootcheck: INFO: Ending rootcheck scan.
+2026/01/26 15:08:45 wazuh-modulesd:vulnerability-scanner: INFO: Triggered a re-scan after content update.
+2026/01/26 15:08:45 wazuh-modulesd:vulnerability-scanner: INFO: Feed update process completed.
+2026/01/26 16:07:33 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2026/01/26 16:07:40 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2026/01/26 16:37:44 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:37:44 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' can't be replaced since it is not disconnected.
+2026/01/26 16:37:49 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:37:49 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' can't be replaced since it is not disconnected.
+2026/01/26 16:37:59 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:37:59 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' can't be replaced since it is not disconnected.
+2026/01/26 16:38:14 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:38:14 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' can't be replaced since it is not disconnected.
+2026/01/26 16:38:34 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:38:34 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' can't be replaced since it is not disconnected.
+2026/01/26 16:38:59 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:38:59 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' can't be replaced since it is not disconnected.
+2026/01/26 16:39:29 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:39:29 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' can't be replaced since it is not disconnected.
+2026/01/26 16:40:05 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:40:05 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' can't be replaced since it is not disconnected.
+2026/01/26 16:40:45 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:40:45 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' can't be replaced since it is not disconnected.
+2026/01/26 16:41:30 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:41:30 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' can't be replaced since it is not disconnected.
+2026/01/26 16:42:21 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:42:21 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' can't be replaced since it is not disconnected.
+2026/01/26 16:43:16 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:43:16 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' has not been disconnected long enough to be replaced.
+2026/01/26 16:44:16 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:44:16 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' has not been disconnected long enough to be replaced.
+2026/01/26 16:45:17 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:45:17 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' has not been disconnected long enough to be replaced.
+2026/01/26 16:46:17 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:46:17 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' has not been disconnected long enough to be replaced.
+2026/01/26 16:47:18 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:47:18 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' has not been disconnected long enough to be replaced.
+2026/01/26 16:48:18 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:48:18 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' has not been disconnected long enough to be replaced.
+2026/01/26 16:49:18 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:49:18 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' has not been disconnected long enough to be replaced.
+2026/01/26 16:50:19 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:50:19 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' has not been disconnected long enough to be replaced.
+2026/01/26 16:51:19 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:51:19 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' has not been disconnected long enough to be replaced.
+2026/01/26 16:52:20 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:52:20 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '049' has not been disconnected long enough to be replaced.
+2026/01/26 16:53:20 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 16:53:20 wazuh-authd: INFO: Duplicate name. Removing old agent 'ws000189' (id '049').
+2026/01/26 16:53:20 wazuh-authd: INFO: Agent key generated for 'ws000189' (requested by any)
+2026/01/26 16:53:29 wazuh-remoted: INFO: (1409): Authentication file changed. Updating.
+2026/01/26 16:53:29 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2026/01/26 17:08:05 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2026/01/26 17:08:12 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2026/01/26 17:22:22 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:22:22 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' can't be replaced since it is not disconnected.
+2026/01/26 17:22:27 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:22:27 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' can't be replaced since it is not disconnected.
+2026/01/26 17:22:37 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:22:37 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' can't be replaced since it is not disconnected.
+2026/01/26 17:22:51 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:22:51 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' can't be replaced since it is not disconnected.
+2026/01/26 17:22:52 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:22:52 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' can't be replaced since it is not disconnected.
+2026/01/26 17:22:56 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:22:56 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' can't be replaced since it is not disconnected.
+2026/01/26 17:23:06 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:23:06 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' can't be replaced since it is not disconnected.
+2026/01/26 17:23:12 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:23:12 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' can't be replaced since it is not disconnected.
+2026/01/26 17:23:21 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:23:21 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' can't be replaced since it is not disconnected.
+2026/01/26 17:23:38 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:23:38 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' can't be replaced since it is not disconnected.
+2026/01/26 17:23:42 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:23:42 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' can't be replaced since it is not disconnected.
+2026/01/26 17:24:07 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:24:07 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' can't be replaced since it is not disconnected.
+2026/01/26 17:24:08 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:24:08 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' can't be replaced since it is not disconnected.
+2026/01/26 17:24:37 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:24:37 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' can't be replaced since it is not disconnected.
+2026/01/26 17:24:43 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:24:43 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' can't be replaced since it is not disconnected.
+2026/01/26 17:25:12 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:25:12 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' can't be replaced since it is not disconnected.
+2026/01/26 17:25:23 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:25:23 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' can't be replaced since it is not disconnected.
+2026/01/26 17:25:53 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:25:53 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' can't be replaced since it is not disconnected.
+2026/01/26 17:26:09 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:26:09 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' can't be replaced since it is not disconnected.
+2026/01/26 17:26:38 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:26:38 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' can't be replaced since it is not disconnected.
+2026/01/26 17:26:59 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:26:59 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' can't be replaced since it is not disconnected.
+2026/01/26 17:27:29 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:27:29 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' can't be replaced since it is not disconnected.
+2026/01/26 17:27:55 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:27:55 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' can't be replaced since it is not disconnected.
+2026/01/26 17:28:24 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:28:24 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' has not been disconnected long enough to be replaced.
+2026/01/26 17:28:55 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:28:55 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' has not been disconnected long enough to be replaced.
+2026/01/26 17:29:24 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:29:24 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' has not been disconnected long enough to be replaced.
+2026/01/26 17:29:56 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:29:56 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' has not been disconnected long enough to be replaced.
+2026/01/26 17:30:25 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:30:25 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' has not been disconnected long enough to be replaced.
+2026/01/26 17:30:56 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:30:56 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' has not been disconnected long enough to be replaced.
+2026/01/26 17:31:25 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:31:25 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' has not been disconnected long enough to be replaced.
+2026/01/26 17:31:57 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:31:57 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' has not been disconnected long enough to be replaced.
+2026/01/26 17:32:26 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:32:26 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' has not been disconnected long enough to be replaced.
+2026/01/26 17:32:54 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:32:54 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' has not been disconnected long enough to be replaced.
+2026/01/26 17:32:57 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:32:57 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' has not been disconnected long enough to be replaced.
+2026/01/26 17:32:59 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:32:59 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' has not been disconnected long enough to be replaced.
+2026/01/26 17:33:10 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:33:10 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' has not been disconnected long enough to be replaced.
+2026/01/26 17:33:25 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:33:25 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' has not been disconnected long enough to be replaced.
+2026/01/26 17:33:45 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:33:45 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' has not been disconnected long enough to be replaced.
+2026/01/26 17:33:59 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:33:59 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' has not been disconnected long enough to be replaced.
+2026/01/26 17:34:11 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:34:11 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' has not been disconnected long enough to be replaced.
+2026/01/26 17:34:41 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:34:41 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' has not been disconnected long enough to be replaced.
+2026/01/26 17:34:59 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:34:59 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' has not been disconnected long enough to be replaced.
+2026/01/26 17:35:16 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:35:16 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' has not been disconnected long enough to be replaced.
+2026/01/26 17:35:57 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:35:57 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' has not been disconnected long enough to be replaced.
+2026/01/26 17:36:00 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:36:00 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' has not been disconnected long enough to be replaced.
+2026/01/26 17:36:43 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:36:43 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' has not been disconnected long enough to be replaced.
+2026/01/26 17:37:01 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:37:01 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' has not been disconnected long enough to be replaced.
+2026/01/26 17:37:34 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:37:34 wazuh-authd: WARNING: Duplicate name 'ws000342', rejecting enrollment. Agent '052' has not been disconnected long enough to be replaced.
+2026/01/26 17:38:03 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:38:03 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '053' has not been disconnected long enough to be replaced.
+2026/01/26 17:38:30 wazuh-authd: INFO: Received request for a new agent (ws000342) from: 192.168.202.189
+2026/01/26 17:38:30 wazuh-authd: INFO: Duplicate name. Removing old agent 'ws000342' (id '052').
+2026/01/26 17:38:30 wazuh-authd: INFO: Agent key generated for 'ws000342' (requested by any)
+2026/01/26 17:38:32 wazuh-remoted: INFO: (1409): Authentication file changed. Updating.
+2026/01/26 17:38:32 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2026/01/26 17:39:04 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 17:39:04 wazuh-authd: INFO: Duplicate name. Removing old agent 'ws000189' (id '053').
+2026/01/26 17:39:04 wazuh-authd: INFO: Agent key generated for 'ws000189' (requested by any)
+2026/01/26 17:39:12 wazuh-remoted: INFO: (1409): Authentication file changed. Updating.
+2026/01/26 17:39:12 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2026/01/26 18:09:07 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2026/01/26 18:09:14 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2026/01/26 18:13:30 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:13:30 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' can't be replaced since it is not disconnected.
+2026/01/26 18:13:35 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:13:35 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' can't be replaced since it is not disconnected.
+2026/01/26 18:13:45 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:13:45 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' can't be replaced since it is not disconnected.
+2026/01/26 18:14:01 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:14:01 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' can't be replaced since it is not disconnected.
+2026/01/26 18:14:21 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:14:21 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' can't be replaced since it is not disconnected.
+2026/01/26 18:14:47 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:14:47 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' can't be replaced since it is not disconnected.
+2026/01/26 18:15:17 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:15:17 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' can't be replaced since it is not disconnected.
+2026/01/26 18:15:53 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:15:53 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' can't be replaced since it is not disconnected.
+2026/01/26 18:16:27 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:16:27 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' can't be replaced since it is not disconnected.
+2026/01/26 18:16:33 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:16:33 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' can't be replaced since it is not disconnected.
+2026/01/26 18:16:43 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:16:43 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' can't be replaced since it is not disconnected.
+2026/01/26 18:16:58 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:16:58 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' can't be replaced since it is not disconnected.
+2026/01/26 18:17:19 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:17:19 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' can't be replaced since it is not disconnected.
+2026/01/26 18:17:45 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:17:45 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' can't be replaced since it is not disconnected.
+2026/01/26 18:18:15 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:18:15 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' can't be replaced since it is not disconnected.
+2026/01/26 18:18:51 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:18:51 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' can't be replaced since it is not disconnected.
+2026/01/26 18:19:32 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:19:32 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' has not been disconnected long enough to be replaced.
+2026/01/26 18:20:18 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:20:18 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' has not been disconnected long enough to be replaced.
+2026/01/26 18:21:10 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:21:10 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' has not been disconnected long enough to be replaced.
+2026/01/26 18:22:06 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:22:06 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' has not been disconnected long enough to be replaced.
+2026/01/26 18:23:07 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:23:07 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' has not been disconnected long enough to be replaced.
+2026/01/26 18:24:09 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:24:09 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' has not been disconnected long enough to be replaced.
+2026/01/26 18:25:10 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:25:10 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' has not been disconnected long enough to be replaced.
+2026/01/26 18:26:11 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:26:11 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' has not been disconnected long enough to be replaced.
+2026/01/26 18:26:34 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:26:34 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' has not been disconnected long enough to be replaced.
+2026/01/26 18:26:39 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:26:39 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' has not been disconnected long enough to be replaced.
+2026/01/26 18:26:49 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:26:49 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' has not been disconnected long enough to be replaced.
+2026/01/26 18:27:04 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:27:04 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' has not been disconnected long enough to be replaced.
+2026/01/26 18:27:25 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:27:25 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' has not been disconnected long enough to be replaced.
+2026/01/26 18:27:51 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:27:51 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' has not been disconnected long enough to be replaced.
+2026/01/26 18:28:22 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:28:22 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' has not been disconnected long enough to be replaced.
+2026/01/26 18:28:57 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:28:57 wazuh-authd: WARNING: Duplicate name 'srv_bastion', rejecting enrollment. Agent '050' has not been disconnected long enough to be replaced.
+2026/01/26 18:29:38 wazuh-authd: INFO: Received request for a new agent (srv_bastion) from: 192.168.205.66
+2026/01/26 18:29:38 wazuh-authd: INFO: Duplicate name. Removing old agent 'srv_bastion' (id '050').
+2026/01/26 18:29:38 wazuh-authd: INFO: Agent key generated for 'srv_bastion' (requested by any)
+2026/01/26 18:29:38 wazuh-remoted: INFO: (1409): Authentication file changed. Updating.
+2026/01/26 18:29:38 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2026/01/26 18:45:25 wazuh-authd: INFO: Received request for a new agent (srv_polarproxy) from: 192.168.204.204
+2026/01/26 18:45:25 wazuh-authd: INFO: Agent key generated for 'srv_polarproxy' (requested by any)
+2026/01/26 18:45:32 wazuh-remoted: INFO: (1409): Authentication file changed. Updating.
+2026/01/26 18:45:32 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2026/01/26 19:10:45 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2026/01/26 19:10:52 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2026/01/26 20:12:27 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2026/01/26 20:12:33 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2026/01/26 21:14:10 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2026/01/26 21:14:17 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2026/01/26 21:17:50 wazuh-authd: INFO: Received request for a new agent (ws000189) from: 192.168.202.2
+2026/01/26 21:17:50 wazuh-authd: WARNING: Duplicate name 'ws000189', rejecting enrollment. Agent '055' can't be replaced since it is not disconnected.
+2026/01/26 21:25:19 wazuh-authd: INFO: Received request for a new agent (srv_polarproxy) from: 192.168.204.204
+2026/01/26 21:25:19 wazuh-authd: WARNING: Duplicate name 'srv_polarproxy', rejecting enrollment. Agent '057' has not been disconnected long enough to be replaced.
+2026/01/26 22:15:56 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2026/01/26 22:16:04 wazuh-modulesd:syscollector: INFO: Evaluation finished.

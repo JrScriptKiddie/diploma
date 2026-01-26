@@ -42,8 +42,8 @@ cat <<'EOF' >> /etc/security/access.conf
 -:ALL:ALL
 EOF
 
-sed -i "s|SG_USERS|$SG_USERS|g" /etc/security/access.conf
-sed -i "s|SG_ADMINS|$SG_ADMINS|g" /etc/security/access.conf
+sed -i "s|SG_USERS|$SG_PC_USERS|g" /etc/security/access.conf
+sed -i "s|SG_ADMINS|$SG_PC_ADMINS|g" /etc/security/access.conf
 
 touch /etc/sudoers.d/ldap-sudo
 cat <<'EOF' >> /etc/sudoers.d/ldap-sudo
@@ -66,14 +66,6 @@ service nscd start
 # Выводим диагностику (опционально)
 echo "Testing LDAP connection..."
 getent passwd test || echo "LDAP user 'test' not found via NSS"
-
-# Create local user for PC access if credentials provided
-if [ -n "${PC_USERNAME:-}" ] && [ -n "${PC_USERPWD:-}" ]; then
-    if ! id "$PC_USERNAME" >/dev/null 2>&1; then
-        useradd -m -s /bin/bash "$PC_USERNAME"
-    fi
-    echo "${PC_USERNAME}:${PC_USERPWD}" | chpasswd
-fi
 
 # Права на домашние директории: владелец по имени каталога, права 0755
 # Нужно если подключалось через volumes и права не сохранились при загрузке

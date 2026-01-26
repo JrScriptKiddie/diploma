@@ -49,7 +49,10 @@ services:
       dev_net:
         ipv4_address: ${SUBNET_DEV}.${IP_FW} 
     volumes:
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf          
       - ./fw/nftables.conf:/etc/nftables.conf:rw
+      - ./fw/60-wazuh-forward.conf:/etc/rsyslog.d/60-wazuh-forward.conf
+      - ./fw/suricata_local.rules:/var/lib/suricata/rules/suricata_local.rules
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -176,6 +179,8 @@ services:
     volumes:
       - ./srv_polarproxy:/var/data
       - ./srv_ldap/nslcd.conf:/etc/nslcd.conf 
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}        
 
   srv_arkime:
     build: ./srv_arkime
@@ -185,9 +190,6 @@ services:
     depends_on: [ srv_opensearch ]     
     restart: always
     working_dir: /opt/arkime
-    networks:
-      infosec_net:
-        ipv4_address: ${SUBNET_INFOSEC}.${IP_SRV_ARKIME}            
     volumes:
       - arkime_pcap_storage:/opt/arkime/raw
       #- ./arkime/pcap_storage:/opt/arkime/raw # не работает в WSL
@@ -202,6 +204,11 @@ services:
       GATEWAY_IP: ${SUBNET_INFOSEC}.${IP_FW}
     ports:
       - "8006:8005" # Веб-интерфейс Arkime
+    networks:
+      infosec_net:
+        ipv4_address: ${SUBNET_INFOSEC}.${IP_SRV_ARKIME}            
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}        
 
   srv_opensearch:
     build: ./srv_opensearch
@@ -232,6 +239,8 @@ services:
     networks:
       infosec_net:
         ipv4_address: ${SUBNET_INFOSEC}.${IP_SRV_OPENSEARCH}
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}           
 
   srv_ldap:
     build: ./srv_ldap
@@ -493,6 +502,7 @@ services:
       dmz_net:
         ipv4_address: ${SUBNET_DMZ}.${IP_SRV_WEB}  
     volumes:
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
       - ./www:/usr/share/nginx/html:ro
       - ./srv_web/zz-server.conf:/etc/nginx/http.d/zz-server.conf:rw
       - ./srv_web/nginx.conf:/etc/nginx/nginx.conf:rw
@@ -512,21 +522,18 @@ services:
     cap_add: [ "NET_ADMIN" ]       
     volumes:
       - ./ws000342/home/:/home/
-      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
-      #- ./ws000342/wazuh/var/ossec/etc:/var/ossec/etc
-      #- ./ws000342/wazuh/var/ossec/queue:/var/ossec/queue
-      #- ./ws000342/wazuh/etc/filebeat:/etc/filebeat
-      #- ./ws000342/wazuh/var/lib/filebeat:/var/lib/filebeat       
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf
+      - ./branch/srv_branch_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
     shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
     <<: *common_env_file
     environment:
       <<: *common_env
       GATEWAY_IP: ${SUBNET_USERS}.${IP_FW}                       
-    dns:
-      - ${SUBNET_SERVERS}.${IP_SRV_DNS}
     networks:
       users_net:
         ipv4_address: ${SUBNET_USERS}.${IP_WS_STUDENT}        
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}
     ports:
       - "33389:3389/tcp"
       - "33389:3389/udp"
@@ -539,15 +546,16 @@ services:
     volumes:
       - ./ws000189/home/:/home/
       - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+      - ./branch/srv_branch_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
     shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
     <<: *common_env_file
     environment:
       <<: *common_env
       GATEWAY_IP: ${SUBNET_USERS}.${IP_FW}                       
-    dns:
-      - ${SUBNET_SERVERS}.${IP_SRV_DNS}
     networks:
       - users_net 
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}      
 
   nat_cleaner:
     # САНИТАР NAT: Удаляет правила Masquerade, которые ломают Source IP в Docker Desktop (WSL)

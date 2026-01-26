@@ -53,6 +53,8 @@ services:
     volumes:
       - ./branch/branch_fw/nftables.conf:/etc/nftables.conf:rw
       - ./srv_ldap/nslcd.conf:/etc/nslcd.conf:ro
+      - ./fw/60-wazuh-forward.conf:/etc/rsyslog.d/60-wazuh-forward.conf
+      - ./fw/suricata_local.rules:/var/lib/suricata/rules/suricata_local.rules      
     <<: *common_env_file
     environment:
       <<: *common_env 
@@ -84,7 +86,7 @@ services:
     environment:
       <<: *common_env
       GATEWAY_IP: ${SUBNET_BRANCH_SERVERS}.${IP_BRANCH_FW}
-      IP_DNS_SRV: ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}
+      IP_DNS_SRV:
 
   srv_branch_wg_gate:
     build: ./srv_wg_portal
@@ -143,9 +145,6 @@ services:
     hostname: srv_branch_polarproxy
     restart: always
     cap_add: [ "NET_ADMIN" ]  
-    networks:
-      branch_dmz_net:
-        ipv4_address: ${SUBNET_BRANCH_DMZ}.${IP_SRV_BRANCH_POLARPROXY}
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -156,7 +155,33 @@ services:
       GATEWAY_IP: ${SUBNET_BRANCH_DMZ}.${IP_BRANCH_FW}
     volumes:
       - ./branch/srv_branch_polarproxy:/var/data
-      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf    
+    networks:
+      branch_dmz_net:
+        ipv4_address: ${SUBNET_BRANCH_DMZ}.${IP_SRV_BRANCH_POLARPROXY}
+    dns:
+      - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}           
+
+  srv_branch_fs:
+    build: ./srv_samba  
+    hostname: srv_branch_fs
+    container_name: srv_branch_fs
+    cap_add: [ "NET_ADMIN" ]
+    restart: always
+    #user: root
+    networks:
+      branch_servers_net:
+        ipv4_address: ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_FS}
+    volumes:
+      - ./srv_branch_fs/share:/share
+      - ./srv_branch_fs/samba/smb.conf:/etc/samba/smb.conf:rw
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      GATEWAY_IP: ${SUBNET_BRANCH_SERVERS}.${IP_BRANCH_FW}
+    dns:
+      - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS} 
 
   nat_cleaner:
     # САНИТАР NAT: Удаляет правила Masquerade, которые ломают Source IP в Docker Desktop (WSL)

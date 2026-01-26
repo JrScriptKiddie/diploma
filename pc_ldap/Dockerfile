@@ -3,41 +3,48 @@ FROM scottyhardy/docker-remote-desktop:latest
 
 USER root
 
-# 1. Добавляем 'nslcd' явно в список пакетов
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    nslcd \
-    libnss-ldapd \
-    libpam-ldapd \
-    ldap-utils \
-    libpam-pwquality \
-    nano \
-    iputils-ping \
-    net-tools \
-    rsyslog \
-    cron \
-    iproute2 \
-    remmina \
-    curl \
-    gnupg \
-    apt-transport-https \
-    dnsutils \
-    openssh-client \
-    openssh-server \
-    && rm -rf /var/lib/apt/lists/*
+ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC
+RUN apt-get update
 
-# Wazuh agent repo + install
+# Net tools, ssh, base utils
+RUN apt-get install -y --no-install-recommends \
+   ca-certificates \
+   gnupg \
+   nano \
+   iputils-ping \
+   net-tools \
+   dnsutils \
+   rsyslog \
+   iproute2 \
+   openssh-client \
+   openssh-server \
+   curl \
+   cron   
+
+# Passwords and politics
+RUN apt-get install -y --no-install-recommends \
+   nslcd \
+   libnss-ldapd \
+   libpam-ldapd \
+   ldap-utils \
+   libpam-pwquality \
+   cracklib-runtime \    
+   sudo
+
+ # Wazuh agent repo + install
 RUN curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --dearmor -o /usr/share/keyrings/wazuh.gpg && \
     chmod 644 /usr/share/keyrings/wazuh.gpg && \
     echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt stable main" > /etc/apt/sources.list.d/wazuh.list && \
     apt-get update && \
-    DEBIAN_FRONTEND=noninteractive WAZUH_MANAGER=srv_wazuh_manager apt-get install -y wazuh-agent && \
-    rm -rf /var/lib/apt/lists/*
+    WAZUH_MANAGER=srv_wazuh_manager apt-get install -y wazuh-agent
+
+RUN apt-get install -y --no-install-recommends \
+    remmina
+    
+RUN rm -rf /var/lib/apt/lists/*
 
 # 2. Настройка PAM (mkhomedir)
 RUN echo "session required pam_mkhomedir.so skel=/etc/skel umask=0077" >> /etc/pam.d/common-session
-
-# 3. Копируем конфиги
-COPY nslcd.conf /etc/nslcd.conf
 
 # ВАЖНО: nslcd запускается от пользователя nslcd, он должен уметь читать конфиг!
 # Меняем владельца на root:nslcd и права на 640

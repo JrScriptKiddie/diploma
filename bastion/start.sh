@@ -28,7 +28,7 @@ fi
 
 # Create local admin account if needed
 if ! id localadmin >/dev/null 2>&1; then
-    useradd -m -s /bin/bash localadmin
+    useradd -u 6666 -m -s /bin/bash localadmin
 fi
 echo "localadmin:${LOCALADMIN_PASSWORD}" | chpasswd
 usermod -aG sudo localadmin
@@ -57,12 +57,12 @@ chown root:root /etc/sudoers.d/ldap-sudo
 chmod 0440 /etc/sudoers.d/ldap-sudo
 sed -i "s|SG_ADMINS|$SG_ADMINS|g" /etc/sudoers.d/ldap-sudo
 
-
-# Запускаем демон nslcd (клиент LDAP)
-service nslcd start
-
-# Запускаем nscd (кэширование, желательно)
-service nscd start
+# Запускаем демон nslcd (клиент LDAP) без OpenRC
+if command -v nslcd >/dev/null 2>&1; then
+    nslcd
+else
+    echo "[fw] nslcd not found, skipping"
+fi
 
 # Запуск rsyslog
 /usr/sbin/rsyslogd
@@ -87,7 +87,7 @@ mkdir -p /run/sshd
 chmod 755 /run/sshd
 /usr/sbin/sshd
 
-# WAZUH AGENT INSTALLATION
+# WAZUH AGENT START
 /var/ossec/bin/wazuh-control start
 
 # Передаем управление оригинальному скрипту entrypoint образа scottyhardy

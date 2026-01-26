@@ -10,3 +10,1219 @@
 2026/01/26 11:48:52 INFO: Listening on ['0.0.0.0', '::']:55000.
 2026/01/26 11:48:52 INFO: Getting installation UID...
 2026/01/26 11:48:52 INFO: Getting updates information...
+2026/01/26 12:40:56 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.813s: 200
+2026/01/26 12:40:56 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.095s: 200
+2026/01/26 12:40:57 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.277s: 200
+2026/01/26 12:40:57 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.022s: 200
+2026/01/26 12:40:57 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.019s: 200
+2026/01/26 12:40:57 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.021s: 200
+2026/01/26 12:40:57 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.018s: 200
+2026/01/26 12:43:40 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.050s: 200
+2026/01/26 12:43:40 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.304s: 200
+2026/01/26 12:43:40 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.656s: 200
+2026/01/26 12:43:40 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.656s: 200
+2026/01/26 12:43:43 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 2.436s: 200
+2026/01/26 12:43:43 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 2.786s: 200
+2026/01/26 12:43:43 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 2.450s: 200
+2026/01/26 12:43:43 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.031s: 200
+2026/01/26 12:43:43 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.040s: 200
+2026/01/26 12:43:43 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.586s: 200
+2026/01/26 12:43:43 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.757s: 200
+2026/01/26 12:43:43 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.564s: 200
+2026/01/26 12:43:44 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.783s: 200
+2026/01/26 12:43:44 INFO: wazuh-wui 192.168.203.90 "GET /manager/version/check" with parameters {"force_query": "false"} and body {} done in 0.207s: 200
+2026/01/26 12:43:44 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.214s: 200
+2026/01/26 12:43:44 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.032s: 200
+2026/01/26 12:43:44 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.211s: 200
+2026/01/26 12:43:44 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.589s: 200
+2026/01/26 12:43:44 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.100s: 200
+2026/01/26 12:43:44 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.422s: 200
+2026/01/26 12:43:44 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.020s: 200
+2026/01/26 12:43:44 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.018s: 200
+2026/01/26 12:43:44 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.184s: 200
+2026/01/26 12:43:45 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.018s: 200
+2026/01/26 12:43:45 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.019s: 200
+2026/01/26 12:43:45 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.020s: 200
+2026/01/26 12:43:45 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary/status" with parameters {} and body {} done in 0.021s: 200
+2026/01/26 12:45:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.045s: 200
+2026/01/26 12:45:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.051s: 200
+2026/01/26 12:45:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.029s: 200
+2026/01/26 12:45:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.022s: 200
+2026/01/26 12:45:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.021s: 200
+2026/01/26 12:50:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.029s: 200
+2026/01/26 12:50:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.036s: 200
+2026/01/26 12:55:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.032s: 200
+2026/01/26 12:55:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.039s: 200
+2026/01/26 13:00:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.019s: 401
+2026/01/26 13:00:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.037s: 401
+2026/01/26 13:00:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.040s: 401
+2026/01/26 13:00:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.487s: 200
+2026/01/26 13:00:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.488s: 200
+2026/01/26 13:00:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.102s: 200
+2026/01/26 13:00:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.110s: 200
+2026/01/26 13:00:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.779s: 200
+2026/01/26 13:00:01 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.070s: 200
+2026/01/26 13:00:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.019s: 200
+2026/01/26 13:00:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.019s: 200
+2026/01/26 13:02:52 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.571s: 200
+2026/01/26 13:02:52 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.571s: 200
+2026/01/26 13:02:52 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.016s: 200
+2026/01/26 13:02:52 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.107s: 200
+2026/01/26 13:02:52 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.029s: 200
+2026/01/26 13:02:52 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.646s: 200
+2026/01/26 13:02:52 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.241s: 200
+2026/01/26 13:02:52 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.123s: 200
+2026/01/26 13:02:52 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.032s: 200
+2026/01/26 13:02:52 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.023s: 200
+2026/01/26 13:02:52 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.196s: 200
+2026/01/26 13:02:52 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.019s: 200
+2026/01/26 13:02:52 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.013s: 200
+2026/01/26 13:02:53 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary/status" with parameters {} and body {} done in 0.020s: 200
+2026/01/26 13:02:55 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.035s: 200
+2026/01/26 13:02:55 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.044s: 200
+2026/01/26 13:02:55 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.061s: 200
+2026/01/26 13:02:55 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.082s: 200
+2026/01/26 13:02:55 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.095s: 200
+2026/01/26 13:02:55 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.088s: 200
+2026/01/26 13:02:55 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T12:02:55.345Z", "wait_for_complete": "true"} and body {} done in 0.024s: 200
+2026/01/26 13:02:55 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T12:02:55.345Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 13:02:55 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.528s: 200
+2026/01/26 13:02:55 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T12:02:55.345Z", "wait_for_complete": "true"} and body {} done in 0.092s: 200
+2026/01/26 13:02:55 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.101s: 200
+2026/01/26 13:02:55 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.019s: 200
+2026/01/26 13:02:56 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.185s: 200
+2026/01/26 13:02:56 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.018s: 200
+2026/01/26 13:03:12 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=never_connected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.022s: 200
+2026/01/26 13:03:46 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.060s: 200
+2026/01/26 13:03:46 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.067s: 200
+2026/01/26 13:03:46 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=never_connected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.036s: 200
+2026/01/26 13:03:46 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T12:03:46.092Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 13:03:46 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T12:03:46.092Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 13:03:46 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T12:03:46.092Z", "wait_for_complete": "true"} and body {} done in 0.018s: 200
+2026/01/26 13:03:59 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.025s: 200
+2026/01/26 13:04:08 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=never_connected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.025s: 200
+2026/01/26 13:04:16 INFO: wazuh-wui 192.168.203.90 "GET /groups" with parameters {"limit": "1000", "offset": "0", "wait_for_complete": "true"} and body {} done in 0.034s: 200
+2026/01/26 13:05:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.030s: 200
+2026/01/26 13:05:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.037s: 200
+2026/01/26 13:06:03 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id=044"} and body {} done in 0.020s: 200
+2026/01/26 13:06:05 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 13:06:06 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.047s: 200
+2026/01/26 13:06:06 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.056s: 200
+2026/01/26 13:06:06 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.085s: 200
+2026/01/26 13:06:06 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.070s: 200
+2026/01/26 13:06:06 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T12:06:05.931Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 13:06:06 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T12:06:05.931Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 13:06:06 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T12:06:05.931Z", "wait_for_complete": "true"} and body {} done in 0.024s: 200
+2026/01/26 13:07:11 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.024s: 200
+2026/01/26 13:07:11 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.630s: 200
+2026/01/26 13:07:11 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.126s: 200
+2026/01/26 13:07:11 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.018s: 200
+2026/01/26 13:07:12 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.178s: 200
+2026/01/26 13:07:12 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.017s: 200
+2026/01/26 13:07:51 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.016s: 200
+2026/01/26 13:07:52 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.413s: 200
+2026/01/26 13:07:52 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.074s: 200
+2026/01/26 13:07:52 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.018s: 200
+2026/01/26 13:07:52 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.186s: 200
+2026/01/26 13:07:52 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.017s: 200
+2026/01/26 13:07:53 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.023s: 200
+2026/01/26 13:07:53 INFO: wazuh-wui 192.168.203.90 "GET /manager/configuration/wmodules/wmodules" with parameters {} and body {} done in 0.016s: 200
+2026/01/26 13:07:58 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.027s: 200
+2026/01/26 13:07:58 INFO: wazuh-wui 192.168.203.90 "GET /manager/configuration/wmodules/wmodules" with parameters {} and body {} done in 0.023s: 200
+2026/01/26 13:10:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.034s: 200
+2026/01/26 13:10:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.041s: 200
+2026/01/26 13:10:34 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.640s: 200
+2026/01/26 13:10:34 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.509s: 200
+2026/01/26 13:10:35 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.014s: 200
+2026/01/26 13:10:35 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.097s: 200
+2026/01/26 13:10:35 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.028s: 200
+2026/01/26 13:10:35 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.752s: 200
+2026/01/26 13:10:35 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.288s: 200
+2026/01/26 13:10:35 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.085s: 200
+2026/01/26 13:10:35 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.031s: 200
+2026/01/26 13:10:35 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.024s: 200
+2026/01/26 13:10:35 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.184s: 200
+2026/01/26 13:10:35 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.017s: 200
+2026/01/26 13:10:35 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.069s: 200
+2026/01/26 13:10:41 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.056s: 200
+2026/01/26 13:10:41 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary/status" with parameters {} and body {} done in 0.076s: 200
+2026/01/26 13:10:41 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.582s: 200
+2026/01/26 13:10:41 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.071s: 200
+2026/01/26 13:10:41 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.019s: 200
+2026/01/26 13:10:41 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.164s: 200
+2026/01/26 13:10:41 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.017s: 200
+2026/01/26 13:10:42 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.028s: 200
+2026/01/26 13:10:42 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.035s: 200
+2026/01/26 13:10:42 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.067s: 200
+2026/01/26 13:10:42 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.074s: 200
+2026/01/26 13:10:42 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.084s: 200
+2026/01/26 13:10:42 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.092s: 200
+2026/01/26 13:10:42 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T12:10:42.781Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 13:10:43 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T12:10:42.781Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 13:10:43 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.447s: 200
+2026/01/26 13:10:43 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T12:10:42.781Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 13:10:43 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.101s: 200
+2026/01/26 13:10:43 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.019s: 200
+2026/01/26 13:10:43 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.222s: 200
+2026/01/26 13:10:43 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.020s: 200
+2026/01/26 13:12:28 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.244s: 200
+2026/01/26 13:12:28 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.253s: 200
+2026/01/26 13:12:28 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.214s: 200
+2026/01/26 13:12:28 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T12:12:27.968Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 13:12:28 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T12:12:27.968Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 13:12:28 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T12:12:27.968Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 13:12:29 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.056s: 200
+2026/01/26 13:12:29 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.066s: 200
+2026/01/26 13:12:29 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.038s: 200
+2026/01/26 13:12:29 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T12:12:29.176Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 13:12:29 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T12:12:29.176Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 13:12:29 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T12:12:29.176Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 13:12:31 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.080s: 200
+2026/01/26 13:12:31 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.095s: 200
+2026/01/26 13:12:31 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.052s: 200
+2026/01/26 13:12:31 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T12:12:30.976Z", "wait_for_complete": "true"} and body {} done in 0.028s: 200
+2026/01/26 13:12:31 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T12:12:30.976Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 13:12:31 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T12:12:30.976Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 13:12:31 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.055s: 200
+2026/01/26 13:12:31 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.066s: 200
+2026/01/26 13:12:31 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.038s: 200
+2026/01/26 13:12:31 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T12:12:31.824Z", "wait_for_complete": "true"} and body {} done in 0.024s: 200
+2026/01/26 13:12:32 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T12:12:31.824Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 13:12:32 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T12:12:31.824Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 13:12:34 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=never_connected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.022s: 200
+2026/01/26 13:12:39 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.022s: 200
+2026/01/26 13:12:44 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.083s: 200
+2026/01/26 13:12:44 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.055s: 200
+2026/01/26 13:12:44 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.066s: 200
+2026/01/26 13:12:44 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T12:12:44.386Z", "wait_for_complete": "true"} and body {} done in 0.026s: 200
+2026/01/26 13:12:44 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T12:12:44.386Z", "wait_for_complete": "true"} and body {} done in 0.023s: 200
+2026/01/26 13:12:44 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T12:12:44.386Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 13:15:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.043s: 200
+2026/01/26 13:15:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.034s: 200
+2026/01/26 13:15:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.041s: 200
+2026/01/26 13:15:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.018s: 200
+2026/01/26 13:15:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.019s: 200
+2026/01/26 13:19:39 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id=048"} and body {} done in 0.025s: 200
+2026/01/26 13:19:39 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.029s: 200
+2026/01/26 13:19:39 INFO: wazuh-wui 192.168.203.90 "GET /sca/048" with parameters {"sort": "-end_scan", "limit": "1"} and body {} done in 0.025s: 200
+2026/01/26 13:19:40 INFO: wazuh-wui 192.168.203.90 "GET /sca/048" with parameters {"offset": "0", "limit": "4", "sort": "+policy_id"} and body {} done in 0.024s: 200
+2026/01/26 13:20:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.028s: 200
+2026/01/26 13:20:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.035s: 200
+2026/01/26 13:20:22 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.038s: 200
+2026/01/26 13:20:22 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id=048"} and body {} done in 0.052s: 200
+2026/01/26 13:20:22 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.029s: 200
+2026/01/26 13:20:22 INFO: wazuh-wui 192.168.203.90 "GET /sca/048" with parameters {"sort": "-end_scan", "limit": "1"} and body {} done in 0.038s: 200
+2026/01/26 13:20:22 INFO: wazuh-wui 192.168.203.90 "GET /sca/048" with parameters {"offset": "0", "limit": "4", "sort": "+policy_id"} and body {} done in 0.032s: 200
+2026/01/26 13:20:23 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.574s: 200
+2026/01/26 13:20:23 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.138s: 200
+2026/01/26 13:20:23 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.028s: 200
+2026/01/26 13:20:23 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.314s: 200
+2026/01/26 13:20:23 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.019s: 200
+2026/01/26 13:25:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.032s: 200
+2026/01/26 13:25:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.040s: 200
+2026/01/26 13:28:31 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id=048"} and body {} done in 0.105s: 401
+2026/01/26 13:28:32 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.508s: 200
+2026/01/26 13:28:32 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.390s: 200
+2026/01/26 13:28:32 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.014s: 200
+2026/01/26 13:28:32 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.091s: 200
+2026/01/26 13:28:32 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.019s: 200
+2026/01/26 13:28:32 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.486s: 200
+2026/01/26 13:28:32 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.187s: 200
+2026/01/26 13:28:32 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.081s: 200
+2026/01/26 13:28:32 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.028s: 200
+2026/01/26 13:28:32 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.021s: 200
+2026/01/26 13:28:32 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.172s: 200
+2026/01/26 13:28:32 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.017s: 200
+2026/01/26 13:28:33 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.319s: 200
+2026/01/26 13:28:33 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.011s: 200
+2026/01/26 13:28:33 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id=048"} and body {} done in 0.019s: 200
+2026/01/26 13:28:33 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.029s: 200
+2026/01/26 13:28:33 INFO: wazuh-wui 192.168.203.90 "GET /sca/048" with parameters {"sort": "-end_scan", "limit": "1"} and body {} done in 0.040s: 200
+2026/01/26 13:28:33 INFO: wazuh-wui 192.168.203.90 "GET /sca/048" with parameters {"offset": "0", "limit": "4", "sort": "+policy_id"} and body {} done in 0.038s: 200
+2026/01/26 13:28:35 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.030s: 200
+2026/01/26 13:28:36 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.116s: 200
+2026/01/26 13:28:36 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.125s: 200
+2026/01/26 13:28:36 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.135s: 200
+2026/01/26 13:28:36 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.144s: 200
+2026/01/26 13:28:36 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T12:28:35.943Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 13:28:36 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T12:28:35.943Z", "wait_for_complete": "true"} and body {} done in 0.037s: 200
+2026/01/26 13:28:36 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T12:28:35.943Z", "wait_for_complete": "true"} and body {} done in 0.026s: 200
+2026/01/26 13:28:42 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.016s: 200
+2026/01/26 13:28:42 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.029s: 200
+2026/01/26 13:28:43 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.056s: 200
+2026/01/26 13:28:43 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.093s: 200
+2026/01/26 13:28:43 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.080s: 200
+2026/01/26 13:28:43 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.089s: 200
+2026/01/26 13:28:43 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T12:28:42.952Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 13:28:43 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.506s: 200
+2026/01/26 13:28:43 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T12:28:42.952Z", "wait_for_complete": "true"} and body {} done in 0.032s: 200
+2026/01/26 13:28:43 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.131s: 200
+2026/01/26 13:28:43 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T12:28:42.952Z", "wait_for_complete": "true"} and body {} done in 0.030s: 200
+2026/01/26 13:28:43 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.026s: 200
+2026/01/26 13:28:43 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.220s: 200
+2026/01/26 13:28:43 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.020s: 200
+2026/01/26 13:30:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.049s: 200
+2026/01/26 13:30:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.054s: 200
+2026/01/26 13:30:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.059s: 200
+2026/01/26 13:30:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.019s: 200
+2026/01/26 13:30:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.018s: 200
+2026/01/26 13:30:39 INFO: Shutdown wazuh-apid server.
+2026/01/26 13:31:11 INFO: Checking RBAC database integrity...
+2026/01/26 13:31:11 INFO: /var/ossec/api/configuration/security/rbac.db file was detected
+2026/01/26 13:31:11 INFO: RBAC database integrity check finished successfully
+2026/01/26 13:31:14 INFO: Listening on ['0.0.0.0', '::']:55000.
+2026/01/26 13:31:14 INFO: Getting installation UID...
+2026/01/26 13:31:14 INFO: Getting updates information...
+2026/01/26 13:32:11 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id=048"} and body {} done in 0.304s: 200
+2026/01/26 13:32:14 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 2.433s: 200
+2026/01/26 13:32:14 INFO: wazuh-wui 192.168.203.90 "GET /sca/048" with parameters {"sort": "-end_scan", "limit": "1"} and body {} done in 2.447s: 200
+2026/01/26 13:32:14 INFO: wazuh-wui 192.168.203.90 "GET /sca/048" with parameters {"offset": "0", "limit": "4", "sort": "+policy_id"} and body {} done in 0.029s: 200
+2026/01/26 13:32:24 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 13:32:24 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.100s: 200
+2026/01/26 13:32:24 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.108s: 200
+2026/01/26 13:32:24 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.117s: 200
+2026/01/26 13:32:24 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.127s: 200
+2026/01/26 13:32:24 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T12:32:24.612Z", "wait_for_complete": "true"} and body {} done in 0.027s: 200
+2026/01/26 13:32:24 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T12:32:24.612Z", "wait_for_complete": "true"} and body {} done in 0.023s: 200
+2026/01/26 13:32:24 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T12:32:24.612Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 13:32:26 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=pending", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.025s: 200
+2026/01/26 13:32:55 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.022s: 200
+2026/01/26 13:35:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.090s: 200
+2026/01/26 13:35:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.098s: 200
+2026/01/26 13:37:28 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.014s: 200
+2026/01/26 13:37:28 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.817s: 200
+2026/01/26 13:37:28 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.118s: 200
+2026/01/26 13:37:28 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.021s: 200
+2026/01/26 13:37:29 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.277s: 200
+2026/01/26 13:37:29 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.021s: 200
+2026/01/26 13:40:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.030s: 200
+2026/01/26 13:40:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.037s: 200
+2026/01/26 13:42:01 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.202s: 200
+2026/01/26 13:42:01 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary/status" with parameters {} and body {} done in 0.213s: 200
+2026/01/26 13:42:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.522s: 200
+2026/01/26 13:42:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.069s: 200
+2026/01/26 13:42:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.017s: 200
+2026/01/26 13:42:01 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.163s: 200
+2026/01/26 13:42:01 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.016s: 200
+2026/01/26 13:42:07 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.028s: 200
+2026/01/26 13:42:07 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.035s: 200
+2026/01/26 13:42:08 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.051s: 200
+2026/01/26 13:42:08 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.059s: 200
+2026/01/26 13:42:08 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.089s: 200
+2026/01/26 13:42:08 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.075s: 200
+2026/01/26 13:42:08 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T12:42:08.005Z", "wait_for_complete": "true"} and body {} done in 0.024s: 200
+2026/01/26 13:42:08 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T12:42:08.005Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 13:42:08 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.446s: 200
+2026/01/26 13:42:08 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T12:42:08.005Z", "wait_for_complete": "true"} and body {} done in 0.097s: 200
+2026/01/26 13:42:08 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.086s: 200
+2026/01/26 13:42:08 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.018s: 200
+2026/01/26 13:42:08 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.173s: 200
+2026/01/26 13:42:08 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.017s: 200
+2026/01/26 13:42:11 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.025s: 200
+2026/01/26 13:45:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.061s: 200
+2026/01/26 13:45:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.071s: 200
+2026/01/26 13:45:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.044s: 200
+2026/01/26 13:45:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.022s: 200
+2026/01/26 13:45:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.028s: 200
+2026/01/26 13:50:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.030s: 200
+2026/01/26 13:50:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.037s: 200
+2026/01/26 13:55:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.038s: 200
+2026/01/26 13:55:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.049s: 200
+2026/01/26 14:00:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.015s: 401
+2026/01/26 14:00:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.020s: 401
+2026/01/26 14:00:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.025s: 401
+2026/01/26 14:00:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.504s: 200
+2026/01/26 14:00:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.504s: 200
+2026/01/26 14:00:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.083s: 200
+2026/01/26 14:00:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.091s: 200
+2026/01/26 14:00:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.582s: 200
+2026/01/26 14:00:01 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.069s: 200
+2026/01/26 14:00:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.019s: 200
+2026/01/26 14:00:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.020s: 200
+2026/01/26 14:05:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.025s: 200
+2026/01/26 14:05:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.032s: 200
+2026/01/26 14:10:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.025s: 200
+2026/01/26 14:10:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.031s: 200
+2026/01/26 14:14:03 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.527s: 200
+2026/01/26 14:14:03 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.423s: 200
+2026/01/26 14:14:04 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.085s: 200
+2026/01/26 14:14:04 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.093s: 200
+2026/01/26 14:14:04 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.030s: 200
+2026/01/26 14:14:04 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.022s: 200
+2026/01/26 14:14:04 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.694s: 200
+2026/01/26 14:14:04 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.069s: 200
+2026/01/26 14:14:04 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.208s: 200
+2026/01/26 14:14:04 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.369s: 200
+2026/01/26 14:14:04 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.171s: 200
+2026/01/26 14:14:04 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.018s: 200
+2026/01/26 14:14:04 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.021s: 200
+2026/01/26 14:14:04 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:14:05 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.068s: 200
+2026/01/26 14:14:05 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.056s: 200
+2026/01/26 14:14:05 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.080s: 200
+2026/01/26 14:14:05 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.091s: 200
+2026/01/26 14:14:05 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:14:04.989Z", "wait_for_complete": "true"} and body {} done in 0.024s: 200
+2026/01/26 14:14:05 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:14:04.989Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 14:14:05 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:14:04.989Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 14:15:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.041s: 200
+2026/01/26 14:15:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.048s: 200
+2026/01/26 14:15:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.046s: 200
+2026/01/26 14:15:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.019s: 200
+2026/01/26 14:15:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.020s: 200
+2026/01/26 14:15:56 INFO: Shutdown wazuh-apid server.
+2026/01/26 14:16:27 INFO: Checking RBAC database integrity...
+2026/01/26 14:16:27 INFO: /var/ossec/api/configuration/security/rbac.db file was detected
+2026/01/26 14:16:27 INFO: RBAC database integrity check finished successfully
+2026/01/26 14:16:30 INFO: Listening on ['0.0.0.0', '::']:55000.
+2026/01/26 14:16:30 INFO: Getting installation UID...
+2026/01/26 14:16:30 INFO: Getting updates information...
+2026/01/26 14:16:40 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.213s: 200
+2026/01/26 14:16:40 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary/status" with parameters {} and body {} done in 0.224s: 200
+2026/01/26 14:16:40 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.834s: 200
+2026/01/26 14:16:40 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.081s: 200
+2026/01/26 14:16:40 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.018s: 200
+2026/01/26 14:16:41 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.270s: 200
+2026/01/26 14:16:41 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.019s: 200
+2026/01/26 14:16:56 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.102s: 200
+2026/01/26 14:16:56 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.111s: 200
+2026/01/26 14:16:58 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 1.947s: 200
+2026/01/26 14:16:58 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 1.978s: 200
+2026/01/26 14:16:58 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 1.961s: 200
+2026/01/26 14:16:58 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 1.966s: 200
+2026/01/26 14:16:58 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 2.269s: 200
+2026/01/26 14:16:59 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.126s: 200
+2026/01/26 14:16:59 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:16:56.924Z", "wait_for_complete": "true"} and body {} done in 0.033s: 200
+2026/01/26 14:16:59 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.044s: 200
+2026/01/26 14:16:59 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:16:56.924Z", "wait_for_complete": "true"} and body {} done in 0.031s: 200
+2026/01/26 14:16:59 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.206s: 200
+2026/01/26 14:16:59 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:16:56.924Z", "wait_for_complete": "true"} and body {} done in 0.196s: 200
+2026/01/26 14:16:59 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.018s: 200
+2026/01/26 14:17:03 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=never_connected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.021s: 200
+2026/01/26 14:17:06 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.024s: 200
+2026/01/26 14:17:23 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.045s: 200
+2026/01/26 14:17:23 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.084s: 200
+2026/01/26 14:17:23 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.066s: 200
+2026/01/26 14:17:23 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:17:23.012Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 14:17:23 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:17:23.012Z", "wait_for_complete": "true"} and body {} done in 0.018s: 200
+2026/01/26 14:17:23 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:17:23.012Z", "wait_for_complete": "true"} and body {} done in 0.018s: 200
+2026/01/26 14:17:25 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.023s: 200
+2026/01/26 14:17:32 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.042s: 200
+2026/01/26 14:17:32 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.070s: 200
+2026/01/26 14:17:32 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.038s: 200
+2026/01/26 14:17:32 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:17:32.507Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 14:17:32 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:17:32.507Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 14:17:32 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:17:32.507Z", "wait_for_complete": "true"} and body {} done in 0.017s: 200
+2026/01/26 14:17:33 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.035s: 200
+2026/01/26 14:17:33 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.066s: 200
+2026/01/26 14:17:33 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.052s: 200
+2026/01/26 14:17:33 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:17:33.370Z", "wait_for_complete": "true"} and body {} done in 0.024s: 200
+2026/01/26 14:17:33 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:17:33.370Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 14:17:33 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:17:33.370Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 14:17:50 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.065s: 200
+2026/01/26 14:17:50 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.073s: 200
+2026/01/26 14:17:50 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.035s: 200
+2026/01/26 14:17:50 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:17:50.330Z", "wait_for_complete": "true"} and body {} done in 0.023s: 200
+2026/01/26 14:17:50 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:17:50.330Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:17:50 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:17:50.330Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 14:17:51 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.052s: 200
+2026/01/26 14:17:51 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.060s: 200
+2026/01/26 14:17:51 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.033s: 200
+2026/01/26 14:17:51 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:17:51.088Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 14:17:51 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:17:51.088Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 14:17:51 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:17:51.088Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:17:57 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.039s: 200
+2026/01/26 14:17:57 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.066s: 200
+2026/01/26 14:17:57 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.055s: 200
+2026/01/26 14:17:57 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:17:57.139Z", "wait_for_complete": "true"} and body {} done in 0.023s: 200
+2026/01/26 14:17:57 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:17:57.139Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 14:17:57 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:17:57.139Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 14:18:22 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.062s: 200
+2026/01/26 14:18:22 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.072s: 200
+2026/01/26 14:18:22 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.036s: 200
+2026/01/26 14:18:22 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:22.502Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 14:18:22 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:22.502Z", "wait_for_complete": "true"} and body {} done in 0.024s: 200
+2026/01/26 14:18:22 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:22.502Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 14:18:24 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.036s: 200
+2026/01/26 14:18:24 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.069s: 200
+2026/01/26 14:18:24 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.054s: 200
+2026/01/26 14:18:24 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:24.215Z", "wait_for_complete": "true"} and body {} done in 0.023s: 200
+2026/01/26 14:18:24 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:24.215Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 14:18:24 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:24.215Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 14:18:25 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.059s: 200
+2026/01/26 14:18:25 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.070s: 200
+2026/01/26 14:18:25 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.040s: 200
+2026/01/26 14:18:25 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:25.084Z", "wait_for_complete": "true"} and body {} done in 0.023s: 200
+2026/01/26 14:18:25 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:25.084Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 14:18:25 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:25.084Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 14:18:25 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.056s: 200
+2026/01/26 14:18:25 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.089s: 200
+2026/01/26 14:18:25 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.071s: 200
+2026/01/26 14:18:25 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:25.813Z", "wait_for_complete": "true"} and body {} done in 0.027s: 200
+2026/01/26 14:18:26 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:25.813Z", "wait_for_complete": "true"} and body {} done in 0.039s: 200
+2026/01/26 14:18:26 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:25.813Z", "wait_for_complete": "true"} and body {} done in 0.024s: 200
+2026/01/26 14:18:26 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.044s: 200
+2026/01/26 14:18:26 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.069s: 200
+2026/01/26 14:18:26 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.042s: 200
+2026/01/26 14:18:26 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:26.614Z", "wait_for_complete": "true"} and body {} done in 0.023s: 200
+2026/01/26 14:18:26 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:26.614Z", "wait_for_complete": "true"} and body {} done in 0.023s: 200
+2026/01/26 14:18:26 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:26.614Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:18:30 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.033s: 200
+2026/01/26 14:18:30 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.063s: 200
+2026/01/26 14:18:31 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.051s: 200
+2026/01/26 14:18:31 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:30.905Z", "wait_for_complete": "true"} and body {} done in 0.024s: 200
+2026/01/26 14:18:31 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:30.905Z", "wait_for_complete": "true"} and body {} done in 0.023s: 200
+2026/01/26 14:18:31 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:30.905Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:18:31 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.075s: 200
+2026/01/26 14:18:31 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.053s: 200
+2026/01/26 14:18:31 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.063s: 200
+2026/01/26 14:18:32 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:31.864Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 14:18:32 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:31.864Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:18:32 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:31.864Z", "wait_for_complete": "true"} and body {} done in 0.017s: 200
+2026/01/26 14:18:32 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.053s: 200
+2026/01/26 14:18:32 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.061s: 200
+2026/01/26 14:18:32 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.035s: 200
+2026/01/26 14:18:32 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:32.781Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 14:18:32 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:32.781Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 14:18:33 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:18:32.781Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 14:18:51 INFO: Shutdown wazuh-apid server.
+2026/01/26 14:19:22 INFO: Checking RBAC database integrity...
+2026/01/26 14:19:23 INFO: /var/ossec/api/configuration/security/rbac.db file was detected
+2026/01/26 14:19:23 INFO: RBAC database integrity check finished successfully
+2026/01/26 14:19:26 INFO: Listening on ['0.0.0.0', '::']:55000.
+2026/01/26 14:19:26 INFO: Getting installation UID...
+2026/01/26 14:19:26 INFO: Getting updates information...
+2026/01/26 14:19:40 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.157s: 200
+2026/01/26 14:19:40 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.168s: 200
+2026/01/26 14:19:43 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 2.166s: 200
+2026/01/26 14:19:43 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 2.157s: 200
+2026/01/26 14:19:43 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 2.180s: 200
+2026/01/26 14:19:43 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 2.650s: 200
+2026/01/26 14:19:43 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 2.194s: 200
+2026/01/26 14:19:43 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.182s: 200
+2026/01/26 14:19:43 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:19:40.944Z", "wait_for_complete": "true"} and body {} done in 0.094s: 200
+2026/01/26 14:19:43 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.039s: 200
+2026/01/26 14:19:43 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:19:40.944Z", "wait_for_complete": "true"} and body {} done in 0.023s: 200
+2026/01/26 14:19:43 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.304s: 200
+2026/01/26 14:19:43 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:19:40.944Z", "wait_for_complete": "true"} and body {} done in 0.293s: 200
+2026/01/26 14:19:43 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.020s: 200
+2026/01/26 14:19:46 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.039s: 200
+2026/01/26 14:19:46 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.069s: 200
+2026/01/26 14:19:46 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.054s: 200
+2026/01/26 14:19:46 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:19:46.170Z", "wait_for_complete": "true"} and body {} done in 0.023s: 200
+2026/01/26 14:19:46 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:19:46.170Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:19:46 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:19:46.170Z", "wait_for_complete": "true"} and body {} done in 0.017s: 200
+2026/01/26 14:19:47 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.037s: 200
+2026/01/26 14:19:47 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.063s: 200
+2026/01/26 14:19:47 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.040s: 200
+2026/01/26 14:19:47 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:19:47.172Z", "wait_for_complete": "true"} and body {} done in 0.018s: 200
+2026/01/26 14:19:47 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:19:47.172Z", "wait_for_complete": "true"} and body {} done in 0.017s: 200
+2026/01/26 14:19:47 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:19:47.172Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 14:19:48 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.032s: 200
+2026/01/26 14:19:48 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.060s: 200
+2026/01/26 14:19:48 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.047s: 200
+2026/01/26 14:19:48 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:19:48.071Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:19:48 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:19:48.071Z", "wait_for_complete": "true"} and body {} done in 0.018s: 200
+2026/01/26 14:19:48 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:19:48.071Z", "wait_for_complete": "true"} and body {} done in 0.017s: 200
+2026/01/26 14:20:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.027s: 200
+2026/01/26 14:20:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.034s: 200
+2026/01/26 14:20:07 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.038s: 200
+2026/01/26 14:20:07 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.069s: 200
+2026/01/26 14:20:07 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.055s: 200
+2026/01/26 14:20:07 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:20:07.792Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 14:20:07 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:20:07.792Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:20:08 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:20:07.792Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:20:08 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.054s: 200
+2026/01/26 14:20:08 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.065s: 200
+2026/01/26 14:20:08 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.035s: 200
+2026/01/26 14:20:08 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:20:08.772Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 14:20:08 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:20:08.772Z", "wait_for_complete": "true"} and body {} done in 0.017s: 200
+2026/01/26 14:20:08 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:20:08.772Z", "wait_for_complete": "true"} and body {} done in 0.015s: 200
+2026/01/26 14:20:14 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.018s: 200
+2026/01/26 14:20:14 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.644s: 200
+2026/01/26 14:20:15 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.090s: 200
+2026/01/26 14:20:15 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.020s: 200
+2026/01/26 14:20:15 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.197s: 200
+2026/01/26 14:20:15 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.017s: 200
+2026/01/26 14:20:41 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.035s: 200
+2026/01/26 14:20:41 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary/status" with parameters {} and body {} done in 0.046s: 200
+2026/01/26 14:20:41 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.510s: 200
+2026/01/26 14:20:41 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.078s: 200
+2026/01/26 14:20:41 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.018s: 200
+2026/01/26 14:20:41 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.185s: 200
+2026/01/26 14:20:41 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.024s: 200
+2026/01/26 14:20:43 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.031s: 200
+2026/01/26 14:20:43 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.038s: 200
+2026/01/26 14:20:44 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.074s: 200
+2026/01/26 14:20:44 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.082s: 200
+2026/01/26 14:20:44 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.118s: 200
+2026/01/26 14:20:44 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.098s: 200
+2026/01/26 14:20:44 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:20:43.919Z", "wait_for_complete": "true"} and body {} done in 0.027s: 200
+2026/01/26 14:20:44 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:20:43.919Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 14:20:44 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:20:43.919Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 14:20:44 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.505s: 200
+2026/01/26 14:20:44 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.072s: 200
+2026/01/26 14:20:44 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.019s: 200
+2026/01/26 14:20:44 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.172s: 200
+2026/01/26 14:20:44 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.017s: 200
+2026/01/26 14:20:47 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.043s: 200
+2026/01/26 14:20:47 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.064s: 200
+2026/01/26 14:20:47 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.040s: 200
+2026/01/26 14:20:47 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:20:47.555Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 14:20:47 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:20:47.555Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 14:20:47 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:20:47.555Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 14:20:48 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.020s: 200
+2026/01/26 14:21:04 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.082s: 200
+2026/01/26 14:21:04 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.079s: 200
+2026/01/26 14:21:04 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.092s: 200
+2026/01/26 14:21:04 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:21:03.994Z", "wait_for_complete": "true"} and body {} done in 0.024s: 200
+2026/01/26 14:21:04 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:21:03.994Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 14:21:04 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:21:03.994Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 14:21:05 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.037s: 200
+2026/01/26 14:21:05 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.066s: 200
+2026/01/26 14:21:05 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.053s: 200
+2026/01/26 14:21:05 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:21:05.020Z", "wait_for_complete": "true"} and body {} done in 0.024s: 200
+2026/01/26 14:21:05 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:21:05.020Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 14:21:05 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:21:05.020Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:21:07 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.021s: 200
+2026/01/26 14:21:22 INFO: Checking RBAC database integrity...
+2026/01/26 14:21:22 INFO: /var/ossec/api/configuration/security/rbac.db file was detected
+2026/01/26 14:21:22 INFO: RBAC database integrity check finished successfully
+2026/01/26 14:21:25 INFO: Listening on ['0.0.0.0', '::']:55000.
+2026/01/26 14:21:25 INFO: Getting installation UID...
+2026/01/26 14:21:25 INFO: Getting updates information...
+2026/01/26 14:21:43 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.058s: 401
+2026/01/26 14:21:43 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.063s: 401
+2026/01/26 14:21:43 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.779s: 200
+2026/01/26 14:21:43 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.417s: 200
+2026/01/26 14:21:43 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.092s: 200
+2026/01/26 14:21:43 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.100s: 200
+2026/01/26 14:21:43 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.034s: 200
+2026/01/26 14:21:43 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.025s: 200
+2026/01/26 14:21:43 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.562s: 200
+2026/01/26 14:21:44 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.312s: 200
+2026/01/26 14:21:44 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.461s: 200
+2026/01/26 14:21:44 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.397s: 200
+2026/01/26 14:21:44 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.185s: 200
+2026/01/26 14:21:44 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.036s: 200
+2026/01/26 14:21:44 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.023s: 200
+2026/01/26 14:21:44 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.202s: 200
+2026/01/26 14:21:44 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.020s: 200
+2026/01/26 14:21:44 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.374s: 200
+2026/01/26 14:21:44 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.068s: 200
+2026/01/26 14:21:44 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.012s: 200
+2026/01/26 14:21:45 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.345s: 200
+2026/01/26 14:21:45 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.061s: 200
+2026/01/26 14:21:45 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:21:47 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 1.860s: 200
+2026/01/26 14:21:47 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 1.869s: 200
+2026/01/26 14:21:47 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 1.893s: 200
+2026/01/26 14:21:47 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 1.881s: 200
+2026/01/26 14:21:47 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:21:45.187Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 14:21:47 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:21:45.187Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:21:47 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:21:45.187Z", "wait_for_complete": "true"} and body {} done in 0.018s: 200
+2026/01/26 14:22:04 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.022s: 200
+2026/01/26 14:22:08 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.021s: 200
+2026/01/26 14:22:11 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id=050"} and body {} done in 0.027s: 200
+2026/01/26 14:22:12 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.032s: 200
+2026/01/26 14:22:12 INFO: wazuh-wui 192.168.203.90 "GET /sca/050" with parameters {"sort": "-end_scan", "limit": "1"} and body {} done in 0.035s: 200
+2026/01/26 14:22:12 INFO: wazuh-wui 192.168.203.90 "GET /sca/050" with parameters {"offset": "0", "limit": "4", "sort": "+policy_id"} and body {} done in 0.030s: 200
+2026/01/26 14:22:42 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.026s: 200
+2026/01/26 14:22:42 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.068s: 200
+2026/01/26 14:22:42 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.077s: 200
+2026/01/26 14:22:42 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.087s: 200
+2026/01/26 14:22:42 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.094s: 200
+2026/01/26 14:22:42 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:22:42.768Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 14:22:43 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:22:42.768Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 14:22:43 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:22:42.768Z", "wait_for_complete": "true"} and body {} done in 0.028s: 200
+2026/01/26 14:22:46 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.057s: 200
+2026/01/26 14:22:46 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.066s: 200
+2026/01/26 14:22:46 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.036s: 200
+2026/01/26 14:22:46 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:22:46.481Z", "wait_for_complete": "true"} and body {} done in 0.024s: 200
+2026/01/26 14:22:46 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:22:46.481Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 14:22:46 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:22:46.481Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:23:15 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.038s: 200
+2026/01/26 14:23:15 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.063s: 200
+2026/01/26 14:23:15 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.053s: 200
+2026/01/26 14:23:15 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:23:15.815Z", "wait_for_complete": "true"} and body {} done in 0.024s: 200
+2026/01/26 14:23:16 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:23:15.815Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 14:23:16 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:23:15.815Z", "wait_for_complete": "true"} and body {} done in 0.018s: 200
+2026/01/26 14:23:20 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.022s: 200
+2026/01/26 14:23:32 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.029s: 200
+2026/01/26 14:23:32 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.036s: 200
+2026/01/26 14:23:32 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.048s: 200
+2026/01/26 14:23:32 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.057s: 200
+2026/01/26 14:23:32 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.089s: 200
+2026/01/26 14:23:32 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.075s: 200
+2026/01/26 14:23:33 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:23:32.792Z", "wait_for_complete": "true"} and body {} done in 0.023s: 200
+2026/01/26 14:23:33 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:23:32.792Z", "wait_for_complete": "true"} and body {} done in 0.023s: 200
+2026/01/26 14:23:33 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.472s: 200
+2026/01/26 14:23:33 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:23:32.792Z", "wait_for_complete": "true"} and body {} done in 0.192s: 200
+2026/01/26 14:23:33 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.093s: 200
+2026/01/26 14:23:33 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.019s: 200
+2026/01/26 14:23:33 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.186s: 200
+2026/01/26 14:23:33 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.018s: 200
+2026/01/26 14:23:34 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.023s: 200
+2026/01/26 14:23:36 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.023s: 200
+2026/01/26 14:23:50 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.036s: 200
+2026/01/26 14:23:50 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.068s: 200
+2026/01/26 14:23:50 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.051s: 200
+2026/01/26 14:23:50 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:23:50.213Z", "wait_for_complete": "true"} and body {} done in 0.029s: 200
+2026/01/26 14:23:50 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:23:50.213Z", "wait_for_complete": "true"} and body {} done in 0.028s: 200
+2026/01/26 14:23:50 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:23:50.213Z", "wait_for_complete": "true"} and body {} done in 0.024s: 200
+2026/01/26 14:24:02 INFO: Shutdown wazuh-apid server.
+2026/01/26 14:24:33 INFO: Checking RBAC database integrity...
+2026/01/26 14:24:33 INFO: /var/ossec/api/configuration/security/rbac.db file was detected
+2026/01/26 14:24:33 INFO: RBAC database integrity check finished successfully
+2026/01/26 14:24:36 INFO: Listening on ['0.0.0.0', '::']:55000.
+2026/01/26 14:24:36 INFO: Getting installation UID...
+2026/01/26 14:24:36 INFO: Getting updates information...
+2026/01/26 14:25:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.180s: 200
+2026/01/26 14:25:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.187s: 200
+2026/01/26 14:25:16 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.127s: 200
+2026/01/26 14:25:16 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.073s: 200
+2026/01/26 14:25:18 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 1.971s: 200
+2026/01/26 14:25:18 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 1.979s: 200
+2026/01/26 14:25:18 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 2.385s: 200
+2026/01/26 14:25:18 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 1.986s: 200
+2026/01/26 14:25:18 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 2.001s: 200
+2026/01/26 14:25:18 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.173s: 200
+2026/01/26 14:25:18 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:25:16.249Z", "wait_for_complete": "true"} and body {} done in 0.087s: 200
+2026/01/26 14:25:18 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.039s: 200
+2026/01/26 14:25:18 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:25:16.249Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 14:25:18 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.325s: 200
+2026/01/26 14:25:18 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:25:16.249Z", "wait_for_complete": "true"} and body {} done in 0.314s: 200
+2026/01/26 14:25:18 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.023s: 200
+2026/01/26 14:25:30 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.030s: 200
+2026/01/26 14:25:30 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.037s: 200
+2026/01/26 14:25:30 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.068s: 200
+2026/01/26 14:25:30 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.076s: 200
+2026/01/26 14:25:30 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.089s: 200
+2026/01/26 14:25:30 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.098s: 200
+2026/01/26 14:25:30 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:25:30.516Z", "wait_for_complete": "true"} and body {} done in 0.024s: 200
+2026/01/26 14:25:30 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:25:30.516Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:25:30 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.467s: 200
+2026/01/26 14:25:30 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:25:30.516Z", "wait_for_complete": "true"} and body {} done in 0.107s: 200
+2026/01/26 14:25:30 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.095s: 200
+2026/01/26 14:25:30 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.022s: 200
+2026/01/26 14:25:31 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.200s: 200
+2026/01/26 14:25:31 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.017s: 200
+2026/01/26 14:25:39 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.035s: 200
+2026/01/26 14:25:39 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.044s: 200
+2026/01/26 14:25:39 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.076s: 200
+2026/01/26 14:25:39 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.084s: 200
+2026/01/26 14:25:39 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.097s: 200
+2026/01/26 14:25:39 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.105s: 200
+2026/01/26 14:25:39 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:25:39.512Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 14:25:39 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.487s: 200
+2026/01/26 14:25:39 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:25:39.512Z", "wait_for_complete": "true"} and body {} done in 0.115s: 200
+2026/01/26 14:25:39 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.102s: 200
+2026/01/26 14:25:39 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.035s: 200
+2026/01/26 14:25:39 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:25:39.512Z", "wait_for_complete": "true"} and body {} done in 0.046s: 200
+2026/01/26 14:25:40 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.223s: 200
+2026/01/26 14:25:40 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.018s: 200
+2026/01/26 14:30:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.045s: 200
+2026/01/26 14:30:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.051s: 200
+2026/01/26 14:30:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.057s: 200
+2026/01/26 14:30:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.020s: 200
+2026/01/26 14:30:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.018s: 200
+2026/01/26 14:35:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.031s: 200
+2026/01/26 14:35:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.039s: 200
+2026/01/26 14:35:31 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.058s: 200
+2026/01/26 14:35:31 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.068s: 200
+2026/01/26 14:35:31 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.039s: 200
+2026/01/26 14:35:31 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:35:31.758Z", "wait_for_complete": "true"} and body {} done in 0.029s: 200
+2026/01/26 14:35:32 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:35:31.758Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 14:35:32 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:35:31.758Z", "wait_for_complete": "true"} and body {} done in 0.024s: 200
+2026/01/26 14:36:51 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.024s: 401
+2026/01/26 14:36:51 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.029s: 401
+2026/01/26 14:36:51 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.021s: 401
+2026/01/26 14:36:51 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.505s: 200
+2026/01/26 14:36:51 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.406s: 200
+2026/01/26 14:36:51 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.093s: 200
+2026/01/26 14:36:51 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.104s: 200
+2026/01/26 14:36:52 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.035s: 200
+2026/01/26 14:36:52 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.025s: 200
+2026/01/26 14:36:52 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.702s: 200
+2026/01/26 14:36:52 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.245s: 200
+2026/01/26 14:36:52 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.484s: 200
+2026/01/26 14:36:52 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.388s: 200
+2026/01/26 14:36:52 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.286s: 200
+2026/01/26 14:36:52 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.045s: 200
+2026/01/26 14:36:52 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.115s: 200
+2026/01/26 14:36:53 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.453s: 200
+2026/01/26 14:36:53 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.088s: 200
+2026/01/26 14:36:53 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.469s: 200
+2026/01/26 14:36:53 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.092s: 200
+2026/01/26 14:36:53 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.516s: 200
+2026/01/26 14:36:53 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.055s: 200
+2026/01/26 14:36:53 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.051s: 200
+2026/01/26 14:36:53 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.051s: 200
+2026/01/26 14:36:53 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:36:51.269Z", "wait_for_complete": "true"} and body {} done in 0.030s: 200
+2026/01/26 14:36:53 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:36:51.269Z", "wait_for_complete": "true"} and body {} done in 0.118s: 200
+2026/01/26 14:36:53 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:36:51.269Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:36:53 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.407s: 200
+2026/01/26 14:36:53 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.011s: 200
+2026/01/26 14:36:53 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.018s: 200
+2026/01/26 14:37:53 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.041s: 200
+2026/01/26 14:37:53 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.064s: 200
+2026/01/26 14:37:53 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.037s: 200
+2026/01/26 14:37:53 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:37:53.025Z", "wait_for_complete": "true"} and body {} done in 0.023s: 200
+2026/01/26 14:37:53 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:37:53.025Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 14:37:53 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:37:53.025Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 14:37:54 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.033s: 200
+2026/01/26 14:37:54 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.060s: 200
+2026/01/26 14:37:54 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.047s: 200
+2026/01/26 14:37:54 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:37:54.157Z", "wait_for_complete": "true"} and body {} done in 0.023s: 200
+2026/01/26 14:37:54 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:37:54.157Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 14:37:54 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:37:54.157Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:37:55 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.054s: 200
+2026/01/26 14:37:55 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.039s: 200
+2026/01/26 14:37:55 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.049s: 200
+2026/01/26 14:37:55 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:37:55.208Z", "wait_for_complete": "true"} and body {} done in 0.023s: 200
+2026/01/26 14:37:55 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:37:55.208Z", "wait_for_complete": "true"} and body {} done in 0.023s: 200
+2026/01/26 14:37:55 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:37:55.208Z", "wait_for_complete": "true"} and body {} done in 0.018s: 200
+2026/01/26 14:38:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id=049"} and body {} done in 0.023s: 200
+2026/01/26 14:38:00 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.015s: 200
+2026/01/26 14:38:00 INFO: wazuh-wui 192.168.203.90 "GET /sca/049" with parameters {"sort": "-end_scan", "limit": "1"} and body {} done in 0.033s: 200
+2026/01/26 14:38:00 INFO: wazuh-wui 192.168.203.90 "GET /sca/049" with parameters {"offset": "0", "limit": "4", "sort": "+policy_id"} and body {} done in 0.034s: 200
+2026/01/26 14:38:12 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.053s: 200
+2026/01/26 14:38:12 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.058s: 200
+2026/01/26 14:38:12 INFO: wazuh-wui 192.168.203.90 "GET /sca/049" with parameters {"sort": "-end_scan", "limit": "1"} and body {} done in 0.107s: 200
+2026/01/26 14:38:12 INFO: wazuh-wui 192.168.203.90 "GET /sca/049" with parameters {"sort": "-end_scan", "limit": "1"} and body {} done in 0.063s: 200
+2026/01/26 14:38:12 INFO: wazuh-wui 192.168.203.90 "GET /sca/049" with parameters {"offset": "0", "limit": "4", "sort": "+policy_id"} and body {} done in 0.031s: 200
+2026/01/26 14:38:18 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.021s: 200
+2026/01/26 14:38:19 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.575s: 200
+2026/01/26 14:38:19 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.083s: 200
+2026/01/26 14:38:19 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.020s: 200
+2026/01/26 14:38:19 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.198s: 200
+2026/01/26 14:38:19 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.018s: 200
+2026/01/26 14:39:47 INFO: Shutdown wazuh-apid server.
+2026/01/26 14:40:18 INFO: Checking RBAC database integrity...
+2026/01/26 14:40:18 INFO: /var/ossec/api/configuration/security/rbac.db file was detected
+2026/01/26 14:40:18 INFO: RBAC database integrity check finished successfully
+2026/01/26 14:40:21 INFO: Listening on ['0.0.0.0', '::']:55000.
+2026/01/26 14:40:21 INFO: Getting installation UID...
+2026/01/26 14:40:21 INFO: Getting updates information...
+2026/01/26 14:41:01 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.165s: 200
+2026/01/26 14:41:01 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary/status" with parameters {} and body {} done in 0.033s: 200
+2026/01/26 14:41:02 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.739s: 200
+2026/01/26 14:41:02 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.082s: 200
+2026/01/26 14:41:02 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.019s: 200
+2026/01/26 14:41:02 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.277s: 200
+2026/01/26 14:41:02 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.020s: 200
+2026/01/26 14:41:03 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.104s: 200
+2026/01/26 14:41:03 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.112s: 200
+2026/01/26 14:41:05 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 2.057s: 200
+2026/01/26 14:41:05 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 2.064s: 200
+2026/01/26 14:41:05 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 2.361s: 200
+2026/01/26 14:41:05 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 2.062s: 200
+2026/01/26 14:41:05 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 2.088s: 200
+2026/01/26 14:41:05 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.112s: 200
+2026/01/26 14:41:05 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:03.496Z", "wait_for_complete": "true"} and body {} done in 0.121s: 200
+2026/01/26 14:41:05 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.039s: 200
+2026/01/26 14:41:05 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:03.496Z", "wait_for_complete": "true"} and body {} done in 0.031s: 200
+2026/01/26 14:41:06 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.207s: 200
+2026/01/26 14:41:06 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:03.496Z", "wait_for_complete": "true"} and body {} done in 0.196s: 200
+2026/01/26 14:41:06 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.019s: 200
+2026/01/26 14:41:09 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=disconnected", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.024s: 200
+2026/01/26 14:41:10 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.021s: 200
+2026/01/26 14:41:12 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.066s: 200
+2026/01/26 14:41:12 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.075s: 200
+2026/01/26 14:41:12 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.061s: 200
+2026/01/26 14:41:12 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:12.122Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 14:41:12 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:12.122Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:41:12 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:12.122Z", "wait_for_complete": "true"} and body {} done in 0.017s: 200
+2026/01/26 14:41:13 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.055s: 200
+2026/01/26 14:41:13 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.066s: 200
+2026/01/26 14:41:13 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.038s: 200
+2026/01/26 14:41:13 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:13.026Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 14:41:13 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:13.026Z", "wait_for_complete": "true"} and body {} done in 0.018s: 200
+2026/01/26 14:41:13 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:13.026Z", "wait_for_complete": "true"} and body {} done in 0.017s: 200
+2026/01/26 14:41:13 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.055s: 200
+2026/01/26 14:41:13 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.064s: 200
+2026/01/26 14:41:13 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.040s: 200
+2026/01/26 14:41:13 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:13.775Z", "wait_for_complete": "true"} and body {} done in 0.028s: 200
+2026/01/26 14:41:13 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:13.775Z", "wait_for_complete": "true"} and body {} done in 0.018s: 200
+2026/01/26 14:41:14 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:13.775Z", "wait_for_complete": "true"} and body {} done in 0.018s: 200
+2026/01/26 14:41:14 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.054s: 200
+2026/01/26 14:41:14 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.063s: 200
+2026/01/26 14:41:14 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.035s: 200
+2026/01/26 14:41:14 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:14.578Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:41:14 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:14.578Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 14:41:14 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:14.578Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 14:41:15 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.056s: 200
+2026/01/26 14:41:15 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.067s: 200
+2026/01/26 14:41:15 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.037s: 200
+2026/01/26 14:41:15 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:15.357Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 14:41:15 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:15.357Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:41:15 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:15.357Z", "wait_for_complete": "true"} and body {} done in 0.018s: 200
+2026/01/26 14:41:16 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.035s: 200
+2026/01/26 14:41:16 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.064s: 200
+2026/01/26 14:41:16 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.052s: 200
+2026/01/26 14:41:16 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:16.110Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:41:16 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:16.110Z", "wait_for_complete": "true"} and body {} done in 0.019s: 200
+2026/01/26 14:41:16 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:16.110Z", "wait_for_complete": "true"} and body {} done in 0.017s: 200
+2026/01/26 14:41:19 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.059s: 200
+2026/01/26 14:41:19 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.069s: 200
+2026/01/26 14:41:19 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.037s: 200
+2026/01/26 14:41:19 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:19.466Z", "wait_for_complete": "true"} and body {} done in 0.021s: 200
+2026/01/26 14:41:19 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:19.466Z", "wait_for_complete": "true"} and body {} done in 0.017s: 200
+2026/01/26 14:41:19 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:41:19.466Z", "wait_for_complete": "true"} and body {} done in 0.016s: 200
+2026/01/26 14:42:14 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.032s: 200
+2026/01/26 14:42:14 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.041s: 200
+2026/01/26 14:42:14 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.051s: 200
+2026/01/26 14:42:14 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.061s: 200
+2026/01/26 14:42:14 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.093s: 200
+2026/01/26 14:42:14 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.077s: 200
+2026/01/26 14:42:14 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:42:14.501Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 14:42:14 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.471s: 200
+2026/01/26 14:42:14 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:42:14.501Z", "wait_for_complete": "true"} and body {} done in 0.028s: 200
+2026/01/26 14:42:14 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.116s: 200
+2026/01/26 14:42:14 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:42:14.501Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 14:42:14 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.022s: 200
+2026/01/26 14:42:15 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.219s: 200
+2026/01/26 14:42:15 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.017s: 200
+2026/01/26 14:45:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.061s: 200
+2026/01/26 14:45:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.070s: 200
+2026/01/26 14:45:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.080s: 200
+2026/01/26 14:45:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.022s: 200
+2026/01/26 14:45:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.020s: 200
+2026/01/26 14:50:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.035s: 200
+2026/01/26 14:50:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.042s: 200
+2026/01/26 14:54:52 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.009s: 401
+2026/01/26 14:54:53 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.513s: 200
+2026/01/26 14:54:53 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.511s: 200
+2026/01/26 14:54:53 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.016s: 200
+2026/01/26 14:54:53 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.101s: 200
+2026/01/26 14:54:53 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.022s: 200
+2026/01/26 14:54:53 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.589s: 200
+2026/01/26 14:54:53 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.261s: 200
+2026/01/26 14:54:53 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.146s: 200
+2026/01/26 14:54:53 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.031s: 200
+2026/01/26 14:54:53 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.020s: 200
+2026/01/26 14:54:53 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.190s: 200
+2026/01/26 14:54:53 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.018s: 200
+2026/01/26 14:54:54 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.354s: 200
+2026/01/26 14:54:54 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.072s: 200
+2026/01/26 14:54:54 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 14:54:54 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.050s: 200
+2026/01/26 14:54:54 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.060s: 200
+2026/01/26 14:54:54 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.095s: 200
+2026/01/26 14:54:54 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.079s: 200
+2026/01/26 14:54:54 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T13:54:54.332Z", "wait_for_complete": "true"} and body {} done in 0.031s: 200
+2026/01/26 14:54:54 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T13:54:54.332Z", "wait_for_complete": "true"} and body {} done in 0.022s: 200
+2026/01/26 14:54:54 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T13:54:54.332Z", "wait_for_complete": "true"} and body {} done in 0.024s: 200
+2026/01/26 14:55:00 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.020s: 200
+2026/01/26 14:55:00 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.685s: 200
+2026/01/26 14:55:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.140s: 200
+2026/01/26 14:55:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.030s: 200
+2026/01/26 14:55:01 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.226s: 200
+2026/01/26 14:55:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.167s: 200
+2026/01/26 14:55:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.173s: 200
+2026/01/26 14:55:01 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.019s: 200
+2026/01/26 14:57:26 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.115s: 200
+2026/01/26 14:57:26 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.614s: 200
+2026/01/26 14:57:26 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.080s: 200
+2026/01/26 14:57:26 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.019s: 200
+2026/01/26 14:57:26 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.174s: 200
+2026/01/26 14:57:27 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.017s: 200
+2026/01/26 15:00:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.047s: 200
+2026/01/26 15:00:01 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.056s: 200
+2026/01/26 15:00:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.065s: 200
+2026/01/26 15:00:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.022s: 200
+2026/01/26 15:00:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.020s: 200
+2026/01/26 15:02:27 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary/status" with parameters {} and body {} done in 0.026s: 200
+2026/01/26 15:02:27 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.054s: 200
+2026/01/26 15:02:27 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.582s: 200
+2026/01/26 15:02:27 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.082s: 200
+2026/01/26 15:02:27 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.019s: 200
+2026/01/26 15:02:28 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.189s: 200
+2026/01/26 15:02:28 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.019s: 200
+2026/01/26 15:02:29 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.030s: 200
+2026/01/26 15:02:29 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.041s: 200
+2026/01/26 15:02:29 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.057s: 200
+2026/01/26 15:02:29 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.069s: 200
+2026/01/26 15:02:29 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.113s: 200
+2026/01/26 15:02:29 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000;status=active", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.093s: 200
+2026/01/26 15:02:29 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T14:02:29.465Z", "wait_for_complete": "true"} and body {} done in 0.026s: 200
+2026/01/26 15:02:29 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T14:02:29.465Z", "wait_for_complete": "true"} and body {} done in 0.026s: 200
+2026/01/26 15:02:29 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.544s: 200
+2026/01/26 15:02:29 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T14:02:29.465Z", "wait_for_complete": "true"} and body {} done in 0.119s: 200
+2026/01/26 15:02:29 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.126s: 200
+2026/01/26 15:02:30 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.020s: 200
+2026/01/26 15:02:30 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.210s: 200
+2026/01/26 15:02:30 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.019s: 200
+2026/01/26 15:05:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.036s: 200
+2026/01/26 15:05:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.055s: 200
+2026/01/26 15:06:31 INFO: Shutdown wazuh-apid server.
+2026/01/26 15:07:02 INFO: Checking RBAC database integrity...
+2026/01/26 15:07:02 INFO: /var/ossec/api/configuration/security/rbac.db file was detected
+2026/01/26 15:07:02 INFO: RBAC database integrity check finished successfully
+2026/01/26 15:07:05 INFO: Listening on ['0.0.0.0', '::']:55000.
+2026/01/26 15:07:05 INFO: Getting installation UID...
+2026/01/26 15:07:05 INFO: Getting updates information...
+2026/01/26 15:07:28 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.512s: 200
+2026/01/26 15:07:28 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 1.026s: 200
+2026/01/26 15:07:28 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.104s: 200
+2026/01/26 15:07:29 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.024s: 200
+2026/01/26 15:07:29 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.364s: 200
+2026/01/26 15:07:29 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.021s: 200
+2026/01/26 15:10:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.037s: 200
+2026/01/26 15:10:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.044s: 200
+2026/01/26 15:15:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.047s: 200
+2026/01/26 15:15:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.053s: 200
+2026/01/26 15:15:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.054s: 200
+2026/01/26 15:15:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.020s: 200
+2026/01/26 15:15:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.019s: 200
+2026/01/26 15:20:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.032s: 200
+2026/01/26 15:20:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.039s: 200
+2026/01/26 15:25:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.016s: 401
+2026/01/26 15:25:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.022s: 401
+2026/01/26 15:25:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.379s: 200
+2026/01/26 15:25:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.461s: 200
+2026/01/26 15:25:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.078s: 200
+2026/01/26 15:25:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.066s: 200
+2026/01/26 15:30:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.044s: 200
+2026/01/26 15:30:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.051s: 200
+2026/01/26 15:30:01 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.045s: 200
+2026/01/26 15:30:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.021s: 200
+2026/01/26 15:30:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.020s: 200
+2026/01/26 15:35:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.025s: 200
+2026/01/26 15:35:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.031s: 200
+2026/01/26 15:40:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.031s: 200
+2026/01/26 15:40:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.038s: 200
+2026/01/26 15:45:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.023s: 401
+2026/01/26 15:45:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.028s: 401
+2026/01/26 15:45:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.026s: 401
+2026/01/26 15:45:00 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.489s: 200
+2026/01/26 15:45:00 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.490s: 200
+2026/01/26 15:45:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.091s: 200
+2026/01/26 15:45:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.099s: 200
+2026/01/26 15:45:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.573s: 200
+2026/01/26 15:45:01 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.077s: 200
+2026/01/26 15:45:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.020s: 200
+2026/01/26 15:45:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.019s: 200
+2026/01/26 15:45:50 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.670s: 200
+2026/01/26 15:45:50 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.541s: 200
+2026/01/26 15:45:50 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.017s: 200
+2026/01/26 15:45:50 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.129s: 200
+2026/01/26 15:45:50 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.024s: 200
+2026/01/26 15:45:51 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.825s: 200
+2026/01/26 15:45:51 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.299s: 200
+2026/01/26 15:45:51 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.119s: 200
+2026/01/26 15:45:51 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.036s: 200
+2026/01/26 15:45:51 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.029s: 200
+2026/01/26 15:45:51 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.217s: 200
+2026/01/26 15:45:51 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.018s: 200
+2026/01/26 15:45:53 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 1.995s: 200
+2026/01/26 15:46:18 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.053s: 200
+2026/01/26 15:46:18 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary/status" with parameters {} and body {} done in 0.069s: 200
+2026/01/26 15:46:18 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.614s: 200
+2026/01/26 15:46:18 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.078s: 200
+2026/01/26 15:46:18 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.018s: 200
+2026/01/26 15:46:18 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.181s: 200
+2026/01/26 15:46:18 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.021s: 200
+2026/01/26 15:48:23 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.026s: 200
+2026/01/26 15:48:24 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.664s: 200
+2026/01/26 15:48:24 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.094s: 200
+2026/01/26 15:48:24 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.021s: 200
+2026/01/26 15:48:24 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.192s: 200
+2026/01/26 15:48:24 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.017s: 200
+2026/01/26 15:48:53 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.017s: 200
+2026/01/26 15:48:54 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.651s: 200
+2026/01/26 15:48:54 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.080s: 200
+2026/01/26 15:48:54 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.018s: 200
+2026/01/26 15:48:54 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.184s: 200
+2026/01/26 15:48:54 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.018s: 200
+2026/01/26 15:50:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.033s: 200
+2026/01/26 15:50:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.041s: 200
+2026/01/26 15:55:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.031s: 200
+2026/01/26 15:55:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.039s: 200
+2026/01/26 16:00:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.049s: 200
+2026/01/26 16:00:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.056s: 200
+2026/01/26 16:00:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.064s: 200
+2026/01/26 16:00:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.021s: 200
+2026/01/26 16:00:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.021s: 200
+2026/01/26 16:05:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.014s: 401
+2026/01/26 16:05:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.019s: 401
+2026/01/26 16:05:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.367s: 200
+2026/01/26 16:05:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.444s: 200
+2026/01/26 16:05:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.074s: 200
+2026/01/26 16:05:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.062s: 200
+2026/01/26 16:10:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.046s: 200
+2026/01/26 16:10:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.054s: 200
+2026/01/26 16:15:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.062s: 200
+2026/01/26 16:15:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.069s: 200
+2026/01/26 16:15:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.076s: 200
+2026/01/26 16:15:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.026s: 200
+2026/01/26 16:15:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.022s: 200
+2026/01/26 16:20:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.055s: 200
+2026/01/26 16:20:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.062s: 200
+2026/01/26 16:25:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.013s: 401
+2026/01/26 16:25:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.019s: 401
+2026/01/26 16:25:00 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.402s: 200
+2026/01/26 16:25:00 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.484s: 200
+2026/01/26 16:25:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.079s: 200
+2026/01/26 16:25:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.069s: 200
+2026/01/26 16:30:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.053s: 200
+2026/01/26 16:30:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.061s: 200
+2026/01/26 16:30:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.067s: 200
+2026/01/26 16:30:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.022s: 200
+2026/01/26 16:30:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.026s: 200
+2026/01/26 16:33:49 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 1.084s: 200
+2026/01/26 16:33:49 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.937s: 200
+2026/01/26 16:33:49 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.937s: 200
+2026/01/26 16:33:49 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.938s: 200
+2026/01/26 16:33:49 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.128s: 200
+2026/01/26 16:33:49 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.133s: 200
+2026/01/26 16:33:49 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.031s: 200
+2026/01/26 16:33:49 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.148s: 200
+2026/01/26 16:33:49 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.051s: 200
+2026/01/26 16:33:49 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.057s: 200
+2026/01/26 16:33:49 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.030s: 200
+2026/01/26 16:33:49 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 1.298s: 200
+2026/01/26 16:33:49 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.013s: 200
+2026/01/26 16:33:49 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.236s: 200
+2026/01/26 16:33:49 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.405s: 200
+2026/01/26 16:33:49 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.532s: 200
+2026/01/26 16:33:49 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.333s: 200
+2026/01/26 16:33:50 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.185s: 200
+2026/01/26 16:33:50 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.022s: 200
+2026/01/26 16:33:50 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.013s: 200
+2026/01/26 16:33:50 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary/status" with parameters {} and body {} done in 0.029s: 200
+2026/01/26 16:35:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.041s: 200
+2026/01/26 16:35:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.047s: 200
+2026/01/26 16:40:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.036s: 200
+2026/01/26 16:40:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.043s: 200
+2026/01/26 16:45:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.051s: 200
+2026/01/26 16:45:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.057s: 200
+2026/01/26 16:45:01 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.062s: 200
+2026/01/26 16:45:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.024s: 200
+2026/01/26 16:45:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.020s: 200
+2026/01/26 16:50:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.015s: 401
+2026/01/26 16:50:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.022s: 401
+2026/01/26 16:50:00 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.405s: 200
+2026/01/26 16:50:00 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.482s: 200
+2026/01/26 16:50:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.075s: 200
+2026/01/26 16:50:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.065s: 200
+2026/01/26 16:55:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.028s: 200
+2026/01/26 16:55:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.035s: 200
+2026/01/26 17:00:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.042s: 200
+2026/01/26 17:00:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.047s: 200
+2026/01/26 17:00:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.042s: 200
+2026/01/26 17:00:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.018s: 200
+2026/01/26 17:00:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.018s: 200
+2026/01/26 17:05:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.019s: 401
+2026/01/26 17:05:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.030s: 401
+2026/01/26 17:05:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.345s: 200
+2026/01/26 17:05:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.429s: 200
+2026/01/26 17:05:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.080s: 200
+2026/01/26 17:05:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.065s: 200
+2026/01/26 17:10:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.027s: 200
+2026/01/26 17:10:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.034s: 200
+2026/01/26 17:20:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.028s: 200
+2026/01/26 17:20:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.034s: 200
+2026/01/26 17:25:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.015s: 401
+2026/01/26 17:25:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.020s: 401
+2026/01/26 17:25:00 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.375s: 200
+2026/01/26 17:25:00 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.458s: 200
+2026/01/26 17:25:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.080s: 200
+2026/01/26 17:25:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.064s: 200
+2026/01/26 17:30:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.060s: 200
+2026/01/26 17:30:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.067s: 200
+2026/01/26 17:30:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.075s: 200
+2026/01/26 17:30:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.031s: 200
+2026/01/26 17:30:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.022s: 200
+2026/01/26 17:35:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.030s: 200
+2026/01/26 17:35:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.037s: 200
+2026/01/26 17:40:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.018s: 401
+2026/01/26 17:40:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.026s: 401
+2026/01/26 17:40:00 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.561s: 200
+2026/01/26 17:40:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.704s: 200
+2026/01/26 17:40:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.134s: 200
+2026/01/26 17:40:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.085s: 200
+2026/01/26 17:45:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.047s: 200
+2026/01/26 17:45:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.053s: 200
+2026/01/26 17:45:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.048s: 200
+2026/01/26 17:45:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.022s: 200
+2026/01/26 17:45:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.019s: 200
+2026/01/26 17:50:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.030s: 200
+2026/01/26 17:50:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.037s: 200
+2026/01/26 17:55:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.031s: 200
+2026/01/26 17:55:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.037s: 200
+2026/01/26 18:00:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.026s: 401
+2026/01/26 18:00:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.032s: 401
+2026/01/26 18:00:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.036s: 401
+2026/01/26 18:00:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.482s: 200
+2026/01/26 18:00:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.383s: 200
+2026/01/26 18:00:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.083s: 200
+2026/01/26 18:00:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.090s: 200
+2026/01/26 18:00:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.644s: 200
+2026/01/26 18:00:01 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.102s: 200
+2026/01/26 18:00:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.029s: 200
+2026/01/26 18:00:01 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.024s: 200
+2026/01/26 18:01:07 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.577s: 200
+2026/01/26 18:01:07 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.454s: 200
+2026/01/26 18:01:07 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.088s: 200
+2026/01/26 18:01:07 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.096s: 200
+2026/01/26 18:01:07 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.039s: 200
+2026/01/26 18:01:07 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.028s: 200
+2026/01/26 18:01:08 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.731s: 200
+2026/01/26 18:01:08 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.067s: 200
+2026/01/26 18:01:08 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.256s: 200
+2026/01/26 18:01:08 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.405s: 200
+2026/01/26 18:01:08 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.164s: 200
+2026/01/26 18:01:08 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.019s: 200
+2026/01/26 18:01:08 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.013s: 200
+2026/01/26 18:01:08 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"limit": "1", "offset": "0", "q": "id!=000", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 18:01:08 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.075s: 200
+2026/01/26 18:01:08 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "In progress", "command": "upgrade", "wait_for_complete": "true"} and body {} done in 0.102s: 200
+2026/01/26 18:01:08 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"q": "id!=000", "offset": "0", "limit": "10", "sort": "+id"} and body {} done in 0.112s: 200
+2026/01/26 18:01:08 INFO: wazuh-wui 192.168.203.90 "GET /agents/summary" with parameters {} and body {} done in 0.124s: 200
+2026/01/26 18:01:09 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Done", "command": "upgrade", "q": "last_update_time>2026-01-26T17:01:08.822Z", "wait_for_complete": "true"} and body {} done in 0.026s: 200
+2026/01/26 18:01:09 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Failed", "command": "upgrade", "q": "last_update_time>2026-01-26T17:01:08.822Z", "wait_for_complete": "true"} and body {} done in 0.020s: 200
+2026/01/26 18:01:09 INFO: wazuh-wui 192.168.203.90 "GET /tasks/status" with parameters {"limit": "1", "offset": "0", "status": "Timeout", "command": "upgrade", "q": "last_update_time>2026-01-26T17:01:08.822Z", "wait_for_complete": "true"} and body {} done in 0.025s: 200
+2026/01/26 18:01:30 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.024s: 200
+2026/01/26 18:01:30 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.648s: 200
+2026/01/26 18:01:31 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.083s: 200
+2026/01/26 18:01:31 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.020s: 200
+2026/01/26 18:01:31 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.215s: 200
+2026/01/26 18:01:31 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.033s: 200
+2026/01/26 18:05:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.029s: 200
+2026/01/26 18:05:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.036s: 200
+2026/01/26 18:10:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.031s: 200
+2026/01/26 18:10:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.038s: 200
+2026/01/26 18:20:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.019s: 401
+2026/01/26 18:20:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.024s: 401
+2026/01/26 18:20:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.445s: 200
+2026/01/26 18:20:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.562s: 200
+2026/01/26 18:20:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.113s: 200
+2026/01/26 18:20:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.091s: 200
+2026/01/26 18:22:56 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.564s: 200
+2026/01/26 18:22:56 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.420s: 200
+2026/01/26 18:22:56 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me/policies" with parameters {} and body {"idHost": "1513629884013"} done in 0.014s: 200
+2026/01/26 18:22:56 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.093s: 200
+2026/01/26 18:22:56 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.021s: 200
+2026/01/26 18:22:56 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.682s: 200
+2026/01/26 18:22:56 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.205s: 200
+2026/01/26 18:22:56 INFO: wazuh-wui 192.168.203.90 "GET /manager/info" with parameters {} and body {} done in 0.089s: 200
+2026/01/26 18:22:56 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.029s: 200
+2026/01/26 18:22:56 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"agents_list": "000"} and body {} done in 0.022s: 200
+2026/01/26 18:22:56 INFO: wazuh-wui 192.168.203.90 "GET /security/users/me" with parameters {} and body {} done in 0.178s: 200
+2026/01/26 18:22:56 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.018s: 200
+2026/01/26 18:22:56 INFO: wazuh-wui 192.168.203.90 "GET /" with parameters {} and body {} done in 0.013s: 200
+2026/01/26 18:25:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.039s: 200
+2026/01/26 18:25:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.045s: 200
+2026/01/26 18:30:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.044s: 200
+2026/01/26 18:30:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.050s: 200
+2026/01/26 18:30:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.056s: 200
+2026/01/26 18:30:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.023s: 200
+2026/01/26 18:30:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.019s: 200
+2026/01/26 18:35:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.029s: 200
+2026/01/26 18:35:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.035s: 200
+2026/01/26 18:40:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.014s: 401
+2026/01/26 18:40:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.019s: 401
+2026/01/26 18:40:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.364s: 200
+2026/01/26 18:40:01 INFO: wazuh-wui 192.168.203.90 "POST /security/user/authenticate" with parameters {} and body {} done in 0.447s: 200
+2026/01/26 18:40:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.078s: 200
+2026/01/26 18:40:01 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.068s: 200
