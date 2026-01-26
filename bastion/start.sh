@@ -18,10 +18,8 @@ if [ -f /usr/local/share/ca-certificates/proxy_ca.crt ]; then
 EOF
 fi
 
-echo "Injecting LDAP password into config..."
-sed -i "s|LDAP_READONLY_USER_USERNAME|$LDAP_READONLY_USER_USERNAME|g" /etc/nslcd.conf
-sed -i "s|LDAP_READONLY_USER_PASSWORD|$LDAP_READONLY_USER_PASSWORD|g" /etc/nslcd.conf
-sed -i "s|LDAP_SRV_IP|$LDAP_SRV_IP|g" /etc/nslcd.conf
+# NSLCD config access
+chown root:nslcd /etc/nslcd.conf && chmod 640 /etc/nslcd.conf
 
 # Enforce pam_access for group-based login control
 if ! grep -q '^account required pam_access.so' /etc/pam.d/common-account; then
@@ -84,18 +82,13 @@ for d in /home/users/*; do
   fi
 done
 
+# Run SSH server
+mkdir -p /run/sshd
+chmod 755 /run/sshd
+/usr/sbin/sshd
+
 # WAZUH AGENT INSTALLATION
-# Install GPG/curl, add Wazuh key to a dedicated keyring, add repo, then install the agent.
-if [ -n "${WAZUH_MANAGER_IP}" ]; then
-  apt-get update
-  DEBIAN_FRONTEND=noninteractive apt-get install -y curl gnupg apt-transport-https
-  curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --dearmor -o /usr/share/keyrings/wazuh.gpg
-  chmod 644 /usr/share/keyrings/wazuh.gpg
-  echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt stable main" > /etc/apt/sources.list.d/wazuh.list
-  apt-get update
-  DEBIAN_FRONTEND=noninteractive WAZUH_MANAGER="${WAZUH_MANAGER_IP}" apt-get install -y wazuh-agent
-  /var/ossec/bin/wazuh-control start
-fi
+/var/ossec/bin/wazuh-control start
 
 # Передаем управление оригинальному скрипту entrypoint образа scottyhardy
 # (В оригинальном образе entrypoint обычно /usr/bin/entrypoint)

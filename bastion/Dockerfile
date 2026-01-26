@@ -1,4 +1,5 @@
 FROM scottyhardy/docker-remote-desktop:latest
+#Ubuntu 
 
 USER root
 
@@ -15,18 +16,20 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     rsyslog \
     iproute2 \
     openssh-client \
+    openssh-server \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
+# Wazuh agent repo + install
+RUN curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --dearmor -o /usr/share/keyrings/wazuh.gpg && \
+    chmod 644 /usr/share/keyrings/wazuh.gpg && \
+    echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt stable main" > /etc/apt/sources.list.d/wazuh.list && \
+    apt-get update && \
+    DEBIAN_FRONTEND=noninteractive WAZUH_MANAGER=srv_wazuh_manager apt-get install -y wazuh-agent && \
+    rm -rf /var/lib/apt/lists/*
+
 # 2. Настройка PAM (mkhomedir)
 RUN echo "session required pam_mkhomedir.so skel=/etc/skel umask=0077" >> /etc/pam.d/common-session
-
-# 3. Копируем конфиги
-COPY nslcd.conf /etc/nslcd.conf
-
-# ВАЖНО: nslcd запускается от пользователя nslcd, он должен уметь читать конфиг!
-# Меняем владельца на root:nslcd и права на 640
-RUN chown root:nslcd /etc/nslcd.conf && chmod 640 /etc/nslcd.conf
 
 # 4. Настраиваем nsswitch
 RUN sed -i 's/passwd:         files/passwd:         files ldap/' /etc/nsswitch.conf && \

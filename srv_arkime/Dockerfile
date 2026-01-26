@@ -13,7 +13,14 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     openssh-server \
     curl \
     sudo \
+    python3 \
+    python3-pip \
+    python3-venv \
     && rm -rf /var/lib/apt/lists/*
+
+# Use a venv to avoid PEP 668 restrictions in the system Python.
+RUN python3 -m venv /opt/arkime/venv \
+    && /opt/arkime/venv/bin/pip install --no-cache-dir scapy
 
 COPY start.sh /usr/bin/start.sh
 RUN chmod +x /usr/bin/start.sh

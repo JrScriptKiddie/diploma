@@ -1,0 +1,10 @@
+Current checksum:
+MD5  (logs/firewall/2025/Dec/ossec-firewall-13) = none
+SHA1 (logs/firewall/2025/Dec/ossec-firewall-13) = none
+SHA256 (logs/firewall/2025/Dec/ossec-firewall-13) = none
+
+Chained checksum:
+MD5  (logs/firewall/2025/Dec/ossec-firewall-12.log.sum) = e3733cbf151dfc7edb90226fc0448dd1
+SHA1 (logs/firewall/2025/Dec/ossec-firewall-12.log.sum) = 0ca13eb530d01cf66a4558a166bfb84f3f5f59e3
+SHA256 (logs/firewall/2025/Dec/ossec-firewall-12.log.sum) = e66eda56d4cf7d0f1dcd452d2d4baf66b4457768abbc968bcf5efe04a9c6d388
+

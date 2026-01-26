@@ -75,13 +75,64 @@ sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/ssh
 sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config || true
 ssh-keygen -A >/dev/null 2>&1 || true
 
-# Add ansible user
-if ! id -u svc_ib_admin >/dev/null 2>&1; then
-  useradd -m -s /bin/bash svc_ib_admin && echo "svc_ib_admin:${SVC_IB_ADMIN_PASSWORD}" | chpasswd
+# Enforce pam_access for group-based login control
+if ! grep -q '^account required pam_access.so' /etc/pam.d/common-account; then
+    echo 'account required pam_access.so' >> /etc/pam.d/common-account
 fi
 
-echo 'svc_ib_admin ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/91-svc_ib_admin
-chmod 0440 /etc/sudoers.d/91-svc_ib_admin
+# Create local admin account if needed (Alpine)
+if ! id localadmin >/dev/null 2>&1; then
+    adduser -D -s /bin/bash localadmin
+fi
+if ! getent group wheel >/dev/null 2>&1; then
+    addgroup -S wheel
+fi
+addgroup localadmin wheel || true
+echo "localadmin:${LOCALADMIN_PASSWORD}" | chpasswd
+
+# Access rules: allow root locally, allow bastion admins/users groups, deny all else
+cat <<'EOF' >> /etc/security/access.conf
++:root:LOCAL
++:localadmin:ALL
+# Разрешить членам группы ADMINS (имя группы в Linux, не DN!)
++:SG_ADMINS:ALL
+# Запретить всем остальным (важно, иначе смысла нет)
+-:ALL:ALL
+EOF
+
+sed -i "s|SG_ADMINS|$SG_NET_ADMINS|g" /etc/security/access.conf
+
+touch /etc/sudoers.d/ldap-sudo
+cat <<'EOF' >> /etc/sudoers.d/ldap-sudo
+%SG_ADMINS ALL=(ALL:ALL) ALL
+%wheel ALL=(ALL:ALL) ALL
+localadmin ALL=(ALL:ALL) ALL
+EOF
+chown root:root /etc/sudoers.d/ldap-sudo
+chmod 0440 /etc/sudoers.d/ldap-sudo
+sed -i "s|SG_ADMINS|$SG_NET_ADMINS|g" /etc/sudoers.d/ldap-sudo
+
+
+# Запускаем демон nslcd (клиент LDAP) без OpenRC
+if command -v nslcd >/dev/null 2>&1; then
+    nslcd
+else
+    echo "[fw] nslcd not found, skipping"
+fi
+
+# Запускаем nscd (кэширование, желательно) без OpenRC
+if command -v nscd >/dev/null 2>&1; then
+    nscd
+else
+    echo "[fw] nscd not found, skipping"
+fi
+
+# Запуск rsyslog
+/usr/sbin/rsyslogd
+
+# Выводим диагностику (опционально)
+echo "Testing LDAP connection..."
+getent passwd test || echo "LDAP user 'test' not found via NSS"
 
 mkdir -p /run/sshd
 chmod 755 /run/sshd

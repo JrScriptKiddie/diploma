@@ -1,0 +1,5 @@
+** Alert 1769425719.0: - ossec,pci_dss_10.6.1,gpg13_10.1,gdpr_IV_35.7.d,hipaa_164.312.b,nist_800_53_AU.6,tsc_CC7.2,tsc_CC7.3,
+2026 Jan 26 11:08:39 srv_wazuh_manager->wazuh-monitord
+Rule: 502 (level 3) -> 'Wazuh server started.'
+ossec: Manager started.
+

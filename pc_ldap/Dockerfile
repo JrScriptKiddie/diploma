@@ -1,4 +1,5 @@
 FROM scottyhardy/docker-remote-desktop:latest
+# Ubuntu
 
 USER root
 
@@ -8,18 +9,29 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     libnss-ldapd \
     libpam-ldapd \
     ldap-utils \
+    libpam-pwquality \
     nano \
     iputils-ping \
     net-tools \
     rsyslog \
     cron \
     iproute2 \
-    wireguard \
-    remmina\
+    remmina \
     curl \
+    gnupg \
+    apt-transport-https \
     dnsutils \
     openssh-client \
+    openssh-server \
     && rm -rf /var/lib/apt/lists/*
+
+# Wazuh agent repo + install
+RUN curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --dearmor -o /usr/share/keyrings/wazuh.gpg && \
+    chmod 644 /usr/share/keyrings/wazuh.gpg && \
+    echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt stable main" > /etc/apt/sources.list.d/wazuh.list && \
+    apt-get update && \
+    DEBIAN_FRONTEND=noninteractive WAZUH_MANAGER=srv_wazuh_manager apt-get install -y wazuh-agent && \
+    rm -rf /var/lib/apt/lists/*
 
 # 2. Настройка PAM (mkhomedir)
 RUN echo "session required pam_mkhomedir.so skel=/etc/skel umask=0077" >> /etc/pam.d/common-session

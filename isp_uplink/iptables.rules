@@ -3,11 +3,10 @@
 :POSTROUTING ACCEPT [0:0]
 
 # DNAT внешний->fw: весь трафик, пришедший на IP прокси на uplink
--A PREROUTING ! -s 192.168.90.2 -j DNAT --to-destination SUBNET_BRANCH_UPLINK.100
+-A PREROUTING ! -s 172.56.200.100 -j DNAT --to-destination 172.56.200.100
 
-# все пакеты адресованные на fw задаем source ip на наш NAT
-#-A POSTROUTING -o eth0 -d 192.168.90.2 -j SNAT --to-source 192.168.90.254
-#-A POSTROUTING -o eth1 -d 192.168.90.2 -j SNAT --to-source 192.168.90.254
+# маскируем пакеты, которые пришли с самого докер-хоста (для остальных не требуется)
+-A POSTROUTING -s 172.56.200.1 -j SNAT --to-source 172.56.200.254
 
 COMMIT
 
@@ -15,10 +14,5 @@ COMMIT
 :INPUT ACCEPT [0:0]
 :FORWARD ACCEPT [0:0]
 :OUTPUT ACCEPT [0:0]
-
-# Разрешаем возвратные
--A FORWARD -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
--A FORWARD -i eth0 -o eth1 -j ACCEPT
--A FORWARD -i eth1 -o eth0 -j ACCEPT
 
 COMMIT

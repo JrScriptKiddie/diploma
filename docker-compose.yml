@@ -1,49 +1,63 @@
 
+x-env-file: &common_env_file
+  env_file:
+    - ./.env
+
+x-env: &common_env
+  IP_SRV_WAZUH_MANAGER: ${SUBNET_INFOSEC}.${IP_SRV_WAZUH_MANAGER} 
+  IP_LDAP_SRV: ${SUBNET_SERVERS}.${IP_LDAP_SRV} 
+
 services:
+  isp:
+    build: ./isp_uplink
+    container_name: isp
+    cap_add: [ "NET_ADMIN" ]
+    restart: always
+    networks:
+      uplink_net:
+        ipv4_address: ${SUBNET_UPLINK}.254
+    volumes:
+      - ./isp_uplink/iptables.rules:/etc/iptables/rules.v4:ro      
+    environment:
+      GATEWAY_IP: ${SUBNET_UPLINK}.1
+    ports:     
+      - "51820:51820/udp"
+      - "8888:8888/tcp"
+
   fw:
     hostname: fw
     build: ./fw
     container_name: fw
-    #privileged: true
     cap_add: [ "NET_ADMIN" ]
     restart: always
     sysctls:
       net.ipv4.ip_forward: 1    
-      net.ipv4.conf.all.src_valid_mark: 1              
+      net.ipv4.conf.all.src_valid_mark: 1  
     networks:
       uplink_net:
         ipv4_address: ${SUBNET_UPLINK}.100
       users_net:
-        ipv4_address: ${SUBNET_USERS}.1
+        ipv4_address: ${SUBNET_USERS}.${IP_FW}
       dmz_net:
-        ipv4_address: ${SUBNET_DMZ}.1
+        ipv4_address: ${SUBNET_DMZ}.${IP_FW}
       servers_net:
-        ipv4_address: ${SUBNET_SERVERS}.1
+        ipv4_address: ${SUBNET_SERVERS}.${IP_FW}
       admin_net:
-        ipv4_address: ${SUBNET_ADMIN}.1      
+        ipv4_address: ${SUBNET_ADMIN}.${IP_FW}      
       infosec_net:
-        ipv4_address: ${SUBNET_INFOSEC}.1
+        ipv4_address: ${SUBNET_INFOSEC}.${IP_FW}
       dev_net:
-        ipv4_address: ${SUBNET_DEV}.1
-    ports:
-      - "51820:51820/udp"
+        ipv4_address: ${SUBNET_DEV}.${IP_FW} 
     volumes:
       - ./fw/nftables.conf:/etc/nftables.conf:rw
+    <<: *common_env_file
     environment:
-      SVC_IB_ADMIN_PASSWORD: ${SVC_IB_ADMIN_PASSWORD}
-      GATEWAY_IP: ${SUBNET_UPLINK}.1
-      SUBNET_UPLINK: ${SUBNET_UPLINK}
-      SUBNET_ADMIN: ${SUBNET_ADMIN}
-      SUBNET_DMZ: ${SUBNET_DMZ}
-      SUBNET_INFOSEC: ${SUBNET_INFOSEC}
-      SUBNET_SERVERS: ${SUBNET_SERVERS}
-      SUBNET_USERS: ${SUBNET_USERS}
-      SUBNET_DEV: ${SUBNET_DEV}
-      VPN_SRV_IP: ${VPN_SRV_IP}
+      <<: *common_env
+      GATEWAY_IP: ${SUBNET_UPLINK}.${IP_ISP}
+      VPN_SRV_IP: ${IP_VPN}
     dns:
-      - ${SUBNET_SERVERS}.${DNS_SRV_IP}      
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}      
 
-# Servers
   srv_dns:
     hostname: srv_dns
     depends_on: [ fw ]
@@ -53,43 +67,68 @@ services:
     restart: always
     networks:
       servers_net:
-        ipv4_address: ${SUBNET_SERVERS}.${DNS_SRV_IP}
+        ipv4_address: ${SUBNET_SERVERS}.${IP_SRV_DNS}
     volumes:
       - ./srv_dns/Corefile:/etc/coredns/Corefile:ro
-      - ./srv_dns/layer8.ag.db:/etc/coredns/layer8.ag.db:ro
+      - ./srv_dns/xxx.ag.db:/etc/coredns/xxx.ag.db:ro
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf          
     dns: ["1.1.1.1", "8.8.8.8"]
+    <<: *common_env_file
     environment:
-      GATEWAY_IP: ${SUBNET_SERVERS}.254
-      DNS_SRV_IP: ${SUBNET_SERVERS}.${DNS_SRV_IP}
+      <<: *common_env
+      GATEWAY_IP: ${SUBNET_SERVERS}.${IP_FW}
+      IP_SRV_DNS: ${SUBNET_SERVERS}.${IP_SRV_DNS}
 
   srv_wg_portal:
     build: ./srv_wg_portal
     container_name: srv_wg_portal
     hostname: srv_wg_portal
     restart: always
-    cap_add:
-      - NET_ADMIN
+    cap_add: [ "NET_ADMIN" ]
     volumes:
       - ./srv_wg_portal/data:/app/data
       - ./srv_wg_portal/config:/app/config
-      - ./srv_wg_portal/etc/wireguard:/etc/wireguard   # Конфиги интерфейсов    
+      - ./srv_wg_portal/etc/wireguard:/etc/wireguard
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf            
     sysctls:
       - net.ipv4.ip_forward=1
       - net.ipv4.conf.all.src_valid_mark=1
-    environment:  
+    <<: *common_env_file
+    environment:
+      <<: *common_env
       WB_ENABLE_NAT: true
       GATEWAY_IP: ${SUBNET_DMZ}.254
-      LDAP_READONLY_USER_USERNAME: ${LDAP_READONLY_USER_USERNAME}
-      LDAP_READONLY_USER_PASSWORD: ${LDAP_READONLY_USER_PASSWORD}  
-      WG_PORTAL_ADMIN_USERNAME: ${WG_PORTAL_ADMIN_USERNAME}
-      WG_PORTAL_ADMIN_PASSWORD: ${WG_PORTAL_ADMIN_PASSWORD}
-      WAZUH_MANAGER_IP: ${SUBNET_INFOSEC}.${WAZUH_SRV_IP}
-      LDAP_SRV_IP: ${SUBNET_SERVERS}.${LDAP_SRV_IP}
     networks:
       dmz_net:
-        ipv4_address: ${SUBNET_DMZ}.${VPN_SRV_IP}
+        ipv4_address: ${SUBNET_DMZ}.${IP_VPN}
     dns:
-      - ${SUBNET_SERVERS}.${DNS_SRV_IP}
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}
+
+  srv_bastion:
+    build: ./bastion
+    hostname: srv_bastion
+    container_name: srv_bastion
+    cap_add: [ "NET_ADMIN" ]
+    volumes:
+      - ./srv_bastion/home/users:/home/users/
+      - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+      #- ./srv_bastion/wazuh/var/ossec/etc:/var/ossec/etc
+      #- ./srv_bastion/wazuh/var/ossec/queue:/var/ossec/queue
+      #- ./srv_bastion/wazuh/etc/filebeat:/etc/filebeat
+      #- ./srv_bastion/wazuh/var/lib/filebeat:/var/lib/filebeat      
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI  
+    <<: *common_env_file
+    environment:
+      <<: *common_env 
+      SG_USERS: SG-SRV-BASTION-USERS
+      SG_ADMINS: SG-SRV-BASTION-ADMINS
+      GATEWAY_IP: ${SUBNET_ADMIN}.${IP_FW}       
+    networks:
+      admin_net:
+        ipv4_address: ${SUBNET_ADMIN}.${IP_BASTION}
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}   
 
   srv_bastion_ib:
     build: ./bastion
@@ -98,24 +137,417 @@ services:
     cap_add: [ "NET_ADMIN" ]
     volumes:
       - ./srv_bastion_ib/home/users:/home/users/
+      - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
       #- ./srv_bastion_ib/wazuh/var/ossec/etc:/var/ossec/etc
       #- ./srv_bastion_ib/wazuh/var/ossec/queue:/var/ossec/queue
       #- ./srv_bastion_ib/wazuh/etc/filebeat:/etc/filebeat
       #- ./srv_bastion_ib/wazuh/var/lib/filebeat:/var/lib/filebeat      
     shm_size: "1gb" # Важно для стабильности браузеров и GUI  
+    <<: *common_env_file
     environment:
-      LDAP_READONLY_USER_USERNAME: ${LDAP_READONLY_USER_USERNAME}
-      LDAP_READONLY_USER_PASSWORD: ${LDAP_READONLY_USER_PASSWORD}  
+      <<: *common_env 
       SG_USERS: SG-SRV-BASTION-IB-USERS
       SG_ADMINS: SG-SRV-BASTION-IB-ADMINS
-      GATEWAY_IP: ${SUBNET_INFOSEC}.254   
-      WAZUH_MANAGER_IP: ${SUBNET_INFOSEC}.${WAZUH_SRV_IP}
-      LDAP_SRV_IP: ${SUBNET_SERVERS}.${LDAP_SRV_IP}      
+      GATEWAY_IP: ${SUBNET_INFOSEC}.${IP_FW}       
     networks:
       infosec_net:
-        ipv4_address: ${SUBNET_INFOSEC}.${BASTION_IB_IP}
+        ipv4_address: ${SUBNET_INFOSEC}.${IP_BASTION_IB}
     dns:
-      - ${SUBNET_SERVERS}.${DNS_SRV_IP}   
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}   
+
+  srv_polarproxy:
+    build: ./forward_proxy
+    container_name: srv_polarproxy
+    hostname: srv_polarproxy
+    restart: always
+    cap_add: [ "NET_ADMIN" ]  
+    networks:
+      dmz_net:
+        ipv4_address: ${SUBNET_DMZ}.${IP_SRV_POLARPROXY}
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      ARKIME_HOST: ${SUBNET_DMZ}.${SRV_ARKIME_IP}
+      ARKIME_PORT: 57012
+      SG_USERS: SG-SRV-MGMT-USERS
+      SG_ADMINS: SG-SRV-MGMT-ADMINS
+      GATEWAY_IP: ${SUBNET_DMZ}.${IP_FW}
+    volumes:
+      - ./srv_polarproxy:/var/data
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf 
+
+  srv_arkime:
+    build: ./srv_arkime
+    container_name: srv_arkime
+    hostname: srv_arkime
+    cap_add: [ "NET_ADMIN" ]
+    depends_on: [ srv_opensearch ]     
+    restart: always
+    working_dir: /opt/arkime
+    networks:
+      infosec_net:
+        ipv4_address: ${SUBNET_INFOSEC}.${IP_SRV_ARKIME}            
+    volumes:
+      - arkime_pcap_storage:/opt/arkime/raw
+      #- ./arkime/pcap_storage:/opt/arkime/raw # не работает в WSL
+      - ./srv_arkime/etc:/opt/arkime/etc
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      ARKIME__elasticsearch: http://srv_opensearch:9200    
+      SG_USERS: SG-SRV-MGMT-USERS
+      SG_ADMINS: SG-SRV-MGMT-ADMINS
+      GATEWAY_IP: ${SUBNET_INFOSEC}.${IP_FW}
+    ports:
+      - "8006:8005" # Веб-интерфейс Arkime
+
+  srv_opensearch:
+    build: ./srv_opensearch
+    container_name: srv_opensearch
+    hostname: srv_opensearch
+    cap_add: [ "NET_ADMIN" ]        
+    restart: always
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      discovery.type: single-node
+      plugins.security.disabled: true
+      OPENSEARCH_JAVA_OPTS: -Xms512m -Xmx512m
+      OPENSEARCH_INITIAL_ADMIN_PASSWORD: ${OPENSEARCH_ADMIN_PASSWORD}
+      SG_USERS: SG-SRV-MGMT-USERS
+      SG_ADMINS: SG-SRV-MGMT-ADMINS
+      GATEWAY_IP: ${SUBNET_INFOSEC}.${IP_FW}
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    volumes:
+      - opensearch_data:/usr/share/opensearch/data
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+    networks:
+      infosec_net:
+        ipv4_address: ${SUBNET_INFOSEC}.${IP_SRV_OPENSEARCH}
+
+  srv_ldap:
+    build: ./srv_ldap
+    container_name: srv_ldap
+    hostname: srv_ldap
+    cap_add: [ "NET_ADMIN" ]    
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      LDAP_ORGANISATION: Layer8Agency
+      LDAP_DOMAIN: layer8.ag
+      LDAP_BASE_DN: dc=layer8,dc=ag
+      LDAP_PPOLICY_ENABLED: true
+      LDAP_CONFIG_PASSWORD: admin
+      LDAP_READONLY_USER: true
+      GATEWAY_IP: ${SUBNET_SERVERS}.${IP_FW}
+    volumes:
+      - ./srv_ldap/var/lib/ldap:/var/lib/ldap
+      - ./srv_ldap/etc/ldap:/etc/ldap/slapd.d
+      - ./wazuh/wazuh_agent.sh:/opt/wazuh_agent.sh
+      - ./srv_ldap/wazuh/var/ossec/etc:/var/ossec/etc
+      - ./srv_ldap/wazuh/var/ossec/queue:/var/ossec/queue
+      - ./srv_ldap/wazuh/etc/filebeat:/etc/filebeat
+      - ./srv_ldap/wazuh/var/lib/filebeat:/var/lib/filebeat            
+    networks:
+      servers_net:
+        ipv4_address: ${SUBNET_SERVERS}.${IP_LDAP_SRV}
+    restart: always
+    healthcheck:
+      test: ["CMD", "bash", "-c", "ldapsearch -x -H ldap://127.0.0.1 -D cn=admin,dc=layer8,dc=ag -w ${LDAP_ADMIN_PASSWORD} -b dc=layer8,dc=ag >/dev/null 2>&1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}
+
+  srv_espocrm:
+    build: ./srv_espocrm
+    container_name: srv_espocrm
+    hostname: srv_espocrm
+    cap_add: [ "NET_ADMIN" ]    
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      APACHE_LOG_DIR: /var/log/apache2
+      ESPOCRM_CONFIG_LOGGER_PATH: data/logs/espo.log
+      ESPOCRM_DATABASE_PLATFORM: Mysql
+      ESPOCRM_DATABASE_HOST: ${SUBNET_SERVERS}.${SRV_ESPOCRM_DB_IP}
+      ESPOCRM_DATABASE_USER: espocrm
+      ESPOCRM_DATABASE_PASSWORD=: spocrm
+      ESPOCRM_DATABASE_NAME: espocrm
+      ESPOCRM_ADMIN_USERNAME: admin
+      ESPOCRM_ADMIN_PASSWORD: password
+      ESPOCRM_SITE_URL: crm.layer8.ag:80
+      ESPOCRM_CONFIG_USE_WEB_SOCKET: false   
+      GATEWAY_IP: ${SUBNET_SERVERS}.${IP_FW}       
+    volumes:
+      - espocrm_web:/var/www/html
+      - ./espocrm/log/apache2:/var/log/apache2
+    networks:
+      servers_net:
+        ipv4_address: ${SUBNET_SERVERS}.${IP_SRV_ESPOCRM}
+    ports:
+      - 333:80
+    depends_on:
+      srv_espocrm_db:
+        condition: service_healthy
+    restart: always
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}
+
+  srv_espocrm_db:
+    image: mariadb:latest
+    container_name: srv_espocrm_db
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      MYSQL_DATABASE: espocrm
+      MYSQL_USER: espocrm
+      MYSQL_PASSWORD: espocrm
+      MYSQL_ROOT_PASSWORD: root_password   
+    volumes:
+      - espocrm_db:/var/lib/mysql
+    networks:
+      servers_net:
+        ipv4_address: ${SUBNET_SERVERS}.${IP_SRV_ESPOCRM_DB}
+        aliases:
+          - espocrm-db
+    ports:
+      - 3306:3306
+    restart: always
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 20s
+      start_period: 10s
+      timeout: 10s
+      retries: 3    
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}
+
+  srv_wazuh_manager:
+    build: ./srv_wazuh_manager
+    hostname: srv_wazuh_manager
+    container_name: srv_wazuh_manager
+    restart: always
+    cap_add: [ "NET_ADMIN" ]        
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 655360
+        hard: 655360
+    ports:
+      - "1514:1514"
+      - "1515:1515"
+      - "514:514/udp"
+      - "55000:55000"
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      INDEXER_URL: https://wazuh.indexer:9200
+      INDEXER_USERNAME: admin
+      INDEXER_PASSWORD: SecretPassword
+      FILEBEAT_SSL_VERIFICATION_MODE: full
+      SSL_CERTIFICATE_AUTHORITIES: /etc/ssl/root-ca.pem
+      SSL_CERTIFICATE: /etc/ssl/filebeat.pem
+      SSL_KEY: /etc/ssl/filebeat.key
+      API_USERNAME: wazuh-wui
+      API_PASSWORD: MyS3cr37P450r.*-
+      GATEWAY_IP: ${SUBNET_INFOSEC}.${IP_FW} 
+    volumes:
+      - ./srv_wazuh_manager/var/ossec/api/configuration:/var/ossec/api/configuration
+      - ./srv_wazuh_manager/var/ossec/etc:/var/ossec/etc
+      - ./srv_wazuh_manager/var/ossec/logs:/var/ossec/logs
+      - ./srv_wazuh_manager/ossec/queue:/var/ossec/queue
+      - ./srv_wazuh_manager/var/ossec/var/multigroups:/var/ossec/var/multigroups
+      - ./srv_wazuh_manager/var/ossec/integrations:/var/ossec/integrations
+      - ./srv_wazuh_manager/var/ossec/active-response/bin:/var/ossec/active-response/bin
+      - ./srv_wazuh_manager/var/ossec/agentless:/var/ossec/agentless
+      - ./srv_wazuh_manager/var/ossec/wodles:/var/ossec/wodles
+      - ./srv_wazuh_manager/etc/filebeat:/etc/filebeat
+      - ./srv_wazuh_manager/var/lib/filebeat:/var/lib/filebeat
+      - ./wazuh/config/wazuh_indexer_ssl_certs/root-ca-manager.pem:/etc/ssl/root-ca.pem
+      - ./wazuh/config/wazuh_indexer_ssl_certs/wazuh.manager.pem:/etc/ssl/filebeat.pem
+      - ./wazuh/config/wazuh_indexer_ssl_certs/wazuh.manager-key.pem:/etc/ssl/filebeat.key
+      - ./wazuh/config/wazuh_cluster/wazuh_manager.conf:/wazuh-config-mount/etc/ossec.conf
+    networks:
+      infosec_net:
+        ipv4_address: ${SUBNET_INFOSEC}.${IP_SRV_WAZUH_MANAGER}
+        aliases:
+          - wazuh.manager
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}             
+
+  srv_wazuh_indexer:
+    build: ./srv_wazuh_indexer
+    hostname: srv_wazuh_indexer
+    container_name: srv_wazuh_indexer
+    restart: always
+    cap_add: [ "NET_ADMIN" ]
+    ports:
+      - "9200:9200"
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      OPENSEARCH_JAVA_OPTS: -Xms1g -Xmx1g
+      GATEWAY_IP: ${SUBNET_INFOSEC}.${IP_FW}
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    volumes:
+      - wazuh_indexer:/var/lib/wazuh-indexer
+      - ./wazuh/config/wazuh_indexer_ssl_certs/root-ca.pem:/usr/share/wazuh-indexer/config/certs/root-ca.pem
+      - ./wazuh/config/wazuh_indexer_ssl_certs/wazuh.indexer-key.pem:/usr/share/wazuh-indexer/config/certs/wazuh.indexer.key
+      - ./wazuh/config/wazuh_indexer_ssl_certs/wazuh.indexer.pem:/usr/share/wazuh-indexer/config/certs/wazuh.indexer.pem
+      - ./wazuh/config/wazuh_indexer_ssl_certs/admin.pem:/usr/share/wazuh-indexer/config/certs/admin.pem
+      - ./wazuh/config/wazuh_indexer_ssl_certs/admin-key.pem:/usr/share/wazuh-indexer/config/certs/admin-key.pem
+      - ./wazuh/config/wazuh_indexer/wazuh.indexer.yml:/usr/share/wazuh-indexer/config/opensearch.yml
+      - ./wazuh/config/wazuh_indexer/internal_users.yml:/usr/share/wazuh-indexer/config/opensearch-security/internal_users.yml
+    networks:
+      infosec_net:
+        ipv4_address: ${SUBNET_INFOSEC}.${IP_SRV_WAZUH_INDEXER}
+        aliases:
+          - wazuh.indexer        
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}          
+
+  srv_wazuh_dashboard:
+    build: ./srv_wazuh_dashboard
+    hostname: srv_wazuh_dashboard
+    container_name: srv_wazuh_dashboard
+    restart: always
+    cap_add: [ "NET_ADMIN" ]      
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      INDEXER_USERNAME: admin
+      INDEXER_PASSWORD: SecretPassword
+      WAZUH_API_URL: https://${SUBNET_INFOSEC}.${IP_SRV_WAZUH_MANAGER}
+      DASHBOARD_USERNAME: kibanaserver
+      DASHBOARD_PASSWORD: kibanaserver
+      API_USERNAME: wazuh-wui
+      API_PASSWORD: MyS3cr37P450r.*-  
+      GATEWAY_IP: ${SUBNET_INFOSEC}.${IP_FW}
+    volumes:
+      - ./wazuh/config/wazuh_indexer_ssl_certs/wazuh.dashboard.pem:/usr/share/wazuh-dashboard/certs/wazuh-dashboard.pem
+      - ./wazuh/config/wazuh_indexer_ssl_certs/wazuh.dashboard-key.pem:/usr/share/wazuh-dashboard/certs/wazuh-dashboard-key.pem
+      - ./wazuh/config/wazuh_indexer_ssl_certs/root-ca.pem:/usr/share/wazuh-dashboard/certs/root-ca.pem
+      - ./wazuh/config/wazuh_dashboard/opensearch_dashboards.yml:/usr/share/wazuh-dashboard/config/opensearch_dashboards.yml
+      - ./wazuh/config/wazuh_dashboard/wazuh.yml:/usr/share/wazuh-dashboard/data/wazuh/config/wazuh.yml
+      - ./srv_wazuh_dashboard/config:/usr/share/wazuh-dashboard/data/wazuh/config
+      - ./srv_wazuh_dashboard/custom:/usr/share/wazuh-dashboard/plugins/wazuh/public/assets/custom
+    depends_on:
+      - srv_wazuh_indexer
+    networks:
+      infosec_net:
+        ipv4_address: ${SUBNET_INFOSEC}.${IP_SRV_WAZUH_DASHBOARD}
+        aliases:
+          - wazuh.manager
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}   
+
+  srv_wiki:
+    build: ./srv_wiki
+    container_name: srv_wiki
+    hostname: srv_wiki
+    cap_add: [ "NET_ADMIN" ]   
+    restart: no
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      LEAFWIKI_HOST: 0.0.0.0
+      LEAFWIKI_PORT: 80
+      LEAFWIKI_JWT_SECRET: ${LEAFWIKI_JWT_SECRET}
+      LEAFWIKI_ADMIN_PASSWORD: ${LEAFWIKI_ADMIN_PASSWORD}
+      GATEWAY_IP: ${SUBNET_SERVERS}.${IP_FW}
+      LEAFWIKI_ALLOW_INSECURE: true
+    volumes:
+      - ./srv_wiki/data:/app/data
+    networks:
+      servers_net:
+        ipv4_address: ${SUBNET_SERVERS}.${IP_SRV_WIKI}
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}
+
+  srv_web:
+    hostname: srv_web
+    depends_on: [ fw ]
+    build: ./srv_web
+    container_name: srv_web
+    cap_add: [ "NET_ADMIN" ]
+    restart: always
+    networks:
+      dmz_net:
+        ipv4_address: ${SUBNET_DMZ}.${IP_SRV_WEB}  
+    volumes:
+      - ./www:/usr/share/nginx/html:ro
+      - ./srv_web/zz-server.conf:/etc/nginx/http.d/zz-server.conf:rw
+      - ./srv_web/nginx.conf:/etc/nginx/nginx.conf:rw
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      GATEWAY_IP: ${SUBNET_DMZ}.${IP_FW} 
+      SG_ADMINS: SG-SRV-WEB-ADMINS      
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}     
+
+  ws000342:
+    # Student PC
+    build: ./pc_ldap
+    hostname: ws000342
+    container_name: ws000342
+    cap_add: [ "NET_ADMIN" ]       
+    volumes:
+      - ./ws000342/home/:/home/
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+      #- ./ws000342/wazuh/var/ossec/etc:/var/ossec/etc
+      #- ./ws000342/wazuh/var/ossec/queue:/var/ossec/queue
+      #- ./ws000342/wazuh/etc/filebeat:/etc/filebeat
+      #- ./ws000342/wazuh/var/lib/filebeat:/var/lib/filebeat       
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      GATEWAY_IP: ${SUBNET_USERS}.${IP_FW}                       
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}
+    networks:
+      users_net:
+        ipv4_address: ${SUBNET_USERS}.${IP_WS_STUDENT}        
+    ports:
+      - "33389:3389/tcp"
+      - "33389:3389/udp"
+
+  ws000189:
+    build: ./pc_ldap
+    hostname: ws000189
+    container_name: ws000189
+    cap_add: [ "NET_ADMIN" ]       
+    volumes:
+      - ./ws000189/home/:/home/
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      GATEWAY_IP: ${SUBNET_USERS}.${IP_FW}                       
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}
+    networks:
+      - users_net 
 
   nat_cleaner:
     # САНИТАР NAT: Удаляет правила Masquerade, которые ломают Source IP в Docker Desktop (WSL)
@@ -128,11 +560,12 @@ services:
     command: |
       sh -c '
       echo "Starting NAT Cleaner..."
-      BRIDGES="br-users br-admin br-dmz br-uplink br-servers br-infosec"
+      BRIDGES="go-users go-admin go-dmz go-uplink go-servers go-infosec go-dev"
       for br in $$BRIDGES; do
         echo "Removing bad NAT rule for $$br"
         iptables -t nat -D POSTROUTING -o $$br -m addrtype --src-type LOCAL -j MASQUERADE
       done
+      iptables -t nat -D POSTROUTING -s $SUBNET_BRANCH_UPLINK.0/24 ! -o go-uplink -j MASQUERADE
       '
 
 networks:  
@@ -145,7 +578,7 @@ networks:
           gateway: ${SUBNET_UPLINK}.1
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
-      com.docker.network.bridge.name: br-uplink
+      com.docker.network.bridge.name: go-uplink
 #      com.docker.network.bridge.enable_ip_masquerade: "false"      
   
   dev_net:
@@ -157,7 +590,7 @@ networks:
           gateway: ${SUBNET_DEV}.1
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
-      com.docker.network.bridge.name: br-dev
+      com.docker.network.bridge.name: go-dev
       com.docker.network.bridge.enable_ip_masquerade: "false"            
   
   users_net:
@@ -169,7 +602,7 @@ networks:
           gateway: ${SUBNET_USERS}.1
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
-      com.docker.network.bridge.name: br-users
+      com.docker.network.bridge.name: go-users
       com.docker.network.bridge.enable_ip_masquerade: "false"            
   
   dmz_net:
@@ -181,7 +614,7 @@ networks:
           gateway: ${SUBNET_DMZ}.1        
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
-      com.docker.network.bridge.name: br-dmz
+      com.docker.network.bridge.name: go-dmz
       com.docker.network.bridge.enable_ip_masquerade: "false"
 
   servers_net:
@@ -193,7 +626,7 @@ networks:
           gateway: ${SUBNET_SERVERS}.1        
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
-      com.docker.network.bridge.name: br-servers
+      com.docker.network.bridge.name: go-servers
       com.docker.network.bridge.enable_ip_masquerade: "false"
 
   admin_net:
@@ -205,7 +638,7 @@ networks:
           gateway: ${SUBNET_ADMIN}.1        
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
-      com.docker.network.bridge.name: br-admin
+      com.docker.network.bridge.name: go-admin
       com.docker.network.bridge.enable_ip_masquerade: "false"            
 
   infosec_net:
@@ -217,5 +650,13 @@ networks:
           gateway: ${SUBNET_INFOSEC}.1        
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
-      com.docker.network.bridge.name: br-infosec
+      com.docker.network.bridge.name: go-infosec
       com.docker.network.bridge.enable_ip_masquerade: "false"            
+
+volumes:
+  arkime_pcap_storage:
+  opensearch_data:
+  wazuh_indexer:
+  espocrm_db:
+  espocrm_web:
+

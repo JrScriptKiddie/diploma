@@ -1,10 +1,15 @@
 .:53 {
   log
   errors
+  # Rewrite short names like "srv_dns" -> "srv_dns.xxx.ag"
+  rewrite stop {
+    name regex ^([^.]+)\.?$ {1}.xxx.ag.
+    answer auto
+  }
   # Serve local zone
-  file /etc/coredns/xxx.ag.db xxx.ag
+  file /etc/coredns/xxx.ag.db xxx.ag 
   # Cache responses briefly
   cache 30
   # Forward all other queries to public resolvers
-  forward . 1.1.1.1 8.8.8.8
+  forward . /etc/resolv.conf
 }

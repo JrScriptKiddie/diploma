@@ -1,63 +1,68 @@
 
-services:
+x-env-file: &common_env_file
+  env_file:
+    - ./.env
 
+x-env: &common_env
+  IP_SRV_WAZUH_MANAGER: ${SUBNET_INFOSEC}.${IP_SRV_WAZUH_MANAGER} 
+  IP_LDAP_SRV: ${SUBNET_SERVERS}.${IP_LDAP_SRV} 
+
+services:
   branch_isp:
-      build: ./isp_uplink
-      container_name: branch_isp
-      cap_add: [ "NET_ADMIN" ]
-      restart: always
-      # Подключаем ТОЛЬКО к uplink. У докера нет выбора, кроме как слать сюда.
-      networks:
-        uplink_net:
-          ipv4_address: ${SUBNET_BRANCH_UPLINK}.254
-      volumes:
-        - ./branch/branch_isp/iptables.rules:/etc/iptables/rules.v4:ro      
-      environment:
-        GATEWAY_IP: ${SUBNET_BRANCH_UPLINK}.1
-      # Все внешние порты теперь здесь
-      ports:
-        - "51820:51820/udp"
-        - "8888:8888/tcp"
-        - "33389:33389/tcp"
-        - "33389:33389/udp"
+    build: ./isp_uplink
+    container_name: branch_isp
+    cap_add: [ "NET_ADMIN" ]
+    restart: always
+    networks:
+      branch_uplink_net:
+        ipv4_address: ${SUBNET_BRANCH_UPLINK}.254
+    volumes:
+      - ./branch/branch_isp/iptables.rules:/etc/iptables/rules.v4:ro      
+    environment:
+      GATEWAY_IP: ${SUBNET_BRANCH_UPLINK}.1
+    ports:
+      - "43389:33389/tcp"
+      - "43389:33389/udp"
+      - "8889:8888/tcp"
 
   branch_fw:
     hostname: branch_fw
     build: ./fw
     container_name: branch_fw
-    #privileged: true
     cap_add: [ "NET_ADMIN" ]
     restart: always
     sysctls:
       net.ipv4.ip_forward: 1    
       net.ipv4.conf.all.src_valid_mark: 1              
     networks:
-      uplink_net:
+      branch_uplink_net:
         ipv4_address: ${SUBNET_BRANCH_UPLINK}.100
-        gw_priority: 100
-      users_net:
-        ipv4_address: ${SUBNET_BRANCH_USERS}.254
-        gw_priority: 10
-      dmz_net:
-        ipv4_address: ${SUBNET_BRANCH_DMZ}.254
-        gw_priority: 10
-      servers_net:
-        ipv4_address: ${SUBNET_BRANCH_SERVERS}.254
-        gw_priority: 10
-      admin_net:
-        ipv4_address: ${SUBNET_BRANCH_ADMIN}.254
-        gw_priority: 10
+        #gw_priority: 100
+      branch_users_net:
+        ipv4_address: ${SUBNET_BRANCH_USERS}.${IP_BRANCH_FW}
+        #gw_priority: 10
+      branch_dmz_net:
+        ipv4_address: ${SUBNET_BRANCH_DMZ}.${IP_BRANCH_FW}
+        #gw_priority: 10
+      branch_servers_net:
+        ipv4_address: ${SUBNET_BRANCH_SERVERS}.${IP_BRANCH_FW}
+        #gw_priority: 10
+      branch_admin_net:
+        ipv4_address: ${SUBNET_BRANCH_ADMIN}.${IP_BRANCH_FW}
+        #gw_priority: 10
     volumes:
       - ./branch/branch_fw/nftables.conf:/etc/nftables.conf:rw
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf:ro
+    <<: *common_env_file
     environment:
-      GATEWAY_IP: ${SUBNET_BRANCH_UPLINK}.${IP_BRANCH_ISP}    
-      SVC_IB_ADMIN_PASSWORD: ${SVC_IB_ADMIN_PASSWORD}
+      <<: *common_env 
       SUBNET_UPLINK: ${SUBNET_BRANCH_UPLINK}
       SUBNET_ADMIN: ${SUBNET_BRANCH_ADMIN}
       SUBNET_DMZ: ${SUBNET_BRANCH_DMZ}
       SUBNET_SERVERS: ${SUBNET_BRANCH_SERVERS}
       SUBNET_USERS: ${SUBNET_BRANCH_USERS}
-      VPN_SRV_IP: ${VPN_SRV_IP}
+      GATEWAY_IP: ${SUBNET_BRANCH_UPLINK}.${IP_BRANCH_ISP}        
+      VPN_SRV_IP: ${IP_BRANCH_VPN}
     dns:
       - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}           
 
@@ -68,41 +73,40 @@ services:
     cap_add: [ "NET_ADMIN" ]
     restart: always
     networks:
-      servers_net:
+      branch_servers_net:
         ipv4_address: ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}
     volumes:
       - ./srv_dns/Corefile:/etc/coredns/Corefile:ro
       - ./srv_dns/xxx.db:/etc/coredns/xxx.ag.db:ro
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
     dns: ["1.1.1.1", "8.8.8.8"]
+    <<: *common_env_file
     environment:
-      GATEWAY_IP: ${SUBNET_BRANCH_SERVERS}.254
-      DNS_SRV_IP: ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}
+      <<: *common_env
+      GATEWAY_IP: ${SUBNET_BRANCH_SERVERS}.${IP_BRANCH_FW}
+      IP_DNS_SRV: ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}
 
   srv_branch_wg_gate:
     build: ./srv_wg_portal
     container_name: srv_branch_wg_gate
     hostname: srv_branch_wg_gate
     restart: always
-    cap_add:
-      - NET_ADMIN
+    cap_add: [ "NET_ADMIN" ]
     volumes:
       - ./branch/srv_branch_wg_gate/data:/app/data
       - ./branch/srv_branch_wg_gate/config:/app/config
-      - ./branch/srv_branch_wg_gate/etc/wireguard:/etc/wireguard   # Конфиги интерфейсов    
+      - ./branch/srv_branch_wg_gate/etc/wireguard:/etc/wireguard    
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
     sysctls:
       - net.ipv4.ip_forward=1
       - net.ipv4.conf.all.src_valid_mark=1
-    environment:  
+    <<: *common_env_file
+    environment:
+      <<: *common_env
       WB_ENABLE_NAT: true
-      GATEWAY_IP: ${SUBNET_BRANCH_DMZ}.254
-      LDAP_READONLY_USER_USERNAME: ${LDAP_READONLY_USER_USERNAME}
-      LDAP_READONLY_USER_PASSWORD: ${LDAP_READONLY_USER_PASSWORD}  
-      WG_PORTAL_ADMIN_USERNAME: ${WG_PORTAL_ADMIN_USERNAME}
-      WG_PORTAL_ADMIN_PASSWORD: ${WG_PORTAL_ADMIN_PASSWORD}
-      WAZUH_MANAGER_IP: ${SUBNET_INFOSEC}.${WAZUH_SRV_IP}
-      LDAP_SRV_IP: ${SUBNET_SERVERS}.${LDAP_SRV_IP}
+      GATEWAY_IP: ${SUBNET_BRANCH_DMZ}.${IP_BRANCH_FW}
     networks:
-      dmz_net:
+      branch_dmz_net:
         ipv4_address: ${SUBNET_BRANCH_DMZ}.${IP_SRV_BRANCH_WG_GATE}
     dns:
       - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}        
@@ -115,21 +119,20 @@ services:
     volumes:
       - ./branch/srv_branch_bastion/home/users:/home/users/ # Персистентность данных пользователей
       - ./branch/srv_branch_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf
       #- ./srv_bastion_mgmt/wazuh/var/ossec/etc:/var/ossec/etc
       #- ./srv_bastion_mgmt/wazuh/var/ossec/queue:/var/ossec/queue
       #- ./srv_bastion_mgmt/wazuh/etc/filebeat:/etc/filebeat
       #- ./srv_bastion_mgmt/wazuh/var/lib/filebeat:/var/lib/filebeat     
     shm_size: "1gb" # Важно для стабильности браузеров и GUI  
+    <<: *common_env_file
     environment:
-      LDAP_READONLY_USER_USERNAME: ${LDAP_READONLY_USER_USERNAME}
-      LDAP_READONLY_USER_PASSWORD: ${LDAP_READONLY_USER_PASSWORD}  
+      <<: *common_env 
       SG_USERS: SG-SRV-MGMT-USERS
       SG_ADMINS: SG-SRV-MGMT-ADMINS
-      GATEWAY_IP: ${SUBNET_BRANCH_ADMIN}.254
-      LDAP_SRV_IP: ${SUBNET_SERVERS}.${LDAP_SRV_IP}
-      LOCALADMIN_PASSWORD: ${LOCALADMIN_PASSWORD}
+      GATEWAY_IP: ${SUBNET_BRANCH_ADMIN}.${IP_BRANCH_FW}
     networks:
-      admin_net:
+      branch_admin_net:
         ipv4_address: ${SUBNET_BRANCH_ADMIN}.${IP_SRV_BRANCH_BASTION}
     dns:
       - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}         
@@ -141,80 +144,19 @@ services:
     restart: always
     cap_add: [ "NET_ADMIN" ]  
     networks:
-      dmz_net:
-        ipv4_address: ${SUBNET_BRANCH_DMZ}.51
+      branch_dmz_net:
+        ipv4_address: ${SUBNET_BRANCH_DMZ}.${IP_SRV_BRANCH_POLARPROXY}
+    <<: *common_env_file
     environment:
-      SRV_ARKIME_IP: ${SUBNET_BRANCH_DMZ}.53 
+      <<: *common_env
       ARKIME_HOST: ${SUBNET_BRANCH_DMZ}.${SRV_ARKIME_IP}
       ARKIME_PORT: 57012
-      LDAP_READONLY_USER_USERNAME: ${LDAP_READONLY_USER_USERNAME}
-      LDAP_READONLY_USER_PASSWORD: ${LDAP_READONLY_USER_PASSWORD}  
       SG_USERS: SG-SRV-MGMT-USERS
       SG_ADMINS: SG-SRV-MGMT-ADMINS
-      GATEWAY_IP: ${SUBNET_BRANCH_DMZ}.254
-      LDAP_SRV_IP: ${SUBNET_SERVERS}.${LDAP_SRV_IP}
-      LOCALADMIN_PASSWORD: ${LOCALADMIN_PASSWORD}        
+      GATEWAY_IP: ${SUBNET_BRANCH_DMZ}.${IP_BRANCH_FW}
     volumes:
       - ./branch/srv_branch_polarproxy:/var/data
-
-  srv_arkime:
-    build: ./srv_arkime
-    container_name: srv_arkime
-    hostname: srv_arkime
-    cap_add: [ "NET_ADMIN" ]
-    depends_on: [ srv_opensearch ]     
-    restart: always
-    working_dir: /opt/arkime
-    networks:
-      dmz_net:
-        ipv4_address: ${SUBNET_BRANCH_DMZ}.${SRV_ARKIME_IP}            
-    volumes:
-      - arkime_pcap_storage:/opt/arkime/raw
-      #- ./arkime/pcap_storage:/opt/arkime/raw # не работает в WSL
-      - ./srv_arkime/etc:/opt/arkime/etc
-    environment:
-      ARKIME__elasticsearch: http://srv_opensearch:9200    
-      ARKIME_ADMIN_PASSWORD: ${ARKIME_ADMIN_PASSWORD}
-      LDAP_READONLY_USER_USERNAME: ${LDAP_READONLY_USER_USERNAME}
-      LDAP_READONLY_USER_PASSWORD: ${LDAP_READONLY_USER_PASSWORD}  
-      SG_USERS: SG-SRV-MGMT-USERS
-      SG_ADMINS: SG-SRV-MGMT-ADMINS
-      GATEWAY_IP: ${SUBNET_BRANCH_DMZ}.254
-      LDAP_SRV_IP: ${SUBNET_SERVERS}.${LDAP_SRV_IP}
-      LOCALADMIN_PASSWORD: ${LOCALADMIN_PASSWORD}      
-    ports:
-      - "8006:8005" # Веб-интерфейс Arkime
-
-  srv_opensearch:
-    build: ./srv_opensearch
-    container_name: srv_opensearch
-    hostname: srv_opensearch
-    cap_add: [ "NET_ADMIN" ]        
-    restart: always
-    environment:
-      discovery.type: single-node
-      plugins.security.disabled: true # Отключаем HTTPS для базы
-      OPENSEARCH_JAVA_OPTS: -Xms512m -Xmx512m
-      OPENSEARCH_INITIAL_ADMIN_PASSWORD: ${OPENSEARCH_ADMIN_PASSWORD}
-      LDAP_READONLY_USER_USERNAME: ${LDAP_READONLY_USER_USERNAME}
-      LDAP_READONLY_USER_PASSWORD: ${LDAP_READONLY_USER_PASSWORD}  
-      SG_USERS: SG-SRV-MGMT-USERS
-      SG_ADMINS: SG-SRV-MGMT-ADMINS
-      GATEWAY_IP: ${SUBNET_BRANCH_DMZ}.254
-      LDAP_SRV_IP: ${SUBNET_SERVERS}.${LDAP_SRV_IP}
-      LOCALADMIN_PASSWORD: ${LOCALADMIN_PASSWORD}           
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
-      nofile:
-        soft: 65536
-        hard: 65536
-    volumes:
-      - opensearch_data:/usr/share/opensearch/data
-    networks:
-      dmz_net:
-        ipv4_address: ${SUBNET_BRANCH_DMZ}.55
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
 
   nat_cleaner:
     # САНИТАР NAT: Удаляет правила Masquerade, которые ломают Source IP в Docker Desktop (WSL)
@@ -227,17 +169,35 @@ services:
     command: |
       sh -c '
       echo "Starting NAT Cleaner..."
-      BRIDGES="br-uplink br-users br-dmz br-servers br-admin"
+      BRIDGES="brnch-uplink brnch-users brnch-dmz brnch-servers brnch-admin"
       for br in $$BRIDGES; do
         echo "Removing bad NAT rule for $$br"
         iptables -t nat -D POSTROUTING -o $$br -m addrtype --src-type LOCAL -j MASQUERADE        
       done
-      iptables -t nat -D POSTROUTING -s $SUBNET_BRANCH_UPLINK.0/24 ! -o br-uplink -j MASQUERADE
+      iptables -t nat -D POSTROUTING -s $SUBNET_BRANCH_UPLINK.0/24 ! -o brnch-uplink -j MASQUERADE
       '
+ 
+  wsbr000845:
+    build: ./pc_ldap
+    hostname: wsbr000845
+    container_name: wsbr000845
+    cap_add: [ "NET_ADMIN" ]           
+    volumes:
+      - ./branch/wsbr000845/home/:/home/
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      GATEWAY_IP: ${SUBNET_BRANCH_USERS}.${IP_BRANCH_FW}                       
+    dns:
+      - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}
+    networks:
+      - branch_users_net 
 
 networks:
-  uplink_net:
-    name: uplink_net
+  branch_uplink_net:
+    name: branch_uplink_net
     driver: bridge
     ipam:
       config:
@@ -245,49 +205,45 @@ networks:
           gateway: ${SUBNET_BRANCH_UPLINK}.1
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
-      com.docker.network.bridge.name: br-uplink
+      com.docker.network.bridge.name: brnch-uplink
       #com.docker.network.bridge.enable_ip_masquerade: "false"        
-  users_net:
-    name: users_net
+  branch_users_net:
+    name: branch_users_net
     driver: bridge
     ipam:
       config:
         - subnet: ${SUBNET_BRANCH_USERS}.0/24
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
-      com.docker.network.bridge.name: br-users
+      com.docker.network.bridge.name: brnch-users
       com.docker.network.bridge.enable_ip_masquerade: "false"            
-  dmz_net:
-    name: dmz_net
+  branch_dmz_net:
+    name: branch_dmz_net
     driver: bridge
     ipam:
       config:
         - subnet: ${SUBNET_BRANCH_DMZ}.0/24
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
-      com.docker.network.bridge.name: br-dmz
+      com.docker.network.bridge.name: brnch-dmz
       com.docker.network.bridge.enable_ip_masquerade: "false"            
-  servers_net:
-    name: servers_net
+  branch_servers_net:
+    name: branch_servers_net
     driver: bridge
     ipam:
       config:
         - subnet: ${SUBNET_BRANCH_SERVERS}.0/24     
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
-      com.docker.network.bridge.name: br-servers
+      com.docker.network.bridge.name: brnch-servers
       com.docker.network.bridge.enable_ip_masquerade: "false"            
-  admin_net:
-    name: admin_net
+  branch_admin_net:
+    name: branch_admin_net
     driver: bridge
     ipam:
       config:
         - subnet: ${SUBNET_BRANCH_ADMIN}.0/24
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
-      com.docker.network.bridge.name: br-admin
+      com.docker.network.bridge.name: brnch-admin
       com.docker.network.bridge.enable_ip_masquerade: "false"                     
-
-volumes:
-  arkime_pcap_storage:
-  opensearch_data:

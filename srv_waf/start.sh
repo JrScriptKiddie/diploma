@@ -10,7 +10,7 @@ echo "Injecting LDAP password into config..."
 # Мы используем разделитель | вместо /, чтобы пароль мог содержать слеши.
 sed -i "s|LDAP_READONLY_USER_USERNAME|$LDAP_READONLY_USER_USERNAME|g" /etc/nslcd.conf
 sed -i "s|LDAP_READONLY_USER_PASSWORD|$LDAP_READONLY_USER_PASSWORD|g" /etc/nslcd.conf
-sed -i "s|LDAP_SRV_IP|$LDAP_SRV_IP|g" /etc/nslcd.conf
+sed -i "s|IP_LDAP_SRV|$IP_LDAP_SRV|g" /etc/nslcd.conf
 
 # Schedule a one-time run of global rate limit insertion (2 minutes after boot)
 CRON_FILE=/etc/cron.d/global-rate-limit

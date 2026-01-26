@@ -1,0 +1,1158 @@
+2025/12/08 18:14:34 wazuh-analysisd: ERROR: Could not chmod cdb list 'etc/lists/audit-keys.cdb' to 660 due to: [2 - No such file or directory]
+2025/12/08 18:14:34 wazuh-analysisd: ERROR: Could not chmod cdb list 'etc/lists/amazon/aws-eventnames.cdb' to 660 due to: [2 - No such file or directory]
+2025/12/08 18:14:34 wazuh-analysisd: ERROR: Could not chmod cdb list 'etc/lists/security-eventchannel.cdb' to 660 due to: [2 - No such file or directory]
+2025/12/08 18:14:34 wazuh-analysisd: ERROR: Could not chmod cdb list 'etc/lists/malicious-ioc/malicious-ip.cdb' to 660 due to: [2 - No such file or directory]
+2025/12/08 18:14:34 wazuh-analysisd: ERROR: Could not chmod cdb list 'etc/lists/malicious-ioc/malicious-domains.cdb' to 660 due to: [2 - No such file or directory]
+2025/12/08 18:14:34 wazuh-analysisd: ERROR: Could not chmod cdb list 'etc/lists/malicious-ioc/malware-hashes.cdb' to 660 due to: [2 - No such file or directory]
+2025/12/08 18:14:36 wazuh-modulesd:router: INFO: Loaded router module.
+2025/12/08 18:14:36 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2025/12/08 18:14:36 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2025/12/08 18:14:39 wazuh-csyslogd: INFO: Remote syslog server not configured. Clean exit.
+2025/12/08 18:14:39 wazuh-dbd: INFO: Database not configured. Clean exit.
+2025/12/08 18:14:39 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.
+2025/12/08 18:14:39 wazuh-agentlessd: INFO: Not configured. Exiting.
+2025/12/08 18:14:39 wazuh-authd: INFO: Started (pid: 614).
+2025/12/08 18:14:39 wazuh-authd: INFO: Accepting connections on port 1515. No password required.
+2025/12/08 18:14:39 wazuh-authd: INFO: Setting network timeout to 1.000000 sec.
+2025/12/08 18:14:40 wazuh-db: INFO: Started (pid: 630).
+2025/12/08 18:14:40 :router: INFO: Registering GET endpoint: /v1/agents/ids
+2025/12/08 18:14:40 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups/:name
+2025/12/08 18:14:40 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups
+2025/12/08 18:14:40 :router: INFO: Registering GET endpoint: /v1/agents/:agent_id/groups
+2025/12/08 18:14:40 :router: INFO: Registering POST endpoint: /v1/agents/summary
+2025/12/08 18:14:40 :router: INFO: Registering GET endpoint: /v1/agents/sync
+2025/12/08 18:14:40 :router: INFO: Registering POST endpoint: /v1/agents/sync
+2025/12/08 18:14:40 :router: INFO: Registering POST endpoint: /v1/agents/restartinfo
+2025/12/08 18:14:40 :router: INFO: API started successfully
+2025/12/08 18:14:40 wazuh-db: INFO: Created Global database backup "backup/db/global.db-backup-2025-12-08-18:14:40.gz"
+2025/12/08 18:14:41 wazuh-execd: INFO: Started (pid: 669).
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: Started (pid: 698).
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6003): Monitoring path: '/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6003): Monitoring path: '/boot', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6003): Monitoring path: '/etc', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6003): Monitoring path: '/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mtab'
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/hosts.deny'
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mail/statistics'
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random-seed'
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random.seed'
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/adjtime'
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/httpd/logs'
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/utmpx'
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/wtmpx'
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/cups/certs'
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/dumpdates'
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/svc/volatile'
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6207): Ignore 'file' sregex '.log$|.swp$'
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6004): No diff for file: '/etc/ssl/private.key'
+2025/12/08 18:14:40 rootcheck: INFO: Starting rootcheck scan.
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6000): Starting daemon...
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6010): File integrity monitoring scan frequency: 43200 seconds
+2025/12/08 18:14:40 wazuh-syscheckd: INFO: (6008): File integrity monitoring scan started.
+2025/12/08 18:14:40 wazuh-analysisd: INFO: Total rules enabled: '8451'
+2025/12/08 18:14:40 wazuh-analysisd: INFO: Started (pid: 681).
+2025/12/08 18:14:41 wazuh-syscheckd: INFO: (6009): File integrity monitoring scan ended.
+2025/12/08 18:14:41 wazuh-syscheckd: INFO: FIM sync module started.
+2025/12/08 18:14:41 wazuh-analysisd: INFO: (7200): Logtest started
+2025/12/08 18:14:41 wazuh-analysisd: INFO: EPS limit disabled
+2025/12/08 18:14:41 wazuh-remoted: INFO: Started (pid: 841). Listening on port 1514/TCP (secure).
+2025/12/08 18:14:42 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2025/12/08 18:14:42 wazuh-remoted: WARNING: (1408): Invalid ID 004 for the source ip: '192.168.1.7' (name 'unknown').
+2025/12/08 18:14:42 wazuh-logcollector: INFO: Monitoring output of command(360): df -P
+2025/12/08 18:14:42 wazuh-logcollector: INFO: Monitoring full output of command(360): netstat -tulpn | sed 's/\([[:alnum:]]\+\)\ \+[[:digit:]]\+\ \+[[:digit:]]\+\ \+\(.*\):\([[:digit:]]*\)\ \+\([0-9\.\:\*]\+\).\+\ \([[:digit:]]*\/[[:alnum:]\-]*\).*/\1 \2 == \3 == \4 \5/' | sort -k 4 -g | sed 's/ == \(.*\) ==/:\1/' | sed 1,2d
+2025/12/08 18:14:42 wazuh-logcollector: INFO: Monitoring full output of command(360): last -n 20
+2025/12/08 18:14:42 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/ossec/logs/active-responses.log'.
+2025/12/08 18:14:42 wazuh-logcollector: INFO: Started (pid: 928).
+2025/12/08 18:14:42 wazuh-monitord: INFO: Started (pid: 946).
+2025/12/08 18:14:42 wazuh-modulesd:router: INFO: Loaded router module.
+2025/12/08 18:14:42 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2025/12/08 18:14:42 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2025/12/08 18:14:42 wazuh-modulesd: INFO: Started (pid: 959).
+2025/12/08 18:14:42 wazuh-modulesd:agent-upgrade: INFO: (8153): Module Agent Upgrade started.
+2025/12/08 18:14:42 wazuh-modulesd:ciscat: INFO: Module disabled. Exiting...
+2025/12/08 18:14:42 wazuh-modulesd:osquery: INFO: Module disabled. Exiting...
+2025/12/08 18:14:42 wazuh-modulesd:task-manager: INFO: (8200): Module Task Manager started.
+2025/12/08 18:14:42 sca: INFO: Module started.
+2025/12/08 18:14:42 wazuh-modulesd:vulnerability-scanner: INFO: Starting vulnerability_scanner module.
+2025/12/08 18:14:42 sca: INFO: Loaded policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2025/12/08 18:14:42 wazuh-modulesd:router: INFO: Starting router module.
+2025/12/08 18:14:42 sca: INFO: Starting Security Configuration Assessment scan.
+2025/12/08 18:14:42 wazuh-modulesd:content_manager: INFO: Starting content_manager module.
+2025/12/08 18:14:43 wazuh-modulesd:database: INFO: Module started.
+2025/12/08 18:14:43 wazuh-modulesd:download: INFO: Module started.
+2025/12/08 18:14:43 wazuh-modulesd:inventory-harvester: INFO: Starting inventory_harvester module.
+2025/12/08 18:14:43 wazuh-modulesd:control: INFO: Starting control thread.
+2025/12/08 18:14:43 sca: INFO: Starting evaluation of policy: '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2025/12/08 18:14:43 logger-helper: ERROR: InventoryHarvesterFacade::start: Failed to open RocksDB database, not repairable. Reason: Found options incompatible with filesystem: IO error: No such file or directory: While open a file for random read: queue/harvester/system_event/CURRENT: No such file or directory.
+2025/12/08 18:14:43 wazuh-modulesd:syscollector: INFO: Module started.
+2025/12/08 18:14:43 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2025/12/08 18:14:43 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2025/12/08 18:14:43 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-vulnerabilities-srv_wazuh_manager.
+2025/12/08 18:14:43 wazuh-modulesd:vulnerability-scanner: INFO: Starting database file decompression.
+2025/12/08 18:14:49 sca: INFO: Evaluation finished for policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2025/12/08 18:14:49 sca: INFO: Security Configuration Assessment scan finished. Duration: 7 seconds.
+2025/12/08 18:14:59 wazuh-syscheckd: INFO: netstat not available. Skipping port check.
+2025/12/08 18:15:02 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 18:15:02 wazuh-authd: INFO: Agent key generated for 'srv_bastion_ib' (requested by any)
+2025/12/08 18:15:04 rootcheck: INFO: Ending rootcheck scan.
+2025/12/08 18:15:10 wazuh-remoted: INFO: (1409): Authentication file changed. Updating.
+2025/12/08 18:15:10 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2025/12/08 18:18:18 wazuh-modulesd:vulnerability-scanner: INFO: Database decompression finished.
+2025/12/08 18:18:20 wazuh-modulesd:vulnerability-scanner: INFO: Vulnerability scanner module started.
+2025/12/08 18:22:37 wazuh-modulesd:vulnerability-scanner: INFO: Initiating update feed process.
+2025/12/08 18:30:01 wazuh-modulesd:router: INFO: Loaded router module.
+2025/12/08 18:30:01 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2025/12/08 18:30:01 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2025/12/08 18:30:19 wazuh-modulesd:router: INFO: Loaded router module.
+2025/12/08 18:30:19 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2025/12/08 18:30:19 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2025/12/08 18:35:38 verify-agent-conf: ERROR: (1235): Invalid value for element 'log_format': auth.
+2025/12/08 18:35:38 verify-agent-conf: ERROR: (1202): Configuration error at '/var/ossec/tmp/api_tmp_file_9j94zas2.xml'.
+2025/12/08 18:35:38 verify-agent-conf: ERROR: (1207): Localfile remote configuration in '/var/ossec/tmp/api_tmp_file_9j94zas2.xml' is corrupted.
+2025/12/08 18:35:53 verify-agent-conf: ERROR: (1235): Invalid value for element 'log_format': auth.
+2025/12/08 18:35:53 verify-agent-conf: ERROR: (1202): Configuration error at '/var/ossec/tmp/api_tmp_file_nnhr63ie.xml'.
+2025/12/08 18:35:53 verify-agent-conf: ERROR: (1207): Localfile remote configuration in '/var/ossec/tmp/api_tmp_file_nnhr63ie.xml' is corrupted.
+2025/12/08 18:36:10 wazuh-modulesd:router: INFO: Loaded router module.
+2025/12/08 18:36:10 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2025/12/08 18:36:10 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2025/12/08 18:44:13 wazuh-modulesd:vulnerability-scanner: INFO: Triggered a re-scan after content update.
+2025/12/08 18:44:13 wazuh-modulesd:vulnerability-scanner: INFO: Feed update process completed.
+2025/12/08 18:44:14 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:44:14 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:44:20 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:44:20 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:44:26 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:44:26 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:44:32 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:44:32 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:44:38 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:44:38 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:44:44 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:44:44 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:44:50 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:44:50 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:44:56 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:44:56 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:45:02 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:45:02 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:45:08 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:45:08 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:45:14 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:45:14 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:45:20 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:45:20 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:45:26 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:45:26 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:45:32 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:45:32 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:45:36 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:45:36 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:45:42 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:45:42 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:45:48 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:45:48 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:45:54 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:45:54 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:46:00 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:46:00 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:46:04 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:46:04 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:46:10 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:46:10 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:46:16 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:46:16 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:46:22 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:46:22 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:46:28 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:46:28 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:46:32 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:46:32 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:46:38 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:46:38 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:46:44 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:46:44 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:46:50 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:46:50 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:46:56 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:46:56 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:47:00 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:47:00 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:47:06 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:47:06 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:47:12 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:47:12 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:47:18 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:47:18 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:47:24 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:47:24 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:47:28 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:47:28 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:47:34 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:47:34 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:47:40 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:47:40 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:47:46 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:47:46 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:47:52 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:47:52 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:47:57 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:47:57 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:48:03 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:48:03 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:48:09 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:48:09 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:48:15 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:48:15 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:48:21 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:48:21 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:48:25 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:48:25 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:48:31 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:48:31 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:48:37 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:48:37 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:48:43 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:48:43 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:48:49 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:48:49 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:48:53 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:48:53 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:48:59 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:48:59 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:49:05 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:49:05 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:49:11 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:49:11 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:49:17 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:49:17 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:49:21 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:49:21 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:49:27 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:49:27 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:49:33 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:49:33 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:49:39 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:49:39 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:49:45 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:49:45 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:49:49 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:49:49 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:49:55 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:49:55 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:50:01 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:50:01 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:50:07 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:50:07 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:50:13 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:50:13 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:50:17 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:50:17 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:50:23 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:50:23 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:50:29 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:50:29 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:50:35 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:50:35 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:50:41 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:50:41 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:50:45 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:50:45 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:50:51 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:50:51 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:50:57 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:50:57 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:51:03 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:51:03 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:51:09 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:51:09 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:51:13 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:51:13 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:51:19 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:51:19 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:51:25 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:51:25 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:51:31 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:51:31 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:51:37 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:51:37 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:51:41 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:51:41 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:51:47 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:51:47 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:51:53 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:51:53 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:51:59 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:51:59 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:52:05 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:52:05 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:52:09 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:52:09 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:52:15 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:52:15 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:52:21 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:52:21 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:52:27 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:52:27 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:52:33 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:52:33 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:52:40 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:52:40 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:52:46 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:52:46 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:52:52 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:52:52 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:52:58 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:52:58 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:53:04 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:53:04 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:53:10 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:53:10 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:53:16 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:53:16 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:53:22 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:53:22 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:53:28 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:53:28 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:53:34 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:53:34 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:53:40 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:53:40 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:53:46 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:53:46 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:53:52 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:53:52 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:53:58 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:53:58 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:54:04 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:54:04 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:54:10 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:54:10 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:54:16 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:54:16 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:54:22 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:54:22 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:54:28 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:54:28 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:54:34 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:54:34 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:54:40 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:54:40 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:54:46 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:54:46 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:54:52 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:54:52 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:54:58 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:54:58 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:55:04 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:55:04 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:55:10 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:55:10 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:55:16 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:55:16 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:55:22 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:55:22 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:55:28 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:55:28 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:55:34 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:55:34 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:55:40 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:55:40 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:55:46 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:55:46 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:55:52 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:55:52 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:55:58 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:55:58 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:56:04 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:56:04 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:56:10 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:56:10 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:56:16 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:56:16 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:56:22 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:56:22 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:56:28 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:56:28 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:56:34 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:56:34 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:56:40 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:56:40 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:56:46 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:56:46 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:56:52 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:56:52 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:56:58 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:56:58 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:57:04 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:57:04 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:57:10 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:57:10 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:57:16 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:57:16 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:57:22 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:57:22 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:57:28 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:57:28 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:57:34 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:57:34 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:57:40 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:57:40 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:57:46 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:57:46 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:57:52 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:57:52 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:57:58 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:57:58 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:58:04 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:58:04 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:58:10 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:58:10 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:58:16 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:58:16 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:58:22 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:58:22 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:58:28 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:58:28 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:58:34 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:58:34 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:58:40 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:58:40 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:58:46 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:58:46 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:58:52 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:58:52 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:58:58 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:58:58 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:59:04 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:59:04 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:59:10 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:59:10 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:59:16 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:59:16 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:59:22 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:59:22 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:59:28 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:59:28 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:59:34 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:59:34 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:59:40 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:59:40 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:59:46 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:59:46 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:59:52 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:59:52 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 18:59:58 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 18:59:58 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 19:00:04 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 19:00:04 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 19:00:10 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 19:00:10 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 19:00:16 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 19:00:16 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 19:00:22 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 19:00:22 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 19:00:28 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 19:00:28 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 19:00:34 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 19:00:34 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 19:00:40 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 19:00:40 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 19:00:46 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 19:00:46 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 19:00:52 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 19:00:52 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 19:00:58 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 19:00:58 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 19:01:04 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 19:01:04 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 19:01:10 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 19:01:10 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 19:01:16 indexer-connector: WARNING: Document operation failed for index 'wazuh-states-vulnerabilities-srv_wazuh_manager' - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 19:01:16 indexer-connector: ERROR: Client error, status code: 404.
+2025/12/08 19:01:17 indexer-connector: WARNING: Failed to retrieve agent documents - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 19:01:17 indexer-connector: WARNING: Failed to sync agent '001': Client error
+2025/12/08 19:01:17 indexer-connector: WARNING: Failed to retrieve agent documents - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-vulnerabilities-srv_wazuh_manager]'
+2025/12/08 19:01:17 indexer-connector: WARNING: Failed to sync agent '001': Client error
+2025/12/08 19:10:55 wazuh-authd: INFO: Agent '001' (srv_bastion_ib) deleted (requested locally)
+2025/12/08 19:10:58 wazuh-remoted: INFO: (1409): Authentication file changed. Updating.
+2025/12/08 19:10:58 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2025/12/08 19:11:05 wazuh-remoted: WARNING: (1408): Invalid ID 001 for the source ip: '192.168.1.7' (name 'unknown').
+2025/12/08 19:11:05 wazuh-remoted: WARNING: (1408): Invalid ID 001 for the source ip: '192.168.1.7' (name 'unknown').
+2025/12/08 19:11:15 wazuh-remoted: WARNING: (1408): Invalid ID 001 for the source ip: '192.168.1.7' (name 'unknown').
+2025/12/08 19:11:42 wazuh-remoted: WARNING: (1408): Invalid ID 001 for the source ip: '192.168.1.7' (name 'unknown').
+2025/12/08 19:12:02 wazuh-remoted: WARNING: (1408): Invalid ID 001 for the source ip: '192.168.1.7' (name 'unknown').
+2025/12/08 19:12:10 wazuh-remoted: WARNING: (1408): Invalid ID 001 for the source ip: '192.168.1.7' (name 'unknown').
+2025/12/08 19:12:38 wazuh-remoted: WARNING: (1408): Invalid ID 001 for the source ip: '192.168.1.7' (name 'unknown').
+2025/12/08 19:12:58 wazuh-remoted: WARNING: (1408): Invalid ID 001 for the source ip: '192.168.1.7' (name 'unknown').
+2025/12/08 19:12:59 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:12:59 wazuh-execd: INFO: (1314): Shutdown received. Deleting responses.
+2025/12/08 19:12:59 wazuh-analysisd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:12:59 wazuh-db: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:12:59 wazuh-syscheckd: INFO: (1756): Shutdown received. Releasing resources.
+2025/12/08 19:12:59 wazuh-logcollector: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:12:59 wazuh-authd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:12:59 wazuh-monitord: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:12:59 wazuh-db: INFO: (1225): SIGNAL [(1)-(Hangup)] Received. Exit Cleaning...
+2025/12/08 19:13:00 wazuh-execd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:12:59 wazuh-authd: INFO: (1225): SIGNAL [(1)-(Hangup)] Received. Exit Cleaning...
+2025/12/08 19:13:00 wazuh-syscheckd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:13:00 wazuh-authd: INFO: Exiting...
+2025/12/08 19:13:06 wazuh-modulesd:router: INFO: Loaded router module.
+2025/12/08 19:13:06 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2025/12/08 19:13:06 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2025/12/08 19:13:07 wazuh-csyslogd: INFO: Remote syslog server not configured. Clean exit.
+2025/12/08 19:13:07 wazuh-dbd: INFO: Database not configured. Clean exit.
+2025/12/08 19:13:07 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.
+2025/12/08 19:13:07 wazuh-agentlessd: INFO: Not configured. Exiting.
+2025/12/08 19:13:07 wazuh-authd: INFO: Started (pid: 436).
+2025/12/08 19:13:07 wazuh-authd: INFO: Accepting connections on port 1515. No password required.
+2025/12/08 19:13:07 wazuh-authd: INFO: Setting network timeout to 1.000000 sec.
+2025/12/08 19:13:08 wazuh-db: INFO: Started (pid: 456).
+2025/12/08 19:13:08 :router: INFO: Registering GET endpoint: /v1/agents/ids
+2025/12/08 19:13:08 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups/:name
+2025/12/08 19:13:08 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups
+2025/12/08 19:13:08 :router: INFO: Registering GET endpoint: /v1/agents/:agent_id/groups
+2025/12/08 19:13:08 :router: INFO: Registering POST endpoint: /v1/agents/summary
+2025/12/08 19:13:08 :router: INFO: Registering GET endpoint: /v1/agents/sync
+2025/12/08 19:13:08 :router: INFO: Registering POST endpoint: /v1/agents/sync
+2025/12/08 19:13:08 :router: INFO: Registering POST endpoint: /v1/agents/restartinfo
+2025/12/08 19:13:08 :router: INFO: API started successfully
+2025/12/08 19:13:09 wazuh-execd: INFO: Started (pid: 495).
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: Started (pid: 517).
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6003): Monitoring path: '/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6003): Monitoring path: '/boot', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6003): Monitoring path: '/etc', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6003): Monitoring path: '/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mtab'
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/hosts.deny'
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mail/statistics'
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random-seed'
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random.seed'
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/adjtime'
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/httpd/logs'
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/utmpx'
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/wtmpx'
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/cups/certs'
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/dumpdates'
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/svc/volatile'
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6207): Ignore 'file' sregex '.log$|.swp$'
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6004): No diff for file: '/etc/ssl/private.key'
+2025/12/08 19:13:09 rootcheck: INFO: Starting rootcheck scan.
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6000): Starting daemon...
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6010): File integrity monitoring scan frequency: 43200 seconds
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6008): File integrity monitoring scan started.
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: (6009): File integrity monitoring scan ended.
+2025/12/08 19:13:09 wazuh-syscheckd: INFO: FIM sync module started.
+2025/12/08 19:13:10 wazuh-remoted: INFO: Started (pid: 558). Listening on port 1514/TCP (secure).
+2025/12/08 19:13:10 wazuh-analysisd: INFO: Total rules enabled: '8451'
+2025/12/08 19:13:10 wazuh-analysisd: INFO: Started (pid: 507).
+2025/12/08 19:13:10 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2025/12/08 19:13:10 wazuh-analysisd: INFO: (7200): Logtest started
+2025/12/08 19:13:10 wazuh-analysisd: INFO: EPS limit disabled
+2025/12/08 19:13:11 wazuh-logcollector: INFO: Monitoring output of command(360): df -P
+2025/12/08 19:13:11 wazuh-logcollector: INFO: Monitoring full output of command(360): netstat -tulpn | sed 's/\([[:alnum:]]\+\)\ \+[[:digit:]]\+\ \+[[:digit:]]\+\ \+\(.*\):\([[:digit:]]*\)\ \+\([0-9\.\:\*]\+\).\+\ \([[:digit:]]*\/[[:alnum:]\-]*\).*/\1 \2 == \3 == \4 \5/' | sort -k 4 -g | sed 's/ == \(.*\) ==/:\1/' | sed 1,2d
+2025/12/08 19:13:11 wazuh-logcollector: INFO: Monitoring full output of command(360): last -n 20
+2025/12/08 19:13:11 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/ossec/logs/active-responses.log'.
+2025/12/08 19:13:11 wazuh-logcollector: INFO: Started (pid: 753).
+2025/12/08 19:13:11 wazuh-monitord: INFO: Started (pid: 771).
+2025/12/08 19:13:12 wazuh-modulesd:router: INFO: Loaded router module.
+2025/12/08 19:13:12 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2025/12/08 19:13:12 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2025/12/08 19:13:12 wazuh-modulesd: INFO: Started (pid: 827).
+2025/12/08 19:13:12 wazuh-modulesd:agent-upgrade: INFO: (8153): Module Agent Upgrade started.
+2025/12/08 19:13:12 wazuh-modulesd:ciscat: INFO: Module disabled. Exiting...
+2025/12/08 19:13:12 wazuh-modulesd:osquery: INFO: Module disabled. Exiting...
+2025/12/08 19:13:12 wazuh-modulesd:task-manager: INFO: (8200): Module Task Manager started.
+2025/12/08 19:13:12 sca: INFO: Module started.
+2025/12/08 19:13:12 wazuh-modulesd:vulnerability-scanner: INFO: Starting vulnerability_scanner module.
+2025/12/08 19:13:12 sca: INFO: Loaded policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2025/12/08 19:13:12 wazuh-modulesd:router: INFO: Starting router module.
+2025/12/08 19:13:12 sca: INFO: Starting Security Configuration Assessment scan.
+2025/12/08 19:13:12 wazuh-modulesd:content_manager: INFO: Starting content_manager module.
+2025/12/08 19:13:12 wazuh-modulesd:database: INFO: Module started.
+2025/12/08 19:13:12 wazuh-modulesd:download: INFO: Module started.
+2025/12/08 19:13:12 wazuh-modulesd:inventory-harvester: INFO: Starting inventory_harvester module.
+2025/12/08 19:13:12 wazuh-modulesd:control: INFO: Starting control thread.
+2025/12/08 19:13:12 sca: INFO: Starting evaluation of policy: '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2025/12/08 19:13:12 wazuh-modulesd:syscollector: INFO: Module started.
+2025/12/08 19:13:12 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2025/12/08 19:13:13 logger-helper: ERROR: InventoryHarvesterFacade::start: Failed to open RocksDB database, not repairable. Reason: Found options incompatible with filesystem: IO error: No such file or directory: While open a file for random read: queue/indexer/wazuh-states-inventory-packages-srv_wazuh_manager/CURRENT: No such file or directory.
+2025/12/08 19:13:13 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2025/12/08 19:13:14 wazuh-modulesd:vulnerability-scanner: INFO: Vulnerability scanner module started.
+2025/12/08 19:13:15 indexer-connector: INFO: It tooks '0' seconds to reindex the index 'wazuh-states-vulnerabilities-srv_wazuh_manager'.
+2025/12/08 19:13:16 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-vulnerabilities-srv_wazuh_manager.
+2025/12/08 19:13:16 wazuh-remoted: WARNING: (1408): Invalid ID 001 for the source ip: '192.168.1.7' (name 'unknown').
+2025/12/08 19:13:17 sca: INFO: Evaluation finished for policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2025/12/08 19:13:17 sca: INFO: Security Configuration Assessment scan finished. Duration: 5 seconds.
+2025/12/08 19:13:27 wazuh-syscheckd: INFO: netstat not available. Skipping port check.
+2025/12/08 19:13:32 rootcheck: INFO: Ending rootcheck scan.
+2025/12/08 19:13:34 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 19:13:34 wazuh-authd: INFO: Agent key generated for 'srv_bastion_ib' (requested by any)
+2025/12/08 19:13:38 wazuh-remoted: INFO: (1409): Authentication file changed. Updating.
+2025/12/08 19:13:38 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2025/12/08 19:41:57 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 19:41:57 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '001' can't be replaced since it is not disconnected.
+2025/12/08 19:42:06 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 19:42:06 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '001' can't be replaced since it is not disconnected.
+2025/12/08 19:42:21 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 19:42:21 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '001' can't be replaced since it is not disconnected.
+2025/12/08 19:43:02 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 19:43:02 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '001' can't be replaced since it is not disconnected.
+2025/12/08 19:43:54 wazuh-authd: INFO: Agent '001' (srv_bastion_ib) deleted (requested locally)
+2025/12/08 19:43:54 wazuh-remoted: INFO: (1409): Authentication file changed. Updating.
+2025/12/08 19:43:54 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2025/12/08 19:44:41 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 19:44:41 wazuh-authd: INFO: Agent key generated for 'srv_bastion_ib' (requested by any)
+2025/12/08 19:44:51 wazuh-remoted: INFO: (1409): Authentication file changed. Updating.
+2025/12/08 19:44:51 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2025/12/08 19:48:04 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:48:04 wazuh-db: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:48:04 wazuh-authd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:48:04 wazuh-syscheckd: INFO: (1756): Shutdown received. Releasing resources.
+2025/12/08 19:48:04 wazuh-execd: INFO: (1314): Shutdown received. Deleting responses.
+2025/12/08 19:48:04 wazuh-db: INFO: (1225): SIGNAL [(1)-(Hangup)] Received. Exit Cleaning...
+2025/12/08 19:48:04 wazuh-analysisd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:48:04 wazuh-authd: INFO: (1225): SIGNAL [(1)-(Hangup)] Received. Exit Cleaning...
+2025/12/08 19:48:04 wazuh-logcollector: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:48:04 wazuh-execd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:48:04 wazuh-monitord: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:48:04 wazuh-syscheckd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:48:05 :router: INFO: Stopping server thread
+2025/12/08 19:48:09 wazuh-authd: WARNING: The <force_insert> tag is deprecated. Use <force> instead.
+2025/12/08 19:48:09 wazuh-authd: WARNING: The <force_time> tag is deprecated. Use <force> instead.
+2025/12/08 19:48:11 wazuh-modulesd:router: INFO: Loaded router module.
+2025/12/08 19:48:11 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2025/12/08 19:48:11 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2025/12/08 19:48:11 wazuh-csyslogd: INFO: Remote syslog server not configured. Clean exit.
+2025/12/08 19:48:11 wazuh-dbd: INFO: Database not configured. Clean exit.
+2025/12/08 19:48:11 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.
+2025/12/08 19:48:11 wazuh-agentlessd: INFO: Not configured. Exiting.
+2025/12/08 19:48:11 wazuh-authd: WARNING: The <force_insert> tag is deprecated. Use <force> instead.
+2025/12/08 19:48:11 wazuh-authd: WARNING: The <force_time> tag is deprecated. Use <force> instead.
+2025/12/08 19:48:12 wazuh-authd: INFO: Started (pid: 440).
+2025/12/08 19:48:12 wazuh-authd: INFO: Accepting connections on port 1515. No password required.
+2025/12/08 19:48:12 wazuh-authd: INFO: Setting network timeout to 1.000000 sec.
+2025/12/08 19:48:13 wazuh-db: INFO: Started (pid: 460).
+2025/12/08 19:48:13 :router: INFO: Registering GET endpoint: /v1/agents/ids
+2025/12/08 19:48:13 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups/:name
+2025/12/08 19:48:13 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups
+2025/12/08 19:48:13 :router: INFO: Registering GET endpoint: /v1/agents/:agent_id/groups
+2025/12/08 19:48:13 :router: INFO: Registering POST endpoint: /v1/agents/summary
+2025/12/08 19:48:13 :router: INFO: Registering GET endpoint: /v1/agents/sync
+2025/12/08 19:48:13 :router: INFO: Registering POST endpoint: /v1/agents/sync
+2025/12/08 19:48:13 :router: INFO: Registering POST endpoint: /v1/agents/restartinfo
+2025/12/08 19:48:13 :router: INFO: API started successfully
+2025/12/08 19:48:14 wazuh-execd: INFO: Started (pid: 499).
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: Started (pid: 521).
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6003): Monitoring path: '/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6003): Monitoring path: '/boot', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6003): Monitoring path: '/etc', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6003): Monitoring path: '/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mtab'
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/hosts.deny'
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mail/statistics'
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random-seed'
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random.seed'
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/adjtime'
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/httpd/logs'
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/utmpx'
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/wtmpx'
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/cups/certs'
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/dumpdates'
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/svc/volatile'
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6207): Ignore 'file' sregex '.log$|.swp$'
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6004): No diff for file: '/etc/ssl/private.key'
+2025/12/08 19:48:14 rootcheck: INFO: Starting rootcheck scan.
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6000): Starting daemon...
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6010): File integrity monitoring scan frequency: 43200 seconds
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6008): File integrity monitoring scan started.
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: (6009): File integrity monitoring scan ended.
+2025/12/08 19:48:14 wazuh-syscheckd: INFO: FIM sync module started.
+2025/12/08 19:48:15 wazuh-remoted: INFO: Started (pid: 564). Listening on port 1514/TCP (secure).
+2025/12/08 19:48:15 wazuh-analysisd: INFO: Total rules enabled: '8451'
+2025/12/08 19:48:15 wazuh-analysisd: INFO: Started (pid: 511).
+2025/12/08 19:48:15 wazuh-analysisd: INFO: (7200): Logtest started
+2025/12/08 19:48:15 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2025/12/08 19:48:15 wazuh-analysisd: INFO: EPS limit disabled
+2025/12/08 19:48:16 wazuh-logcollector: INFO: Monitoring output of command(360): df -P
+2025/12/08 19:48:16 wazuh-logcollector: INFO: Monitoring full output of command(360): netstat -tulpn | sed 's/\([[:alnum:]]\+\)\ \+[[:digit:]]\+\ \+[[:digit:]]\+\ \+\(.*\):\([[:digit:]]*\)\ \+\([0-9\.\:\*]\+\).\+\ \([[:digit:]]*\/[[:alnum:]\-]*\).*/\1 \2 == \3 == \4 \5/' | sort -k 4 -g | sed 's/ == \(.*\) ==/:\1/' | sed 1,2d
+2025/12/08 19:48:16 wazuh-logcollector: INFO: Monitoring full output of command(360): last -n 20
+2025/12/08 19:48:16 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/ossec/logs/active-responses.log'.
+2025/12/08 19:48:16 wazuh-logcollector: INFO: Started (pid: 759).
+2025/12/08 19:48:16 wazuh-monitord: INFO: Started (pid: 778).
+2025/12/08 19:48:16 wazuh-modulesd:router: INFO: Loaded router module.
+2025/12/08 19:48:16 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2025/12/08 19:48:16 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2025/12/08 19:48:16 wazuh-modulesd: INFO: Started (pid: 794).
+2025/12/08 19:48:16 wazuh-modulesd:agent-upgrade: INFO: (8153): Module Agent Upgrade started.
+2025/12/08 19:48:16 wazuh-modulesd:ciscat: INFO: Module disabled. Exiting...
+2025/12/08 19:48:16 wazuh-modulesd:osquery: INFO: Module disabled. Exiting...
+2025/12/08 19:48:16 wazuh-modulesd:task-manager: INFO: (8200): Module Task Manager started.
+2025/12/08 19:48:16 sca: INFO: Module started.
+2025/12/08 19:48:16 wazuh-modulesd:vulnerability-scanner: INFO: Starting vulnerability_scanner module.
+2025/12/08 19:48:16 sca: INFO: Loaded policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2025/12/08 19:48:16 wazuh-modulesd:router: INFO: Starting router module.
+2025/12/08 19:48:16 sca: INFO: Starting Security Configuration Assessment scan.
+2025/12/08 19:48:16 wazuh-modulesd:content_manager: INFO: Starting content_manager module.
+2025/12/08 19:48:16 wazuh-modulesd:database: INFO: Module started.
+2025/12/08 19:48:16 wazuh-modulesd:download: INFO: Module started.
+2025/12/08 19:48:16 wazuh-modulesd:inventory-harvester: INFO: Starting inventory_harvester module.
+2025/12/08 19:48:16 wazuh-modulesd:control: INFO: Starting control thread.
+2025/12/08 19:48:16 sca: INFO: Starting evaluation of policy: '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2025/12/08 19:48:16 wazuh-modulesd:syscollector: INFO: Module started.
+2025/12/08 19:48:16 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2025/12/08 19:48:17 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2025/12/08 19:48:17 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-vulnerabilities-srv_wazuh_manager.
+2025/12/08 19:48:18 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-packages-srv_wazuh_manager.
+2025/12/08 19:48:18 logger-helper: ERROR: InventoryHarvesterFacade::start: Failed to open RocksDB database, repair not tried because the error wasn't corruption. Code: 4 Reason: Direct I/O is not supported by the specified DB..
+2025/12/08 19:48:18 wazuh-modulesd:vulnerability-scanner: INFO: Vulnerability scanner module started.
+2025/12/08 19:48:21 sca: INFO: Evaluation finished for policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2025/12/08 19:48:21 sca: INFO: Security Configuration Assessment scan finished. Duration: 5 seconds.
+2025/12/08 19:48:32 wazuh-syscheckd: INFO: netstat not available. Skipping port check.
+2025/12/08 19:48:37 rootcheck: INFO: Ending rootcheck scan.
+2025/12/08 19:49:06 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 19:49:06 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '002' doesn't comply with the registration time to be removed.
+2025/12/08 19:49:49 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 19:49:49 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '002' doesn't comply with the registration time to be removed.
+2025/12/08 19:50:25 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 19:50:25 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '002' doesn't comply with the registration time to be removed.
+2025/12/08 19:50:30 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 19:50:30 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '002' doesn't comply with the registration time to be removed.
+2025/12/08 19:50:38 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 19:50:38 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '002' doesn't comply with the registration time to be removed.
+2025/12/08 19:51:11 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 19:51:11 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '002' doesn't comply with the registration time to be removed.
+2025/12/08 19:53:14 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 19:53:14 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '002' doesn't comply with the registration time to be removed.
+2025/12/08 19:53:36 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 19:53:36 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '002' doesn't comply with the registration time to be removed.
+2025/12/08 19:54:42 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 19:54:42 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '002' doesn't comply with the registration time to be removed.
+2025/12/08 19:55:10 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 19:55:10 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '002' doesn't comply with the registration time to be removed.
+2025/12/08 19:56:20 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 19:56:20 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '002' doesn't comply with the registration time to be removed.
+2025/12/08 19:56:38 wazuh-authd: INFO: Agent '002' (srv_bastion_ib) deleted (requested locally)
+2025/12/08 19:56:40 wazuh-remoted: INFO: (1409): Authentication file changed. Updating.
+2025/12/08 19:56:40 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2025/12/08 19:57:02 wazuh-logcollector: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:57:02 wazuh-syscheckd: INFO: (1756): Shutdown received. Releasing resources.
+2025/12/08 19:57:02 wazuh-execd: INFO: (1314): Shutdown received. Deleting responses.
+2025/12/08 19:57:02 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:57:02 wazuh-syscheckd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:57:02 wazuh-db: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:57:02 wazuh-monitord: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:57:02 wazuh-authd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:57:02 wazuh-execd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:57:02 wazuh-analysisd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 19:57:02 wazuh-authd: INFO: (1225): SIGNAL [(1)-(Hangup)] Received. Exit Cleaning...
+2025/12/08 19:57:02 wazuh-db: INFO: (1225): SIGNAL [(1)-(Hangup)] Received. Exit Cleaning...
+2025/12/08 19:57:02 :router: INFO: Stopping server thread
+2025/12/08 19:57:02 wazuh-authd: INFO: Exiting...
+2025/12/08 19:57:02 wazuh-db: INFO: Graceful process shutdown.
+2025/12/08 19:57:03 wazuh-authd: WARNING: The <force_insert> tag is deprecated. Use <force> instead.
+2025/12/08 19:57:03 wazuh-authd: WARNING: The <force_time> tag is deprecated. Use <force> instead.
+2025/12/08 19:57:05 wazuh-modulesd:router: INFO: Loaded router module.
+2025/12/08 19:57:05 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2025/12/08 19:57:05 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2025/12/08 19:57:08 wazuh-csyslogd: INFO: Remote syslog server not configured. Clean exit.
+2025/12/08 19:57:08 wazuh-dbd: INFO: Database not configured. Clean exit.
+2025/12/08 19:57:08 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.
+2025/12/08 19:57:08 wazuh-agentlessd: INFO: Not configured. Exiting.
+2025/12/08 19:57:08 wazuh-authd: WARNING: The <force_insert> tag is deprecated. Use <force> instead.
+2025/12/08 19:57:08 wazuh-authd: WARNING: The <force_time> tag is deprecated. Use <force> instead.
+2025/12/08 19:57:08 wazuh-authd: INFO: Started (pid: 442).
+2025/12/08 19:57:08 wazuh-authd: INFO: Accepting connections on port 1515. No password required.
+2025/12/08 19:57:08 wazuh-authd: INFO: Setting network timeout to 1.000000 sec.
+2025/12/08 19:57:08 wazuh-db: INFO: Started (pid: 455).
+2025/12/08 19:57:08 :router: INFO: Registering GET endpoint: /v1/agents/ids
+2025/12/08 19:57:08 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups/:name
+2025/12/08 19:57:08 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups
+2025/12/08 19:57:08 :router: INFO: Registering GET endpoint: /v1/agents/:agent_id/groups
+2025/12/08 19:57:08 :router: INFO: Registering POST endpoint: /v1/agents/summary
+2025/12/08 19:57:08 :router: INFO: Registering GET endpoint: /v1/agents/sync
+2025/12/08 19:57:08 :router: INFO: Registering POST endpoint: /v1/agents/sync
+2025/12/08 19:57:08 :router: INFO: Registering POST endpoint: /v1/agents/restartinfo
+2025/12/08 19:57:08 :router: INFO: API started successfully
+2025/12/08 19:57:09 wazuh-execd: INFO: Started (pid: 494).
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: Started (pid: 519).
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6003): Monitoring path: '/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6003): Monitoring path: '/boot', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6003): Monitoring path: '/etc', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6003): Monitoring path: '/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mtab'
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/hosts.deny'
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mail/statistics'
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random-seed'
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random.seed'
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/adjtime'
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/httpd/logs'
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/utmpx'
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/wtmpx'
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/cups/certs'
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/dumpdates'
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/svc/volatile'
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6207): Ignore 'file' sregex '.log$|.swp$'
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6004): No diff for file: '/etc/ssl/private.key'
+2025/12/08 19:57:10 rootcheck: INFO: Starting rootcheck scan.
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6000): Starting daemon...
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6010): File integrity monitoring scan frequency: 43200 seconds
+2025/12/08 19:57:10 wazuh-syscheckd: INFO: (6008): File integrity monitoring scan started.
+2025/12/08 19:57:11 wazuh-syscheckd: INFO: (6009): File integrity monitoring scan ended.
+2025/12/08 19:57:11 wazuh-syscheckd: INFO: FIM sync module started.
+2025/12/08 19:57:11 wazuh-remoted: INFO: Started (pid: 554). Listening on port 1514/TCP (secure).
+2025/12/08 19:57:11 wazuh-analysisd: INFO: Total rules enabled: '8451'
+2025/12/08 19:57:11 wazuh-analysisd: INFO: Started (pid: 509).
+2025/12/08 19:57:11 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2025/12/08 19:57:11 wazuh-analysisd: INFO: (7200): Logtest started
+2025/12/08 19:57:12 wazuh-analysisd: INFO: EPS limit disabled
+2025/12/08 19:57:12 wazuh-logcollector: INFO: Monitoring output of command(360): df -P
+2025/12/08 19:57:12 wazuh-logcollector: INFO: Monitoring full output of command(360): netstat -tulpn | sed 's/\([[:alnum:]]\+\)\ \+[[:digit:]]\+\ \+[[:digit:]]\+\ \+\(.*\):\([[:digit:]]*\)\ \+\([0-9\.\:\*]\+\).\+\ \([[:digit:]]*\/[[:alnum:]\-]*\).*/\1 \2 == \3 == \4 \5/' | sort -k 4 -g | sed 's/ == \(.*\) ==/:\1/' | sed 1,2d
+2025/12/08 19:57:12 wazuh-logcollector: INFO: Monitoring full output of command(360): last -n 20
+2025/12/08 19:57:12 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/ossec/logs/active-responses.log'.
+2025/12/08 19:57:12 wazuh-monitord: INFO: Started (pid: 764).
+2025/12/08 19:57:12 wazuh-logcollector: INFO: Started (pid: 751).
+2025/12/08 19:57:12 wazuh-modulesd:router: INFO: Loaded router module.
+2025/12/08 19:57:12 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2025/12/08 19:57:12 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2025/12/08 19:57:12 wazuh-modulesd: INFO: Started (pid: 786).
+2025/12/08 19:57:12 wazuh-modulesd:agent-upgrade: INFO: (8153): Module Agent Upgrade started.
+2025/12/08 19:57:12 wazuh-modulesd:osquery: INFO: Module disabled. Exiting...
+2025/12/08 19:57:12 wazuh-modulesd:task-manager: INFO: (8200): Module Task Manager started.
+2025/12/08 19:57:12 wazuh-modulesd:ciscat: INFO: Module disabled. Exiting...
+2025/12/08 19:57:12 wazuh-modulesd:content_manager: INFO: Starting content_manager module.
+2025/12/08 19:57:12 wazuh-modulesd:database: INFO: Module started.
+2025/12/08 19:57:12 sca: INFO: Module started.
+2025/12/08 19:57:12 wazuh-modulesd:router: INFO: Starting router module.
+2025/12/08 19:57:12 wazuh-modulesd:download: INFO: Module started.
+2025/12/08 19:57:12 wazuh-modulesd:vulnerability-scanner: INFO: Starting vulnerability_scanner module.
+2025/12/08 19:57:12 wazuh-modulesd:control: INFO: Starting control thread.
+2025/12/08 19:57:12 wazuh-modulesd:inventory-harvester: INFO: Starting inventory_harvester module.
+2025/12/08 19:57:12 sca: INFO: Loaded policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2025/12/08 19:57:12 wazuh-modulesd:database: WARNING: Removing dangling WDB DB file: 'queue/db/002.db-journal'
+2025/12/08 19:57:12 sca: INFO: Starting Security Configuration Assessment scan.
+2025/12/08 19:57:12 sca: INFO: Starting evaluation of policy: '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2025/12/08 19:57:13 wazuh-modulesd:syscollector: INFO: Module started.
+2025/12/08 19:57:13 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2025/12/08 19:57:13 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2025/12/08 19:57:13 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-vulnerabilities-srv_wazuh_manager.
+2025/12/08 19:57:13 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-packages-srv_wazuh_manager.
+2025/12/08 19:57:15 logger-helper: INFO: InventoryHarvesterFacade module started.
+2025/12/08 19:57:15 indexer-connector: WARNING: Failed to retrieve agent documents - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-inventory-networks-srv_wazuh_manager]'
+2025/12/08 19:57:15 indexer-connector: WARNING: Failed to retrieve agent documents - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-inventory-interfaces-srv_wazuh_manager]'
+2025/12/08 19:57:15 indexer-connector: WARNING: Failed to retrieve agent documents - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-inventory-hardware-srv_wazuh_manager]'
+2025/12/08 19:57:15 indexer-connector: WARNING: Failed to retrieve agent documents - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-inventory-users-srv_wazuh_manager]'
+2025/12/08 19:57:15 indexer-connector: WARNING: Failed to sync agent '001': Client error
+2025/12/08 19:57:15 indexer-connector: WARNING: Failed to sync agent '001': Client error
+2025/12/08 19:57:15 indexer-connector: WARNING: Failed to sync agent '001': Server error
+2025/12/08 19:57:15 indexer-connector: WARNING: Failed to retrieve agent documents - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-inventory-ports-srv_wazuh_manager]'
+2025/12/08 19:57:15 indexer-connector: WARNING: Failed to sync agent '001': Client error
+2025/12/08 19:57:15 indexer-connector: WARNING: Failed to retrieve agent documents - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-inventory-groups-srv_wazuh_manager]'
+2025/12/08 19:57:15 indexer-connector: WARNING: Failed to sync agent '001': Client error
+2025/12/08 19:57:15 indexer-connector: WARNING: Failed to retrieve agent documents - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-inventory-protocols-srv_wazuh_manager]'
+2025/12/08 19:57:15 indexer-connector: WARNING: Failed to sync agent '001': Client error
+2025/12/08 19:57:15 indexer-connector: WARNING: Failed to sync agent '001': Client error
+2025/12/08 19:57:15 indexer-connector: WARNING: Failed to sync agent '001': Client error
+2025/12/08 19:57:16 indexer-connector: WARNING: Failed to retrieve agent documents - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-inventory-hardware-srv_wazuh_manager]'
+2025/12/08 19:57:16 indexer-connector: WARNING: Failed to retrieve agent documents - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-inventory-interfaces-srv_wazuh_manager]'
+2025/12/08 19:57:16 indexer-connector: WARNING: Failed to retrieve agent documents - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-inventory-protocols-srv_wazuh_manager]'
+2025/12/08 19:57:16 indexer-connector: WARNING: Failed to retrieve agent documents - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-inventory-networks-srv_wazuh_manager]'
+2025/12/08 19:57:16 indexer-connector: WARNING: Failed to sync agent '002': Server error
+2025/12/08 19:57:16 indexer-connector: WARNING: Failed to sync agent '002': Client error
+2025/12/08 19:57:16 indexer-connector: WARNING: Failed to retrieve agent documents - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-inventory-groups-srv_wazuh_manager]'
+2025/12/08 19:57:16 indexer-connector: WARNING: Failed to sync agent '002': Client error
+2025/12/08 19:57:16 indexer-connector: WARNING: Failed to sync agent '002': Client error
+2025/12/08 19:57:16 indexer-connector: WARNING: Failed to sync agent '002': Client error
+2025/12/08 19:57:16 indexer-connector: WARNING: Failed to retrieve agent documents - type: 'index_not_found_exception', reason: 'no such index [wazuh-states-inventory-users-srv_wazuh_manager]'
+2025/12/08 19:57:16 indexer-connector: WARNING: Failed to sync agent '002': Client error
+2025/12/08 19:57:16 indexer-connector: WARNING: Failed to sync agent '002': Client error
+2025/12/08 19:57:17 sca: INFO: Evaluation finished for policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2025/12/08 19:57:17 sca: INFO: Security Configuration Assessment scan finished. Duration: 5 seconds.
+2025/12/08 19:57:18 wazuh-modulesd:vulnerability-scanner: INFO: Vulnerability scanner module started.
+2025/12/08 19:57:19 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-ports-srv_wazuh_manager.
+2025/12/08 19:57:19 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-processes-srv_wazuh_manager.
+2025/12/08 19:57:19 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-system-srv_wazuh_manager.
+2025/12/08 19:57:20 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hotfixes-srv_wazuh_manager.
+2025/12/08 19:57:20 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-protocols-srv_wazuh_manager.
+2025/12/08 19:57:20 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hardware-srv_wazuh_manager.
+2025/12/08 19:57:20 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-interfaces-srv_wazuh_manager.
+2025/12/08 19:57:20 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-users-srv_wazuh_manager.
+2025/12/08 19:57:20 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-groups-srv_wazuh_manager.
+2025/12/08 19:57:20 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-networks-srv_wazuh_manager.
+2025/12/08 19:57:20 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-browser-extensions-srv_wazuh_manager.
+2025/12/08 19:57:21 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-services-srv_wazuh_manager.
+2025/12/08 19:57:31 wazuh-syscheckd: INFO: netstat not available. Skipping port check.
+2025/12/08 19:57:34 rootcheck: INFO: Ending rootcheck scan.
+2025/12/08 19:58:36 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 19:58:36 wazuh-authd: INFO: Agent key generated for 'srv_bastion_ib' (requested by any)
+2025/12/08 19:58:46 wazuh-remoted: INFO: (1409): Authentication file changed. Updating.
+2025/12/08 19:58:46 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2025/12/08 20:27:57 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 20:27:57 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '001' doesn't comply with the registration time to be removed.
+2025/12/08 20:28:17 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 20:28:17 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '001' doesn't comply with the registration time to be removed.
+2025/12/08 20:29:09 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 20:29:09 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '001' doesn't comply with the registration time to be removed.
+2025/12/08 20:30:18 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 20:30:18 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '001' doesn't comply with the registration time to be removed.
+2025/12/08 20:31:01 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 20:31:01 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '001' doesn't comply with the registration time to be removed.
+2025/12/08 20:33:34 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 20:33:34 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '001' doesn't comply with the registration time to be removed.
+2025/12/08 20:33:43 wazuh-db: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 20:33:43 wazuh-analysisd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 20:33:43 wazuh-execd: INFO: (1314): Shutdown received. Deleting responses.
+2025/12/08 20:33:43 wazuh-monitord: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 20:33:43 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 20:33:43 wazuh-logcollector: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 20:33:43 wazuh-syscheckd: INFO: (1756): Shutdown received. Releasing resources.
+2025/12/08 20:33:43 wazuh-execd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 20:33:43 wazuh-db: INFO: (1225): SIGNAL [(1)-(Hangup)] Received. Exit Cleaning...
+2025/12/08 20:33:43 wazuh-authd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 20:33:43 wazuh-authd: INFO: (1225): SIGNAL [(1)-(Hangup)] Received. Exit Cleaning...
+2025/12/08 20:33:43 wazuh-syscheckd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 20:33:44 :router: INFO: Stopping server thread
+2025/12/08 20:33:44 wazuh-db: INFO: Graceful process shutdown.
+2025/12/08 20:33:47 wazuh-authd: WARNING: The <force_insert> tag is deprecated. Use <force> instead.
+2025/12/08 20:33:47 wazuh-authd: WARNING: The <force_time> tag is deprecated. Use <force> instead.
+2025/12/08 20:33:49 wazuh-modulesd:router: INFO: Loaded router module.
+2025/12/08 20:33:49 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2025/12/08 20:33:49 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2025/12/08 20:33:52 wazuh-csyslogd: INFO: Remote syslog server not configured. Clean exit.
+2025/12/08 20:33:52 wazuh-dbd: INFO: Database not configured. Clean exit.
+2025/12/08 20:33:52 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.
+2025/12/08 20:33:52 wazuh-agentlessd: INFO: Not configured. Exiting.
+2025/12/08 20:33:52 wazuh-authd: WARNING: The <force_insert> tag is deprecated. Use <force> instead.
+2025/12/08 20:33:52 wazuh-authd: WARNING: The <force_time> tag is deprecated. Use <force> instead.
+2025/12/08 20:33:52 wazuh-authd: INFO: Started (pid: 440).
+2025/12/08 20:33:52 wazuh-authd: INFO: Accepting connections on port 1515. No password required.
+2025/12/08 20:33:52 wazuh-authd: INFO: Setting network timeout to 1.000000 sec.
+2025/12/08 20:33:52 wazuh-db: INFO: Started (pid: 453).
+2025/12/08 20:33:52 :router: INFO: Registering GET endpoint: /v1/agents/ids
+2025/12/08 20:33:52 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups/:name
+2025/12/08 20:33:52 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups
+2025/12/08 20:33:52 :router: INFO: Registering GET endpoint: /v1/agents/:agent_id/groups
+2025/12/08 20:33:52 :router: INFO: Registering POST endpoint: /v1/agents/summary
+2025/12/08 20:33:52 :router: INFO: Registering GET endpoint: /v1/agents/sync
+2025/12/08 20:33:52 :router: INFO: Registering POST endpoint: /v1/agents/sync
+2025/12/08 20:33:52 :router: INFO: Registering POST endpoint: /v1/agents/restartinfo
+2025/12/08 20:33:52 :router: INFO: API started successfully
+2025/12/08 20:33:53 wazuh-execd: INFO: Started (pid: 492).
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: Started (pid: 514).
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6003): Monitoring path: '/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6003): Monitoring path: '/boot', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6003): Monitoring path: '/etc', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6003): Monitoring path: '/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mtab'
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/hosts.deny'
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mail/statistics'
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random-seed'
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random.seed'
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/adjtime'
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/httpd/logs'
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/utmpx'
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/wtmpx'
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/cups/certs'
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/dumpdates'
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/svc/volatile'
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6207): Ignore 'file' sregex '.log$|.swp$'
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6004): No diff for file: '/etc/ssl/private.key'
+2025/12/08 20:33:53 rootcheck: INFO: Starting rootcheck scan.
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6000): Starting daemon...
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6010): File integrity monitoring scan frequency: 43200 seconds
+2025/12/08 20:33:53 wazuh-syscheckd: INFO: (6008): File integrity monitoring scan started.
+2025/12/08 20:33:54 wazuh-syscheckd: INFO: (6009): File integrity monitoring scan ended.
+2025/12/08 20:33:54 wazuh-syscheckd: INFO: FIM sync module started.
+2025/12/08 20:33:54 wazuh-remoted: INFO: Started (pid: 541). Listening on port 1514/TCP (secure).
+2025/12/08 20:33:54 wazuh-analysisd: INFO: Total rules enabled: '8451'
+2025/12/08 20:33:54 wazuh-analysisd: INFO: Started (pid: 504).
+2025/12/08 20:33:54 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2025/12/08 20:33:54 wazuh-analysisd: INFO: (7200): Logtest started
+2025/12/08 20:33:55 wazuh-analysisd: INFO: EPS limit disabled
+2025/12/08 20:33:55 wazuh-logcollector: INFO: Monitoring output of command(360): df -P
+2025/12/08 20:33:55 wazuh-logcollector: INFO: Monitoring full output of command(360): netstat -tulpn | sed 's/\([[:alnum:]]\+\)\ \+[[:digit:]]\+\ \+[[:digit:]]\+\ \+\(.*\):\([[:digit:]]*\)\ \+\([0-9\.\:\*]\+\).\+\ \([[:digit:]]*\/[[:alnum:]\-]*\).*/\1 \2 == \3 == \4 \5/' | sort -k 4 -g | sed 's/ == \(.*\) ==/:\1/' | sed 1,2d
+2025/12/08 20:33:55 wazuh-logcollector: INFO: Monitoring full output of command(360): last -n 20
+2025/12/08 20:33:55 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/ossec/logs/active-responses.log'.
+2025/12/08 20:33:55 wazuh-monitord: INFO: Started (pid: 753).
+2025/12/08 20:33:55 wazuh-logcollector: INFO: Started (pid: 740).
+2025/12/08 20:33:55 wazuh-modulesd:router: INFO: Loaded router module.
+2025/12/08 20:33:55 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2025/12/08 20:33:55 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2025/12/08 20:33:55 wazuh-modulesd: INFO: Started (pid: 777).
+2025/12/08 20:33:55 wazuh-modulesd:agent-upgrade: INFO: (8153): Module Agent Upgrade started.
+2025/12/08 20:33:55 wazuh-modulesd:task-manager: INFO: (8200): Module Task Manager started.
+2025/12/08 20:33:55 wazuh-modulesd:osquery: INFO: Module disabled. Exiting...
+2025/12/08 20:33:55 wazuh-modulesd:ciscat: INFO: Module disabled. Exiting...
+2025/12/08 20:33:55 wazuh-modulesd:download: INFO: Module started.
+2025/12/08 20:33:55 wazuh-modulesd:database: INFO: Module started.
+2025/12/08 20:33:55 sca: INFO: Module started.
+2025/12/08 20:33:55 wazuh-modulesd:vulnerability-scanner: INFO: Starting vulnerability_scanner module.
+2025/12/08 20:33:55 wazuh-modulesd:content_manager: INFO: Starting content_manager module.
+2025/12/08 20:33:55 wazuh-modulesd:router: INFO: Starting router module.
+2025/12/08 20:33:55 wazuh-modulesd:inventory-harvester: INFO: Starting inventory_harvester module.
+2025/12/08 20:33:55 sca: INFO: Loaded policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2025/12/08 20:33:55 wazuh-modulesd:control: INFO: Starting control thread.
+2025/12/08 20:33:55 sca: INFO: Starting Security Configuration Assessment scan.
+2025/12/08 20:33:55 sca: INFO: Starting evaluation of policy: '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2025/12/08 20:33:55 wazuh-modulesd:syscollector: INFO: Module started.
+2025/12/08 20:33:55 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2025/12/08 20:33:56 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2025/12/08 20:33:56 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-vulnerabilities-srv_wazuh_manager.
+2025/12/08 20:33:56 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-packages-srv_wazuh_manager.
+2025/12/08 20:33:56 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-system-srv_wazuh_manager.
+2025/12/08 20:33:56 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-processes-srv_wazuh_manager.
+2025/12/08 20:33:57 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-ports-srv_wazuh_manager.
+2025/12/08 20:33:57 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hotfixes-srv_wazuh_manager.
+2025/12/08 20:33:57 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hardware-srv_wazuh_manager.
+2025/12/08 20:33:57 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-protocols-srv_wazuh_manager.
+2025/12/08 20:33:57 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-interfaces-srv_wazuh_manager.
+2025/12/08 20:33:57 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-networks-srv_wazuh_manager.
+2025/12/08 20:33:58 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-users-srv_wazuh_manager.
+2025/12/08 20:33:58 wazuh-modulesd:vulnerability-scanner: INFO: Vulnerability scanner module started.
+2025/12/08 20:33:58 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-groups-srv_wazuh_manager.
+2025/12/08 20:33:58 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-browser-extensions-srv_wazuh_manager.
+2025/12/08 20:33:58 logger-helper: INFO: InventoryHarvesterFacade module started.
+2025/12/08 20:33:58 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-services-srv_wazuh_manager.
+2025/12/08 20:34:01 sca: INFO: Evaluation finished for policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2025/12/08 20:34:01 sca: INFO: Security Configuration Assessment scan finished. Duration: 6 seconds.
+2025/12/08 20:34:12 wazuh-syscheckd: INFO: netstat not available. Skipping port check.
+2025/12/08 20:34:17 rootcheck: INFO: Ending rootcheck scan.
+2025/12/08 20:35:27 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 20:35:27 wazuh-authd: WARNING: Duplicate name 'srv_bastion_ib', rejecting enrollment. Agent '001' doesn't comply with the registration time to be removed.
+2025/12/08 20:36:31 wazuh-execd: INFO: (1314): Shutdown received. Deleting responses.
+2025/12/08 20:36:31 wazuh-syscheckd: INFO: (1756): Shutdown received. Releasing resources.
+2025/12/08 20:36:31 wazuh-authd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 20:36:31 wazuh-analysisd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 20:36:31 wazuh-db: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 20:36:31 wazuh-logcollector: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 20:36:31 wazuh-remoted: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 20:36:31 wazuh-monitord: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 20:36:31 wazuh-authd: INFO: (1225): SIGNAL [(1)-(Hangup)] Received. Exit Cleaning...
+2025/12/08 20:36:31 wazuh-syscheckd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 20:36:31 wazuh-execd: INFO: (1225): SIGNAL [(15)-(Terminated)] Received. Exit Cleaning...
+2025/12/08 20:36:31 wazuh-db: INFO: (1225): SIGNAL [(1)-(Hangup)] Received. Exit Cleaning...
+2025/12/08 20:36:31 :router: INFO: Stopping server thread
+2025/12/08 20:36:36 wazuh-modulesd:router: INFO: Loaded router module.
+2025/12/08 20:36:36 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2025/12/08 20:36:36 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2025/12/08 20:36:39 wazuh-csyslogd: INFO: Remote syslog server not configured. Clean exit.
+2025/12/08 20:36:39 wazuh-dbd: INFO: Database not configured. Clean exit.
+2025/12/08 20:36:39 wazuh-integratord: INFO: Remote integrations not configured. Clean exit.
+2025/12/08 20:36:39 wazuh-agentlessd: INFO: Not configured. Exiting.
+2025/12/08 20:36:39 wazuh-authd: INFO: Started (pid: 441).
+2025/12/08 20:36:39 wazuh-authd: INFO: Accepting connections on port 1515. No password required.
+2025/12/08 20:36:39 wazuh-authd: INFO: Setting network timeout to 1.000000 sec.
+2025/12/08 20:36:39 wazuh-db: INFO: Started (pid: 458).
+2025/12/08 20:36:39 :router: INFO: Registering GET endpoint: /v1/agents/ids
+2025/12/08 20:36:39 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups/:name
+2025/12/08 20:36:39 :router: INFO: Registering GET endpoint: /v1/agents/ids/groups
+2025/12/08 20:36:39 :router: INFO: Registering GET endpoint: /v1/agents/:agent_id/groups
+2025/12/08 20:36:39 :router: INFO: Registering POST endpoint: /v1/agents/summary
+2025/12/08 20:36:39 :router: INFO: Registering GET endpoint: /v1/agents/sync
+2025/12/08 20:36:39 :router: INFO: Registering POST endpoint: /v1/agents/sync
+2025/12/08 20:36:39 :router: INFO: Registering POST endpoint: /v1/agents/restartinfo
+2025/12/08 20:36:39 :router: INFO: API started successfully
+2025/12/08 20:36:40 wazuh-execd: INFO: Started (pid: 497).
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: Started (pid: 522).
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6003): Monitoring path: '/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6003): Monitoring path: '/boot', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6003): Monitoring path: '/etc', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6003): Monitoring path: '/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/bin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6003): Monitoring path: '/usr/sbin', with options 'size | permissions | owner | group | mtime | inode | hash_md5 | hash_sha1 | hash_sha256 | scheduled'.
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mtab'
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/hosts.deny'
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/mail/statistics'
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random-seed'
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/random.seed'
+2025/12/08 20:36:41 wazuh-analysisd: INFO: Total rules enabled: '8451'
+2025/12/08 20:36:41 wazuh-analysisd: INFO: Started (pid: 509).
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/adjtime'
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/httpd/logs'
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/utmpx'
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/wtmpx'
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/cups/certs'
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/dumpdates'
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6206): Ignore 'file' entry '/etc/svc/volatile'
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6207): Ignore 'file' sregex '.log$|.swp$'
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6004): No diff for file: '/etc/ssl/private.key'
+2025/12/08 20:36:41 rootcheck: INFO: Starting rootcheck scan.
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6000): Starting daemon...
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6010): File integrity monitoring scan frequency: 43200 seconds
+2025/12/08 20:36:41 wazuh-syscheckd: INFO: (6008): File integrity monitoring scan started.
+2025/12/08 20:36:41 wazuh-analysisd: INFO: (7200): Logtest started
+2025/12/08 20:36:42 wazuh-analysisd: INFO: EPS limit disabled
+2025/12/08 20:36:42 wazuh-syscheckd: INFO: (6009): File integrity monitoring scan ended.
+2025/12/08 20:36:42 wazuh-syscheckd: INFO: FIM sync module started.
+2025/12/08 20:36:42 wazuh-remoted: INFO: Started (pid: 680). Listening on port 1514/TCP (secure).
+2025/12/08 20:36:42 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2025/12/08 20:36:43 wazuh-logcollector: INFO: Monitoring output of command(360): df -P
+2025/12/08 20:36:43 wazuh-logcollector: INFO: Monitoring full output of command(360): netstat -tulpn | sed 's/\([[:alnum:]]\+\)\ \+[[:digit:]]\+\ \+[[:digit:]]\+\ \+\(.*\):\([[:digit:]]*\)\ \+\([0-9\.\:\*]\+\).\+\ \([[:digit:]]*\/[[:alnum:]\-]*\).*/\1 \2 == \3 == \4 \5/' | sort -k 4 -g | sed 's/ == \(.*\) ==/:\1/' | sed 1,2d
+2025/12/08 20:36:43 wazuh-logcollector: INFO: Monitoring full output of command(360): last -n 20
+2025/12/08 20:36:43 wazuh-logcollector: INFO: (1950): Analyzing file: '/var/ossec/logs/active-responses.log'.
+2025/12/08 20:36:43 wazuh-monitord: INFO: Started (pid: 767).
+2025/12/08 20:36:43 wazuh-logcollector: INFO: Started (pid: 754).
+2025/12/08 20:36:43 wazuh-modulesd:router: INFO: Loaded router module.
+2025/12/08 20:36:43 wazuh-modulesd:content_manager: INFO: Loaded content_manager module.
+2025/12/08 20:36:43 wazuh-modulesd:inventory-harvester: INFO: Loaded Inventory harvester module.
+2025/12/08 20:36:43 wazuh-modulesd: INFO: Started (pid: 789).
+2025/12/08 20:36:43 wazuh-modulesd:agent-upgrade: INFO: (8153): Module Agent Upgrade started.
+2025/12/08 20:36:43 wazuh-modulesd:osquery: INFO: Module disabled. Exiting...
+2025/12/08 20:36:43 wazuh-modulesd:ciscat: INFO: Module disabled. Exiting...
+2025/12/08 20:36:43 wazuh-modulesd:task-manager: INFO: (8200): Module Task Manager started.
+2025/12/08 20:36:43 wazuh-modulesd:content_manager: INFO: Starting content_manager module.
+2025/12/08 20:36:43 wazuh-modulesd:database: INFO: Module started.
+2025/12/08 20:36:43 wazuh-modulesd:vulnerability-scanner: INFO: Starting vulnerability_scanner module.
+2025/12/08 20:36:43 wazuh-modulesd:router: INFO: Starting router module.
+2025/12/08 20:36:43 sca: INFO: Module started.
+2025/12/08 20:36:43 wazuh-modulesd:inventory-harvester: INFO: Starting inventory_harvester module.
+2025/12/08 20:36:43 wazuh-modulesd:download: INFO: Module started.
+2025/12/08 20:36:43 wazuh-modulesd:control: INFO: Starting control thread.
+2025/12/08 20:36:43 sca: INFO: Loaded policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2025/12/08 20:36:43 sca: INFO: Starting Security Configuration Assessment scan.
+2025/12/08 20:36:43 sca: INFO: Starting evaluation of policy: '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2025/12/08 20:36:44 wazuh-modulesd:syscollector: INFO: Module started.
+2025/12/08 20:36:44 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2025/12/08 20:36:44 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2025/12/08 20:36:44 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-vulnerabilities-srv_wazuh_manager.
+2025/12/08 20:36:44 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-packages-srv_wazuh_manager.
+2025/12/08 20:36:44 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-system-srv_wazuh_manager.
+2025/12/08 20:36:44 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-processes-srv_wazuh_manager.
+2025/12/08 20:36:45 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-ports-srv_wazuh_manager.
+2025/12/08 20:36:45 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hotfixes-srv_wazuh_manager.
+2025/12/08 20:36:45 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-hardware-srv_wazuh_manager.
+2025/12/08 20:36:45 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-protocols-srv_wazuh_manager.
+2025/12/08 20:36:45 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-interfaces-srv_wazuh_manager.
+2025/12/08 20:36:45 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-networks-srv_wazuh_manager.
+2025/12/08 20:36:45 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-users-srv_wazuh_manager.
+2025/12/08 20:36:46 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-groups-srv_wazuh_manager.
+2025/12/08 20:36:46 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-browser-extensions-srv_wazuh_manager.
+2025/12/08 20:36:46 wazuh-modulesd:vulnerability-scanner: INFO: Vulnerability scanner module started.
+2025/12/08 20:36:46 logger-helper: INFO: InventoryHarvesterFacade module started.
+2025/12/08 20:36:46 indexer-connector: INFO: IndexerConnector initialized successfully for index: wazuh-states-inventory-services-srv_wazuh_manager.
+2025/12/08 20:36:48 sca: INFO: Evaluation finished for policy '/var/ossec/ruleset/sca/cis_amazon_linux_2023.yml'
+2025/12/08 20:36:48 sca: INFO: Security Configuration Assessment scan finished. Duration: 5 seconds.
+2025/12/08 20:37:00 wazuh-syscheckd: INFO: netstat not available. Skipping port check.
+2025/12/08 20:37:05 rootcheck: INFO: Ending rootcheck scan.
+2025/12/08 20:37:19 wazuh-authd: INFO: Received request for a new agent (srv_bastion_ib) from: 192.168.1.7
+2025/12/08 20:37:19 wazuh-authd: INFO: Duplicate name. Removing old agent 'srv_bastion_ib' (id '001').
+2025/12/08 20:37:19 wazuh-authd: INFO: Agent key generated for 'srv_bastion_ib' (requested by any)
+2025/12/08 20:37:29 wazuh-remoted: INFO: (1409): Authentication file changed. Updating.
+2025/12/08 20:37:29 wazuh-remoted: INFO: (1410): Reading authentication keys file.
+2025/12/08 21:36:45 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2025/12/08 21:36:51 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2025/12/08 22:36:52 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2025/12/08 22:36:58 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2025/12/08 23:36:59 wazuh-modulesd:syscollector: INFO: Starting evaluation.
+2025/12/08 23:37:06 wazuh-modulesd:syscollector: INFO: Evaluation finished.
+2025/12/09 00:00:10 wazuh-monitord: INFO: Running daily rotation of log files.

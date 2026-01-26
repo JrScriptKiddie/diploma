@@ -5,7 +5,6 @@ ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
     ansible \
-    smbclient \
     openssh-server \
     sshpass \
     python3 \
@@ -17,8 +16,6 @@ RUN apt-get update \
     iproute2 \
     ca-certificates \
  && rm -rf /var/lib/apt/lists/*
-
-EXPOSE 22
 
 COPY start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh

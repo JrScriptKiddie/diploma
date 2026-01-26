@@ -8,7 +8,7 @@ ip route add default via "${GATEWAY_IP}" || true
 echo "Injecting LDAP password into config..."
 sed -i "s|LDAP_READONLY_USER_USERNAME|${LDAP_READONLY_USER_USERNAME:-LDAP_READONLY_USER_USERNAME}|g" /etc/nslcd.conf
 sed -i "s|LDAP_READONLY_USER_PASSWORD|${LDAP_READONLY_USER_PASSWORD:-LDAP_READONLY_USER_PASSWORD}|g" /etc/nslcd.conf
-sed -i "s|LDAP_SRV_IP|${LDAP_SRV_IP:-LDAP_SRV_IP}|g" /etc/nslcd.conf
+sed -i "s|IP_LDAP_SRV|${IP_LDAP_SRV:-IP_LDAP_SRV}|g" /etc/nslcd.conf
 
 # Ensure NSS uses LDAP
 cat >/etc/nsswitch.conf <<'EOF'
