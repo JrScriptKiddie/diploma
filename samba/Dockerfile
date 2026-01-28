@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 #Ubuntu 
 
-ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC
+ENV DEBIAN_FRONTEND=noninteractive TZ=Europe/Moscow
 RUN apt-get update
 
 # Net tools, ssh, base utils

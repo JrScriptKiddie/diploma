@@ -6,16 +6,25 @@ ip route add default via $GATEWAY_IP || true
 # Trust PolarProxy CA if mounted
 if [ -f /usr/local/share/ca-certificates/proxy_ca.crt ]; then
   update-ca-certificates || true
-  mkdir -p /etc/firefox/policies
-  cat <<'EOF' > /etc/firefox/policies/policies.json
+  for policy_dir in /etc/firefox/policies /etc/firefox-esr/policies /usr/lib/firefox/distribution /usr/lib/firefox-esr/distribution; do
+    mkdir -p "$policy_dir"
+    cat <<'EOF' > "$policy_dir/policies.json"
 {
   "policies": {
     "Certificates": {
+      "ImportEnterpriseRoots": true,
       "Install": ["/usr/local/share/ca-certificates/proxy_ca.crt"]
-    }
+    },
+    "Preferences": {
+      "network.http.http2.enabled": {
+        "Value": false,
+        "Status": "locked"
+      }
+    }    
   }
 }
 EOF
+  done
 fi
 
 # Enforce pam_access for group-based login control
@@ -60,12 +69,13 @@ service nslcd start
 # Запускаем nscd (кэширование, желательно)
 service nscd start
 
-# Запуск rsyslog
-/usr/sbin/rsyslogd
-
 # Выводим диагностику (опционально)
 echo "Testing LDAP connection..."
 getent passwd test || echo "LDAP user 'test' not found via NSS"
+
+# Запуск rsyslog
+/usr/sbin/rsyslogd
+
 
 # Права на домашние директории: владелец по имени каталога, права 0755
 # Нужно если подключалось через volumes и права не сохранились при загрузке
@@ -77,6 +87,28 @@ for d in /home/*; do
     chmod 0755 "$d"
   fi
 done
+
+# SSH
+echo "SSH setup..."
+mkdir -p /etc/ssh /run/sshd
+chmod 755 /run/sshd
+if [ ! -f /etc/ssh/sshd_config ]; then
+  cat > /etc/ssh/sshd_config <<'EOF'
+Port 22
+Protocol 2
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+PasswordAuthentication yes
+PermitRootLogin no
+UsePAM yes
+Subsystem sftp /usr/lib/openssh/sftp-server
+EOF
+fi
+sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config || true
+sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config || true
+ssh-keygen -A >/dev/null 2>&1 || true
+/usr/sbin/sshd
 
 # Run scenario if present and optionally schedule via cron
 #Каждую минуту: * * * * *

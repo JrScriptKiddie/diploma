@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC
+ENV DEBIAN_FRONTEND=noninteractive TZ=Europe/Moscow
 RUN apt-get update
 
 # Net tools, ssh, base utils
@@ -16,7 +16,7 @@ RUN apt-get install -y --no-install-recommends \
    openssh-client \
    openssh-server \
    curl \
-   cron   
+   cron
 
 # Passwords and politics
 RUN apt-get install -y --no-install-recommends \

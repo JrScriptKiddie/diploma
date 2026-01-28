@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/runtime:6.0
 
 USER root
 
-ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC
+ENV DEBIAN_FRONTEND=noninteractive TZ=Europe/Moscow
 RUN apt-get update
 
 # Net tools, ssh, base utils
@@ -40,6 +40,18 @@ RUN curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --dearmor -o /usr
 RUN apt install -y libcap2-bin
 
 RUN rm -rf /var/lib/apt/lists/*
+
+# 2. Настройка PAM (mkhomedir)
+RUN echo "session required pam_mkhomedir.so skel=/etc/skel umask=0077" >> /etc/pam.d/common-session
+
+# ВАЖНО: nslcd запускается от пользователя nslcd, он должен уметь читать конфиг!
+# Меняем владельца на root:nslcd и права на 640
+RUN chown root:nslcd /etc/nslcd.conf && chmod 640 /etc/nslcd.conf
+
+# 4. Настраиваем nsswitch
+RUN sed -i 's/passwd:         files/passwd:         files ldap/' /etc/nsswitch.conf && \
+    sed -i 's/group:          files/group:          files ldap/' /etc/nsswitch.conf && \
+    sed -i 's/shadow:         files/shadow:         files ldap/' /etc/nsswitch.conf
 
 RUN groupadd -g 31337 polarproxy && \
     useradd -m -u 31337 -g polarproxy polarproxy && \

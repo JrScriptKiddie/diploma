@@ -7,6 +7,17 @@ ip route add default via $GATEWAY_IP || true
 # NSLCD config access
 chown root:nslcd /etc/nslcd.conf && chmod 640 /etc/nslcd.conf
 
+# Запускаем демон nslcd (клиент LDAP) без OpenRC
+if command -v nslcd >/dev/null 2>&1; then
+    nslcd
+else
+    echo "[fw] nslcd not found, skipping"
+fi
+
+# Выводим диагностику (опционально)
+echo "Testing LDAP connection..."
+getent passwd test || echo "LDAP user 'test' not found via NSS"
+
 # Enforce pam_access for group-based login control
 if ! grep -q '^account required pam_access.so' /etc/pam.d/common-account; then
     echo 'account required pam_access.so' >> /etc/pam.d/common-account
@@ -40,23 +51,25 @@ chown root:root /etc/sudoers.d/ldap-sudo
 chmod 0440 /etc/sudoers.d/ldap-sudo
 sed -i "s|SG_ADMINS|$SG_ADMINS|g" /etc/sudoers.d/ldap-sudo
 
-# Запускаем демон nslcd (клиент LDAP) без OpenRC
-if command -v nslcd >/dev/null 2>&1; then
-    nslcd
-else
-    echo "[fw] nslcd not found, skipping"
-fi
-
-# Запуск rsyslog
-/usr/sbin/rsyslogd
-
-# Выводим диагностику (опционально)
-echo "Testing LDAP connection..."
-getent passwd test || echo "LDAP user 'test' not found via NSS"
-
-# Run SSH server
-mkdir -p /run/sshd
+# SSH
+mkdir -p /etc/ssh /run/sshd
 chmod 755 /run/sshd
+if [ ! -f /etc/ssh/sshd_config ]; then
+  cat > /etc/ssh/sshd_config <<'EOF'
+Port 22
+Protocol 2
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+PasswordAuthentication yes
+PermitRootLogin no
+UsePAM yes
+Subsystem sftp /usr/lib/openssh/sftp-server
+EOF
+fi
+sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config || true
+sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config || true
+ssh-keygen -A >/dev/null 2>&1 || true
 /usr/sbin/sshd
 
 # WAZUH AGENT START

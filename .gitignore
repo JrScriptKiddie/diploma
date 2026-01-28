@@ -29,10 +29,13 @@ Thumbs.db
 
 # Logs
 wget-log
+.*.log
+.xorgxrdp*.log
 
 fw/nftables.target.conf
 docker-compose-trash.yml
 srv_wazuh_manager/ossec/queue/vd/feed/*
+srv_wazuh_manager/var/ossec/logs
 home/.cache/
 home/.mozilla/
 .cache/
@@ -95,11 +98,9 @@ home/.config
 .config/kde/
 .config/gtk-3.0/
 
-# Если вам вообще не нужны конфиги софта в этом репозитории,
-# можно раскомментировать строку ниже (это решит 90% проблем):
 .config/
 .gnupg/
-# --- Linux Home Dir Trash ---
+
 # Ключи и доступы (ОПАСНО КОММИТИТЬ!)
 .gnupg/
 .ssh/

@@ -1,75 +1,114 @@
-- hosts: all
+- name: Healthcheck
+  hosts: all
   gather_facts: false
-  any_errors_fatal: false
-  vars:
-    ping_target_cmd: "ip route | awk '/^default/ {print $3; exit}'"
-      
-  pre_tasks: 
-    - name: Detect Alpine
-      raw: "test -f /etc/alpine-release && echo alpine || echo other"
-      changed_when: false
-      register: os_detect
+  become: true
 
-    - name: Set OS family fact
-      set_fact:
-        is_alpine: "{{ 'true' if (os_detect.stdout | trim) == 'alpine' else 'false' }}"
-
-    - name: Ensure Python 3 for non-Alpine targets
-      raw: |
-        if command -v python3 >/dev/null 2>&1; then exit 0; fi
-        sudo apt-get update -y >/dev/null 2>&1 || true
-        sudo apt-get install -y python3 >/dev/null 2>&1
-      when: is_alpine == 'false'
-      changed_when: false
-
-    - name: Gather facts (non-Alpine)
-      setup:
-      when: is_alpine == 'false'
-
-    - name: ICMP ping default gateway
-      command: sh -lc "ping -c1 -W1 {{ gw.stdout | default('127.0.0.1') }}"
-      register: icmp
-      changed_when: false
+  pre_tasks:
+    - name: ICMP ping from controller (2 attempts, 1s timeout)
+      ansible.builtin.command: "ping -c 2 -W 1 {{ inventory_hostname }}"
+      delegate_to: localhost
+      become: false
+      register: icmp_ping
       failed_when: false
-
-    - name: Collect metrics summary (non-Alpine)
-      set_fact:
-        monitor_summary:
-          hostname: "{{ ansible_facts['hostname'] | default(inventory_hostname) }}"
-          os_family: "{{ ansible_facts['os_family'] | default('debian') }}"
-          uptime_seconds: "{{ ansible_facts['uptime_seconds'] | default('n/a') }}"
-          mem_total_mb: "{{ ansible_facts['memtotal_mb'] | default(ansible_facts['memory_mb']['real']['total'] | default('n/a')) }}"
-          mem_free_mb: "{{ ansible_facts['memfree_mb'] | default(ansible_facts['memory_mb']['real']['free'] | default('n/a')) }}"
-          vcpus: "{{ ansible_facts['processor_vcpus'] | default(ansible_facts['processor_count'] | default('n/a')) }}"
-          icmp_ok: "{{ icmp.rc == 0 }}"
-      when: is_alpine == 'false'
-
-    - name: Collect metrics summary (Alpine via raw)
-      raw: |
-        HOST=$(hostname)
-        UPTIME=$(cut -d' ' -f1 /proc/uptime)
-        MEMTOTAL=$(awk '/MemTotal/ {print int($2/1024)}' /proc/meminfo)
-        MEMFREE=$(awk '/MemAvailable/ {print int($2/1024)}' /proc/meminfo)
-        VCPUS=$(nproc 2>/dev/null || getconf _NPROCESSORS_ONLN)
-        echo "HOST=${HOST} UPTIME=${UPTIME} MEMTOTAL=${MEMTOTAL} MEMFREE=${MEMFREE} VCPUS=${VCPUS}"
-      register: alpine_stats
       changed_when: false
-      when: is_alpine == 'true'
 
-    - name: Set Alpine summary fact
-      set_fact:
-        monitor_summary:
-          hostname: "{{ (alpine_stats.stdout | regex_search('HOST=([^ ]+)', '\\1')) | default(inventory_hostname) }}"
-          os_family: "alpine"
-          uptime_seconds: "{{ alpine_stats.stdout | regex_search('UPTIME=([^ ]+)', '\\1') | default('n/a') }}"
-          mem_total_mb: "{{ alpine_stats.stdout | regex_search('MEMTOTAL=([^ ]+)', '\\1') | default('n/a') }}"
-          mem_free_mb: "{{ alpine_stats.stdout | regex_search('MEMFREE=([^ ]+)', '\\1') | default('n/a') }}"
-          vcpus: "{{ alpine_stats.stdout | regex_search('VCPUS=([^ ]+)', '\\1') | default('n/a') }}"
-          icmp_ok: "{{ icmp.rc == 0 }}"
-      when: is_alpine == 'true'
+    - name: Skip host when ICMP unreachable
+      ansible.builtin.meta: end_host
+      when: icmp_ping.rc != 0
 
-    - name: Show summary
-      debug:
-        var: monitor_summary
+    - name: Check SSH availability (port 22)
+      ansible.builtin.wait_for:
+        host: "{{ inventory_hostname }}"
+        port: 22
+        timeout: 1
+        connect_timeout: 1
+        state: started
+      delegate_to: localhost
+      become: false
+      register: ssh_check
+      failed_when: false
+      changed_when: false
 
-  
+    - name: Skip host when SSH unavailable
+      ansible.builtin.meta: end_host
+      when: ssh_check.state is not defined or ssh_check.state != "started"
+
+    - name: Confirm pre_tasks completed
+      ansible.builtin.debug:
+        msg: "pre_tasks passed: ICMP and SSH reachable"
+      when: icmp_ping.rc == 0 and ssh_check.state is defined and ssh_check.state == "started"
+
+  tasks:
+    - name: Read passwd database
+      ansible.builtin.getent:
+        database: passwd
+
+    - name: Build missing user list
+      ansible.builtin.set_fact:
+        missing_users: >-
+          {{ ['test', 'localadmin']
+             | reject('in', ansible_facts.getent_passwd.keys())
+             | list }}
+
+    - name: Ensure required users exist
+      ansible.builtin.assert:
+        that:
+          - missing_users | length == 0
+        fail_msg: "Missing users: {{ missing_users | join(', ') }}"
+        success_msg: "Required users present: test, localadmin"
+
+    - name: Stat required files for users and branch_users
+      ansible.builtin.stat:
+        path: "{{ item }}"
+      loop:
+        - /usr/local/share/ca-certificates/proxy_ca.crt
+        - /etc/firefox/policies/policies.json
+      register: required_file_stats
+      when: "'users' in group_names or 'branch_users' in group_names"
+
+    - name: Ensure required files exist and are regular files
+      ansible.builtin.assert:
+        that:
+          - item.stat.exists
+          - item.stat.isreg
+        fail_msg: "Missing or not a file: {{ item.stat.path }}"
+        success_msg: "Required file present: {{ item.stat.path }}"
+      loop: "{{ required_file_stats.results | default([]) }}"
+      when: "'users' in group_names or 'branch_users' in group_names"
+
+    - name: Check syslog file exists
+      ansible.builtin.stat:
+        path: /var/log/syslog
+      register: syslog_stat
+
+    - name: Fail if syslog missing
+      ansible.builtin.fail:
+        msg: "/var/log/syslog not found"
+      when: not syslog_stat.stat.exists
+
+    - name: Count errors in syslog for the last hour
+      ansible.builtin.shell: |
+        set -euo pipefail
+        cutoff="$(date -d '1 hour ago' +%s)"
+        year="$(date +%Y)"
+        awk -v cutoff="$cutoff" -v year="$year" '
+          BEGIN {
+            mon["Jan"]=1; mon["Feb"]=2; mon["Mar"]=3; mon["Apr"]=4; mon["May"]=5; mon["Jun"]=6;
+            mon["Jul"]=7; mon["Aug"]=8; mon["Sep"]=9; mon["Oct"]=10; mon["Nov"]=11; mon["Dec"]=12;
+            count=0;
+          }
+          {
+            m=mon[$1]; d=$2; split($3, t, ":");
+            if (m==0 || d=="" || t[1]=="") next;
+            ts = mktime(year " " m " " d " " t[1] " " t[2] " " t[3]);
+            if (ts >= cutoff && $0 ~ /error/i) count++;
+          }
+          END { print count }' /var/log/syslog
+      args:
+        executable: /bin/bash
+      register: syslog_error_count
+      changed_when: false
+
+    - name: Show syslog error count for the last hour
+      ansible.builtin.debug:
+        msg: "Syslog errors in the last hour: {{ syslog_error_count.stdout | trim }}"

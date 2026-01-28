@@ -61,26 +61,53 @@ services:
     dns:
       - ${SUBNET_SERVERS}.${IP_SRV_DNS}      
 
+  srv_ansible:
+    build: ./srv_ansible
+    hostname: srv_ansible
+    container_name: srv_ansible
+    cap_add: [ "NET_ADMIN" ]
+    restart: always
+    volumes:
+      - ./srv_ansible/ansible:/workspace/
+      - ./srv_ansible/ansible.cfg:/etc/ansible/ansible.cfg
+      - ./srv_ansible/logs:/var/log/ansible
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      SG_USERS: SG-USERS
+      SG_ADMINS: SG-NET-ADMINS
+      GATEWAY_IP: ${SUBNET_ADMIN}.${IP_FW}
+      ANSIBLE: /workspace/ansible
+      ANSIBLE_USERNAME: localadmin
+      ANSIBLE_PASSWORD: ${LOCALADMIN_PASSWORD}
+    networks:
+      admin_net:
+        ipv4_address: ${SUBNET_ADMIN}.${IP_SRV_ANSIBLE}
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}
+
   srv_dns:
     hostname: srv_dns
-    depends_on: [ fw ]
     build: ./srv_dns
     container_name: srv_dns
     cap_add: [ "NET_ADMIN" ]
     restart: always
-    networks:
-      servers_net:
-        ipv4_address: ${SUBNET_SERVERS}.${IP_SRV_DNS}
     volumes:
       - ./srv_dns/Corefile:/etc/coredns/Corefile:ro
       - ./srv_dns/xxx.ag.db:/etc/coredns/xxx.ag.db:ro
       - ./srv_ldap/nslcd.conf:/etc/nslcd.conf          
-    dns: ["1.1.1.1", "8.8.8.8"]
+    #dns: ["1.1.1.1", "8.8.8.8"]
     <<: *common_env_file
     environment:
       <<: *common_env
+      SG_USERS: SG-SRV-BASTION-USERS
+      SG_ADMINS: SG-SRV-BASTION-ADMINS      
       GATEWAY_IP: ${SUBNET_SERVERS}.${IP_FW}
       IP_SRV_DNS: ${SUBNET_SERVERS}.${IP_SRV_DNS}
+    networks:
+      servers_net:
+        ipv4_address: ${SUBNET_SERVERS}.${IP_SRV_DNS}
 
   srv_wg_portal:
     build: ./srv_wg_portal
@@ -171,7 +198,7 @@ services:
     <<: *common_env_file
     environment:
       <<: *common_env
-      ARKIME_HOST: ${SUBNET_DMZ}.${SRV_ARKIME_IP}
+      ARKIME_HOST: ${SUBNET_INFOSEC}.${IP_SRV_ARKIME}
       ARKIME_PORT: 57012
       SG_USERS: SG-SRV-MGMT-USERS
       SG_ADMINS: SG-SRV-MGMT-ADMINS
@@ -187,7 +214,6 @@ services:
     container_name: srv_arkime
     hostname: srv_arkime
     cap_add: [ "NET_ADMIN" ]
-    depends_on: [ srv_opensearch ]     
     restart: always
     working_dir: /opt/arkime
     volumes:
@@ -523,7 +549,7 @@ services:
     volumes:
       - ./ws000342/home/:/home/
       - ./srv_ldap/nslcd.conf:/etc/nslcd.conf
-      - ./branch/srv_branch_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
+      - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro
     shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
     <<: *common_env_file
     environment:
@@ -546,7 +572,7 @@ services:
     volumes:
       - ./ws000189/home/:/home/
       - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
-      - ./branch/srv_branch_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
+      - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
     shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
     <<: *common_env_file
     environment:
@@ -667,4 +693,3 @@ volumes:
   wazuh_indexer:
   espocrm_db:
   espocrm_web:
-

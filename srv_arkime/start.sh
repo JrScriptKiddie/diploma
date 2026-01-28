@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set +e
+set -o pipefail
+
 ip route del default
 ip route add default via $GATEWAY_IP || true
 
@@ -16,6 +19,7 @@ until curl -sSf "${OPENSEARCH_URL}" >/dev/null 2>&1; do
     fi
     sleep "${OPENSEARCH_WAIT_INTERVAL}"
 done
+
 echo "OpenSearch is reachable, checking Arkime DB..."
 
 /opt/arkime/db/db.pl "${OPENSEARCH_URL}" init --ifneeded
@@ -30,6 +34,12 @@ echo "Injecting LDAP password into config..."
 sed -i "s|LDAP_READONLY_USER_USERNAME|$LDAP_READONLY_USER_USERNAME|g" /etc/nslcd.conf
 sed -i "s|LDAP_READONLY_USER_PASSWORD|$LDAP_READONLY_USER_PASSWORD|g" /etc/nslcd.conf
 sed -i "s|IP_LDAP_SRV|$IP_LDAP_SRV|g" /etc/nslcd.conf
+
+# Запускаем демон nslcd (клиент LDAP)
+service nslcd start
+# Выводим диагностику (опционально)
+echo "Testing LDAP connection..."
+getent passwd test || echo "LDAP user 'test' not found via NSS"
 
 # Enforce pam_access for group-based login control
 if ! grep -q '^account required pam_access.so' /etc/pam.d/common-account; then
@@ -67,19 +77,31 @@ chown root:root /etc/sudoers.d/ldap-sudo
 chmod 0440 /etc/sudoers.d/ldap-sudo
 sed -i "s|SG_ADMINS|$SG_ADMINS|g" /etc/sudoers.d/ldap-sudo
 
-
-# Запускаем демон nslcd (клиент LDAP)
-service nslcd start
-
-# Запускаем nscd (кэширование, желательно)
-service nscd start
-
 # Запуск rsyslog
 /usr/sbin/rsyslogd
 
-# Выводим диагностику (опционально)
-echo "Testing LDAP connection..."
-getent passwd test || echo "LDAP user 'test' not found via NSS"
+# SSH
+echo "SSH setup..."
+mkdir -p /etc/ssh /run/sshd
+chmod 755 /run/sshd
+if [ ! -f /etc/ssh/sshd_config ]; then
+  cat > /etc/ssh/sshd_config <<'EOF'
+Port 22
+Protocol 2
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+PasswordAuthentication yes
+PermitRootLogin no
+UsePAM yes
+Subsystem sftp /usr/lib/openssh/sftp-server
+EOF
+fi
+sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config || true
+sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config || true
+ssh-keygen -A >/dev/null 2>&1 || true
+/usr/sbin/sshd
 
 # Передаем управление оригинальному скрипту
+echo "Arkime starting..."
 exec /opt/arkime/bin/docker.sh capture-viewer --update-geo "$@"
