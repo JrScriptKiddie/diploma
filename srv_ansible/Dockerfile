@@ -1,28 +1,32 @@
 FROM ubuntu:latest
 
-ENV DEBIAN_FRONTEND=noninteractive TZ=Europe/Moscow
+ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC
+RUN apt-get update
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ca-certificates \
-    gnupg \
-    nano \
-    iputils-ping \
-    net-tools \
-    dnsutils \
-    rsyslog \
-    iproute2 \
-    openssh-client \
-    openssh-server \
-    curl \
-    cron \
-    nslcd \
-    libnss-ldapd \
-    libpam-ldapd \
-    ldap-utils \
-    libpam-pwquality \
-    cracklib-runtime \
-    sudo \
-    && rm -rf /var/lib/apt/lists/*
+# Net tools, ssh, base utils
+RUN apt-get install -y --no-install-recommends \
+   ca-certificates \
+   gnupg \
+   nano \
+   iputils-ping \
+   net-tools \
+   dnsutils \
+   rsyslog \
+   iproute2 \
+   openssh-client \
+   openssh-server \
+   curl \
+   cron   
+
+# Passwords and politics
+RUN apt-get install -y --no-install-recommends \
+   nslcd \
+   libnss-ldapd \
+   libpam-ldapd \
+   ldap-utils \
+   libpam-pwquality \
+   cracklib-runtime \    
+   sudo
 
 # Wazuh agent repo + install
 RUN curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --dearmor -o /usr/share/keyrings/wazuh.gpg && \

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=OpenTTD
+Exec=openttd
+Icon=openttd
+Terminal=false

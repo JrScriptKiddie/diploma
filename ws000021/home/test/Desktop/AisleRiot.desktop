@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=AisleRiot
+Exec=sol
+Icon=aisleriot
+Terminal=false

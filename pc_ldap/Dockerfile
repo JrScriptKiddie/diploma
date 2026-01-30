@@ -39,16 +39,17 @@ RUN curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --dearmor -o /usr
     WAZUH_MANAGER=srv_wazuh_manager apt-get install -y wazuh-agent
 
 RUN apt-get install -y --no-install-recommends \
-    remmina
+    remmina \
+    remmina-plugin-rdp \
+    freerdp2-x11 \
+    samba-client
     
 RUN rm -rf /var/lib/apt/lists/*
 
 # 2. Настройка PAM (mkhomedir)
 RUN echo "session required pam_mkhomedir.so skel=/etc/skel umask=0077" >> /etc/pam.d/common-session
 
-# ВАЖНО: nslcd запускается от пользователя nslcd, он должен уметь читать конфиг!
-# Меняем владельца на root:nslcd и права на 640
-RUN chown root:nslcd /etc/nslcd.conf && chmod 640 /etc/nslcd.conf
+
 
 # 4. Настраиваем nsswitch
 RUN sed -i 's/passwd:         files/passwd:         files ldap/' /etc/nsswitch.conf && \

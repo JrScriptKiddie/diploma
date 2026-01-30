@@ -3,6 +3,18 @@
 ip route del default
 ip route add default via $GATEWAY_IP || true
 
+# Ensure Wazuh manager resolves before CoreDNS starts
+echo "${IP_SRV_WAZUH_MANAGER} srv_wazuh_manager" >> /etc/hosts
+
+# Start CoreDNS early and keep it running in background
+COREDNS_PID=""
+if command -v coredns >/dev/null 2>&1; then
+  coredns -conf /etc/coredns/Corefile &
+  COREDNS_PID=$!
+else
+  echo "[srv_dns] coredns not found, skipping"
+fi
+
 # NSLCD config access
 chown root:nslcd /etc/nslcd.conf && chmod 640 /etc/nslcd.conf
 
@@ -50,34 +62,18 @@ else
 fi
 
 # Запуск rsyslog
-/usr/sbin/rsyslogd
-
-# Выводим диагностику (опционально)
-echo "Testing LDAP connection..."
-getent passwd test || echo "LDAP user 'test' not found via NSS"
-
-# Права на домашние директории: владелец по имени каталога, права 0755
-# Нужно если подключалось через volumes и права не сохранились при загрузке с гита
-for d in /home/users/*; do
-  [ -d "$d" ] || continue
-  user=$(basename "$d")
-  if id "$user" >/dev/null 2>&1; then
-    chown -R "$user:root" "$d"
-    chmod 0755 "$d"
-  fi
-done
+/usr/sbin/rsyslogd -n -iNONE &
 
 # Run SSH server
 mkdir -p /run/sshd
 chmod 755 /run/sshd
 /usr/sbin/sshd
 
-# Ensure Wazuh manager resolves before CoreDNS starts
-echo "${IP_SRV_WAZUH_MANAGER} srv_wazuh_manager" >> /etc/hosts
-
 # WAZUH AGENT START
-/var/ossec/bin/wazuh-control start
+/var/ossec/bin/wazuh-control start &
 
-
-
-exec coredns -conf /etc/coredns/Corefile
+if [ -n "$COREDNS_PID" ]; then
+  wait "$COREDNS_PID"
+else
+  tail -f /dev/null
+fi

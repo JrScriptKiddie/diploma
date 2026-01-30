@@ -1,6 +1,9 @@
 /tasks.md
 /report.md
 /workfiles
+ldap_users.csv
+
+/srv_idm
 
 # Editors / IDE
 .vscode/

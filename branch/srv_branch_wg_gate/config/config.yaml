@@ -65,9 +65,9 @@ auth:
   ldap:
     - provider_name: "LDAP"
       url: ldap://192.168.1.199:389
-      bind_user: cn=srv_ldap_reader,dc=layer8,dc=ag
+      bind_user: cn=srv_ldap_reader,local.host
       bind_pass: 8t83XsbYLeqNSEU
-      base_dn: dc=layer8,dc=ag
+      base_dn: local.host
       login_filter: "(&(objectClass=organizationalPerson)(uid={{login_identifier}}))"        
       sync_filter: (&(objectClass=organizationalPerson))
       #sync_filter: (&(objectClass=organizationalPerson)(!userAccountControl:1.2.840.113556.1.4.803:=2)(mail=*))
@@ -80,7 +80,7 @@ auth:
         display_name: cn
         email: mail
       # нужно настраивать аттрибут memberOf в LDAP... поэтому пока только локальные учетки
-      #admin_group: cn=SG-VPN-ADMINS,ou=groups,dc=layer8,dc=ag
+      #admin_group: cn=SG-VPN-ADMINS,ou=groups,local.host
       registration_enabled: true
       log_user_info: true
   webauthn:

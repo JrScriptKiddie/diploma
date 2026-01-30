@@ -5,7 +5,7 @@ x-env-file: &common_env_file
 
 x-env: &common_env
   IP_SRV_WAZUH_MANAGER: ${SUBNET_INFOSEC}.${IP_SRV_WAZUH_MANAGER} 
-  IP_LDAP_SRV: ${SUBNET_SERVERS}.${IP_LDAP_SRV} 
+  IP_SRV_DNS_FULL: ${SUBNET_SERVERS}.${IP_SRV_DNS}
 
 services:
   isp:
@@ -59,7 +59,7 @@ services:
       GATEWAY_IP: ${SUBNET_UPLINK}.${IP_ISP}
       VPN_SRV_IP: ${IP_VPN}
     dns:
-      - ${SUBNET_SERVERS}.${IP_SRV_DNS}      
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}     
 
   srv_ansible:
     build: ./srv_ansible
@@ -72,6 +72,7 @@ services:
       - ./srv_ansible/ansible.cfg:/etc/ansible/ansible.cfg
       - ./srv_ansible/logs:/var/log/ansible
       - ./srv_ldap/nslcd.conf:/etc/nslcd.conf
+      - wazuh_srv_ansible:/var/ossec/etc
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -95,9 +96,9 @@ services:
     restart: always
     volumes:
       - ./srv_dns/Corefile:/etc/coredns/Corefile:ro
-      - ./srv_dns/xxx.ag.db:/etc/coredns/xxx.ag.db:ro
+      - ./srv_dns/local.host.db:/etc/coredns/local.host.db:ro
       - ./srv_ldap/nslcd.conf:/etc/nslcd.conf          
-    #dns: ["1.1.1.1", "8.8.8.8"]
+      - wazuh_srv_dns:/var/ossec/etc
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -120,6 +121,7 @@ services:
       - ./srv_wg_portal/config:/app/config
       - ./srv_wg_portal/etc/wireguard:/etc/wireguard
       - ./srv_ldap/nslcd.conf:/etc/nslcd.conf            
+      - wazuh_srv_wg_portal:/var/ossec/etc
     sysctls:
       - net.ipv4.ip_forward=1
       - net.ipv4.conf.all.src_valid_mark=1
@@ -143,6 +145,7 @@ services:
       - ./srv_bastion/home/users:/home/users/
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro
       - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+      - wazuh_srv_bastion:/var/ossec/etc
       #- ./srv_bastion/wazuh/var/ossec/etc:/var/ossec/etc
       #- ./srv_bastion/wazuh/var/ossec/queue:/var/ossec/queue
       #- ./srv_bastion/wazuh/etc/filebeat:/etc/filebeat
@@ -158,7 +161,7 @@ services:
       admin_net:
         ipv4_address: ${SUBNET_ADMIN}.${IP_BASTION}
     dns:
-      - ${SUBNET_SERVERS}.${IP_SRV_DNS}   
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}  
 
   srv_bastion_ib:
     build: ./bastion
@@ -169,6 +172,7 @@ services:
       - ./srv_bastion_ib/home/users:/home/users/
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro
       - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+      - wazuh_srv_bastion_ib:/var/ossec/etc
       #- ./srv_bastion_ib/wazuh/var/ossec/etc:/var/ossec/etc
       #- ./srv_bastion_ib/wazuh/var/ossec/queue:/var/ossec/queue
       #- ./srv_bastion_ib/wazuh/etc/filebeat:/etc/filebeat
@@ -184,7 +188,34 @@ services:
       infosec_net:
         ipv4_address: ${SUBNET_INFOSEC}.${IP_BASTION_IB}
     dns:
-      - ${SUBNET_SERVERS}.${IP_SRV_DNS}   
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}  
+
+  srv_fs:
+    hostname: srv_fs
+    build: ./samba
+    container_name: srv_fs
+    cap_add: ["NET_ADMIN"]
+    restart: unless-stopped
+    volumes:
+      - ./srv_fs/share:/share
+      - ./srv_fs/smb.conf:/etc/samba/smb.conf:rw
+      - ./srv_fs/samba:/var/lib/samba
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf
+      - wazuh_srv_fs:/var/ossec/etc
+      - ./workfiles/scripts:/opt/scripts      
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      SG_ADMINS: SG-SRV-MGMT-ADMINS-SSSD
+      GATEWAY_IP: ${SUBNET_SERVERS}.${IP_FW}
+      SAMBA_USER: ${SAMBA_USER}
+      SAMBA_PASSWORD: ${SAMBA_PASSWORD}
+      SAMBA_SHARE_NAME: Share             
+    networks:
+      servers_net:
+        ipv4_address: ${SUBNET_SERVERS}.${IP_SRV_FS}
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}
 
   srv_polarproxy:
     build: ./forward_proxy
@@ -201,13 +232,14 @@ services:
       ARKIME_HOST: ${SUBNET_INFOSEC}.${IP_SRV_ARKIME}
       ARKIME_PORT: 57012
       SG_USERS: SG-SRV-MGMT-USERS
-      SG_ADMINS: SG-SRV-MGMT-ADMINS
+      SG_ADMINS: SG-SRV-MGMT-ADMINS-SSSD
       GATEWAY_IP: ${SUBNET_DMZ}.${IP_FW}
     volumes:
       - ./srv_polarproxy:/var/data
       - ./srv_ldap/nslcd.conf:/etc/nslcd.conf 
+      - wazuh_srv_polarproxy:/var/ossec/etc
     dns:
-      - ${SUBNET_SERVERS}.${IP_SRV_DNS}        
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}       
 
   srv_arkime:
     build: ./srv_arkime
@@ -226,7 +258,7 @@ services:
       <<: *common_env
       ARKIME__elasticsearch: http://srv_opensearch:9200    
       SG_USERS: SG-SRV-MGMT-USERS
-      SG_ADMINS: SG-SRV-MGMT-ADMINS
+      SG_ADMINS: SG-SRV-MGMT-ADMINS-SSSD
       GATEWAY_IP: ${SUBNET_INFOSEC}.${IP_FW}
     ports:
       - "8006:8005" # Веб-интерфейс Arkime
@@ -234,7 +266,7 @@ services:
       infosec_net:
         ipv4_address: ${SUBNET_INFOSEC}.${IP_SRV_ARKIME}            
     dns:
-      - ${SUBNET_SERVERS}.${IP_SRV_DNS}        
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}       
 
   srv_opensearch:
     build: ./srv_opensearch
@@ -250,7 +282,7 @@ services:
       OPENSEARCH_JAVA_OPTS: -Xms512m -Xmx512m
       OPENSEARCH_INITIAL_ADMIN_PASSWORD: ${OPENSEARCH_ADMIN_PASSWORD}
       SG_USERS: SG-SRV-MGMT-USERS
-      SG_ADMINS: SG-SRV-MGMT-ADMINS
+      SG_ADMINS: SG-SRV-MGMT-ADMINS-SSSD
       GATEWAY_IP: ${SUBNET_INFOSEC}.${IP_FW}
     ulimits:
       memlock:
@@ -266,7 +298,7 @@ services:
       infosec_net:
         ipv4_address: ${SUBNET_INFOSEC}.${IP_SRV_OPENSEARCH}
     dns:
-      - ${SUBNET_SERVERS}.${IP_SRV_DNS}           
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}          
 
   srv_ldap:
     build: ./srv_ldap
@@ -276,30 +308,52 @@ services:
     <<: *common_env_file
     environment:
       <<: *common_env
-      LDAP_ORGANISATION: Layer8Agency
-      LDAP_DOMAIN: layer8.ag
-      LDAP_BASE_DN: dc=layer8,dc=ag
+      LDAP_ORGANISATION: LocalHost
+      LDAP_DOMAIN: local.host
+      LDAP_BASE_DN: dc=local,dc=host
       LDAP_PPOLICY_ENABLED: true
       LDAP_CONFIG_PASSWORD: admin
       LDAP_READONLY_USER: true
       GATEWAY_IP: ${SUBNET_SERVERS}.${IP_FW}
     volumes:
+      - ./workfiles/scripts:/opt/scripts
       - ./srv_ldap/var/lib/ldap:/var/lib/ldap
       - ./srv_ldap/etc/ldap:/etc/ldap/slapd.d
-      - ./wazuh/wazuh_agent.sh:/opt/wazuh_agent.sh
-      - ./srv_ldap/wazuh/var/ossec/etc:/var/ossec/etc
-      - ./srv_ldap/wazuh/var/ossec/queue:/var/ossec/queue
-      - ./srv_ldap/wazuh/etc/filebeat:/etc/filebeat
-      - ./srv_ldap/wazuh/var/lib/filebeat:/var/lib/filebeat            
+      - wazuh_srv_ldap:/var/ossec/etc           
     networks:
       servers_net:
-        ipv4_address: ${SUBNET_SERVERS}.${IP_LDAP_SRV}
+        ipv4_address: ${SUBNET_SERVERS}.${IP_SRV_LDAP}
     restart: always
     healthcheck:
-      test: ["CMD", "bash", "-c", "ldapsearch -x -H ldap://127.0.0.1 -D cn=admin,dc=layer8,dc=ag -w ${LDAP_ADMIN_PASSWORD} -b dc=layer8,dc=ag >/dev/null 2>&1"]
+      test: ["CMD", "bash", "-c", "ldapsearch -x -H ldap://127.0.0.1 -D cn=admin,dc=local,dc=host -w ${LDAP_ADMIN_PASSWORD} -b local.host >/dev/null 2>&1"]
       interval: 30s
       timeout: 10s
       retries: 5
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}
+
+  srv_ldap_mgr:
+    build: ./srv_ldap_mgr
+    hostname: srv_ldap_mgr
+    container_name: srv_ldap_mgr
+    cap_add: [ "NET_ADMIN" ]
+    restart: always    
+    depends_on:
+      - srv_ldap
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      PHPLDAPADMIN_LDAP_HOSTS: ${SUBNET_SERVERS}.${IP_SRV_LDAP}
+      PHPLDAPADMIN_HTTPS: false
+      LDAP_ADMIN_PASSWORD: ${LDAP_ADMIN_PASSWORD}
+      GATEWAY_IP: ${SUBNET_ADMIN}.254
+    volumes:
+      - wazuh_srv_ldap_mgr:/var/ossec/etc
+    ports:
+      - "8081:80"
+    networks:
+      admin_net:
+        ipv4_address: ${SUBNET_ADMIN}.${IP_SRV_LDAP_MGR}
     dns:
       - ${SUBNET_SERVERS}.${IP_SRV_DNS}
 
@@ -314,13 +368,13 @@ services:
       APACHE_LOG_DIR: /var/log/apache2
       ESPOCRM_CONFIG_LOGGER_PATH: data/logs/espo.log
       ESPOCRM_DATABASE_PLATFORM: Mysql
-      ESPOCRM_DATABASE_HOST: ${SUBNET_SERVERS}.${SRV_ESPOCRM_DB_IP}
+      ESPOCRM_DATABASE_HOST: ${SUBNET_SERVERS}.${IP_SRV_ESPOCRM_DB}
       ESPOCRM_DATABASE_USER: espocrm
       ESPOCRM_DATABASE_PASSWORD=: spocrm
       ESPOCRM_DATABASE_NAME: espocrm
       ESPOCRM_ADMIN_USERNAME: admin
       ESPOCRM_ADMIN_PASSWORD: password
-      ESPOCRM_SITE_URL: crm.layer8.ag:80
+      ESPOCRM_SITE_URL: crm.local.host:80
       ESPOCRM_CONFIG_USE_WEB_SOCKET: false   
       GATEWAY_IP: ${SUBNET_SERVERS}.${IP_FW}       
     volumes:
@@ -389,8 +443,8 @@ services:
     environment:
       <<: *common_env
       INDEXER_URL: https://wazuh.indexer:9200
-      INDEXER_USERNAME: admin
-      INDEXER_PASSWORD: SecretPassword
+      INDEXER_USERNAME: ${WAZUH_INDEXER_USERNAME}
+      INDEXER_PASSWORD: ${WAZUH_INDEXER_PASSWORD}
       FILEBEAT_SSL_VERIFICATION_MODE: full
       SSL_CERTIFICATE_AUTHORITIES: /etc/ssl/root-ca.pem
       SSL_CERTIFICATE: /etc/ssl/filebeat.pem
@@ -420,7 +474,7 @@ services:
         aliases:
           - wazuh.manager
     dns:
-      - ${SUBNET_SERVERS}.${IP_SRV_DNS}             
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}            
 
   srv_wazuh_indexer:
     build: ./srv_wazuh_indexer
@@ -457,7 +511,7 @@ services:
         aliases:
           - wazuh.indexer        
     dns:
-      - ${SUBNET_SERVERS}.${IP_SRV_DNS}          
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}         
 
   srv_wazuh_dashboard:
     build: ./srv_wazuh_dashboard
@@ -492,7 +546,7 @@ services:
         aliases:
           - wazuh.manager
     dns:
-      - ${SUBNET_SERVERS}.${IP_SRV_DNS}   
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}  
 
   srv_wiki:
     build: ./srv_wiki
@@ -538,26 +592,29 @@ services:
       GATEWAY_IP: ${SUBNET_DMZ}.${IP_FW} 
       SG_ADMINS: SG-SRV-WEB-ADMINS      
     dns:
-      - ${SUBNET_SERVERS}.${IP_SRV_DNS}     
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}    
 
-  ws000342:
+  ws000242:
     # Student PC
     build: ./pc_ldap
-    hostname: ws000342
-    container_name: ws000342
+    hostname: ws000242
+    container_name: ws000242
     cap_add: [ "NET_ADMIN" ]       
     volumes:
-      - ./ws000342/home/:/home/
+      - ./ws000242/home/:/home/
       - ./srv_ldap/nslcd.conf:/etc/nslcd.conf
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro
+      - wazuh_ws000242:/var/ossec/etc
     shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
     <<: *common_env_file
     environment:
       <<: *common_env
+      SG_USERS: ${SG-PC-USERS}
+      SG_ADMINS: ${SG-PC-ADMINS}      
       GATEWAY_IP: ${SUBNET_USERS}.${IP_FW}                       
     networks:
       users_net:
-        ipv4_address: ${SUBNET_USERS}.${IP_WS_STUDENT}        
+        ipv4_address: ${SUBNET_USERS}.242        
     dns:
       - ${SUBNET_SERVERS}.${IP_SRV_DNS}
     ports:
@@ -568,20 +625,207 @@ services:
     build: ./pc_ldap
     hostname: ws000189
     container_name: ws000189
-    cap_add: [ "NET_ADMIN" ]       
+    cap_add: [ "NET_ADMIN" ]
     volumes:
       - ./ws000189/home/:/home/
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+      - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
+      - wazuh_ws000189:/var/ossec/etc
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      SG_USERS: ${SG-PC-USERS}
+      SG_ADMINS: ${SG-PC-ADMINS}
+      GATEWAY_IP: ${SUBNET_USERS}.${IP_FW}                       
+    networks:
+      users_net:
+        ipv4_address: ${SUBNET_USERS}.189
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}     
+
+  ws000159:
+    build: ./pc_ldap
+    hostname: ws000159
+    container_name: ws000159
+    cap_add: [ "NET_ADMIN" ]       
+    volumes:
+      - ./ws000159/home/:/home/
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+      - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro
+      - wazuh_ws000159:/var/ossec/etc
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      SG_USERS: ${SG-PC-USERS}
+      SG_ADMINS: ${SG-PC-ADMINS}
+      GATEWAY_IP: ${SUBNET_USERS}.${IP_FW}                       
+    networks:
+      users_net:
+        ipv4_address: ${SUBNET_USERS}.159
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}   
+
+  ws000021:
+    build: ./pc_old
+    hostname: ws000021
+    container_name: ws000021
+    cap_add: [ "NET_ADMIN" ]       
+    volumes:
+      - ./ws000021/home/:/home/
       - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
     shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
     <<: *common_env_file
     environment:
       <<: *common_env
+      SG_USERS: ${SG-PC-USERS}
+      SG_ADMINS: ${SG-PC-ADMINS}
+      GATEWAY_IP: ${SUBNET_USERS}.${IP_FW}
+    networks:
+      users_net:
+        ipv4_address: ${SUBNET_USERS}.21
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}   
+
+  ws000023:
+    build: ./pc_ldap
+    hostname: ws000023
+    container_name: ws000023
+    cap_add: [ "NET_ADMIN" ]       
+    volumes:
+      - ./ws000023/home/:/home/
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+      - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
+      - wazuh_ws000023:/var/ossec/etc
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      SG_USERS: ${SG-PC-USERS}
+      SG_ADMINS: ${SG-PC-ADMINS}
       GATEWAY_IP: ${SUBNET_USERS}.${IP_FW}                       
     networks:
-      - users_net 
+      users_net:
+        ipv4_address: ${SUBNET_USERS}.23
     dns:
-      - ${SUBNET_SERVERS}.${IP_SRV_DNS}      
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}   
+
+  ws000034:
+    build: ./pc_ldap
+    hostname: ws000034
+    container_name: ws000034
+    cap_add: [ "NET_ADMIN" ]       
+    volumes:
+      - ./ws000034/home/:/home/
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+      - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
+      - wazuh_ws000034:/var/ossec/etc
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      SG_USERS: ${SG-PC-USERS}
+      SG_ADMINS: ${SG-PC-ADMINS}
+      GATEWAY_IP: ${SUBNET_USERS}.${IP_FW}                       
+    networks:
+      users_net:
+        ipv4_address: ${SUBNET_USERS}.34
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS} 
+
+  ws000046:
+    build: ./pc_ldap
+    hostname: ws000046
+    container_name: ws000046
+    cap_add: [ "NET_ADMIN" ]       
+    volumes:
+      - ./ws000046/home/:/home/
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+      - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
+      - wazuh_ws000046:/var/ossec/etc
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      SG_USERS: ${SG-PC-USERS}
+      SG_ADMINS: ${SG-PC-ADMINS}
+      GATEWAY_IP: ${SUBNET_USERS}.${IP_FW}                       
+    networks:
+      users_net:
+        ipv4_address: ${SUBNET_USERS}.46
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS} 
+
+  ws000055:
+    build: ./pc_ldap
+    hostname: ws000055
+    container_name: ws000055
+    cap_add: [ "NET_ADMIN" ]       
+    volumes:
+      - ./ws000055/home/:/home/
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+      - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
+      - wazuh_ws000055:/var/ossec/etc
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      SG_USERS: ${SG-PC-USERS}
+      SG_ADMINS: ${SG-PC-ADMINS}
+      GATEWAY_IP: ${SUBNET_USERS}.${IP_FW}                       
+    networks:
+      users_net:
+        ipv4_address: ${SUBNET_USERS}.55
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS} 
+
+  ws000019:
+    build: ./pc_ldap
+    hostname: ws000019
+    container_name: ws000019
+    cap_add: [ "NET_ADMIN" ]       
+    volumes:
+      - ./ws000019/home/:/home/
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+      - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
+      - wazuh_ws000019:/var/ossec/etc
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      SG_USERS: ${SG-PC-USERS}
+      SG_ADMINS: ${SG-PC-ADMINS}
+      GATEWAY_IP: ${SUBNET_USERS}.${IP_FW}                       
+    networks:
+      users_net:
+        ipv4_address: ${SUBNET_USERS}.19
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS} 
+
+  ws000126:
+    build: ./pc_ldap
+    hostname: ws000126
+    container_name: ws000126
+    cap_add: [ "NET_ADMIN" ]       
+    volumes:
+      - ./ws000126/home/:/home/
+      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+      - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
+      - wazuh_ws000126:/var/ossec/etc
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      SG_USERS: ${SG-PC-USERS}
+      SG_ADMINS: ${SG-PC-ADMINS}
+      GATEWAY_IP: ${SUBNET_USERS}.${IP_FW}                       
+    networks:
+      users_net:
+        ipv4_address: ${SUBNET_USERS}.126
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS} 
 
   nat_cleaner:
     # САНИТАР NAT: Удаляет правила Masquerade, которые ломают Source IP в Docker Desktop (WSL)
@@ -691,5 +935,23 @@ volumes:
   arkime_pcap_storage:
   opensearch_data:
   wazuh_indexer:
+  wazuh_srv_ansible:
+  wazuh_srv_dns:
+  wazuh_srv_wg_portal:
+  wazuh_srv_bastion:
+  wazuh_srv_bastion_ib:
+  wazuh_srv_fs:
+  wazuh_srv_polarproxy:
+  wazuh_srv_ldap:
+  wazuh_srv_ldap_mgr:
+  wazuh_ws000242:
+  wazuh_ws000189:
+  wazuh_ws000159:
+  wazuh_ws000023:
+  wazuh_ws000034:
+  wazuh_ws000046:
+  wazuh_ws000055:
+  wazuh_ws000019:
+  wazuh_ws000126:
   espocrm_db:
   espocrm_web:

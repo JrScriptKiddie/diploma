@@ -26,9 +26,7 @@ RUN echo "session required pam_mkhomedir.so skel=/etc/skel umask=0077" >> /etc/p
 # 3. Копируем конфиги
 COPY nslcd.conf /etc/nslcd.conf
 
-# ВАЖНО: nslcd запускается от пользователя nslcd, он должен уметь читать конфиг!
-# Меняем владельца на root:nslcd и права на 640
-RUN chown root:nslcd /etc/nslcd.conf && chmod 640 /etc/nslcd.conf
+
 
 # 4. Настраиваем nsswitch
 RUN sed -i 's/passwd:         files/passwd:         files ldap/' /etc/nsswitch.conf && \

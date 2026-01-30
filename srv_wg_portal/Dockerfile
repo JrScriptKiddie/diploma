@@ -49,9 +49,7 @@ RUN curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --dearmor -o /usr
 # 2. Настройка PAM (mkhomedir)
 RUN echo "session required pam_mkhomedir.so skel=/etc/skel umask=0077" >> /etc/pam.d/common-session
 
-# ВАЖНО: nslcd запускается от пользователя nslcd, он должен уметь читать конфиг!
-# Меняем владельца на root:nslcd и права на 640
-RUN chown root:nslcd /etc/nslcd.conf && chmod 640 /etc/nslcd.conf
+
 
 # 4. Настраиваем nsswitch
 RUN sed -i 's/passwd:         files/passwd:         files ldap/' /etc/nsswitch.conf && \

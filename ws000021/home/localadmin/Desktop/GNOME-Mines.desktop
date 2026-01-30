@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=GNOME Mines
+Exec=gnome-mines
+Icon=gnome-mines
+Terminal=false

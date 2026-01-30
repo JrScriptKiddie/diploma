@@ -38,6 +38,12 @@ RUN curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --dearmor -o /usr
     apt-get update && \
     WAZUH_MANAGER=srv_wazuh_manager apt-get install -y wazuh-agent
 
+RUN apt-get install -y --no-install-recommends \
+    remmina \
+    remmina-plugin-rdp \
+    freerdp2-x11 \
+    samba-client
+
 RUN rm -rf /var/lib/apt/lists/*
     
 # 2. Настройка PAM (mkhomedir)
