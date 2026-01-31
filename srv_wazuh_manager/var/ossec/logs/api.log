@@ -1,5 +1,0 @@
-2026/01/30 00:00:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/remoted" with parameters {} and body {} done in 0.039s: 200
-2026/01/30 00:00:00 INFO: wazuh-wui 192.168.203.90 "GET /manager/stats/analysisd" with parameters {} and body {} done in 0.064s: 200
-2026/01/30 00:00:00 INFO: wazuh-wui 192.168.203.90 "GET /cluster/status" with parameters {} and body {} done in 0.059s: 200
-2026/01/30 00:00:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "1", "q": "id!=000"} and body {} done in 0.018s: 200
-2026/01/30 00:00:00 INFO: wazuh-wui 192.168.203.90 "GET /agents" with parameters {"offset": "0", "limit": "500", "q": "id!=000"} and body {} done in 0.020s: 200

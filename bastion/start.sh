@@ -18,9 +18,6 @@ if [ -f /usr/local/share/ca-certificates/proxy_ca.crt ]; then
 EOF
 fi
 
-# NSLCD config access
-chown root:nslcd /etc/nslcd.conf && chmod 640 /etc/nslcd.conf
-
 # Enforce pam_access for group-based login control
 if ! grep -q '^account required pam_access.so' /etc/pam.d/common-account; then
     echo 'account required pam_access.so' >> /etc/pam.d/common-account
@@ -28,7 +25,7 @@ fi
 
 # Create local admin account if needed
 if ! id localadmin >/dev/null 2>&1; then
-    useradd -u 6666 -m -s /bin/bash localadmin
+    useradd -m -s /bin/bash localadmin
 fi
 echo "localadmin:${LOCALADMIN_PASSWORD}" | chpasswd
 usermod -aG sudo localadmin
@@ -57,19 +54,25 @@ chown root:root /etc/sudoers.d/ldap-sudo
 chmod 0440 /etc/sudoers.d/ldap-sudo
 sed -i "s|SG_ADMINS|$SG_ADMINS|g" /etc/sudoers.d/ldap-sudo
 
-# Запускаем демон nslcd (клиент LDAP) без OpenRC
-if command -v nslcd >/dev/null 2>&1; then
-    nslcd
-else
-    echo "[fw] nslcd not found, skipping"
-fi
+# SSSD execute and test
+mkdir -p /etc/sssd
+cp /etc/sssd_temp.conf /etc/sssd/sssd.conf
+chmod 600 /etc/sssd/sssd.conf
+mkdir -p /var/lib/sss/db /var/log/sssd
+/usr/sbin/sssd
+echo "Testing LDAP connection via SSSD..."
+while true; do
+    if getent passwd test >/dev/null 2>&1; then
+        echo "LDAP connection OK, NSS cache warmed."
+        break
+    else
+        echo "LDAP user 'test' not found via NSS"
+    fi
+    sleep 2
+done
 
 # Запуск rsyslog
 /usr/sbin/rsyslogd
-
-# Выводим диагностику (опционально)
-echo "Testing LDAP connection..."
-getent passwd test || echo "LDAP user 'test' not found via NSS"
 
 # Права на домашние директории: владелец по имени каталога, права 0755
 # Нужно если подключалось через volumes и права не сохранились при загрузке с гита
@@ -93,3 +96,7 @@ chmod 755 /run/sshd
 # Передаем управление оригинальному скрипту entrypoint образа scottyhardy
 # (В оригинальном образе entrypoint обычно /usr/bin/entrypoint)
 exec /usr/bin/entrypoint "$@"
+
+
+
+

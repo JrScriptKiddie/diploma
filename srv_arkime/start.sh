@@ -27,19 +27,22 @@ if [ -n "${ARKIME_ADMIN_PASSWORD}" ]; then
   /opt/arkime/bin/arkime_add_user.sh admin ArkimeAdmin ${ARKIME_ADMIN_PASSWORD} --admin --createOnly
 fi
 
-echo "Injecting LDAP password into config..."
-
-# Используем sed для замены.
-# Мы используем разделитель | вместо /, чтобы пароль мог содержать слеши.
-sed -i "s|LDAP_READONLY_USER_USERNAME|$LDAP_READONLY_USER_USERNAME|g" /etc/nslcd.conf
-sed -i "s|LDAP_READONLY_USER_PASSWORD|$LDAP_READONLY_USER_PASSWORD|g" /etc/nslcd.conf
-sed -i "s|IP_LDAP_SRV|$IP_LDAP_SRV|g" /etc/nslcd.conf
-
-# Запускаем демон nslcd (клиент LDAP)
-service nslcd start
-# Выводим диагностику (опционально)
-echo "Testing LDAP connection..."
-getent passwd test || echo "LDAP user 'test' not found via NSS"
+# SSSD execute and test
+mkdir -p /etc/sssd
+cp /etc/sssd_temp.conf /etc/sssd/sssd.conf
+chmod 600 /etc/sssd/sssd.conf
+mkdir -p /var/lib/sss/db /var/log/sssd
+/usr/sbin/sssd
+echo "Testing LDAP connection via SSSD..."
+while true; do
+    if getent passwd test >/dev/null 2>&1; then
+        echo "LDAP connection OK, NSS cache warmed."
+        break
+    else
+        echo "LDAP user 'test' not found via NSS"
+    fi
+    sleep 2
+done
 
 # Enforce pam_access for group-based login control
 if ! grep -q '^account required pam_access.so' /etc/pam.d/common-account; then
@@ -105,3 +108,7 @@ ssh-keygen -A >/dev/null 2>&1 || true
 # Передаем управление оригинальному скрипту
 echo "Arkime starting..."
 exec /opt/arkime/bin/docker.sh capture-viewer --update-geo "$@"
+
+
+
+

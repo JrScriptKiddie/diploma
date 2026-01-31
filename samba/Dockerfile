@@ -60,5 +60,7 @@ RUN sed -i 's/^passwd:.*/passwd:         files sss/' /etc/nsswitch.conf && \
 
 COPY start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
+COPY pre_entrypoint_acl.sh /usr/local/bin/pre_entrypoint_acl.sh
+RUN chmod +x /usr/local/bin/pre_entrypoint_acl.sh
 
 CMD ["/usr/local/bin/start.sh"]

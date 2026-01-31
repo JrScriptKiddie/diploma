@@ -5,16 +5,23 @@ set -euo pipefail
 ip route del default || true
 ip route add default via "${GATEWAY_IP}" || true
 
-# NSLCD config access (if mounted)
-if [ -f /etc/nslcd.conf ]; then
-  chown root:nslcd /etc/nslcd.conf && chmod 640 /etc/nslcd.conf
+# SSSD execute and test
+mkdir -p /etc/sssd
+cp /etc/sssd_temp.conf /etc/sssd/sssd.conf
+chmod 600 /etc/sssd/sssd.conf
+mkdir -p /var/lib/sss/db /var/log/sssd
+/usr/sbin/sssd
+echo "Testing LDAP connection via SSSD..."
+if getent passwd test >/dev/null 2>&1; then
+    echo "LDAP connection OK, NSS cache warmed."
+else
+    echo "LDAP user 'test' not found via NSS"
 fi
 
 # Enforce pam_access for group-based login control
 if ! grep -q '^account required pam_access.so' /etc/pam.d/common-account; then
   echo 'account required pam_access.so' >> /etc/pam.d/common-account
 fi
-
 : "${SG_ADMINS:=SG-ADMINS}"
 
 # Create local admin account if needed
@@ -46,10 +53,9 @@ chown root:root /etc/sudoers.d/ldap-sudo
 chmod 0440 /etc/sudoers.d/ldap-sudo
 sed -i "s|SG_ADMINS|$SG_ADMINS|g" /etc/sudoers.d/ldap-sudo
 
-# Start LDAP client
-if command -v nslcd >/dev/null 2>&1; then
-  nslcd
-fi
+# Запуск rsyslog
+/usr/sbin/rsyslogd
+
 
 # Run SSH server
 mkdir -p /run/sshd
@@ -63,3 +69,7 @@ ssh-keygen -A >/dev/null 2>&1 || true
 echo "Go to original entrypoin..."
 # Continue with the default OpenLDAP entrypoint from the base image
 exec /container/tool/run "$@"
+
+
+
+

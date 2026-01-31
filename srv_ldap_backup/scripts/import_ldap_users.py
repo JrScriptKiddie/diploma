@@ -241,9 +241,49 @@ def build_ldif(entries):
     return "\n\n".join(blocks) + ("\n" if blocks else "")
 
 
+def parse_ou_components(raw_value):
+    if raw_value is None:
+        return []
+    text = raw_value.strip()
+    if not text:
+        return []
+    parts = [p.strip() for p in text.split(",") if p.strip()]
+    ou_parts = []
+    dc_parts = []
+    for part in parts:
+        lower = part.lower()
+        if lower.startswith("ou="):
+            ou_parts.append(part)
+        elif lower.startswith("dc="):
+            dc_parts.append(part)
+        else:
+            ou_parts.append("ou={}".format(part))
+    return ou_parts, dc_parts
+
+
+def build_ou_dn(raw_value, base_dn):
+    ou_parts, dc_parts = parse_ou_components(raw_value)
+    if dc_parts:
+        base_dn = ",".join(dc_parts)
+    ou_dn = ",".join(ou_parts + [base_dn]) if ou_parts else base_dn
+    return ou_dn, ou_parts, base_dn
+
+
+def ensure_ou_path(uri, bind_dn, bind_password, ou_parts, base_dn, ensured):
+    current_base = base_dn
+    for part in reversed(ou_parts):
+        ou_dn = "{},{}".format(part, current_base)
+        if ou_dn not in ensured:
+            ou_value = part.split("=", 1)[1]
+            ensure_ou(uri, bind_dn, bind_password, ou_dn, ou_value)
+            ensured.add(ou_dn)
+        current_base = ou_dn
+    return current_base
+
+
 def main():
     parser = argparse.ArgumentParser(
-        description="Import LDAP users from CSV into ou=Users."
+        description="Import LDAP users from CSV into OUs."
     )
     parser.add_argument(
         "--csv",
@@ -275,7 +315,7 @@ def main():
         return 2
 
     users_ou = args.users_ou
-    ou_dn = "ou={},{}".format(users_ou, args.base_dn)
+    ou_dn, _, base_dn = build_ou_dn(users_ou, args.base_dn)
     if args.prune:
         try:
             pruned = prune_users(args.ldap_uri, bind_dn, bind_password, ou_dn)
@@ -285,7 +325,15 @@ def main():
         print("Pruned: {}".format(pruned))
         return 0
 
-    ensure_ou(args.ldap_uri, bind_dn, bind_password, ou_dn, users_ou)
+    ensured_ou_dns = set()
+    ou_value_default = users_ou
+    ou_parts_default, _ = parse_ou_components(users_ou)
+    if ou_parts_default:
+        ensure_ou_path(
+            args.ldap_uri, bind_dn, bind_password, ou_parts_default, base_dn, ensured_ou_dns
+        )
+    else:
+        ensure_ou(args.ldap_uri, bind_dn, bind_password, ou_dn, ou_value_default)
 
     csv_text = decode_csv(args.csv)
     reader = csv.DictReader(io.StringIO(csv_text))
@@ -293,6 +341,7 @@ def main():
     total_rows = len(rows)
     header_map = {
         normalize_header(RUS_DEPT): "department",
+        normalize_header("OU"): "ou",
         normalize_header(RUS_LAST): "last_name",
         normalize_header(RUS_FIRST): "first_name",
         normalize_header("CN"): "cn",
@@ -339,6 +388,8 @@ def main():
         last_name = get_field("last_name")
         first_name = get_field("first_name")
         cn = get_field("cn") or "{} {}".format(first_name, last_name).strip()
+        ou_field = get_field("ou") or users_ou
+        row_ou_dn, row_ou_parts, row_base_dn = build_ou_dn(ou_field, base_dn)
         if not uid or not password:
             invalid_rows += 1
             reason_parts = []
@@ -351,7 +402,7 @@ def main():
                     "row": idx,
                     "uid": uid,
                     "cn": cn,
-                    "dn": "cn={},{}".format(cn, ou_dn) if cn else "",
+                    "dn": "cn={},{}".format(cn, row_ou_dn) if cn else "",
                     "reason": ", ".join(reason_parts),
                 }
             )
@@ -372,7 +423,7 @@ def main():
                     "row": idx,
                     "uid": uid,
                     "cn": cn,
-                    "dn": dn_info or "cn={},{}".format(cn, ou_dn),
+                    "dn": dn_info or "cn={},{}".format(cn, row_ou_dn),
                     "reason": reason,
                 }
             )
@@ -381,7 +432,16 @@ def main():
 
         uid_number = next_uid
         next_uid += 1
-        user_dn = "cn={},{}".format(cn, ou_dn)
+        if row_ou_parts:
+            ensure_ou_path(
+                args.ldap_uri,
+                bind_dn,
+                bind_password,
+                row_ou_parts,
+                row_base_dn,
+                ensured_ou_dns,
+            )
+        user_dn = "cn={},{}".format(cn, row_ou_dn)
 
         entry = [
             ("dn", user_dn),

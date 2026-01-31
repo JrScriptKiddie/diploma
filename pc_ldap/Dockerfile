@@ -23,12 +23,14 @@ RUN apt-get install -y --no-install-recommends \
 
 # Passwords and politics
 RUN apt-get install -y --no-install-recommends \
-   nslcd \
-   libnss-ldapd \
-   libpam-ldapd \
+   sssd \
+   sssd-tools \
+   sssd-ldap \
+   libnss-sss \
+   libpam-sss \
    ldap-utils \
    libpam-pwquality \
-   cracklib-runtime \    
+   cracklib-runtime \
    sudo
 
  # Wazuh agent repo + install
@@ -42,7 +44,11 @@ RUN apt-get install -y --no-install-recommends \
     remmina \
     remmina-plugin-rdp \
     freerdp2-x11 \
-    samba-client
+    samba-client \
+    gvfs \
+    gvfs-backends \
+    gvfs-daemons \
+    gvfs-fuse
     
 RUN rm -rf /var/lib/apt/lists/*
 
@@ -52,11 +58,35 @@ RUN echo "session required pam_mkhomedir.so skel=/etc/skel umask=0077" >> /etc/p
 
 
 # 4. Настраиваем nsswitch
-RUN sed -i 's/passwd:         files/passwd:         files ldap/' /etc/nsswitch.conf && \
-    sed -i 's/group:          files/group:          files ldap/' /etc/nsswitch.conf && \
-    sed -i 's/shadow:         files/shadow:         files ldap/' /etc/nsswitch.conf
+RUN sed -i 's/^passwd:.*/passwd:         files sss/' /etc/nsswitch.conf && \
+    sed -i 's/^group:.*/group:          files sss/' /etc/nsswitch.conf && \
+    sed -i 's/^shadow:.*/shadow:         files sss/' /etc/nsswitch.conf
+
+# Ensure XDG_RUNTIME_DIR exists for non-systemd sessions (xrdp)
+RUN mkdir -p /etc/X11/Xsession.d && \
+    cat <<'EOF' > /etc/X11/Xsession.d/99-xdg-runtime
+if [ -z "$XDG_RUNTIME_DIR" ]; then
+  export XDG_RUNTIME_DIR=/run/user/$(id -u)
+  if [ ! -d "$XDG_RUNTIME_DIR" ]; then
+    mkdir -p "$XDG_RUNTIME_DIR"
+    chmod 700 "$XDG_RUNTIME_DIR"
+    chown "$(id -u):$(id -g)" "$XDG_RUNTIME_DIR" 2>/dev/null || true
+  fi
+fi
+EOF
 
 COPY /start.sh /usr/bin/start.sh
 RUN chmod +x /usr/bin/start.sh
+
+RUN mkdir -p /run/user
+RUN chmod 0755 /run/user
+COPY share.sh /usr/local/bin/share.sh
+RUN chmod +x /usr/local/bin/share.sh
+RUN chmod 755 /usr/local/bin/share.sh
+COPY xdg-runtime.sh /usr/local/libexec/xdg-runtime.sh
+RUN chmod 755 /usr/local/libexec/xdg-runtime.sh
+RUN if ! grep -q '/usr/local/libexec/xdg-runtime.sh' /etc/pam.d/common-session; then \
+    echo 'session optional pam_exec.so /usr/local/libexec/xdg-runtime.sh' >> /etc/pam.d/common-session; \
+  fi
 
 ENTRYPOINT ["/usr/bin/start.sh"]

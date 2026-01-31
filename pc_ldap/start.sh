@@ -52,7 +52,7 @@ cat <<'EOF' >> /etc/security/access.conf
 EOF
 
 sed -i "s|SG_USERS|$SG_PC_USERS|g" /etc/security/access.conf
-sed -i "s|SG_ADMINS|$SG_PC_ADMINS|g" /etc/security/access.conf
+sed -i "s|SG_ADMINS|$SG_ADMINS|g" /etc/security/access.conf
 
 touch /etc/sudoers.d/ldap-sudo
 cat <<'EOF' >> /etc/sudoers.d/ldap-sudo
@@ -63,15 +63,22 @@ chown root:root /etc/sudoers.d/ldap-sudo
 chmod 0440 /etc/sudoers.d/ldap-sudo
 sed -i "s|SG_ADMINS|$SG_ADMINS|g" /etc/sudoers.d/ldap-sudo
 
-# Запускаем демон nslcd (клиент LDAP)
-service nslcd start
-
-# Запускаем nscd (кэширование, желательно)
-service nscd start
-
-# Выводим диагностику (опционально)
-echo "Testing LDAP connection..."
-getent passwd test || echo "LDAP user 'test' not found via NSS"
+# SSSD execute and test
+mkdir -p /etc/sssd
+cp /etc/sssd_temp.conf /etc/sssd/sssd.conf
+chmod 600 /etc/sssd/sssd.conf
+mkdir -p /var/lib/sss/db /var/log/sssd
+/usr/sbin/sssd
+echo "Testing LDAP connection via SSSD..."
+while true; do
+    if getent passwd test >/dev/null 2>&1; then
+        echo "LDAP connection OK, NSS cache warmed."
+        break
+    else
+        echo "LDAP user 'test' not found via NSS"
+    fi
+    sleep 2
+done
 
 # Запуск rsyslog
 /usr/sbin/rsyslogd
@@ -128,3 +135,5 @@ fi
 # Передаем управление оригинальному скрипту entrypoint образа scottyhardy
 # (В оригинальном образе entrypoint обычно /usr/bin/entrypoint)
 exec /usr/bin/entrypoint "$@"
+
+

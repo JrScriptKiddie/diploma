@@ -15,8 +15,22 @@ else
   echo "[srv_dns] coredns not found, skipping"
 fi
 
-# NSLCD config access
-chown root:nslcd /etc/nslcd.conf && chmod 640 /etc/nslcd.conf
+# SSSD execute and test
+mkdir -p /etc/sssd
+cp /etc/sssd_temp.conf /etc/sssd/sssd.conf
+chmod 600 /etc/sssd/sssd.conf
+mkdir -p /var/lib/sss/db /var/log/sssd
+/usr/sbin/sssd
+echo "Testing LDAP connection via SSSD..."
+while true; do
+    if getent passwd test >/dev/null 2>&1; then
+        echo "LDAP connection OK, NSS cache warmed."
+        break
+    else
+        echo "LDAP user 'test' not found via NSS"
+    fi
+    sleep 2
+done
 
 # Enforce pam_access for group-based login control
 if ! grep -q '^account required pam_access.so' /etc/pam.d/common-account; then
@@ -54,12 +68,6 @@ chown root:root /etc/sudoers.d/ldap-sudo
 chmod 0440 /etc/sudoers.d/ldap-sudo
 sed -i "s|SG_ADMINS|$SG_ADMINS|g" /etc/sudoers.d/ldap-sudo
 
-# Запускаем демон nslcd (клиент LDAP) без OpenRC
-if command -v nslcd >/dev/null 2>&1; then
-    nslcd
-else
-    echo "[fw] nslcd not found, skipping"
-fi
 
 # Запуск rsyslog
 /usr/sbin/rsyslogd -n -iNONE &
@@ -77,3 +85,7 @@ if [ -n "$COREDNS_PID" ]; then
 else
   tail -f /dev/null
 fi
+
+
+
+

@@ -10,6 +10,12 @@ RUN apt-get update
 RUN apt-get install -y --no-install-recommends \
     openssh-server \
     iproute2 \
+    sssd \
+    sssd-tools \
+    sssd-ldap \
+    libnss-sss \
+    libpam-sss \
+    ldap-utils \
     supertux \
     openttd \
     aisleriot \
@@ -17,6 +23,11 @@ RUN apt-get install -y --no-install-recommends \
     nethack-console
     
 RUN rm -rf /var/lib/apt/lists/*
+
+# NSS
+RUN sed -i 's/^passwd:.*/passwd:         files sss/' /etc/nsswitch.conf && \
+    sed -i 's/^group:.*/group:          files sss/' /etc/nsswitch.conf && \
+    sed -i 's/^shadow:.*/shadow:         files sss/' /etc/nsswitch.conf
 
 COPY /start.sh /usr/bin/start.sh
 RUN chmod +x /usr/bin/start.sh

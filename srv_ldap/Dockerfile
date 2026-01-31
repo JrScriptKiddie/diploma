@@ -23,9 +23,11 @@ RUN rm -f /etc/apt/sources.list.d/*nginx*.list \
    openssh-server \
    curl \
    cron \
-   nslcd \
-   libnss-ldapd \
-   libpam-ldapd \
+   sssd \
+   sssd-tools \
+   sssd-ldap \
+   libnss-sss \
+   libpam-sss \
    ldap-utils \
    libpam-pwquality \
    cracklib-runtime \
@@ -45,12 +47,11 @@ RUN curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --dearmor -o /usr
 RUN echo "session required pam_mkhomedir.so skel=/etc/skel umask=0077" >> /etc/pam.d/common-session
 
 # NSS
-RUN sed -i 's/passwd:         files/passwd:         files ldap/' /etc/nsswitch.conf && \
-    sed -i 's/group:          files/group:          files ldap/' /etc/nsswitch.conf && \
-    sed -i 's/shadow:         files/shadow:         files ldap/' /etc/nsswitch.conf
+RUN sed -i 's/^passwd:.*/passwd:         files sss/' /etc/nsswitch.conf && \
+    sed -i 's/^group:.*/group:          files sss/' /etc/nsswitch.conf && \
+    sed -i 's/^shadow:.*/shadow:         files sss/' /etc/nsswitch.conf
 
 COPY start.sh /usr/bin/start.sh
 RUN chmod +x /usr/bin/start.sh
 
 ENTRYPOINT ["/usr/bin/start.sh"]
-

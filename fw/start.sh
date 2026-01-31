@@ -97,20 +97,24 @@ chmod 0440 /etc/sudoers.d/ldap-sudo
 sed -i "s|SG_ADMINS|$SG_NET_ADMINS|g" /etc/sudoers.d/ldap-sudo
 
 
-# Запускаем демон nslcd (клиент LDAP) без OpenRC
-if command -v nslcd >/dev/null 2>&1; then
-    nslcd
-else
-    echo "[fw] nslcd not found, skipping"
-fi
-
+# SSSD execute and test
+mkdir -p /etc/sssd
+cp /etc/sssd_temp.conf /etc/sssd/sssd.conf
+chmod 600 /etc/sssd/sssd.conf
+mkdir -p /var/lib/sss/db /var/log/sssd
+/usr/sbin/sssd
+echo "Testing LDAP connection via SSSD..."
+while true; do
+    if getent passwd test >/dev/null 2>&1; then
+        echo "LDAP connection OK, NSS cache warmed."
+        break
+    else
+        echo "LDAP user 'test' not found via NSS"
+    fi
+    sleep 2
+done
 # Запуск rsyslog
 /usr/sbin/rsyslogd
-
-# Выводим диагностику (опционально)
-echo "Testing LDAP connection..."
-getent passwd test || echo "LDAP user 'test' not found via NSS"
-
 echo "[fw] Starting Suricata configuration..."
 
 ALL_SUBNETS=$(env | grep '^SUBNET_' | cut -d= -f2 | sed 's/$/.0\/24/' | paste -sd "," -)
@@ -188,3 +192,7 @@ ssh-keygen -A >/dev/null 2>&1 || true
 
 # Keep container alive
 tail -f /dev/null
+
+
+
+

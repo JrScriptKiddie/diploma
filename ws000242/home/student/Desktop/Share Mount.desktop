@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Share mount
+Comment=
+Exec=/usr/local/bin/share.sh
+Icon=drive-harddisk
+Path=/tmp/
+Terminal=true
+StartupNotify=false

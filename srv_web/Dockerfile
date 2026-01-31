@@ -7,10 +7,11 @@ RUN apt-get update && \
       nginx \
       openssh-server \
       openssh-client \
-      libnss-ldapd \
-      libpam-ldapd \
-      nslcd \
-      nscd \
+      sssd \
+      sssd-tools \
+      sssd-ldap \
+      libnss-sss \
+      libpam-sss \
       ldap-utils \
       rsyslog \
       iproute2 \
@@ -22,18 +23,13 @@ RUN apt-get update && \
 
 # 2. Настройка PAM (mkhomedir)
 RUN echo "session required pam_mkhomedir.so skel=/etc/skel umask=0077" >> /etc/pam.d/common-session
-
-# 3. Копируем конфиги
-COPY nslcd.conf /etc/nslcd.conf
-
-
-
 # 4. Настраиваем nsswitch
-RUN sed -i 's/passwd:         files/passwd:         files ldap/' /etc/nsswitch.conf && \
-    sed -i 's/group:          files/group:          files ldap/' /etc/nsswitch.conf && \
-    sed -i 's/shadow:         files/shadow:         files ldap/' /etc/nsswitch.conf
+RUN sed -i 's/^passwd:.*/passwd:         files sss/' /etc/nsswitch.conf && \
+    sed -i 's/^group:.*/group:          files sss/' /etc/nsswitch.conf && \
+    sed -i 's/^shadow:.*/shadow:         files sss/' /etc/nsswitch.conf
 
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
 CMD ["/start.sh"]
+

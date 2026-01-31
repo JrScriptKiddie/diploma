@@ -5,10 +5,22 @@ set -euo pipefail
 ip route del default || true
 ip route add default via "${GATEWAY_IP}" || true
 
-# NSLCD config access (if mounted)
-if [ -f /etc/nslcd.conf ]; then
-  chown root:nslcd /etc/nslcd.conf && chmod 640 /etc/nslcd.conf
-fi
+# SSSD execute and test
+mkdir -p /etc/sssd
+cp /etc/sssd_temp.conf /etc/sssd/sssd.conf
+chmod 600 /etc/sssd/sssd.conf
+mkdir -p /var/lib/sss/db /var/log/sssd
+/usr/sbin/sssd
+echo "Testing LDAP connection via SSSD..."
+while true; do
+    if getent passwd test >/dev/null 2>&1; then
+        echo "LDAP connection OK, NSS cache warmed."
+        break
+    else
+        echo "LDAP user 'test' not found via NSS"
+    fi
+    sleep 2
+done
 
 # Enforce pam_access for group-based login control
 if ! grep -q '^account required pam_access.so' /etc/pam.d/common-account; then
@@ -50,10 +62,6 @@ chown root:root /etc/sudoers.d/ldap-sudo
 chmod 0440 /etc/sudoers.d/ldap-sudo
 sed -i "s|SG_ADMINS|$SG_ADMINS|g" /etc/sudoers.d/ldap-sudo
 
-# Start LDAP client
-if command -v nslcd >/dev/null 2>&1; then
-  nslcd
-fi
 
 # Start rsyslog
 /usr/sbin/rsyslogd
@@ -64,10 +72,11 @@ if ! id ansible >/dev/null 2>&1; then
 fi
 
 ANSIBLE_DIR="${ANSIBLE:-/workspace/ansible}"
-install -d -m 700 -o ansible -g ansible /home/ansible
+ansible_group=$(id -g ansible 2>/dev/null || echo ansible)
+install -d -m 700 -o ansible -g "${ansible_group}" /home/ansible
 printf "export ANSIBLE=%s\n" "$ANSIBLE_DIR" | tee -a /home/ansible/.bashrc >/dev/null
-chown ansible:ansible /home/ansible/.bashrc
-chown -R ansible:ansible /workspace
+chown ansible:${ansible_group} /home/ansible/.bashrc
+chown -R ansible:${ansible_group} /workspace
 chmod 600 /home/ansible/.bashrc
 if [ -d "${ANSIBLE_DIR}/inventory" ]; then
   chmod 700 "${ANSIBLE_DIR}/inventory"
@@ -97,3 +106,4 @@ ssh-keygen -A >/dev/null 2>&1 || true
 
 # Keep container alive
 tail -f /dev/null
+

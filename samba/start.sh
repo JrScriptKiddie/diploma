@@ -9,63 +9,22 @@ SAMBA_SHARE_PATH=${SAMBA_SHARE_PATH:-/share}
 ip route del default || true
 ip route add default via $GATEWAY_IP || true
 
-# Configure SSSD from nslcd.conf (mounted)
-LDAP_URI=$(awk '$1=="uri"{print $2; exit}' /etc/nslcd.conf || true)
-LDAP_BASE=$(awk '$1=="base"{print $2; exit}' /etc/nslcd.conf || true)
-LDAP_BINDDN=$(awk '$1=="binddn"{print $2; exit}' /etc/nslcd.conf || true)
-LDAP_BINDPW=$(awk '$1=="bindpw"{print $2; exit}' /etc/nslcd.conf || true)
-
-if [[ -z "${LDAP_URI}" || -z "${LDAP_BASE}" || -z "${LDAP_BINDDN}" || -z "${LDAP_BINDPW}" ]]; then
-    echo "[srv_fs] Missing LDAP settings in /etc/nslcd.conf"
-    exit 1
-fi
-
-cat > /etc/sssd/sssd.conf <<EOF
-[sssd]
-config_file_version = 2
-services = nss, pam
-domains = LDAP
-
-[nss]
-filter_users = root
-filter_groups = root
-
-[pam]
-
-[domain/LDAP]
-id_provider = ldap
-auth_provider = ldap
-chpass_provider = ldap
-ldap_uri = ${LDAP_URI}
-ldap_search_base = ${LDAP_BASE}
-ldap_default_bind_dn = ${LDAP_BINDDN}
-ldap_default_authtok = ${LDAP_BINDPW}
-ldap_schema = rfc2307bis
-ldap_group_object_class = groupOfNames
-ldap_group_member = member
-ldap_group_nesting_level = 2
-ldap_tls_reqcert = never
-ldap_id_use_start_tls = False
-ldap_referrals = False
-cache_credentials = True
-enumerate = True
-entry_cache_timeout = 60
-entry_cache_user_timeout = 60
-entry_cache_group_timeout = 60
-entry_cache_negative_timeout = 60
-
-
-EOF
-
+# SSSD execute and test
+mkdir -p /etc/sssd
+cp /etc/sssd_temp.conf /etc/sssd/sssd.conf
 chmod 600 /etc/sssd/sssd.conf
 mkdir -p /var/lib/sss/db /var/log/sssd
-
 /usr/sbin/sssd
-
 echo "Testing LDAP connection via SSSD..."
-getent passwd test || echo "LDAP user 'test' not found via NSS"
-getent group SG-RES-SHARE-RW || echo "LDAP group 'SG-RES-SHARE-RW' not found via NSS"
-
+while true; do
+    if getent passwd test >/dev/null 2>&1; then
+        echo "LDAP connection OK, NSS cache warmed."
+        break
+    else
+        echo "LDAP user 'test' not found via NSS"
+    fi
+    sleep 2
+done
 # Enforce pam_access for group-based login control
 if ! grep -q '^account required pam_access.so' /etc/pam.d/common-account; then
     echo 'account required pam_access.so' >> /etc/pam.d/common-account
@@ -124,7 +83,7 @@ ssh-keygen -A >/dev/null 2>&1 || true
 /usr/sbin/rsyslogd
 
 # WAZUH AGENT START
-#/var/ossec/bin/wazuh-control start
+/var/ossec/bin/wazuh-control start &
 
 ## SAMBA
 # Create local users (system + ansible)
@@ -138,6 +97,10 @@ chmod 0440 /etc/sudoers.d/90-$SAMBA_USER
 
 mkdir -p "$SAMBA_SHARE_PATH"
 chmod -R 0777 "$SAMBA_SHARE_PATH" || true
+
+if [ -x /usr/local/bin/pre_entrypoint_acl.sh ]; then
+  /usr/local/bin/pre_entrypoint_acl.sh || echo "[srv_fs] ACL pre-entrypoint script failed"
+fi
 
 # Samba configuration
 mkdir -p /var/log/samba
@@ -174,3 +137,5 @@ priority=30
 EOF
 
 exec /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
+
+

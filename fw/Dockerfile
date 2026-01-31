@@ -20,9 +20,11 @@ RUN apt-get install -y --no-install-recommends \
 
 # Passwords and politics
 RUN apt-get install -y --no-install-recommends \
-   nslcd \
-   libnss-ldapd \
-   libpam-ldapd \
+   sssd \
+   sssd-tools \
+   sssd-ldap \
+   libnss-sss \
+   libpam-sss \
    ldap-utils \
    libpam-pwquality \
    cracklib-runtime \
@@ -49,9 +51,9 @@ RUN echo "session required pam_mkhomedir.so skel=/etc/skel umask=0077" >> /etc/p
 COPY suricata.yaml /etc/suricata/suricata.yaml.template
 
 # 4. Настраиваем nsswitch
-RUN sed -i 's/passwd:         files/passwd:         files ldap/' /etc/nsswitch.conf && \
-    sed -i 's/group:          files/group:          files ldap/' /etc/nsswitch.conf && \
-    sed -i 's/shadow:         files/shadow:         files ldap/' /etc/nsswitch.conf
+RUN sed -i 's/^passwd:.*/passwd:         files sss/' /etc/nsswitch.conf && \
+    sed -i 's/^group:.*/group:          files sss/' /etc/nsswitch.conf && \
+    sed -i 's/^shadow:.*/shadow:         files sss/' /etc/nsswitch.conf
 
 COPY start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh

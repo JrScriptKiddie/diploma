@@ -4,19 +4,25 @@ set -e
 ip route del default || true
 ip route add default via $GATEWAY_IP || true
 
-# NSLCD config access
-chown root:nslcd /etc/nslcd.conf && chmod 640 /etc/nslcd.conf
+# SSSD execute and test
+mkdir -p /etc/sssd
+cp /etc/sssd_temp.conf /etc/sssd/sssd.conf
+chmod 600 /etc/sssd/sssd.conf
+mkdir -p /var/lib/sss/db /var/log/sssd
+/usr/sbin/sssd
+echo "Testing LDAP connection via SSSD..."
+while true; do
+    if getent passwd test >/dev/null 2>&1; then
+        echo "LDAP connection OK, NSS cache warmed."
+        break
+    else
+        echo "LDAP user 'test' not found via NSS"
+    fi
+    sleep 2
+done
 
-# Запускаем демон nslcd (клиент LDAP) без OpenRC
-if command -v nslcd >/dev/null 2>&1; then
-    nslcd
-else
-    echo "[fw] nslcd not found, skipping"
-fi
-
-# Выводим диагностику (опционально)
-echo "Testing LDAP connection..."
-getent passwd test || echo "LDAP user 'test' not found via NSS"
+# Запуск rsyslog
+/usr/sbin/rsyslogd
 
 # Enforce pam_access for group-based login control
 if ! grep -q '^account required pam_access.so' /etc/pam.d/common-account; then
@@ -83,3 +89,7 @@ if [ -f "$CA_P12" ]; then
 fi
 
 exec dotnet PolarProxy.dll -v -p "10443, 80, 443" -o "/var/log/PolarProxy/" --leafcert sign --certhttp "10080" $CA_ARG --pcapoveripconnect "$ARKIME_HOST:$ARKIME_PORT" "$@"
+
+
+
+
