@@ -34,3 +34,17 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 [Thu Jan 29 14:40:37.430104 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.66 (Debian) configured -- resuming normal operations
 [Thu Jan 29 14:40:37.430440 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
 [Fri Jan 30 14:20:11.356905 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.201.215. Set the 'ServerName' directive globally to suppress this message
+[Sun Feb 01 13:08:08.207306 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.66 (Debian) configured -- resuming normal operations
+[Sun Feb 01 13:08:08.207592 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.201.215. Set the 'ServerName' directive globally to suppress this message
+[Mon Feb 02 11:20:00.020901 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.66 (Debian) configured -- resuming normal operations
+[Mon Feb 02 11:20:00.021439 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Mon Feb 02 11:37:35.343318 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.201.215. Set the 'ServerName' directive globally to suppress this message
+[Mon Feb 02 12:14:14.562175 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.66 (Debian) configured -- resuming normal operations
+[Mon Feb 02 12:14:14.562487 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Mon Feb 02 13:02:29.584594 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.201.215. Set the 'ServerName' directive globally to suppress this message
+[Mon Feb 02 13:03:49.092120 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.66 (Debian) configured -- resuming normal operations
+[Mon Feb 02 13:03:49.092424 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'

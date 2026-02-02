@@ -23,6 +23,10 @@ services:
     ports:     
       - "51820:51820/udp"
       - "8888:8888/tcp"
+      - "8080:8080/tcp"
+      - "8080:8080/udp"
+      - "22:22/tcp"
+      - "22:22/udp"
 
   fw:
     hostname: fw
@@ -150,10 +154,6 @@ services:
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
       - wazuh_srv_bastion:/var/ossec/etc
       - ./srv_bastion/wazuh/client.keys:/var/ossec/etc/client.keys
-      #- ./srv_bastion/wazuh/var/ossec/etc:/var/ossec/etc
-      #- ./srv_bastion/wazuh/var/ossec/queue:/var/ossec/queue
-      #- ./srv_bastion/wazuh/etc/filebeat:/etc/filebeat
-      #- ./srv_bastion/wazuh/var/lib/filebeat:/var/lib/filebeat      
     shm_size: "1gb" # Важно для стабильности браузеров и GUI  
     <<: *common_env_file
     environment:
@@ -328,6 +328,7 @@ services:
       - ./srv_ldap/var/lib/ldap:/var/lib/ldap
       - ./srv_ldap/etc/ldap:/etc/ldap/slapd.d
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+      - ./srv_ldap/ppolicy:/opt/ppolicy      
       - wazuh_srv_ldap:/var/ossec/etc           
       - ./srv_ldap/wazuh/client.keys:/var/ossec/etc/client.keys
     networks:
@@ -374,7 +375,7 @@ services:
     build: ./srv_espocrm
     container_name: srv_espocrm
     hostname: srv_espocrm
-    cap_add: [ "NET_ADMIN" ]    
+    cap_add: [ "NET_ADMIN" ]
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -383,7 +384,7 @@ services:
       ESPOCRM_DATABASE_PLATFORM: Mysql
       ESPOCRM_DATABASE_HOST: ${SUBNET_SERVERS}.${IP_SRV_ESPOCRM_DB}
       ESPOCRM_DATABASE_USER: espocrm
-      ESPOCRM_DATABASE_PASSWORD=: spocrm
+      ESPOCRM_DATABASE_PASSWORD: espocrm
       ESPOCRM_DATABASE_NAME: espocrm
       ESPOCRM_ADMIN_USERNAME: admin
       ESPOCRM_ADMIN_PASSWORD: password
@@ -393,7 +394,11 @@ services:
       SG_ADMINS: ${SG_CRM_ADMINS}
     volumes:
       - espocrm_web:/var/www/html
+      - wazuh_srv_espocrm:/var/ossec/etc
+      #/var/www/html/data/config.php
       - ./espocrm/log/apache2:/var/log/apache2
+      - ./srv_espocrm/wazuh/client.keys:/var/ossec/etc/client.keys      
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf         
     networks:
       servers_net:
         ipv4_address: ${SUBNET_SERVERS}.${IP_SRV_ESPOCRM}
@@ -590,9 +595,54 @@ services:
     dns:
       - ${SUBNET_SERVERS}.${IP_SRV_DNS}
 
+  srv_api:
+    build: ./srv_api
+    hostname: srv_api
+    container_name: srv_api
+    cap_add: [ "NET_ADMIN" ]
+    volumes:
+      - wazuh_srv_api:/var/ossec/etc
+      - ./srv_api/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+    <<: *common_env_file
+    environment:
+      <<: *common_env 
+      SG_USERS: ${SG_BASTION_USERS}
+      SG_ADMINS: ${SG_BASTION_ADMINS}
+      GATEWAY_IP: ${SUBNET_DMZ}.${IP_FW}
+      WORDPRESS_DB_HOST: srv_api_db
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: root
+      WORDPRESS_DB_NAME: wordpress  
+    networks:
+      dmz_net:
+        ipv4_address: ${SUBNET_DMZ}.${IP_SRV_API}
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}  
+
+  srv_api_db:
+    image: mariadb:latest
+    hostname: srv_api_db
+    container_name: srv_api_db
+    cap_add: [ "NET_ADMIN" ]
+    volumes:
+      #- wazuh_srv_api_db:/var/ossec/etc
+      #- ./srv_api_db/wazuh/client.keys:/var/ossec/etc/client.keys  
+      - srv_api_db_data:/var/lib/mysql
+      - ./srv_api_db/wordpress_db.sql:/docker-entrypoint-initdb.d/dump.sql:ro  
+    environment:
+      <<: *common_env 
+      MYSQL_DATABASE: wordpress
+      MYSQL_ROOT_PASSWORD: root
+      GATEWAY_IP: ${SUBNET_DMZ}.${IP_FW}  
+    networks:
+      dmz_net:
+        ipv4_address: ${SUBNET_DMZ}.${IP_SRV_API_DB}
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}  
+
   srv_web:
     hostname: srv_web
-    depends_on: [ fw ]
     build: ./srv_web
     container_name: srv_web
     cap_add: [ "NET_ADMIN" ]
@@ -625,6 +675,7 @@ services:
       - apparmor:unconfined
     volumes:
       - ./ws000242/home/:/home/
+      - ./ws000242/ldap.py:/tmp/ldap.py
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro
       - wazuh_ws000242:/var/ossec/etc
@@ -911,7 +962,8 @@ services:
         echo "Removing bad NAT rule for $$br"
         iptables -t nat -D POSTROUTING -o $$br -m addrtype --src-type LOCAL -j MASQUERADE
       done
-      iptables -t nat -D POSTROUTING -s $SUBNET_BRANCH_UPLINK.0/24 ! -o go-uplink -j MASQUERADE
+      iptables -t nat -D POSTROUTING -s $SUBNET_UPLINK.0/24 ! -o go-uplink -j MASQUERADE
+      iptables -t nat -D POSTROUTING -s $SUBNET_UPLINK.0/24 -j MASQUERADE
       '
 
 networks:  
@@ -925,8 +977,7 @@ networks:
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
       com.docker.network.bridge.name: go-uplink
-#      com.docker.network.bridge.enable_ip_masquerade: "false"      
-  
+#      com.docker.network.bridge.enable_ip_masquerade: "false"        
   dev_net:
     name: dev_net
     driver: bridge
@@ -1004,6 +1055,8 @@ volumes:
   opensearch_data:
   wazuh_indexer:
   wazuh_srv_ansible:
+  wazuh_srv_api:
+  wazuh_srv_espocrm:
   wazuh_srv_dns:
   wazuh_srv_wg_portal:
   wazuh_srv_bastion:
@@ -1023,4 +1076,4 @@ volumes:
   wazuh_ws000126:
   espocrm_db:
   espocrm_web:
-
+  srv_api_db_data:

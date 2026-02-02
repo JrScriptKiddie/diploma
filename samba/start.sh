@@ -13,6 +13,7 @@ ip route add default via $GATEWAY_IP || true
 mkdir -p /etc/sssd
 cp /etc/sssd_temp.conf /etc/sssd/sssd.conf
 chmod 600 /etc/sssd/sssd.conf
+sed -i 's/\r$//' /etc/sssd/sssd.conf
 mkdir -p /var/lib/sss/db /var/log/sssd
 /usr/sbin/sssd
 echo "Testing LDAP connection via SSSD..."
@@ -137,5 +138,4 @@ priority=30
 EOF
 
 exec /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
-
 

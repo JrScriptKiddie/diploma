@@ -2,6 +2,7 @@
 /report.md
 /workfiles
 ldap_users.csv
+*.target
 
 /srv_idm
 

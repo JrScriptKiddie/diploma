@@ -76,7 +76,7 @@ fi
 rm -f "${acl_test}" >/dev/null 2>&1
 
 log "Searching resource groups in ${res_dn}..."
-log "ldapsearch cmd: ldapsearch -x -H \"${LDAP_URI}\" -D \"${LDAP_BINDDN}\" -w \"${LDAP_BINDPW}\" -LLL -b \"${res_dn}\" -s one \"(cn=SG-RES-SHARE-*)\" cn"
+log "ldapsearch cmd: ldapsearch -x -H \"${LDAP_URI}\" -D \"${LDAP_BINDDN}\" -w \"***\" -LLL -b \"${res_dn}\" -s one \"(cn=SG-RES-SHARE-*)\" cn"
 group_lines=$(ldapsearch -x -H "${LDAP_URI}" -D "${LDAP_BINDDN}" -w "${LDAP_BINDPW}" \
     -LLL -b "${res_dn}" -s one "(cn=SG-RES-SHARE-*)" cn 2>/dev/null)
 rc=$?

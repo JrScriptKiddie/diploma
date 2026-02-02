@@ -17,7 +17,8 @@ RUN rm -f /etc/apt/sources.list.d/*nginx*.list \
    iputils-ping \
    net-tools \
    dnsutils \
-   syslog-ng \
+   rsyslog \
+   gawk \
    iproute2 \
    openssh-client \
    openssh-server \
@@ -29,6 +30,8 @@ RUN rm -f /etc/apt/sources.list.d/*nginx*.list \
    libnss-sss \
    libpam-sss \
    ldap-utils \
+   slapd-contrib \
+   build-essential \
    libpam-pwquality \
    cracklib-runtime \
    sudo \
@@ -53,5 +56,8 @@ RUN sed -i 's/^passwd:.*/passwd:         files sss/' /etc/nsswitch.conf && \
 
 COPY start.sh /usr/bin/start.sh
 RUN chmod +x /usr/bin/start.sh
+
+COPY check_password/check_password.c /opt/check_password/check_password.c
+RUN gcc -fPIC -shared -O2 -Wall -Wextra -o /usr/lib/ldap/check_password.so /opt/check_password/check_password.c
 
 ENTRYPOINT ["/usr/bin/start.sh"]

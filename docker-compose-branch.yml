@@ -24,6 +24,8 @@ services:
       - "43389:33389/tcp"
       - "43389:33389/udp"
       - "8889:8888/tcp"
+      - "22:22/tcp"
+      - "22:22/udp"      
 
   branch_fw:
     hostname: branch_fw

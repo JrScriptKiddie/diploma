@@ -32,6 +32,7 @@ RUN rm -f /etc/apt/sources.list.d/*nginx*.list \
    libpam-pwquality \
    cracklib-runtime \
    sudo \
+   gawk \
  && rm -rf /var/lib/apt/lists/*
 
 # Wazuh agent repo + install
