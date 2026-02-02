@@ -1,110 +1,4 @@
-tion failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:49:32.631: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:49:32.690: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:49:32.742: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:49:45.796: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:49:45.854: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:49:46.281: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(exo-open:3630): dbind-WARNING **: 11:49:49.036: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
-
-(xfce4-mime-helper:3632): dbind-WARNING **: 11:49:49.058: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
-
-(xfce4-terminal:3633): dbind-WARNING **: 11:49:49.176: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
-
-(xfce4-mime-helper:3657): dbind-WARNING **: 11:49:58.369: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
-
-(Thunar:2208): GVFS-WARNING **: 11:49:58.457: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:49:58.459: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:49:58.461: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:49:58.462: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-ThunarThumbnailer: Failed to retrieve supported types: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.thumbnails.Thumbnailer1 was not provided by any .service files
-
-(Thunar:2208): GVFS-WARNING **: 11:49:58.528: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GLib-GIO-CRITICAL **: 11:49:58.529: GFileInfo created without standard::size
-
-(Thunar:2208): GLib-GIO-CRITICAL **: 11:49:58.529: file ../../../gio/gfileinfo.c: line 1845 (g_file_info_get_size): should not be reached
-
-(exo-open:3665): dbind-WARNING **: 11:50:02.525: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
-
-(xfce4-mime-helper:3667): dbind-WARNING **: 11:50:02.547: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
-
-(xfce4-terminal:3668): dbind-WARNING **: 11:50:02.579: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
-
-(exo-open:3690): dbind-WARNING **: 11:51:18.593: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
-
-(xfce4-mime-helper:3692): dbind-WARNING **: 11:51:18.619: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
-
-(xfce4-terminal:3693): dbind-WARNING **: 11:51:18.656: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
-
-(Thunar:2208): GVFS-WARNING **: 11:51:22.778: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:51:22.786: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:51:22.788: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:51:22.789: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:51:22.790: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:51:22.791: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:51:22.792: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:51:22.792: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:51:22.793: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:51:22.802: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:51:22.804: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:51:22.813: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:51:22.815: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:51:22.816: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:51:22.852: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(xfce4-mime-helper:3723): dbind-WARNING **: 11:51:26.886: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
-
-(Thunar:2208): GVFS-WARNING **: 11:51:26.939: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:51:26.940: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:51:26.941: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:51:26.942: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-ThunarThumbnailer: Failed to retrieve supported types: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.thumbnails.Thumbnailer1 was not provided by any .service files
-
-(Thunar:2208): GVFS-WARNING **: 11:51:26.998: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GLib-GIO-CRITICAL **: 11:51:26.999: GFileInfo created without standard::size
-
-(Thunar:2208): GLib-GIO-CRITICAL **: 11:51:26.999: file ../../../gio/gfileinfo.c: line 1845 (g_file_info_get_size): should not be reached
-
-(exo-open:3741): dbind-WARNING **: 11:55:43.151: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
-
-(xfce4-mime-helper:3743): dbind-WARNING **: 11:55:43.176: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
-
-(xfce4-terminal:3744): dbind-WARNING **: 11:55:43.210: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
-
-(Thunar:2208): GVFS-WARNING **: 11:55:51.704: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:55:51.706: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
-
-(Thunar:2208): GVFS-WARNING **: 11:55:51.707: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+RNING **: 11:55:51.707: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
 
 (Thunar:2208): GVFS-WARNING **: 11:55:51.708: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
 ThunarThumbnailer: Failed to retrieve supported types: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.thumbnails.Thumbnailer1 was not provided by any .service files
@@ -3746,3 +3640,439 @@ libclock-Message: 13:33:58.357: could not get proxy for org.freedesktop.login1
 (xfce4-mime-helper:2787): dbind-WARNING **: 13:35:30.305: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
 
 (xfce4-terminal:2788): dbind-WARNING **: 13:35:30.354: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfce4-terminal:2788): Gtk-WARNING **: 14:04:23.757: Could not load a pixbuf from /org/gtk/libgtk/theme/Adwaita/assets/check-symbolic.svg.
+This may indicate that pixbuf loaders or the mime database could not be found.
+Xsession: X session started for student at Mon Feb  2 16:55:56 UTC 2026
+localuser:student being added to access control list
+dbus-update-activation-environment: systemd --user not found, ignoring --systemd argument
+dbus-update-activation-environment: setting USER=student
+dbus-update-activation-environment: setting HOME=/home/student
+dbus-update-activation-environment: setting XRDP_PULSE_SINK_SOCKET=xrdp_chansrv_audio_out_socket_11
+dbus-update-activation-environment: setting XRDP_PULSE_SOURCE_SOCKET=xrdp_chansrv_audio_in_socket_11
+dbus-update-activation-environment: setting DBUS_SESSION_BUS_ADDRESS=unix:path=/tmp/dbus-qj1D8DM4Do,guid=28f1bfc1793c54d0cdc3d1f16980d71d
+dbus-update-activation-environment: setting PULSE_SCRIPT=/etc/xrdp/pulse/default.pa
+dbus-update-activation-environment: setting LOGNAME=student
+dbus-update-activation-environment: setting PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+dbus-update-activation-environment: setting XRDP_SOCKET_PATH=/run/xrdp/sockdir
+dbus-update-activation-environment: setting DISPLAY=:11.0
+dbus-update-activation-environment: setting LANG=C.UTF-8
+dbus-update-activation-environment: setting UID=1020
+dbus-update-activation-environment: setting SHELL=/bin/bash
+dbus-update-activation-environment: setting XRDP_SESSION=1
+dbus-update-activation-environment: setting GPG_AGENT_INFO=/run/user/1020/gnupg/S.gpg-agent:0:1
+dbus-update-activation-environment: setting PWD=/home/student
+dbus-update-activation-environment: setting XDG_DATA_DIRS=/usr/share/xfce4:/usr/local/share/:/usr/share/
+/usr/bin/x-session-manager: X server already running on display :11.0
+
+(xfce4-session:1826): dbind-WARNING **: 16:55:57.318: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+_IceTransmkdir: Owner of /tmp/.ICE-unix should be set to root
+xfce4-session-Message: 16:55:57.546: SSH authentication agent is already running
+
+(xfwm4:1922): dbind-WARNING **: 16:55:57.593: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfwm4:1922): xfwm4-WARNING **: 16:55:58.063: Unsupported GL renderer (llvmpipe (LLVM 20.1.2, 256 bits)).
+
+(xfsettingsd:1962): dbind-WARNING **: 16:55:58.102: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfsettingsd:1962): libupower-glib-WARNING **: 16:55:58.118: Couldn't connect to proxy: Could not connect: No such file or directory
+
+(xfce4-panel:1966): dbind-WARNING **: 16:55:58.213: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(Thunar:1971): dbind-WARNING **: 16:55:58.271: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfdesktop:1977): dbind-WARNING **: 16:55:58.330: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+** (xfdesktop:1977): WARNING **: 16:55:58.521: Thumbnailer failed calling GetFlavors
+
+(xfsettingsd:1981): dbind-WARNING **: 16:55:58.521: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+Connection failure: Connection refused
+pa_context_connect() failed: Connection refused
+E: [pulseaudio] core-util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [pulseaudio] core-util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [pulseaudio] core-util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [pulseaudio] core-util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [pulseaudio] core-util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [pulseaudio] core-util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [pulseaudio] core-util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [pulseaudio] core-util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [pulseaudio] core-util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [pulseaudio] core-util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [pulseaudio] core-util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+
+(xfce4-notifyd:1982): dbind-WARNING **: 16:55:58.534: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+W: [pulseaudio] pid.c: Stale PID file, overwriting.
+E: [null-sink] util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [null-sink] util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [null-sink] util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [null-sink] util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [null-sink] util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+N: [pulseaudio] module-xrdp-sink.c: Build library version 16.1.0
+E: [xrdp-sink] module-xrdp-sink.c: sink_process_msg: PA_SINK_MESSAGE_SET_STATE [IDLE]
+E: [xrdp-sink] module-xrdp-sink.c: sink_process_msg: not running
+E: [xrdp-sink] module-xrdp-sink.c: close_send:
+N: [pulseaudio] module-xrdp-source.c: Build library version 16.1.0
+
+(xfdesktop:1977): GVFS-RemoteVolumeMonitor-WARNING **: 16:55:58.601: remote volume monitor with dbus name org.gtk.vfs.UDisks2VolumeMonitor is not supported
+
+(wrapper-2.0:2027): dbind-WARNING **: 16:55:58.665: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(wrapper-2.0:2021): dbind-WARNING **: 16:55:58.666: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(wrapper-2.0:2025): dbind-WARNING **: 16:55:58.666: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfdesktop:1977): GVFS-WARNING **: 16:55:58.667: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(xfdesktop:1977): GVFS-WARNING **: 16:55:58.671: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(xfdesktop:1977): GVFS-WARNING **: 16:55:58.673: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+libclock-Message: 16:55:58.673: could not get proxy for org.freedesktop.login1
+
+(xfce4-panel:1966): libclock-WARNING **: 16:55:58.673: could not instantiate a sleep monitor
+
+(xfdesktop:1977): GVFS-WARNING **: 16:55:58.674: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(xfdesktop:1977): GVFS-WARNING **: 16:55:58.675: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(xfdesktop:1977): GVFS-WARNING **: 16:55:58.676: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(wrapper-2.0:2056): dbind-WARNING **: 16:55:58.754: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+** (xfdesktop:1977): WARNING **: 16:55:58.802: Failed to get system bus: Could not connect: No such file or directory
+
+(wrapper-2.0:2027): xfce4-notification-plugin-WARNING **: 16:55:59.098: Failed to look up notification icon
+
+** (wrapper-2.0:2025): WARNING **: 16:55:59.099: Binding 'XF86AudioLowerVolume' failed!
+
+** (wrapper-2.0:2025): WARNING **: 16:55:59.099: Binding 'XF86AudioRaiseVolume' failed!
+
+** (wrapper-2.0:2025): WARNING **: 16:55:59.099: Binding 'XF86AudioMute' failed!
+
+** (wrapper-2.0:2025): WARNING **: 16:55:59.099: Binding 'XF86AudioMicMute' failed!
+
+(wrapper-2.0:2025): pulseaudio-plugin-WARNING **: 16:55:59.100: Could not have grabbed volume control keys. Is another volume control application (xfce4-volumed) running?
+
+** (wrapper-2.0:2025): WARNING **: 16:55:59.100: Binding 'XF86AudioPlay' failed!
+
+** (wrapper-2.0:2025): WARNING **: 16:55:59.100: Binding 'XF86AudioStop' failed!
+
+** (wrapper-2.0:2025): WARNING **: 16:55:59.100: Binding 'XF86AudioPrev' failed!
+
+** (wrapper-2.0:2025): WARNING **: 16:55:59.101: Binding 'XF86AudioNext' failed!
+
+(wrapper-2.0:2025): pulseaudio-plugin-WARNING **: 16:55:59.101: Could not have grabbed multimedia control keys.
+
+(xfce4-session:1826): xfce4-session-WARNING **: 16:55:59.114: failed to run script: Failed to execute child process “/usr/bin/pm-is-supported” (No such file or directory)
+
+(wrapper-2.0:2027): xfce4-notification-plugin-WARNING **: 16:55:59.117: Failed to look up notification icon
+
+(xfce4-session:1826): xfce4-session-WARNING **: 16:55:59.118: failed to run script: Failed to execute child process “/usr/bin/pm-is-supported” (No such file or directory)
+
+(wrapper-2.0:2027): xfce4-notification-plugin-WARNING **: 16:55:59.119: Failed to look up notification icon
+
+(xfce4-session:1826): xfce4-session-WARNING **: 16:55:59.122: failed to run script: Failed to execute child process “/usr/bin/pm-is-supported” (No such file or directory)
+
+(wrapper-2.0:2027): xfce4-notification-plugin-WARNING **: 16:55:59.147: Failed to look up notification icon
+
+(exo-open:2071): dbind-WARNING **: 16:56:00.137: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfce4-mime-helper:2073): dbind-WARNING **: 16:56:00.160: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfce4-panel:1966): xfce4-panel-CRITICAL **: 16:56:00.463: panel-window.c:2346 (panel_window_active_window_geometry_changed): expression 'WNCK_IS_WINDOW (active_window)' failed.
+
+(exo-open:2418): dbind-WARNING **: 16:56:04.695: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfce4-mime-helper:2420): dbind-WARNING **: 16:56:04.723: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfce4-terminal:2421): dbind-WARNING **: 16:56:04.786: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfce4-mime-helper:2461): dbind-WARNING **: 16:56:08.814: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(Thunar:1971): GVFS-RemoteVolumeMonitor-WARNING **: 16:56:08.852: remote volume monitor with dbus name org.gtk.vfs.UDisks2VolumeMonitor is not supported
+
+(Thunar:1971): GVFS-WARNING **: 16:56:08.896: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:56:08.897: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:56:08.898: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:56:08.899: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+ThunarThumbnailer: Failed to retrieve supported types: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.thumbnails.Thumbnailer1 was not provided by any .service files
+
+(Thunar:1971): GVFS-WARNING **: 16:56:08.999: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GLib-GIO-CRITICAL **: 16:56:09.000: GFileInfo created without standard::size
+
+(Thunar:1971): GLib-GIO-CRITICAL **: 16:56:09.000: file ../../../gio/gfileinfo.c: line 1845 (g_file_info_get_size): should not be reached
+
+(exo-open:2473): dbind-WARNING **: 16:56:21.203: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfce4-mime-helper:2475): dbind-WARNING **: 16:56:21.224: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfce4-terminal:2476): dbind-WARNING **: 16:56:21.254: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(exo-open:2485): dbind-WARNING **: 16:56:25.923: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfce4-mime-helper:2487): dbind-WARNING **: 16:56:25.944: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfce4-terminal:2488): dbind-WARNING **: 16:56:25.974: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(exo-desktop-item-edit:2496): dbind-WARNING **: 16:56:33.635: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(exo-desktop-item-edit:2496): Gtk-WARNING **: 16:56:33.709: Could not load a pixbuf from /org/gtk/libgtk/theme/Adwaita/assets/check-symbolic.svg.
+This may indicate that pixbuf loaders or the mime database could not be found.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:55.354: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.595: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.600: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.601: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.602: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.602: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.605: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.675: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.677: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.678: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.679: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.680: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.681: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.682: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.683: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.684: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.685: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.686: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.687: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.688: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.689: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.691: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.692: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.693: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.694: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.695: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.696: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.697: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:57:58.711: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:00.182: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:00.188: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:00.189: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:00.190: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:00.190: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:00.194: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:00.203: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:00.208: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:00.222: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:00.223: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:00.260: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:01.900: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:01.915: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:01.932: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:01.951: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:01.968: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:01.986: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:02.002: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:02.020: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:02.037: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:02.055: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:02.073: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:02.089: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:58:02.106: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.129: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.147: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.163: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.180: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.195: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.215: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.233: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.250: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.267: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.281: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.298: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.315: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.330: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.347: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.364: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.380: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.398: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.415: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:00.432: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.304: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.307: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.314: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.395: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.397: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.401: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.405: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.406: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.408: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.410: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.411: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.412: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.415: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.416: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.418: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.419: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.421: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.422: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.423: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.425: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.426: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.428: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.429: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:02.431: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(exo-open:2561): dbind-WARNING **: 16:59:08.970: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfce4-mime-helper:2563): dbind-WARNING **: 16:59:08.991: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(Thunar:1971): GVFS-WARNING **: 16:59:09.220: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:09.231: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:09.249: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:09.266: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:09.283: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:09.300: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:09.316: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:09.332: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:09.349: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:09.366: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:09.383: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:09.400: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(Thunar:1971): GVFS-WARNING **: 16:59:09.415: The peer-to-peer connection failed: Error when getting information for file “/run/user/1020/gvfsd”: No such file or directory. Falling back to the session bus. Your application is probably missing --filesystem=xdg-run/gvfsd privileges.
+
+(xfce4-session:1826): xfce4-session-WARNING **: 17:00:44.019: failed to run script: Failed to execute child process “/usr/bin/pm-is-supported” (No such file or directory)
+
+(xfce4-session:1826): xfce4-session-WARNING **: 17:00:44.022: failed to run script: Failed to execute child process “/usr/bin/pm-is-supported” (No such file or directory)
+
+(xfce4-session:1826): xfce4-session-WARNING **: 17:00:44.026: failed to run script: Failed to execute child process “/usr/bin/pm-is-supported” (No such file or directory)
+
+(xfce4-session:1826): xfce4-session-WARNING **: 17:00:44.999: failed to run script: Failed to execute child process “/usr/bin/pm-is-supported” (No such file or directory)
+
+(xfce4-session:1826): xfce4-session-WARNING **: 17:00:45.002: failed to run script: Failed to execute child process “/usr/bin/pm-is-supported” (No such file or directory)
+
+(xfce4-session:1826): xfce4-session-WARNING **: 17:00:45.008: failed to run script: Failed to execute child process “/usr/bin/pm-is-supported” (No such file or directory)
+
+(xfce4-session:1826): Gtk-WARNING **: 17:00:45.036: Could not load a pixbuf from /org/gtk/libgtk/theme/Adwaita/assets/check-symbolic.svg.
+This may indicate that pixbuf loaders or the mime database could not be found.
+[GFX1-]: Detect DeviceReset DeviceResetReason::FORCED_RESET DeviceResetDetectPlace::WR_SIMULATE in Parent process
+Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: Failed to connect WebRenderBridgeChild. isParent=false (t=285.465) [GFX1-]: Failed to connect WebRenderBridgeChild. isParent=false
+Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: Failed to connect WebRenderBridgeChild. isParent=false (t=285.465) |[C1][GFX1-]: IPC Channel is already torn down unexpectedly
+ (t=285.473) [GFX1-]: IPC Channel is already torn down unexpectedly
+
+Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: Failed to connect WebRenderBridgeChild. isParent=false (t=285.465) |[C1][GFX1-]: IPC Channel is already torn down unexpectedly
+ (t=285.473) |[C2][GFX1-]: IPC Channel is already torn down unexpectedly
+ (t=285.477) [GFX1-]: IPC Channel is already torn down unexpectedly
+
+E: [null-sink] util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [null-sink] util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [null-sink] util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [null-sink] util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [null-sink] util.c: Failed to connect to system bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+E: [xrdp-sink] module-xrdp-sink.c: sink_process_msg: PA_SINK_MESSAGE_SET_STATE [UNLINKED]
+E: [xrdp-sink] module-xrdp-sink.c: sink_process_msg: not running
+E: [xrdp-sink] module-xrdp-sink.c: close_send:
+W: [pulseaudio] module.c: After module unload, module 'module-null-sink' was still loaded!

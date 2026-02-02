@@ -61,15 +61,11 @@ chmod 600 /etc/sssd/sssd.conf
 mkdir -p /var/lib/sss/db /var/log/sssd
 /usr/sbin/sssd
 echo "Testing LDAP connection via SSSD..."
-while true; do
-    if getent passwd test >/dev/null 2>&1; then
-        echo "LDAP connection OK, NSS cache warmed."
-        break
-    else
-        echo "LDAP user 'test' not found via NSS"
-    fi
-    sleep 2
-done
+if getent passwd test >/dev/null 2>&1; then
+  echo "LDAP connection OK, NSS cache warmed."
+else
+  echo "LDAP user 'test' not found via NSS"
+fi
 
 # Запуск rsyslog
 /usr/sbin/rsyslogd

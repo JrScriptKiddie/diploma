@@ -1,0 +1,783 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Local Host — современная девелоперская компания</title>
+  <meta name="description" content="Local Host строит современные жилые кварталы в Москве и Санкт-Петербурге. Бетон, стекло, инженерный подход и безопасность на всех этапах проекта." />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+    :root {
+      --bg: #e7e2da;
+      --bg-deep: #d6d0c6;
+      --ink: #171a1f;
+      --muted: #4a525f;
+      --glass: rgba(255, 255, 255, 0.52);
+      --glass-strong: rgba(255, 255, 255, 0.7);
+      --line: rgba(17, 19, 24, 0.12);
+      --accent: #f2b632;
+      --accent-2: #41b6b2;
+      --accent-3: #e76b4b;
+      --shadow: rgba(18, 20, 24, 0.18);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font: 16px/1.65 "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+      background:
+        radial-gradient(900px 480px at 85% -10%, rgba(65, 182, 178, 0.28), transparent 60%),
+        radial-gradient(1000px 520px at 10% 0%, rgba(242, 182, 50, 0.22), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg-deep));
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+      opacity: 0.6;
+      mix-blend-mode: multiply;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(transparent 31px, rgba(255,255,255,0.12) 32px),
+        linear-gradient(90deg, transparent 31px, rgba(255,255,255,0.08) 32px);
+      background-size: 32px 32px;
+      opacity: 0.35;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 16px 5vw;
+      background: rgba(231, 226, 218, 0.72);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background:
+        linear-gradient(150deg, rgba(255,255,255,0.55), rgba(255,255,255,0.1)),
+        linear-gradient(120deg, #9aa3ad, #f1ebe2);
+      border: 1px solid rgba(23, 26, 31, 0.2);
+      box-shadow: 0 10px 20px rgba(23, 26, 31, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 8px 6px 8px 14px;
+      border-left: 3px solid rgba(23, 26, 31, 0.35);
+      border-bottom: 3px solid rgba(23, 26, 31, 0.15);
+      transform: skew(-10deg);
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    nav a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: transparent;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    nav a[aria-current="page"] {
+      background: rgba(23, 26, 31, 0.08);
+    }
+
+    nav a:hover { background: rgba(23, 26, 31, 0.08); }
+
+    main {
+      height: 100vh;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    main::-webkit-scrollbar { width: 10px; }
+    main::-webkit-scrollbar-thumb {
+      background: rgba(23, 26, 31, 0.3);
+      border-radius: 10px;
+    }
+
+    .panel {
+      min-height: 100vh;
+      padding: 120px 6vw 80px;
+      display: grid;
+      align-items: center;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: 20px 6vw 20px;
+      border: 1px solid rgba(23, 26, 31, 0.08);
+      border-radius: 32px;
+      pointer-events: none;
+    }
+
+    #home {
+      background-image:
+        linear-gradient(140deg, rgba(231, 226, 218, 0.92), rgba(214, 208, 198, 0.88)),
+        url("./assets/bg-home.svg");
+    }
+
+    #projects {
+      background-image:
+        linear-gradient(140deg, rgba(231, 226, 218, 0.9), rgba(214, 208, 198, 0.86)),
+        url("./assets/bg-projects-photo.jpg"),
+        url("./assets/bg-projects.svg");
+    }
+
+    #safety {
+      background-image:
+        linear-gradient(140deg, rgba(231, 226, 218, 0.9), rgba(214, 208, 198, 0.86)),
+        url("./assets/bg-safety.svg");
+    }
+
+    #contacts {
+      background-image:
+        linear-gradient(140deg, rgba(231, 226, 218, 0.9), rgba(214, 208, 198, 0.86)),
+        url("./assets/bg-contacts.svg");
+    }
+
+    .hero {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+      margin: 0 0 14px;
+      line-height: 1.1;
+    }
+
+    h1 { font-size: clamp(34px, 4.2vw, 56px); }
+    h2 { font-size: clamp(26px, 3vw, 40px); }
+
+    .lead {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 640px;
+      margin: 0 0 18px;
+    }
+
+    .tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(23, 26, 31, 0.08);
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn.primary {
+      background: linear-gradient(120deg, var(--accent), #f7cc63);
+      box-shadow: 0 12px 28px rgba(242, 182, 50, 0.35);
+    }
+
+    .btn.ghost {
+      background: var(--glass);
+      border-color: rgba(23, 26, 31, 0.18);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .stat {
+      background: var(--glass-strong);
+      border: 1px solid rgba(23, 26, 31, 0.16);
+      padding: 14px 16px;
+      border-radius: 16px;
+      box-shadow: 0 10px 24px var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .stat strong { display: block; font-size: 24px; }
+    .stat span { color: var(--muted); font-size: 13px; }
+
+    .hero-art {
+      position: relative;
+      min-height: 360px;
+      background: linear-gradient(140deg, rgba(255,255,255,0.75), rgba(255,255,255,0.2));
+      border: 1px solid rgba(23, 26, 31, 0.15);
+      border-radius: 28px;
+      padding: 22px;
+      box-shadow: 0 20px 40px rgba(23, 26, 31, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-art svg { width: 100%; height: 100%; }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background: var(--glass-strong);
+      border: 1px solid rgba(23, 26, 31, 0.12);
+      padding: 18px;
+      border-radius: 18px;
+      box-shadow: 0 12px 26px rgba(23, 26, 31, 0.15);
+      backdrop-filter: blur(10px);
+    }
+
+    .card h3 { margin: 0 0 8px; font-size: 20px; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(23, 26, 31, 0.08);
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .safety-list {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-top: 18px;
+    }
+
+    .safety-item {
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid rgba(23, 26, 31, 0.12);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6);
+    }
+
+    .safety-item strong { display: block; margin-bottom: 6px; }
+
+    .contacts-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-bottom: 20px;
+    }
+
+    .office-card {
+      padding: 16px;
+      border-radius: 16px;
+      background: var(--glass-strong);
+      border: 1px solid rgba(23, 26, 31, 0.14);
+      box-shadow: 0 10px 22px rgba(23, 26, 31, 0.14);
+    }
+
+    .office-card h3 { margin: 0 0 8px; }
+    .office-card p { margin: 0 0 6px; color: var(--muted); }
+
+    .people-panel {
+      border: 1px solid rgba(23, 26, 31, 0.16);
+      border-radius: 18px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.58);
+      max-height: 46vh;
+      overflow-y: auto;
+    }
+
+    .people-panel::-webkit-scrollbar { width: 8px; }
+    .people-panel::-webkit-scrollbar-thumb {
+      background: rgba(23, 26, 31, 0.28);
+      border-radius: 8px;
+    }
+
+    .person {
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(23, 26, 31, 0.1);
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .person h4 { margin: 6px 0 4px; font-size: 16px; }
+    .person p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .people-grid {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .scroll-cue {
+      position: absolute;
+      right: 8vw;
+      bottom: 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(23, 26, 31, 0.14);
+      background: rgba(255,255,255,0.6);
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    [data-reveal] { opacity: 0; transform: translateY(14px); transition: all 0.6s ease; }
+    [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+
+    footer {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .site-header { flex-direction: column; align-items: flex-start; }
+      nav { gap: 8px; }
+      .panel::before { inset: 16px 4vw; }
+      .panel { padding: 120px 5vw 80px; }
+      .scroll-cue { position: static; margin-top: 20px; }
+      .people-panel { max-height: none; }
+      main { scroll-snap-type: y proximity; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; }
+      [data-reveal] { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Local Host</span>
+    </div>
+    <nav aria-label="Разделы сайта">
+      <a href="#home" data-nav="home">Главная</a>
+      <a href="#projects" data-nav="projects">Наши проекты</a>
+      <a href="#safety" data-nav="safety">Безопасность</a>
+      <a href="#contacts" data-nav="contacts">Контакты</a>
+      <a href="/contacts.html">Все контакты</a>
+    </nav>
+  </header>
+
+  <main id="page">
+    <section class="panel hero" id="home">
+      <div data-reveal>
+        <div class="eyebrow">Москва • Санкт-Петербург</div>
+        <h1>Local Host — девелопмент, который строит как инженерный проект.</h1>
+        <div class="tagline">Слоган: «Локальная надежность городской высоты»</div>
+        <p class="lead">Мы выросли из небольшой инженерной команды, которая проектировала технопарки для собственных нужд. Сегодня Local Host создает современные многоквартирные дома с умной инфраструктурой, прозрачной логистикой и безопасностью на всех этапах — от котлована до управления домом.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">Смотреть проекты</a>
+          <a class="btn ghost" href="#contacts">Связаться</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>24</strong><span>жилых комплекса в портфеле</span></div>
+          <div class="stat"><strong>2 города</strong><span>Москва и Санкт-Петербург</span></div>
+          <div class="stat"><strong>98%</strong><span>сдачи объектов в срок</span></div>
+          <div class="stat"><strong>7 уровней</strong><span>контроля безопасности стройки</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true" data-reveal>
+        <svg viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffffff" stop-opacity="0.8" />
+              <stop offset="1" stop-color="#41b6b2" stop-opacity="0.25" />
+            </linearGradient>
+            <linearGradient id="concrete" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#9aa3ad" stop-opacity="0.8" />
+              <stop offset="1" stop-color="#6f757d" stop-opacity="0.9" />
+            </linearGradient>
+          </defs>
+          <rect x="30" y="180" width="120" height="160" rx="8" fill="url(#concrete)" />
+          <rect x="160" y="120" width="140" height="220" rx="8" fill="url(#glass)" />
+          <rect x="320" y="160" width="110" height="180" rx="8" fill="url(#concrete)" />
+          <rect x="450" y="200" width="110" height="140" rx="8" fill="url(#glass)" />
+          <line x1="100" y1="60" x2="100" y2="200" stroke="#f2b632" stroke-width="10" />
+          <line x1="100" y1="60" x2="310" y2="80" stroke="#f2b632" stroke-width="10" />
+          <line x1="280" y1="80" x2="280" y2="140" stroke="#f2b632" stroke-width="6" />
+          <rect x="260" y="140" width="40" height="26" fill="#e76b4b" />
+          <circle cx="100" cy="60" r="10" fill="#e76b4b" />
+          <rect x="40" y="320" width="520" height="22" fill="#1f2227" opacity="0.45" />
+        </svg>
+      </div>
+      <button class="scroll-cue" data-next="projects" aria-label="К следующему разделу">Дальше ↓</button>
+    </section>
+
+    <section class="panel" id="projects">
+      <div data-reveal>
+        <h2>Наши проекты</h2>
+        <p class="lead">Мы создаем кварталы нового поколения: стеклянные фасады, бетонные ядра, умные инженерные системы и дворы без машин. В каждом проекте — архитектура, рассчитанная на городской ритм и долгий срок жизни.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="pill">Москва • бизнес-класс</div>
+            <h3>ЖК «Стекольный Порт»</h3>
+            <p>20–34 этажей, панорамное остекление, приватные внутренние улицы. Статус: строительство.</p>
+          </article>
+          <article class="card">
+            <div class="pill">Санкт-Петербург • комфорт+</div>
+            <h3>Квартал «Северный Кварц»</h3>
+            <p>Невская набережная, тихие дворы, инженерные комнаты в каждом подъезде. Статус: проектирование.</p>
+          </article>
+          <article class="card">
+            <div class="pill">Москва • семейный</div>
+            <h3>ЖК «Бетонная Линия»</h3>
+            <p>Близость к паркам, дворы без машин, детские клубы. Статус: сдача корпусов.</p>
+          </article>
+          <article class="card">
+            <div class="pill">Санкт-Петербург • бизнес</div>
+            <h3>«Невская Панорама»</h3>
+            <p>Стеклянные башни, умная парковка, энергоэффективные фасады. Статус: активная фаза.</p>
+          </article>
+          <article class="card">
+            <div class="pill">Москва • премиум</div>
+            <h3>Кластер «Крановый Сад»</h3>
+            <p>Высотные секции, skyline-террасы, лобби как галерея. Статус: концепция.</p>
+          </article>
+          <article class="card">
+            <div class="pill">Санкт-Петербург • комфорт</div>
+            <h3>ЖК «Стальной Берег»</h3>
+            <p>Бетонные ядра, фасадное стекло, инженерные резервы. Статус: строительство.</p>
+          </article>
+        </div>
+      </div>
+      <button class="scroll-cue" data-next="safety" aria-label="К следующему разделу">Дальше ↓</button>
+    </section>
+
+    <section class="panel" id="safety">
+      <div data-reveal>
+        <h2>Безопасность строительства и эксплуатации</h2>
+        <p class="lead">Безопасность для нас — это не раздел, а метод. Мы контролируем качество бетона, цифровую модель, безопасность площадки и будущую эксплуатацию домов.</p>
+        <div class="safety-list">
+          <div class="safety-item">
+            <strong>Цифровой BIM-контроль</strong>
+            <span>Каждый узел проходит проверку по цифровому двойнику — ошибки ловим до выхода на площадку.</span>
+          </div>
+          <div class="safety-item">
+            <strong>7 контуров безопасности стройки</strong>
+            <span>Техника, строповка, высотные работы, допуски, контроль подрядчиков, журнал инцидентов.</span>
+          </div>
+          <div class="safety-item">
+            <strong>Пожарная и инженерная защита</strong>
+            <span>Дублированные системы дымоудаления, умные датчики и сценарии оповещения.</span>
+          </div>
+          <div class="safety-item">
+            <strong>Качество бетона и стекла</strong>
+            <span>Лабораторные проверки партий, температурные карты, регулярные испытания.</span>
+          </div>
+          <div class="safety-item">
+            <strong>Эксплуатация 24/7</strong>
+            <span>Диспетчерский центр, SLA на аварии, дистанционный мониторинг инженерных узлов.</span>
+          </div>
+          <div class="safety-item">
+            <strong>Безопасность жителей</strong>
+            <span>Контроль доступа, камерные дворы, сценарии эвакуации и регулярные учения.</span>
+          </div>
+        </div>
+      </div>
+      <button class="scroll-cue" data-next="contacts" aria-label="К следующему разделу">Дальше ↓</button>
+    </section>
+
+    <section class="panel" id="contacts">
+      <div data-reveal>
+        <h2>Контакты</h2>
+        <p class="lead">Головной офис — Москва. Филиал — Санкт-Петербург. Мы открыты к партнерам, архитекторам и жителям будущих кварталов.</p>
+        <div class="contacts-grid">
+          <div class="office-card">
+            <h3>Москва, головной офис</h3>
+            <p>Пресненская наб., 10, стр. 2</p>
+            <p>+7 (495) 555-18-80</p>
+            <p>hello@local.host</p>
+          </div>
+          <div class="office-card">
+            <h3>Санкт-Петербург, филиал</h3>
+            <p>пр. Медиков, 10</p>
+            <p>+7 (812) 555-18-81</p>
+            <p>spb@local.host</p>
+          </div>
+          <div class="office-card">
+            <h3>Общие вопросы</h3>
+            <p>Пн–Пт, 09:00–19:00</p>
+            <p>press@local.host</p>
+            <p>sales@local.host</p>
+          </div>
+        </div>
+
+        <h3>Начальники отделов</h3>
+        <div class="people-panel" data-scroll="free">
+          <div class="people-grid">
+            <div class="person">
+              <span class="pill">Проектный отдел</span>
+              <h4>Кузнецов Дмитрий</h4>
+              <p>Начальник проектного отдела • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">Отдел продаж и маркетинга</span>
+              <h4>Смирнов Евгений</h4>
+              <p>Начальник отдела продаж и маркетинга • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">Финансовый отдел</span>
+              <h4>Николаев Сергей</h4>
+              <p>Начальник финансового отдела • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">Юридический отдел</span>
+              <h4>Чернов Павел</h4>
+              <p>Начальник юридического отдела • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">HR</span>
+              <h4>Белая Марина</h4>
+              <p>Начальник отдела по работе с персоналом • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">Хозяйственный отдел</span>
+              <h4>Остапенко Илья</h4>
+              <p>Начальник хозяйственного отдела • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">ИТ-отдел</span>
+              <h4>Светлов Максим</h4>
+              <p>Начальник ИТ-отдела • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">Отдел ИБ</span>
+              <h4>Дмитриев Константин</h4>
+              <p>Начальник отдела ИБ • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">Бухгалтерия</span>
+              <h4>Карпова Елена</h4>
+              <p>Начальник бухгалтерии • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">PR</span>
+              <h4>Орлова Ксения</h4>
+              <p>Начальник отдела по связям с общественностью (PR) • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">Логистика</span>
+              <h4>Коваленко Денис</h4>
+              <p>Начальник логистического отдела • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">Закупки и снабжение</span>
+              <h4>Захарова Полина</h4>
+              <p>Начальник отдела закупок и снабжения • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">ПТО</span>
+              <h4>Семёнов Андрей</h4>
+              <p>Начальник производственно-технического отдела (ПТО) • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">Технический надзор</span>
+              <h4>Абдулаев Расул</h4>
+              <p>Начальник отдела технического надзора • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">Сметный отдел</span>
+              <h4>Киселёв Игорь</h4>
+              <p>Начальник сметного отдела • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">BIM-отдел</span>
+              <h4>Доржиев Баир</h4>
+              <p>Начальник BIM-отдела • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">Эксплуатация</span>
+              <h4>Фомин Вадим</h4>
+              <p>Начальник отдела эксплуатации • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">Служба заказчика</span>
+              <h4>Мартынов Аркадий</h4>
+              <p>Начальник службы заказчика • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">Клиентский сервис</span>
+              <h4>Руднева Дарья</h4>
+              <p>Начальник клиентского сервиса • Центральный офис</p>
+            </div>
+            <div class="person">
+              <span class="pill">Комплаенс</span>
+              <h4>Лебедева Надежда</h4>
+              <p>Начальник службы комплаенса и внутреннего контроля • —</p>
+            </div>
+          </div>
+        </div>
+        <footer>Local Host — бетон, стекло и безопасность нового города.</footer>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const main = document.querySelector('main');
+    const panels = Array.from(document.querySelectorAll('.panel'));
+    const navLinks = Array.from(document.querySelectorAll('[data-nav]'));
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const setActive = (id) => {
+      navLinks.forEach((link) => {
+        const isActive = link.getAttribute('data-nav') === id;
+        link.setAttribute('aria-current', isActive ? 'page' : 'false');
+      });
+    };
+
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      { root: main, threshold: 0.6 }
+    );
+
+    panels.forEach((panel) => sectionObserver.observe(panel));
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      },
+      { root: main, threshold: 0.2 }
+    );
+
+    document.querySelectorAll('[data-reveal]').forEach((el) => revealObserver.observe(el));
+
+    const scrollToPanel = (targetId) => {
+      const target = document.getElementById(targetId);
+      if (!target) return;
+      target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    };
+
+    document.querySelectorAll('[data-next]').forEach((btn) => {
+      btn.addEventListener('click', () => scrollToPanel(btn.dataset.next));
+    });
+
+    const allowWheel = window.matchMedia('(pointer: fine)').matches && !reduceMotion;
+    let wheelLock = false;
+
+    const currentIndex = () => {
+      const scrollTop = main.scrollTop + 10;
+      let index = 0;
+      panels.forEach((panel, idx) => {
+        if (panel.offsetTop <= scrollTop) index = idx;
+      });
+      return index;
+    };
+
+    if (allowWheel) {
+      main.addEventListener(
+        'wheel',
+        (event) => {
+          if (event.target.closest('[data-scroll="free"]')) return;
+          if (Math.abs(event.deltaY) < 30) return;
+          event.preventDefault();
+          if (wheelLock) return;
+          wheelLock = true;
+          const idx = currentIndex();
+          const next = event.deltaY > 0 ? Math.min(idx + 1, panels.length - 1) : Math.max(idx - 1, 0);
+          scrollToPanel(panels[next].id);
+          setTimeout(() => { wheelLock = false; }, 700);
+        },
+        { passive: false }
+      );
+    }
+  </script>
+</body>
+</html>
+

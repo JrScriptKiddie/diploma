@@ -26,6 +26,7 @@ while true; do
     fi
     sleep 2
 done
+
 # Enforce pam_access for group-based login control
 if ! grep -q '^account required pam_access.so' /etc/pam.d/common-account; then
     echo 'account required pam_access.so' >> /etc/pam.d/common-account

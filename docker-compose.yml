@@ -25,8 +25,10 @@ services:
       - "8888:8888/tcp"
       - "8080:8080/tcp"
       - "8080:8080/udp"
-      - "22:22/tcp"
-      - "22:22/udp"
+      - "80:80/tcp"
+      - "80:80/udp"
+      - "443:443/tcp"
+      - "443:443/udp"
 
   fw:
     hostname: fw
@@ -63,6 +65,7 @@ services:
       SG_ADMINS: ${SG_NET_ADMINS}
       GATEWAY_IP: ${SUBNET_UPLINK}.${IP_ISP}
       VPN_SRV_IP: ${IP_VPN}
+      BRANCH_OFFICE_SUBNETS: 10.97.0.0/16
     dns:
       - ${SUBNET_SERVERS}.${IP_SRV_DNS}     
 
@@ -652,7 +655,8 @@ services:
         ipv4_address: ${SUBNET_DMZ}.${IP_SRV_WEB}  
     volumes:
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
-      - ./www:/usr/share/nginx/html:ro
+      - ./srv_web/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./srv_web/www:/usr/share/nginx/html:ro
       - ./srv_web/zz-server.conf:/etc/nginx/http.d/zz-server.conf:rw
       - ./srv_web/nginx.conf:/etc/nginx/nginx.conf:rw
     <<: *common_env_file

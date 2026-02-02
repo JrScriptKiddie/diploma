@@ -5,7 +5,7 @@ x-env-file: &common_env_file
 
 x-env: &common_env
   IP_SRV_WAZUH_MANAGER: ${SUBNET_INFOSEC}.${IP_SRV_WAZUH_MANAGER} 
-  IP_LDAP_SRV: ${SUBNET_SERVERS}.${IP_LDAP_SRV} 
+  IP_SRV_LDAP: ${SUBNET_SERVERS}.${IP_SRV_LDAP} 
 
 services:
   branch_isp:
@@ -24,8 +24,8 @@ services:
       - "43389:33389/tcp"
       - "43389:33389/udp"
       - "8889:8888/tcp"
-      - "22:22/tcp"
-      - "22:22/udp"      
+      - "2222:22/tcp"
+      - "2222:22/udp"      
 
   branch_fw:
     hostname: branch_fw
@@ -53,8 +53,8 @@ services:
         ipv4_address: ${SUBNET_BRANCH_ADMIN}.${IP_BRANCH_FW}
         #gw_priority: 10
     volumes:
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf    
       - ./branch/branch_fw/nftables.conf:/etc/nftables.conf:rw
-      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf:ro
       - ./fw/60-wazuh-forward.conf:/etc/rsyslog.d/60-wazuh-forward.conf
       - ./fw/suricata_local.rules:/var/lib/suricata/rules/suricata_local.rules      
     <<: *common_env_file
@@ -67,6 +67,7 @@ services:
       SUBNET_USERS: ${SUBNET_BRANCH_USERS}
       GATEWAY_IP: ${SUBNET_BRANCH_UPLINK}.${IP_BRANCH_ISP}        
       VPN_SRV_IP: ${IP_BRANCH_VPN}
+      MAIN_OFFICE_SUBNETS: ${SUBNET_BRANCH_DMZ}.0/24, ${SUBNET_BRANCH_SERVERS}.0/24
     dns:
       - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}           
 
@@ -76,19 +77,21 @@ services:
     container_name: srv_branch_dns
     cap_add: [ "NET_ADMIN" ]
     restart: always
-    networks:
-      branch_servers_net:
-        ipv4_address: ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}
     volumes:
       - ./srv_dns/Corefile:/etc/coredns/Corefile:ro
-      - ./srv_dns/xxx.db:/etc/coredns/xxx.ag.db:ro
-      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
-    dns: ["1.1.1.1", "8.8.8.8"]
+      - ./srv_dns/local.host.db:/etc/coredns/local.host.db:ro
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf          
+      - wazuh_srv_branch_dns:/var/ossec/etc
+      - ./branch/srv_branch_dns/wazuh/client.keys:/var/ossec/etc/client.keys
     <<: *common_env_file
     environment:
       <<: *common_env
+      SG_ADMINS: ${SG_DNS_ADMINS}
       GATEWAY_IP: ${SUBNET_BRANCH_SERVERS}.${IP_BRANCH_FW}
-      IP_DNS_SRV:
+      IP_DNS_SRV: ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}
+    networks:
+      branch_servers_net:
+        ipv4_address: ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}
 
   srv_branch_wg_gate:
     build: ./srv_wg_portal
@@ -100,13 +103,16 @@ services:
       - ./branch/srv_branch_wg_gate/data:/app/data
       - ./branch/srv_branch_wg_gate/config:/app/config
       - ./branch/srv_branch_wg_gate/etc/wireguard:/etc/wireguard    
-      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+      - wazuh_srv_branch_wg_gate:/var/ossec/etc
+      - ./branch/srv_branch_wg_gate/wazuh/client.keys:/var/ossec/etc/client.keys           
     sysctls:
       - net.ipv4.ip_forward=1
       - net.ipv4.conf.all.src_valid_mark=1
     <<: *common_env_file
     environment:
       <<: *common_env
+      SG_ADMINS: ${SG_NET_ADMINS}      
       WB_ENABLE_NAT: true
       GATEWAY_IP: ${SUBNET_BRANCH_DMZ}.${IP_BRANCH_FW}
     networks:
@@ -121,19 +127,17 @@ services:
     container_name: srv_branch_bastion
     cap_add: [ "NET_ADMIN" ]    
     volumes:
-      - ./branch/srv_branch_bastion/home/users:/home/users/ # Персистентность данных пользователей
+      - ./branch/srv_branch_bastion/home/users:/home/users/
       - ./branch/srv_branch_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro
-      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf
-      #- ./srv_bastion_mgmt/wazuh/var/ossec/etc:/var/ossec/etc
-      #- ./srv_bastion_mgmt/wazuh/var/ossec/queue:/var/ossec/queue
-      #- ./srv_bastion_mgmt/wazuh/etc/filebeat:/etc/filebeat
-      #- ./srv_bastion_mgmt/wazuh/var/lib/filebeat:/var/lib/filebeat     
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+      - wazuh_srv_branch_bastion:/var/ossec/etc
+      - ./branch/srv_branch_bastion/wazuh/client.keys:/var/ossec/etc/client.keys       
     shm_size: "1gb" # Важно для стабильности браузеров и GUI  
     <<: *common_env_file
     environment:
       <<: *common_env 
-      SG_USERS: SG-SRV-MGMT-USERS
-      SG_ADMINS: SG-SRV-MGMT-ADMINS
+      SG_USERS: ${SG_BASTION_USERS}
+      SG_ADMINS: ${SG_BASTION_ADMINS}
       GATEWAY_IP: ${SUBNET_BRANCH_ADMIN}.${IP_BRANCH_FW}
     networks:
       branch_admin_net:
@@ -150,14 +154,15 @@ services:
     <<: *common_env_file
     environment:
       <<: *common_env
-      ARKIME_HOST: ${SUBNET_BRANCH_DMZ}.${SRV_ARKIME_IP}
+      ARKIME_HOST: ${SUBNET_INFOSEC}.${IP_SRV_ARKIME}
       ARKIME_PORT: 57012
-      SG_USERS: SG-SRV-MGMT-USERS
-      SG_ADMINS: SG-SRV-MGMT-ADMINS
+      SG_ADMINS: ${SG_NET_ADMINS}
       GATEWAY_IP: ${SUBNET_BRANCH_DMZ}.${IP_BRANCH_FW}
     volumes:
       - ./branch/srv_branch_polarproxy:/var/data
-      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf    
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+      - wazuh_srv_branch_polarproxy:/var/ossec/etc
+      - ./branch/srv_branch_polarproxy/wazuh/client.keys:/var/ossec/etc/client.keys      
     networks:
       branch_dmz_net:
         ipv4_address: ${SUBNET_BRANCH_DMZ}.${IP_SRV_BRANCH_POLARPROXY}
@@ -165,25 +170,128 @@ services:
       - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}           
 
   srv_branch_fs:
-    build: ./srv_samba  
+    build: ./samba  
     hostname: srv_branch_fs
     container_name: srv_branch_fs
     cap_add: [ "NET_ADMIN" ]
-    restart: always
-    #user: root
-    networks:
-      branch_servers_net:
-        ipv4_address: ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_FS}
+    restart: always   
     volumes:
-      - ./srv_branch_fs/share:/share
-      - ./srv_branch_fs/samba/smb.conf:/etc/samba/smb.conf:rw
-      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf
+      - ./branch/srv_branch_fs/share:/share
+      - ./branch/srv_branch_fs/smb.conf:/etc/samba/smb.conf:rw
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf   
     <<: *common_env_file
     environment:
       <<: *common_env
       GATEWAY_IP: ${SUBNET_BRANCH_SERVERS}.${IP_BRANCH_FW}
+      SG_ADMINS: ${SG_FS_ADMINS}
+      SAMBA_USER: ${SAMBA_USER}
+      SAMBA_PASSWORD: ${SAMBA_PASSWORD}
+      SAMBA_SHARE_NAME: Share          
+    networks:
+      branch_servers_net:
+        ipv4_address: ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_FS}
     dns:
       - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS} 
+
+  wsbr000845:
+    build: ./pc_ldap
+    hostname: wsbr000845
+    container_name: wsbr000845
+    cap_add: [ "NET_ADMIN", "SYS_ADMIN" ]        
+    devices:
+      - /dev/fuse:/dev/fuse
+    security_opt:
+      - apparmor:unconfined    
+    volumes:
+      - ./branch/wsbr000845/home/:/home/
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+      - ./branch/srv_branch_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
+      - wazuh_wsbr000845:/var/ossec/etc
+      - ./branch/wsbr000845/wazuh/client.keys:/var/ossec/etc/client.keys      
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      GATEWAY_IP: ${SUBNET_BRANCH_USERS}.${IP_BRANCH_FW}                       
+    dns:
+      - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}
+    networks:
+      - branch_users_net 
+
+  wsbr000833:
+    build: ./pc_ldap
+    hostname: wsbr000833
+    container_name: wsbr000833
+    cap_add: [ "NET_ADMIN", "SYS_ADMIN" ]        
+    devices:
+      - /dev/fuse:/dev/fuse
+    security_opt:
+      - apparmor:unconfined    
+    volumes:
+      - ./branch/wsbr000833/home/:/home/
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+      - ./branch/srv_branch_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
+      - wazuh_wsbr000833:/var/ossec/etc
+      - ./branch/wsbr000833/wazuh/client.keys:/var/ossec/etc/client.keys      
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      GATEWAY_IP: ${SUBNET_BRANCH_USERS}.${IP_BRANCH_FW}                       
+    dns:
+      - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}
+    networks:
+      - branch_users_net
+
+  wsbr000721:
+    build: ./pc_ldap
+    hostname: wsbr000721
+    container_name: wsbr000721
+    cap_add: [ "NET_ADMIN", "SYS_ADMIN" ]        
+    devices:
+      - /dev/fuse:/dev/fuse
+    security_opt:
+      - apparmor:unconfined    
+    volumes:
+      - ./branch/wsbr000721/home/:/home/
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+      - ./branch/srv_branch_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
+      - wazuh_wsbr000721:/var/ossec/etc
+      - ./branch/wsbr000721/wazuh/client.keys:/var/ossec/etc/client.keys      
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      GATEWAY_IP: ${SUBNET_BRANCH_USERS}.${IP_BRANCH_FW}                       
+    dns:
+      - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}
+    networks:
+      - branch_users_net
+
+  wsbr000777:
+    build: ./pc_ldap
+    hostname: wsbr000777
+    container_name: wsbr000777
+    cap_add: [ "NET_ADMIN", "SYS_ADMIN" ]        
+    devices:
+      - /dev/fuse:/dev/fuse
+    security_opt:
+      - apparmor:unconfined    
+    volumes:
+      - ./branch/wsbr000777/home/:/home/
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+      - ./branch/srv_branch_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
+      - wazuh_wsbr000777:/var/ossec/etc
+      - ./branch/wsbr000777/wazuh/client.keys:/var/ossec/etc/client.keys      
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      GATEWAY_IP: ${SUBNET_BRANCH_USERS}.${IP_BRANCH_FW}                       
+    dns:
+      - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}
+    networks:
+      - branch_users_net
 
   nat_cleaner:
     # САНИТАР NAT: Удаляет правила Masquerade, которые ломают Source IP в Docker Desktop (WSL)
@@ -202,26 +310,8 @@ services:
         iptables -t nat -D POSTROUTING -o $$br -m addrtype --src-type LOCAL -j MASQUERADE        
       done
       iptables -t nat -D POSTROUTING -s $SUBNET_BRANCH_UPLINK.0/24 ! -o brnch-uplink -j MASQUERADE
-      '
+      iptables -t nat -D POSTROUTING -s $SUBNET_BRANCH_UPLINK.0/24 -j MASQUERADE'
  
-  wsbr000845:
-    build: ./pc_ldap
-    hostname: wsbr000845
-    container_name: wsbr000845
-    cap_add: [ "NET_ADMIN" ]           
-    volumes:
-      - ./branch/wsbr000845/home/:/home/
-      - ./srv_ldap/nslcd.conf:/etc/nslcd.conf      
-    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
-    <<: *common_env_file
-    environment:
-      <<: *common_env
-      GATEWAY_IP: ${SUBNET_BRANCH_USERS}.${IP_BRANCH_FW}                       
-    dns:
-      - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}
-    networks:
-      - branch_users_net 
-
 networks:
   branch_uplink_net:
     name: branch_uplink_net
@@ -273,4 +363,14 @@ networks:
     driver_opts:
       com.docker.network.bridge.enable_icc: "true"
       com.docker.network.bridge.name: brnch-admin
-      com.docker.network.bridge.enable_ip_masquerade: "false"                     
+      com.docker.network.bridge.enable_ip_masquerade: "false"
+
+volumes:
+  wazuh_srv_branch_dns:
+  wazuh_srv_branch_wg_gate:
+  wazuh_srv_branch_bastion:
+  wazuh_srv_branch_polarproxy:
+  wazuh_wsbr000845:
+  wazuh_wsbr000833:
+  wazuh_wsbr000721:
+  wazuh_wsbr000777:

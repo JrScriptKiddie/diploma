@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 set -euo pipefail
 
 # Prepare PATH
@@ -45,10 +45,16 @@ while read -r line; do
   ip link set dev "$new" up || true
 done < <(ip -o -4 addr show)
 
-# Задаем дефолтный маршрут на NAT
+# Задаем маршруты
 echo "Adding default route via ${GATEWAY_IP} on eth_uplink"
 ip route add default via $GATEWAY_IP dev eth_uplink || true
 ip route add 10.11.0.0/16 via $SUBNET_DMZ.$VPN_SRV_IP || true
+if [ -n "${MAIN_OFFICE_SUBNETS:-}" ]; then
+  ip route add $MAIN_OFFICE_SUBNETS via $SUBNET_DMZ.$VPN_SRV_IP || true
+fi
+if [ -n "${BRANCH_OFFICE_SUBNETS:-}" ]; then
+  ip route add $BRANCH_OFFICE_SUBNETS via $SUBNET_DMZ.$VPN_SRV_IP || true
+fi
 
 # Load nftables rules
 if nft list chain ip nat PREROUTING >/dev/null 2>&1; then
@@ -96,23 +102,6 @@ chown root:root /etc/sudoers.d/ldap-sudo
 chmod 0440 /etc/sudoers.d/ldap-sudo
 sed -i "s|SG_ADMINS|$SG_NET_ADMINS|g" /etc/sudoers.d/ldap-sudo
 
-
-# SSSD execute and test
-mkdir -p /etc/sssd
-cp /etc/sssd_temp.conf /etc/sssd/sssd.conf
-chmod 600 /etc/sssd/sssd.conf
-mkdir -p /var/lib/sss/db /var/log/sssd
-/usr/sbin/sssd
-echo "Testing LDAP connection via SSSD..."
-while true; do
-    if getent passwd test >/dev/null 2>&1; then
-        echo "LDAP connection OK, NSS cache warmed."
-        break
-    else
-        echo "LDAP user 'test' not found via NSS"
-    fi
-    sleep 2
-done
 # Запуск rsyslog
 /usr/sbin/rsyslogd
 echo "[fw] Starting Suricata configuration..."
@@ -189,6 +178,20 @@ sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/ssh
 sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config || true
 ssh-keygen -A >/dev/null 2>&1 || true
 /usr/sbin/sshd -D
+
+# SSSD execute and test
+mkdir -p /etc/sssd
+cp /etc/sssd_temp.conf /etc/sssd/sssd.conf
+chmod 600 /etc/sssd/sssd.conf
+mkdir -p /var/lib/sss/db /var/log/sssd
+/usr/sbin/sssd
+echo "Testing LDAP connection via SSSD..."
+if getent passwd test >/dev/null 2>&1; then
+  echo "LDAP connection OK, NSS cache warmed."
+  break
+else
+  echo "LDAP user 'test' not found via NSS"
+fi
 
 # Keep container alive
 tail -f /dev/null

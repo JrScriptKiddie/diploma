@@ -3,23 +3,6 @@
 ip route del default || true
 ip route add default via "$GATEWAY_IP" || true
 
-# SSSD execute and test
-mkdir -p /etc/sssd
-cp /etc/sssd_temp.conf /etc/sssd/sssd.conf
-chmod 600 /etc/sssd/sssd.conf
-mkdir -p /var/lib/sss/db /var/log/sssd
-/usr/sbin/sssd
-echo "Testing LDAP connection via SSSD..."
-while true; do
-    if getent passwd test >/dev/null 2>&1; then
-        echo "LDAP connection OK, NSS cache warmed."
-        break
-    else
-        echo "LDAP user 'test' not found via NSS"
-    fi
-    sleep 2
-done
-
 # Enforce pam_access for group-based login control
 if ! grep -q '^account required pam_access.so' /etc/pam.d/common-account; then
     echo 'account required pam_access.so' >> /etc/pam.d/common-account
@@ -94,9 +77,19 @@ ssh-keygen -A >/dev/null 2>&1 || true
 # WAZUH AGENT START
 /var/ossec/bin/wazuh-control start
 
+# SSSD execute and test
+mkdir -p /etc/sssd
+cp /etc/sssd_temp.conf /etc/sssd/sssd.conf
+chmod 600 /etc/sssd/sssd.conf
+mkdir -p /var/lib/sss/db /var/log/sssd
+/usr/sbin/sssd
+echo "Testing LDAP connection via SSSD..."
+if getent passwd test >/dev/null 2>&1; then
+    echo "LDAP connection OK, NSS cache warmed."
+    break
+else
+    echo "LDAP user 'test' not found via NSS"
+fi
+
 cd /app || exit 1
 exec /usr/local/bin/wg-portal "$@"
-
-
-
-
