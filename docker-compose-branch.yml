@@ -21,8 +21,8 @@ services:
     environment:
       GATEWAY_IP: ${SUBNET_BRANCH_UPLINK}.1
     ports:
-      - "43389:33389/tcp"
-      - "43389:33389/udp"
+      - "43389:3389/tcp"
+      - "43389:3389/udp"
       - "8889:8888/tcp"
       - "2222:22/tcp"
       - "2222:22/udp"      

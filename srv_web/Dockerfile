@@ -5,6 +5,41 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update
 
+RUN apt-get install -y \
+    nginx \
+    php-fpm \
+    php-mysql \
+    php-gd \
+    php-zip \
+    php-curl \
+    php-mbstring \
+    php-xml \
+    php-intl \
+    curl \
+    unzip
+
+# Копируем архив с сайтом и секрет для api
+COPY wp.tar.gz /tmp/wp.tar.gz
+COPY secret.txt /tmp/secret.txt 
+
+# Настраиваем папки
+RUN mkdir -p /var/www/wordpress /var/www/other /run/php
+
+# Распаковка WP
+RUN tar -xzf /tmp/wp.tar.gz -C /var/www/wordpress --strip-components=1 && \
+    chown -R www-data:www-data /var/www/wordpress
+RUN sed -i "s/define( 'DB_HOST', 'db' );/define( 'DB_HOST', 'srv_api_db' );/" /var/www/wordpress/wp-config.php && \
+    sed -i "s/define( 'DB_NAME', 'wp_db' );/define( 'DB_NAME', 'wordpress' );/" /var/www/wordpress/wp-config.php
+
+# Копируем файлы api для порта 8080
+COPY index.html /var/www/other/index.html 
+COPY api.php /var/www/other/api.php
+
+# Конфиги
+COPY default.conf /etc/nginx/sites-available/default
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
 # Net tools, ssh, base utils
 RUN apt-get install -y --no-install-recommends \
    ca-certificates \
@@ -39,20 +74,15 @@ RUN curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --dearmor -o /usr
     apt-get update && \
     WAZUH_MANAGER=srv_wazuh_manager apt-get install -y wazuh-agent
 
-RUN   apt-get install -y --no-install-recommends \
-      nginx 
-
-RUN rm -rf /var/lib/apt/lists/*      
+RUN rm -rf /var/lib/apt/lists/*
 
 # 2. Настройка PAM (mkhomedir)
 RUN echo "session required pam_mkhomedir.so skel=/etc/skel umask=0077" >> /etc/pam.d/common-session
+
 # 4. Настраиваем nsswitch
 RUN sed -i 's/^passwd:.*/passwd:         files sss/' /etc/nsswitch.conf && \
     sed -i 's/^group:.*/group:          files sss/' /etc/nsswitch.conf && \
     sed -i 's/^shadow:.*/shadow:         files sss/' /etc/nsswitch.conf
 
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
 
-CMD ["/start.sh"]
-
+ENTRYPOINT ["entrypoint.sh"]

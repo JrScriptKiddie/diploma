@@ -45,9 +45,9 @@ srv_wazuh_indexer	IN A	192.168.203.89
 srv_wazuh_manager	IN A	192.168.203.88
 srv_wg_portal	        IN A	192.168.204.200
 srv_wiki	        IN A	192.168.201.120
-srv_api                 IN A    192.168.204.93
-api                     IN A    192.168.204.93
-srv_api_db              IN A    192.168.204.94
+srv_web                 IN A    192.168.204.34
+api                     IN A    192.168.204.34
+srv_web_db              IN A    192.168.204.94
 wazuh                   IN      A 192.168.203.90
 srv_branch_bastion	IN A	10.97.26.66
 srv_branch_dns	        IN A	10.97.25.44
