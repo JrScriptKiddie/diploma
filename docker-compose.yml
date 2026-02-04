@@ -31,8 +31,10 @@ services:
       - "80:80/udp"
       - "443:443/tcp"
       - "443:443/udp"
-      - "43389:3389/tcp"
-      - "43389:3389/udp"
+      - "43389:43389/tcp"
+      - "43389:43389/udp"
+      - "33389:33389/tcp"
+      - "33389:33389/udp"      
       - "2222:22/tcp"      
 
   fw:
@@ -713,9 +715,6 @@ services:
         ipv4_address: ${SUBNET_USERS}.242        
     dns:
       - ${SUBNET_SERVERS}.${IP_SRV_DNS}
-    ports:
-      - "33389:3389/tcp"
-      - "33389:3389/udp"
 
   ws_msk_000189:
     build: ./pc_ldap
@@ -982,6 +981,7 @@ services:
     container_name: nat_cleaner
     depends_on: [ fw ]
     restart: no
+    profiles: ["manual"]
     network_mode: host
     privileged: true
     command: |
