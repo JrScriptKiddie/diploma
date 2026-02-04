@@ -31,6 +31,9 @@ services:
       - "80:80/udp"
       - "443:443/tcp"
       - "443:443/udp"
+      - "43389:3389/tcp"
+      - "43389:3389/udp"
+      - "2222:22/tcp"      
 
   fw:
     hostname: fw
@@ -221,10 +224,6 @@ services:
     networks:
       infosec_net:
         ipv4_address: ${SUBNET_INFOSEC}.${IP_BASTION_IB}
-    ports:
-      - "43389:3389/tcp"
-      - "43389:3389/udp"
-      - "2222:22/tcp"
     dns:
       - ${SUBNET_SERVERS}.${IP_SRV_DNS}  
 
