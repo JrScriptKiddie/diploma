@@ -1,7 +1,7 @@
 $ORIGIN local.host.
 $TTL 300
 @   IN SOA ns.local.host. admin.local.host. (
-        2025091002 ; Serial
+        2025091003 ; Serial
         3600       ; Refresh
         900        ; Retry
         604800     ; Expire
@@ -32,6 +32,7 @@ srv_arkime	        IN A	192.168.203.53
 srv_bastion	        IN A	192.168.205.66
 srv_bastion_ib	        IN A	192.168.203.66
 srv_dns	                IN A	192.168.201.24
+srv_ntp                 IN A    192.168.201.123
 srv_espocrm	        IN A	192.168.201.215
 crm                     IN A	192.168.201.215
 srv_espocrm_db  	IN A	192.168.201.216

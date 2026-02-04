@@ -1,6 +1,6 @@
 core:
   admin_user: admin
-  admin_password: Tr@nquiL0
+  admin_password: Tr@nquiL0Z2026
   admin_api_token: ""
   disable_admin_user: false
   editable_keys: true
@@ -64,10 +64,10 @@ mail:
 auth:
   ldap:
     - provider_name: "LDAP"
-      url: ldap://192.168.1.199:389
-      bind_user: cn=srv_ldap_reader,local.host
+      url: ldap://srv_ldap:389
+      bind_user: cn=srv_ldap_reader,dc=local,dc=host
       bind_pass: 8t83XsbYLeqNSEU
-      base_dn: local.host
+      base_dn: ou=Users,dc=local,dc=host
       login_filter: "(&(objectClass=organizationalPerson)(uid={{login_identifier}}))"        
       sync_filter: (&(objectClass=organizationalPerson))
       #sync_filter: (&(objectClass=organizationalPerson)(!userAccountControl:1.2.840.113556.1.4.803:=2)(mail=*))
@@ -90,7 +90,7 @@ auth:
 
 web:
   listening_address: :8888
-  external_url: http://xxx.ag:8888
+  external_url: http://srv_branch_wg_gate:8888
   site_company_name: WireGuard Portal
   site_title: WireGuard Portal
   session_identifier: wgPortalSession

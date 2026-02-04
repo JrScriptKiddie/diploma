@@ -40,8 +40,7 @@ fw/nftables.target.conf
 docker-compose-trash.yml
 srv_wazuh_manager/ossec/queue/vd/feed/*
 srv_wazuh_manager/var/ossec/logs
-home/.cache/
-home/.mozilla/
+home/
 .cache/
 .mozilla/
 

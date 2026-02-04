@@ -100,9 +100,13 @@ chmod 0440 /etc/sudoers.d/90-$SAMBA_USER
 mkdir -p "$SAMBA_SHARE_PATH"
 chmod -R 0777 "$SAMBA_SHARE_PATH" || true
 
-if [ -x /usr/local/bin/pre_entrypoint_acl.sh ]; then
-  /usr/local/bin/pre_entrypoint_acl.sh || echo "[srv_fs] ACL pre-entrypoint script failed"
-fi
+case "${SAMBA_ACL_IMPLEMENTATION}" in
+  1|true|TRUE|True|yes|YES|Yes)
+    if [ -x /usr/local/bin/pre_entrypoint_acl.sh ]; then
+      /usr/local/bin/pre_entrypoint_acl.sh || echo "[srv_fs] ACL pre-entrypoint script failed"
+    fi
+    ;;
+esac
 
 # Samba configuration
 mkdir -p /var/log/samba
@@ -139,4 +143,3 @@ priority=30
 EOF
 
 exec /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
-

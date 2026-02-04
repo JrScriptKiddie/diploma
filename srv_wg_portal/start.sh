@@ -86,7 +86,6 @@ mkdir -p /var/lib/sss/db /var/log/sssd
 echo "Testing LDAP connection via SSSD..."
 if getent passwd test >/dev/null 2>&1; then
     echo "LDAP connection OK, NSS cache warmed."
-    break
 else
     echo "LDAP user 'test' not found via NSS"
 fi

@@ -130,10 +130,26 @@ if [ -f /opt/scenario.sh ]; then
     cron -f -L 8 &
 fi
 
+# Schedule web.py to run every 10 minutes if present.
+if [ -f /opt/web.py ]; then
+
+    cat > /etc/cron.d/web <<EOF
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+*/10 * * * * root /usr/bin/python3 /opt/web.py >/var/log/web-cron.log 2>&1
+EOF
+    chmod 0644 /etc/cron.d/web
+
+    if command -v cron >/dev/null 2>&1; then
+        if ! pgrep -x cron >/dev/null 2>&1; then
+            cron -f -L 8 &
+        fi
+    fi
+fi
+
 /var/ossec/bin/wazuh-control start
 
 # Передаем управление оригинальному скрипту entrypoint образа scottyhardy
 # (В оригинальном образе entrypoint обычно /usr/bin/entrypoint)
 exec /usr/bin/entrypoint "$@"
-
 

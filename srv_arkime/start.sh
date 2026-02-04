@@ -105,6 +105,22 @@ sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config || tru
 ssh-keygen -A >/dev/null 2>&1 || true
 /usr/sbin/sshd
 
+
+# Schedule pcap_edit.py to run every 7 minutes.
+if [ -f /opt/arkime/etc/pcap_edit.py ]; then
+  cat > /etc/cron.d/pcap_edit <<'EOF'
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+*/7 * * * * root /opt/arkime/venv/bin/python /opt/arkime/etc/pcap_edit.py >>/proc/1/fd/1 2>>/proc/1/fd/2
+EOF
+  chmod 0644 /etc/cron.d/pcap_edit
+  if command -v cron >/dev/null 2>&1; then
+    if ! pgrep -x cron >/dev/null 2>&1; then
+      cron -f -L 8 &
+    fi
+  fi
+fi
+
 # Передаем управление оригинальному скрипту
 echo "Arkime starting..."
 exec /opt/arkime/bin/docker.sh capture-viewer --update-geo "$@"

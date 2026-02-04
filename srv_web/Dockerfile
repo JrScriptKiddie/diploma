@@ -3,9 +3,7 @@ FROM ubuntu:22.04
 # Отключаем интерактивные окна при установке
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update
-
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y \
     nginx \
     php-fpm \
     php-mysql \
@@ -28,7 +26,7 @@ RUN mkdir -p /var/www/wordpress /var/www/other /run/php
 # Распаковка WP
 RUN tar -xzf /tmp/wp.tar.gz -C /var/www/wordpress --strip-components=1 && \
     chown -R www-data:www-data /var/www/wordpress
-RUN sed -i "s/define( 'DB_HOST', 'db' );/define( 'DB_HOST', 'srv_api_db' );/" /var/www/wordpress/wp-config.php && \
+RUN sed -i "s/define( 'DB_HOST', 'db' );/define( 'DB_HOST', 'srv_web_db' );/" /var/www/wordpress/wp-config.php && \
     sed -i "s/define( 'DB_NAME', 'wp_db' );/define( 'DB_NAME', 'wordpress' );/" /var/www/wordpress/wp-config.php
 
 # Копируем файлы api для порта 8080
@@ -40,6 +38,7 @@ COPY default.conf /etc/nginx/sites-available/default
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
+RUN apt-get update
 # Net tools, ssh, base utils
 RUN apt-get install -y --no-install-recommends \
    ca-certificates \

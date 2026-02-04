@@ -22,7 +22,6 @@ services:
       GATEWAY_IP: ${SUBNET_UPLINK}.1
     ports:     
       - "51820:51820/udp"
-      - "8888:8888/tcp"
       - "8080:8080/tcp"
       - "8080:8080/udp"
       - "80:80/tcp"
@@ -118,6 +117,28 @@ services:
       servers_net:
         ipv4_address: ${SUBNET_SERVERS}.${IP_SRV_DNS}
 
+  srv_ntp:
+    hostname: srv_ntp
+    build: ./srv_ntp
+    container_name: srv_ntp
+    cap_add: [ "NET_ADMIN", "SYS_TIME" ]
+    restart: always
+    volumes:
+      - ./srv_ntp/chrony.conf:/etc/chrony/chrony.conf:ro
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+      - wazuh_srv_ntp:/var/ossec/etc
+      - ./srv_ntp/wazuh/client.keys:/var/ossec/etc/client.keys
+    <<: *common_env_file
+    environment:
+      <<: *common_env
+      SG_ADMINS: ${SG_NET_ADMINS}
+      GATEWAY_IP: ${SUBNET_SERVERS}.${IP_FW}
+    networks:
+      servers_net:
+        ipv4_address: ${SUBNET_SERVERS}.${IP_SRV_NTP}
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}
+
   srv_wg_portal:
     build: ./srv_wg_portal
     container_name: srv_wg_portal
@@ -162,7 +183,7 @@ services:
     environment:
       <<: *common_env 
       SG_USERS: ${SG_BASTION_USERS}
-      SG_ADMINS: ${SG_BASTION_ADMINS}
+      SG_ADMINS: SG-ORG-IT-USERS
       GATEWAY_IP: ${SUBNET_ADMIN}.${IP_FW}       
     networks:
       admin_net:
@@ -197,7 +218,8 @@ services:
         ipv4_address: ${SUBNET_INFOSEC}.${IP_BASTION_IB}
     ports:
       - "43389:3389/tcp"
-      - "43389:3389/udp"    
+      - "43389:3389/udp"
+      - "2222:22/tcp"
     dns:
       - ${SUBNET_SERVERS}.${IP_SRV_DNS}  
 
@@ -214,7 +236,7 @@ services:
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
       - wazuh_srv_fs:/var/ossec/etc
       - ./srv_fs/wazuh/client.keys:/var/ossec/etc/client.keys
-      - ./workfiles/scripts:/opt/scripts      
+      #- ./workfiles/scripts:/opt/scripts      
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -222,7 +244,8 @@ services:
       GATEWAY_IP: ${SUBNET_SERVERS}.${IP_FW}
       SAMBA_USER: ${SAMBA_USER}
       SAMBA_PASSWORD: ${SAMBA_PASSWORD}
-      SAMBA_SHARE_NAME: Share             
+      SAMBA_SHARE_NAME: Share
+      SAMBA_ACL_IMPLEMENTATION: True           
     networks:
       servers_net:
         ipv4_address: ${SUBNET_SERVERS}.${IP_SRV_FS}
@@ -327,7 +350,7 @@ services:
       GATEWAY_IP: ${SUBNET_SERVERS}.${IP_FW}
       SG_ADMINS: ${SG_LDAP_ADMINS}
     volumes:
-      - ./workfiles/scripts:/opt/scripts
+      #- ./workfiles/scripts:/opt/scripts
       - ./srv_ldap/var/lib/ldap:/var/lib/ldap
       - ./srv_ldap/etc/ldap:/etc/ldap/slapd.d
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
@@ -450,6 +473,10 @@ services:
     container_name: srv_wazuh_manager
     restart: always
     cap_add: [ "NET_ADMIN" ]        
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
     ulimits:
       memlock:
         soft: -1
@@ -644,23 +671,32 @@ services:
     dns:
       - ${SUBNET_SERVERS}.${IP_SRV_DNS}  
 
-  ws000242:
+  srv_bim:
+    build: ./srv_bim
+    hostname: srv_bim
+    container_name: srv_bim
+    networks:
+      users_net:
+        ipv4_address: ${SUBNET_USERS}.${IP_SRV_BIM}        
+    dns:
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}
+
+  ws_msk_000242:
     # Student PC
     build: ./pc_ldap
-    hostname: ws000242
-    container_name: ws000242
+    hostname: ws_msk_000242
+    container_name: ws_msk_000242
     cap_add: [ "NET_ADMIN", "SYS_ADMIN" ]
     devices:
       - /dev/fuse:/dev/fuse
     security_opt:
       - apparmor:unconfined
     volumes:
-      - ./ws000242/home/:/home/
-      - ./ws000242/ldap.py:/tmp/ldap.py
+      - ./ws_msk_000242/home/:/home/
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro
       - wazuh_ws000242:/var/ossec/etc
-      - ./ws000242/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./ws_msk_000242/wazuh/client.keys:/var/ossec/etc/client.keys
     shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
     <<: *common_env_file
     environment:
@@ -677,21 +713,22 @@ services:
       - "33389:3389/tcp"
       - "33389:3389/udp"
 
-  ws000189:
+  ws_msk_000189:
     build: ./pc_ldap
-    hostname: ws000189
-    container_name: ws000189
+    hostname: ws_msk_000189
+    container_name: ws_msk_000189
     cap_add: [ "NET_ADMIN", "SYS_ADMIN" ]
     devices:
       - /dev/fuse:/dev/fuse
     security_opt:
       - apparmor:unconfined
     volumes:
-      - ./ws000189/home/:/home/
+      - ./ws_msk_000189/home/:/home/
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
       - wazuh_ws000189:/var/ossec/etc
-      - ./ws000189/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./ws_msk_000189/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./pc_ldap/web.py:/opt/web.py
     shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
     <<: *common_env_file
     environment:
@@ -705,21 +742,22 @@ services:
     dns:
       - ${SUBNET_SERVERS}.${IP_SRV_DNS}     
 
-  ws000159:
+  ws_msk_000159:
     build: ./pc_ldap
-    hostname: ws000159
-    container_name: ws000159
+    hostname: ws_msk_000159
+    container_name: ws_msk_000159
     cap_add: [ "NET_ADMIN", "SYS_ADMIN" ]
     devices:
       - /dev/fuse:/dev/fuse
     security_opt:
       - apparmor:unconfined      
     volumes:
-      - ./ws000159/home/:/home/
+      - ./ws_msk_000159/home/:/home/
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro
       - wazuh_ws000159:/var/ossec/etc
-      - ./ws000159/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./ws_msk_000159/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./pc_ldap/web.py:/opt/web.py      
     shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
     <<: *common_env_file
     environment:
@@ -733,19 +771,20 @@ services:
     dns:
       - ${SUBNET_SERVERS}.${IP_SRV_DNS}   
 
-  ws000021:
+  ws_msk_000021:
     build: ./pc_old
-    hostname: ws000021
-    container_name: ws000021
+    hostname: ws_msk_000021
+    container_name: ws_msk_000021
     cap_add: [ "NET_ADMIN", "SYS_ADMIN" ]
     devices:
       - /dev/fuse:/dev/fuse
     security_opt:
       - apparmor:unconfined    
     volumes:
-      - ./ws000021/home/:/home/
+      - ./ws_msk_000021/home/:/home/
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
+      - ./pc_ldap/web.py:/opt/web.py      
     shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
     <<: *common_env_file
     environment:
@@ -759,21 +798,22 @@ services:
     dns:
       - ${SUBNET_SERVERS}.${IP_SRV_DNS}   
 
-  ws000023:
+  ws_msk_000023:
     build: ./pc_ldap
-    hostname: ws000023
-    container_name: ws000023
+    hostname: ws_msk_000023
+    container_name: ws_msk_000023
     cap_add: [ "NET_ADMIN", "SYS_ADMIN" ]
     devices:
       - /dev/fuse:/dev/fuse
     security_opt:
       - apparmor:unconfined    
     volumes:
-      - ./ws000023/home/:/home/
+      - ./ws_msk_000023/home/:/home/
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
       - wazuh_ws000023:/var/ossec/etc
-      - ./ws000023/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./ws_msk_000023/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./pc_ldap/web.py:/opt/web.py      
     shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
     <<: *common_env_file
     environment:
@@ -787,21 +827,22 @@ services:
     dns:
       - ${SUBNET_SERVERS}.${IP_SRV_DNS}   
 
-  ws000034:
+  ws_msk_000034:
     build: ./pc_ldap
-    hostname: ws000034
-    container_name: ws000034
+    hostname: ws_msk_000034
+    container_name: ws_msk_000034
     cap_add: [ "NET_ADMIN", "SYS_ADMIN" ]
     devices:
       - /dev/fuse:/dev/fuse
     security_opt:
       - apparmor:unconfined    
     volumes:
-      - ./ws000034/home/:/home/
+      - ./ws_msk_000034/home/:/home/
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
       - wazuh_ws000034:/var/ossec/etc
-      - ./ws000034/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./ws_msk_000034/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./pc_ldap/web.py:/opt/web.py      
     shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
     <<: *common_env_file
     environment:
@@ -815,21 +856,22 @@ services:
     dns:
       - ${SUBNET_SERVERS}.${IP_SRV_DNS} 
 
-  ws000046:
+  ws_msk_000046:
     build: ./pc_ldap
-    hostname: ws000046
-    container_name: ws000046
+    hostname: ws_msk_000046
+    container_name: ws_msk_000046
     cap_add: [ "NET_ADMIN", "SYS_ADMIN" ]
     devices:
       - /dev/fuse:/dev/fuse
     security_opt:
       - apparmor:unconfined
     volumes:
-      - ./ws000046/home/:/home/
+      - ./ws_msk_000046/home/:/home/
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
       - wazuh_ws000046:/var/ossec/etc
-      - ./ws000046/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./ws_msk_000046/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./pc_ldap/web.py:/opt/web.py      
     shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
     <<: *common_env_file
     environment:
@@ -843,21 +885,22 @@ services:
     dns:
       - ${SUBNET_SERVERS}.${IP_SRV_DNS} 
 
-  ws000055:
+  ws_msk_000055:
     build: ./pc_ldap
-    hostname: ws000055
-    container_name: ws000055
+    hostname: ws_msk_000055
+    container_name: ws_msk_000055
     cap_add: [ "NET_ADMIN", "SYS_ADMIN" ]
     devices:
       - /dev/fuse:/dev/fuse
     security_opt:
       - apparmor:unconfined
     volumes:
-      - ./ws000055/home/:/home/
+      - ./ws_msk_000055/home/:/home/
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
       - wazuh_ws000055:/var/ossec/etc
-      - ./ws000055/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./ws_msk_000055/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./pc_ldap/web.py:/opt/web.py      
     shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
     <<: *common_env_file
     environment:
@@ -867,25 +910,26 @@ services:
       GATEWAY_IP: ${SUBNET_USERS}.${IP_FW}                       
     networks:
       users_net:
-        ipv4_address: ${SUBNET_USERS}.55
+        ipv4_address: ${SUBNET_USERS}.55     
     dns:
       - ${SUBNET_SERVERS}.${IP_SRV_DNS} 
 
-  ws000019:
+  ws_msk_000019:
     build: ./pc_ldap
-    hostname: ws000019
-    container_name: ws000019
+    hostname: ws_msk_000019
+    container_name: ws_msk_000019
     cap_add: [ "NET_ADMIN", "SYS_ADMIN" ]
     devices:
       - /dev/fuse:/dev/fuse
     security_opt:
       - apparmor:unconfined
     volumes:
-      - ./ws000019/home/:/home/
+      - ./ws_msk_000019/home/:/home/
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
       - wazuh_ws000019:/var/ossec/etc
-      - ./ws000019/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./ws_msk_000019/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./pc_ldap/web.py:/opt/web.py      
     shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
     <<: *common_env_file
     environment:
@@ -899,21 +943,22 @@ services:
     dns:
       - ${SUBNET_SERVERS}.${IP_SRV_DNS} 
 
-  ws000126:
+  ws_msk_000126:
     build: ./pc_ldap
-    hostname: ws000126
-    container_name: ws000126
+    hostname: ws_msk_000126
+    container_name: ws_msk_000126
     cap_add: [ "NET_ADMIN", "SYS_ADMIN" ]
     devices:
       - /dev/fuse:/dev/fuse
     security_opt:
       - apparmor:unconfined
     volumes:
-      - ./ws000126/home/:/home/
+      - ./ws_msk_000126/home/:/home/
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
       - wazuh_ws000126:/var/ossec/etc
-      - ./ws000126/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./ws_msk_000126/wazuh/client.keys:/var/ossec/etc/client.keys
+      - ./pc_ldap/web.py:/opt/web.py      
     shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
     <<: *common_env_file
     environment:
@@ -1039,6 +1084,7 @@ volumes:
   wazuh_srv_web:
   wazuh_srv_espocrm:
   wazuh_srv_dns:
+  wazuh_srv_ntp:
   wazuh_srv_wg_portal:
   wazuh_srv_bastion:
   wazuh_srv_bastion_ib:
