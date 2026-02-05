@@ -68,7 +68,7 @@ services:
       SUBNET_SERVERS: ${SUBNET_BRANCH_SERVERS}
       SUBNET_USERS: ${SUBNET_BRANCH_USERS}
       GATEWAY_IP: ${SUBNET_BRANCH_UPLINK}.${IP_BRANCH_ISP}        
-      VPN_SUBNET: 192.168.0.0/24
+      VPN_SUBNET: 192.168.0.0/16
       VPN_SRV_IP: ${SUBNET_BRANCH_USERS}.${IP_BRANCH_VPN}
     dns:
       - ${SUBNET_BRANCH_USERS}.${IP_SRV_BRANCH_DNS}           
@@ -115,7 +115,7 @@ services:
     environment:
       <<: *common_env
       SG_ADMINS: ${SG_NET_ADMINS}      
-      WB_ENABLE_NAT: false
+      WB_ENABLE_NAT: true
       GATEWAY_IP: ${SUBNET_BRANCH_USERS}.${IP_BRANCH_FW}
       EXTRA_ROUTE: 192.168.0.0/16
     networks:

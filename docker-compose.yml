@@ -169,7 +169,7 @@ services:
     environment:
       <<: *common_env
       SG_ADMINS: ${SG_NET_ADMINS}
-      WB_ENABLE_NAT: false
+      WB_ENABLE_NAT: true
       GATEWAY_IP: ${SUBNET_DMZ}.254
       EXTRA_ROUTE: 192.168.0.0/16      
     networks:
