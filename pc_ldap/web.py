@@ -4,11 +4,6 @@ import time
 import urllib.parse
 from datetime import datetime
 
-# Exit outside working hours (09:00-19:00).
-current_hour = datetime.now().hour
-if current_hour < 9 or current_hour >= 19:
-    raise SystemExit(0)
-
 # Random delay between 1 and 60 seconds before executing the request.
 time.sleep(random.randint(1, 60))
 

@@ -12,7 +12,7 @@ $TTL 300
 
 ; APEX and hosts
 
-@                       IN      A 172.56.200.254
+@                       IN A    192.168.204.34
 branch_fw	        IN A	10.97.23.254
 branch_fw	        IN A	10.97.24.254
 branch_fw	        IN A	10.97.25.254
@@ -49,9 +49,9 @@ srv_wiki	        IN A	192.168.201.120
 srv_web                 IN A    192.168.204.34
 api                     IN A    192.168.204.34
 srv_web_db              IN A    192.168.204.94
-wazuh                   IN      A 192.168.203.90
-srv_branch_bastion	IN A	10.97.26.66
-srv_branch_dns	        IN A	10.97.25.44
-srv_branch_fs	        IN A	10.97.25.33
-srv_branch_polarproxy	IN A	10.97.24.50
-srv_branch_wg_gate	IN A	10.97.24.200
+wazuh                   IN A    192.168.203.90
+srv_branch_bastion	IN A	10.97.22.66
+srv_branch_dns	        IN A	10.97.22.44
+srv_branch_fs	        IN A	10.97.22.33
+srv_branch_polarproxy	IN A	10.97.22.50
+srv_branch_wg_gate	IN A	10.97.22.200

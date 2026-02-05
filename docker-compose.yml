@@ -73,10 +73,10 @@ services:
       <<: *common_env
       SG_ADMINS: ${SG_NET_ADMINS}
       GATEWAY_IP: ${SUBNET_UPLINK}.${IP_ISP}
+      VPN_SUBNET: 10.97.0.0/16
       VPN_SRV_IP: ${IP_VPN}
-      BRANCH_OFFICE_SUBNETS: 10.97.0.0/16
     dns:
-      - ${SUBNET_SERVERS}.${IP_SRV_DNS}     
+      - ${SUBNET_DMZ}.${IP_SRV_DNS}     
 
   srv_ansible:
     build: ./srv_ansible
@@ -141,7 +141,7 @@ services:
     <<: *common_env_file
     environment:
       <<: *common_env
-      SG_ADMINS: ${SG_NET_ADMINS}
+      SG_ADMINS: SG-ADM-T1-SRV-LINUX-ADMINS
       GATEWAY_IP: ${SUBNET_SERVERS}.${IP_FW}
     networks:
       servers_net:
@@ -169,8 +169,9 @@ services:
     environment:
       <<: *common_env
       SG_ADMINS: ${SG_NET_ADMINS}
-      WB_ENABLE_NAT: true
+      WB_ENABLE_NAT: false
       GATEWAY_IP: ${SUBNET_DMZ}.254
+      EXTRA_ROUTE: 192.168.0.0/16      
     networks:
       dmz_net:
         ipv4_address: ${SUBNET_DMZ}.${IP_VPN}
@@ -430,12 +431,11 @@ services:
       #/var/www/html/data/config.php
       - ./espocrm/log/apache2:/var/log/apache2
       - ./srv_espocrm/wazuh/client.keys:/var/ossec/etc/client.keys      
-      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf         
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+      - ./srv_espocrm/config.php:/var/www/html/data/config.php
     networks:
       servers_net:
         ipv4_address: ${SUBNET_SERVERS}.${IP_SRV_ESPOCRM}
-    ports:
-      - 333:80
     depends_on:
       srv_espocrm_db:
         condition: service_healthy
@@ -622,7 +622,7 @@ services:
       LEAFWIKI_ADMIN_PASSWORD: ${LEAFWIKI_ADMIN_PASSWORD}
       GATEWAY_IP: ${SUBNET_SERVERS}.${IP_FW}
       LEAFWIKI_ALLOW_INSECURE: true
-      SG_ADMINS: ${SG-ADM-T1-SRV-LINUX-ADMINS}      
+      SG_ADMINS: SG-ADM-T1-SRV-LINUX-ADMINS   
     volumes:
       - ./srv_wiki/data:/app/data
     networks:
@@ -643,8 +643,7 @@ services:
     <<: *common_env_file
     environment:
       <<: *common_env 
-      SG_USERS: ${SG_BASTION_USERS}
-      SG_ADMINS: ${SG_BASTION_ADMINS}
+      SG_ADMINS: SG-ADM-T1-SRV-LINUX-ADMINS
       GATEWAY_IP: ${SUBNET_DMZ}.${IP_FW}
       WORDPRESS_DB_HOST: srv_web_db
       WORDPRESS_DB_USER: root

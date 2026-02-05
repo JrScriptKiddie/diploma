@@ -20,11 +20,14 @@ services:
       - ./branch/branch_isp/iptables.rules:/etc/iptables/rules.v4:ro      
     environment:
       GATEWAY_IP: ${SUBNET_BRANCH_UPLINK}.1
+    sysctls:
+      net.ipv4.conf.all.send_redirects: 0
+      net.ipv4.conf.default.send_redirects: 0    
     ports:
-      - "43389:3389/tcp"
-      - "43389:3389/udp"
-      - "2222:22/tcp"
-      - "2222:22/udp"      
+      - "43389:43389/tcp"
+      - "43389:43389/udp"
+      - "2222:2222/tcp"
+      - "2222:2222/udp"      
 
   branch_fw:
     hostname: branch_fw
@@ -65,10 +68,10 @@ services:
       SUBNET_SERVERS: ${SUBNET_BRANCH_SERVERS}
       SUBNET_USERS: ${SUBNET_BRANCH_USERS}
       GATEWAY_IP: ${SUBNET_BRANCH_UPLINK}.${IP_BRANCH_ISP}        
-      VPN_SRV_IP: ${IP_BRANCH_VPN}
-      MAIN_OFFICE_SUBNETS: ${SUBNET_BRANCH_DMZ}.0/24, ${SUBNET_BRANCH_SERVERS}.0/24
+      VPN_SUBNET: 192.168.0.0/24
+      VPN_SRV_IP: ${SUBNET_BRANCH_USERS}.${IP_BRANCH_VPN}
     dns:
-      - ${SUBNET_BRANCH_SERVERS}.${IP_SRV_BRANCH_DNS}           
+      - ${SUBNET_BRANCH_USERS}.${IP_SRV_BRANCH_DNS}           
 
   srv_branch_dns:
     hostname: srv_branch_dns
@@ -112,8 +115,9 @@ services:
     environment:
       <<: *common_env
       SG_ADMINS: ${SG_NET_ADMINS}      
-      WB_ENABLE_NAT: true
+      WB_ENABLE_NAT: false
       GATEWAY_IP: ${SUBNET_BRANCH_USERS}.${IP_BRANCH_FW}
+      EXTRA_ROUTE: 192.168.0.0/16
     networks:
       branch_users_net:
         ipv4_address: ${SUBNET_BRANCH_USERS}.${IP_SRV_BRANCH_WG_GATE}
@@ -298,6 +302,7 @@ services:
     container_name: nat_cleaner
     depends_on: [ branch_fw ]
     restart: no
+    profiles: ["manual"]    
     network_mode: host
     privileged: true
     command: |

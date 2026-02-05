@@ -48,13 +48,8 @@ done < <(ip -o -4 addr show)
 # Задаем маршруты
 echo "Adding default route via ${GATEWAY_IP} on eth_uplink"
 ip route add default via $GATEWAY_IP dev eth_uplink || true
-ip route add 10.11.0.0/16 via $SUBNET_DMZ.$VPN_SRV_IP || true
-if [ -n "${MAIN_OFFICE_SUBNETS:-}" ]; then
-  ip route add $MAIN_OFFICE_SUBNETS via $SUBNET_DMZ.$VPN_SRV_IP || true
-fi
-if [ -n "${BRANCH_OFFICE_SUBNETS:-}" ]; then
-  ip route add $BRANCH_OFFICE_SUBNETS via $SUBNET_DMZ.$VPN_SRV_IP || true
-fi
+ip route add 10.11.0.0/16 via $VPN_SRV_IP || true
+ip route add $VPN_SUBNET via $VPN_SRV_IP || true
 
 # Load nftables rules
 if nft list chain ip nat PREROUTING >/dev/null 2>&1; then
@@ -177,7 +172,7 @@ fi
 sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config || true
 sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config || true
 ssh-keygen -A >/dev/null 2>&1 || true
-/usr/sbin/sshd -D
+/usr/sbin/sshd
 
 # SSSD execute and test
 mkdir -p /etc/sssd

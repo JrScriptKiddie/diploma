@@ -77,6 +77,24 @@ def setup_logging() -> None:
     )
 
 
+def has_recent_pcap_activity(pcap_dir: Path, max_age_seconds: int, min_size_bytes: int) -> bool:
+    if not pcap_dir.is_dir():
+        return False
+    now = time.time()
+    for path in pcap_dir.rglob("*"):
+        if not path.is_file():
+            continue
+        try:
+            stat = path.stat()
+        except OSError:
+            continue
+        if stat.st_size < min_size_bytes:
+            continue
+        if (now - stat.st_mtime) <= max_age_seconds:
+            return True
+    return False
+
+
 def format_http_date(dt_utc: datetime) -> str:
     weekday = calendar.day_abbr[dt_utc.weekday()]
     month = calendar.month_abbr[dt_utc.month]
@@ -459,6 +477,15 @@ def main() -> None:
         with open(args.output, "wb") as fh:
             fh.write(data)
         print(f"Packets: {packet_count}, modified payloads: {modified_count}")
+        return
+
+    activity_dir = Path("/opt/arkime/raw")
+    if not has_recent_pcap_activity(activity_dir, max_age_seconds=86400, min_size_bytes=500 * 1024):
+        logging.info(
+            "No recent PCAP activity in %s (last 24h, >= 500KB). Exiting.",
+            activity_dir,
+        )
+        print("No recent PCAP activity")
         return
 
     pcap_dir = Path(args.pcap_dir)
