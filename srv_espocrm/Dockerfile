@@ -1,4 +1,4 @@
-FROM espocrm/espocrm:latest
+FROM espocrm/espocrm
 
 ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC
 RUN apt-get update
