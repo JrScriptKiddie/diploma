@@ -16,7 +16,8 @@ RUN apt-get install -y --no-install-recommends \
    openssh-client \
    openssh-server \
    curl \
-   cron   
+   cron \
+   mariadb-client   
 
 # Passwords and politics
 RUN apt-get install -y --no-install-recommends \

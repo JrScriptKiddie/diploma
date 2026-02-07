@@ -22,12 +22,12 @@ cat <<'EOF' >> /etc/security/access.conf
 # Разрешить членам группы ADMINS (имя группы в Linux, не DN!)
 +:SG_ADMINS:ALL
 # Разрешить членам группы USERS
-+:SG_USERS:ALL
+#+:SG_USERS:ALL
 # Запретить всем остальным (важно, иначе смысла нет)
 -:ALL:ALL
 EOF
 
-sed -i "s|SG_USERS|$SG_USERS|g" /etc/security/access.conf
+#sed -i "s|SG_USERS|$SG_USERS|g" /etc/security/access.conf
 sed -i "s|SG_ADMINS|$SG_ADMINS|g" /etc/security/access.conf
 
 touch /etc/sudoers.d/ldap-sudo
@@ -77,5 +77,7 @@ chmod 755 /run/sshd
 
 # WAZUH AGENT START
 /var/ossec/bin/wazuh-control start
+
+bash /usr/local/bin/fill_db.sh
 
 exec /usr/local/bin/docker-entrypoint.sh apache2-foreground
