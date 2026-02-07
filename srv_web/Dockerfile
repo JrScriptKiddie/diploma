@@ -22,13 +22,26 @@ COPY wp.tar.gz /tmp/wp.tar.gz
 COPY secret.txt /tmp/secret.txt 
 
 # Настраиваем папки
-RUN mkdir -p /var/www/wordpress /var/www/other /run/php
+RUN mkdir -p /var/www/wordpress /var/www/other /run/php && \
+    chown -R www-data:www-data /var/www/other
 
 # Распаковка WP
 RUN tar -xzf /tmp/wp.tar.gz -C /var/www/wordpress --strip-components=1 && \
     chown -R www-data:www-data /var/www/wordpress
 RUN sed -i "s/define( 'DB_HOST', 'db' );/define( 'DB_HOST', 'srv_web_db' );/" /var/www/wordpress/wp-config.php && \
     sed -i "s/define( 'DB_NAME', 'wp_db' );/define( 'DB_NAME', 'wordpress' );/" /var/www/wordpress/wp-config.php
+
+# Настройка WP_HOME и WP_SITEURL (добавляем или изменяем если уже есть)
+RUN if grep -q "define( *'WP_HOME'" /var/www/wordpress/wp-config.php; then \
+        sed -i "s/define( *'WP_HOME'.*/define( 'WP_HOME', 'http:\/\/local.host' );/" /var/www/wordpress/wp-config.php; \
+    else \
+        sed -i "/That's all, stop editing!/i define( 'WP_HOME', 'http://local.host' );" /var/www/wordpress/wp-config.php; \
+    fi && \
+    if grep -q "define( *'WP_SITEURL'" /var/www/wordpress/wp-config.php; then \
+        sed -i "s/define( *'WP_SITEURL'.*/define( 'WP_SITEURL', 'http:\/\/local.host' );/" /var/www/wordpress/wp-config.php; \
+    else \
+        sed -i "/That's all, stop editing!/i define( 'WP_SITEURL', 'http://local.host' );" /var/www/wordpress/wp-config.php; \
+    fi
 
 # Копируем файлы api для порта 8080
 COPY index.html /var/www/other/index.html 
