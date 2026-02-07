@@ -432,7 +432,7 @@ services:
       - ./espocrm/log/apache2:/var/log/apache2
       - ./srv_espocrm/wazuh/client.keys:/var/ossec/etc/client.keys      
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
-      - ./srv_espocrm/config.php:/var/www/html/data/config.php
+      #- ./srv_espocrm/config.php:/var/www/html/data/config.php
       - ./srv_espocrm/fill_db.sh:/usr/local/bin/fill_db.sh
     networks:
       servers_net:
