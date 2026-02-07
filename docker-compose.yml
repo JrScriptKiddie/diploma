@@ -447,6 +447,14 @@ services:
   srv_espocrm_db:
     image: mariadb:latest
     container_name: srv_espocrm_db
+    cap_add:
+      - NET_ADMIN
+    command: >
+      sh -c "
+      ip route del default 2>/dev/null || true;
+      ip route add default via ${SUBNET_SERVERS}.${IP_FW};
+      exec docker-entrypoint.sh mariadbd
+      "
     <<: *common_env_file
     environment:
       <<: *common_env
