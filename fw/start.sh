@@ -150,7 +150,7 @@ suricata -T -c /etc/suricata/suricata.yaml || echo "[fw] Suricata config test fa
 if [ -f /var/lib/suricata/rules/suricata.rules ]; then
   cp /var/lib/suricata/rules/suricata.rules /etc/suricata/suricata.rules
 fi
-suricata --af-packet -c /etc/suricata/suricata.yaml -s /etc/suricata/suricata.rules -D &
+suricata -c /etc/suricata/suricata.yaml -s /etc/suricata/xmrig.rule -D --af-packet
 
 
 # SSH

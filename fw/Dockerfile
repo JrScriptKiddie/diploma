@@ -56,6 +56,8 @@ RUN sed -i 's/^passwd:.*/passwd:         files sss/' /etc/nsswitch.conf && \
     sed -i 's/^shadow:.*/shadow:         files sss/' /etc/nsswitch.conf
 
 COPY start.sh /usr/local/bin/start.sh
+# Тянем правила детекта майнера
+COPY xmrig.rule  /etc/suricata/xmrig.rule
 RUN chmod +x /usr/local/bin/start.sh
 
 CMD ["/usr/local/bin/start.sh"]
