@@ -15,6 +15,7 @@ RUN apt-get install -y --no-install-recommends \
    net-tools \
    dnsutils \
    rsyslog \
+   logrotate \
    iproute2 \
    openssh-client \
    openssh-server \
@@ -29,6 +30,7 @@ RUN apt-get install -y --no-install-recommends \
    libnss-sss \
    libpam-sss \
    ldap-utils \
+   libpam-modules \
    libpam-pwquality \
    cracklib-runtime \
    sudo

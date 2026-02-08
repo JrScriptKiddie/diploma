@@ -27,6 +27,90 @@ EOF
   done
 fi
 
+# Password policy & logs files conf
+chmod 644 /etc/login.defs
+chown root:root /etc/login.defs
+
+chmod 644 /etc/security/pwquality.conf
+chown root:root /etc/security/pwquality.conf
+
+chmod 644 /etc/security/pwhistory.conf
+chown root:root /etc/security/pwhistory.conf
+
+chmod 644 /etc/security/faillock.conf
+chown root:root /etc/security/faillock.conf
+
+chmod 644 /etc/pam.d/common-auth
+chown root:root /etc/pam.d/common-auth
+
+chmod 644 /etc/rsyslog.d/50-default.conf
+chown root:root /etc/rsyslog.d/50-default.conf
+
+chmod 644 /etc/logrotate.conf
+chown root:root /etc/logrotate.conf
+
+chmod 644 /etc/logrotate.d/rsyslog
+chown root:root /etc/logrotate.d/rsyslog
+
+chmod 644 /etc/ssh/sshd_config
+chown root:root /etc/ssh/sshd_config
+
+
+
+# Проверка и добавление pam_pwhistory.so в нужное место
+if ! grep -q "^[^#]*pam_pwhistory.so" /etc/pam.d/common-password; then
+    # вставляем СРАЗУ ПОСЛЕ pam_pwquality.so
+    sed -i '/^[^#]*pam_pwquality.so/a password        required                        pam_pwhistory.so' /etc/pam.d/common-password
+    echo "✓ pam_pwhistory.so inserted after pam_pwquality.so"
+else
+    # Убедимся, что строка в правильном месте (после pwquality, до unix)
+    PWQUALITY_LINE=$(grep -n "^[^#]*pam_pwquality.so" /etc/pam.d/common-password | head -1 | cut -d: -f1)
+    PHISTORY_LINE=$(grep -n "^[^#]*pam_pwhistory.so" /etc/pam.d/common-password | head -1 | cut -d: -f1)
+    PUNIX_LINE=$(grep -n "^[^#]*pam_unix.so" /etc/pam.d/common-password | head -1 | cut -d: -f1)
+    
+    if [ -n "$PWQUALITY_LINE" ] && [ -n "$PHISTORY_LINE" ] && [ -n "$PUNIX_LINE" ]; then
+        if [ "$PHISTORY_LINE" -le "$PWQUALITY_LINE" ] || [ "$PHISTORY_LINE" -ge "$PUNIX_LINE" ]; then
+            echo "⚠ pam_pwhistory.so in wrong position — reordering..."
+            # Удаляем старую строку и вставляем заново в правильное место
+            sed -i '/^[^#]*pam_pwhistory.so/d' /etc/pam.d/common-password
+            sed -i '/^[^#]*pam_pwquality.so/a password        required                        pam_pwhistory.so' /etc/pam.d/common-password
+        fi
+    fi
+    echo "✓ pam_pwhistory.so already configured"
+fi
+
+# Создаем директорию для faillock и настраиваем права
+mkdir -p /var/lib/faillock
+chown root:root /var/lib/faillock
+chmod 700 /var/lib/faillock
+echo "✓ Настройка faillock завершена"
+
+
+echo "##### CONFIGURING PAM.D/SU #####"
+echo "Начинаем настройку /etc/pam.d/su ..."
+
+PAM_FILE="/etc/pam.d/su"
+GROUP="sudo"
+
+# Проверяем, есть ли уже активное правило для группы sudo
+if grep -qE '^[[:space:]]*auth[[:space:]]+required[[:space:]]+pam_wheel\.so.*group='"$GROUP" "$PAM_FILE"; then
+    echo "✓ Правило для группы '$GROUP' уже активно"
+else
+    # Удаляем старые закомментированные/неправильные версии правила
+    sed -i -E '/^[[:space:]]*#?[[:space:]]*auth[[:space:]]+(required|sufficient)[[:space:]]+pam_wheel\.so/d' "$PAM_FILE"
+
+    # Вставляем правильное правило СРАЗУ ПОСЛЕ pam_rootok.so
+    if grep -q 'pam_rootok\.so' "$PAM_FILE"; then
+        sed -i "/pam_rootok\.so/a auth       required   pam_wheel.so use_uid group=$GROUP" "$PAM_FILE"
+        echo "✓ Добавлено правило: auth required pam_wheel.so use_uid group=$GROUP"
+    else
+        echo "Ошибка: не найдена строка 'pam_rootok.so' в $PAM_FILE" >&2
+    fi
+fi
+echo "Настройка /etc/pam.d/su завершена"
+
+
+
 # Enforce pam_access for group-based login control
 if ! grep -q '^account required pam_access.so' /etc/pam.d/common-account; then
     echo 'account required pam_access.so' >> /etc/pam.d/common-account
@@ -82,6 +166,9 @@ done
 
 # Запуск rsyslog
 /usr/sbin/rsyslogd
+
+# Принудительная ротация логов при старте
+logrotate -f /etc/logrotate.conf  
 
 
 # Права на домашние директории: владелец по имени каталога, права 0755

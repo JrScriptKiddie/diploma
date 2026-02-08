@@ -708,6 +708,15 @@ services:
     volumes:
       - ./ws_msk_000242/home/:/home/
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+      - ./ws_msk_000242/etc/ws_msk_000242-login.defs:/etc/login.defs:rw
+      - ./ws_msk_000242/etc/ws_msk_000242-pwquality.conf:/etc/security/pwquality.conf:rw
+      - ./ws_msk_000242/etc/ws_msk_000242-pwhistory.conf:/etc/security/pwhistory.conf:rw
+      - ./ws_msk_000242/etc/ws_msk_000242-faillock.conf:/etc/security/faillock.conf:rw
+      - ./ws_msk_000242/etc/ws_msk_000242-common-auth.conf:/etc/pam.d/common-auth:rw
+      - ./ws_msk_000242/etc/ws_msk_000242-rsyslog-50-default.conf:/etc/rsyslog.d/50-default.conf:rw
+      - ./ws_msk_000242/etc/ws_msk_000242-logrotate.conf:/etc/logrotate.conf:rw
+      - ./ws_msk_000242/etc/ws_msk_000242-logrotate-rsyslog.conf:/etc/logrotate.d/rsyslog:rw
+      - ./ws_msk_000242/etc/ws_msk_000242-sshd_config.conf:/etc/ssh/sshd_config:rw
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro
       - wazuh_ws000242:/var/ossec/etc
       - ./ws_msk_000242/wazuh/client.keys:/var/ossec/etc/client.keys
