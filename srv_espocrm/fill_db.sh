@@ -94,6 +94,9 @@ fill_table() {
     do
         f_name=${first_names[$RANDOM % 10]}
         l_name=${last_names[$RANDOM % 10]}
+        if [[ "$f_name" == "Мария" || "$f_name" == "Анна" || "$f_name" == "Елена" || "$f_name" == "Ольга" ]]; then
+            l_name="${l_name}а"
+        fi
         city=${cities[$RANDOM % 5]}
         street="ул. ${streets[$RANDOM % 5]}, д. $((RANDOM % 100 + 1))"
         country=${countries[$RANDOM % 3]}
