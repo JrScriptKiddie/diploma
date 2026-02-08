@@ -758,7 +758,7 @@ services:
       - wazuh_ws000189:/var/ossec/etc
       - ./ws_msk_000189/wazuh/client.keys:/var/ossec/etc/client.keys
       - ./pc_ldap/web.py:/opt/web.py
-    shm_size: "1gb"
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd  
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -796,7 +796,7 @@ services:
       - wazuh_ws000159:/var/ossec/etc
       - ./ws_msk_000159/wazuh/client.keys:/var/ossec/etc/client.keys
       - ./pc_ldap/web.py:/opt/web.py      
-    shm_size: "1gb"
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd  
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -861,7 +861,7 @@ services:
       - wazuh_ws000023:/var/ossec/etc
       - ./ws_msk_000023/wazuh/client.keys:/var/ossec/etc/client.keys
       - ./pc_ldap/web.py:/opt/web.py      
-    shm_size: "1gb"
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd  
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -899,7 +899,7 @@ services:
       - wazuh_ws000034:/var/ossec/etc
       - ./ws_msk_000034/wazuh/client.keys:/var/ossec/etc/client.keys
       - ./pc_ldap/web.py:/opt/web.py      
-    shm_size: "1gb"
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd  
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -937,7 +937,7 @@ services:
       - wazuh_ws000046:/var/ossec/etc
       - ./ws_msk_000046/wazuh/client.keys:/var/ossec/etc/client.keys
       - ./pc_ldap/web.py:/opt/web.py      
-    shm_size: "1gb"
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd  
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -975,7 +975,7 @@ services:
       - wazuh_ws000055:/var/ossec/etc
       - ./ws_msk_000055/wazuh/client.keys:/var/ossec/etc/client.keys
       - ./pc_ldap/web.py:/opt/web.py      
-    shm_size: "1gb"
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd  
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -1013,7 +1013,7 @@ services:
       - wazuh_ws000019:/var/ossec/etc
       - ./ws_msk_000019/wazuh/client.keys:/var/ossec/etc/client.keys
       - ./pc_ldap/web.py:/opt/web.py      
-    shm_size: "1gb"
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd  
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -1051,7 +1051,7 @@ services:
       - wazuh_ws000126:/var/ossec/etc
       - ./ws_msk_000126/wazuh/client.keys:/var/ossec/etc/client.keys
       - ./pc_ldap/web.py:/opt/web.py      
-    shm_size: "1gb"
+    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd  
     <<: *common_env_file
     environment:
       <<: *common_env
