@@ -708,15 +708,15 @@ services:
     volumes:
       - ./ws_msk_000242/home/:/home/
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
-      - ./ws_msk_000242/etc/ws_msk_000242-login.defs:/etc/login.defs:rw
-      - ./ws_msk_000242/etc/ws_msk_000242-pwquality.conf:/etc/security/pwquality.conf:rw
-      - ./ws_msk_000242/etc/ws_msk_000242-pwhistory.conf:/etc/security/pwhistory.conf:rw
-      - ./ws_msk_000242/etc/ws_msk_000242-faillock.conf:/etc/security/faillock.conf:rw
-      - ./ws_msk_000242/etc/ws_msk_000242-common-auth.conf:/etc/pam.d/common-auth:rw
-      - ./ws_msk_000242/etc/ws_msk_000242-rsyslog-50-default.conf:/etc/rsyslog.d/50-default.conf:rw
-      - ./ws_msk_000242/etc/ws_msk_000242-logrotate.conf:/etc/logrotate.conf:rw
-      - ./ws_msk_000242/etc/ws_msk_000242-logrotate-rsyslog.conf:/etc/logrotate.d/rsyslog:rw
-      - ./ws_msk_000242/etc/ws_msk_000242-sshd_config.conf:/etc/ssh/sshd_config:rw
+      - ./ws_msk_000242/etc/ws_msk_login.defs:/etc/login.defs:rw
+      - ./ws_msk_000242/etc/ws_msk_pwquality.conf:/etc/security/pwquality.conf:rw
+      - ./ws_msk_000242/etc/ws_msk_pwhistory.conf:/etc/security/pwhistory.conf:rw
+      - ./ws_msk_000242/etc/ws_msk_faillock.conf:/etc/security/faillock.conf:rw
+      - ./ws_msk_000242/etc/ws_msk_common-auth.conf:/etc/pam.d/common-auth:rw
+      - ./ws_msk_000242/etc/ws_msk_rsyslog-50-default.conf:/etc/rsyslog.d/50-default.conf:rw
+      - ./ws_msk_000242/etc/ws_msk_logrotate.conf:/etc/logrotate.conf:rw
+      - ./ws_msk_000242/etc/ws_msk_logrotate-rsyslog.conf:/etc/logrotate.d/rsyslog:rw
+      - ./ws_msk_000242/etc/ws_msk_sshd_config.conf:/etc/ssh/sshd_config:rw
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro
       - wazuh_ws000242:/var/ossec/etc
       - ./ws_msk_000242/wazuh/client.keys:/var/ossec/etc/client.keys
@@ -745,11 +745,20 @@ services:
     volumes:
       - ./ws_msk_000189/home/:/home/
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
+      - ./ws_msk_000189/etc/ws_msk_login.defs:/etc/login.defs:rw
+      - ./ws_msk_000189/etc/ws_msk_pwquality.conf:/etc/security/pwquality.conf:rw
+      - ./ws_msk_000189/etc/ws_msk_pwhistory.conf:/etc/security/pwhistory.conf:rw
+      - ./ws_msk_000189/etc/ws_msk_faillock.conf:/etc/security/faillock.conf:rw
+      - ./ws_msk_000189/etc/ws_msk_common-auth.conf:/etc/pam.d/common-auth:rw
+      - ./ws_msk_000189/etc/ws_msk_rsyslog-50-default.conf:/etc/rsyslog.d/50-default.conf:rw
+      - ./ws_msk_000189/etc/ws_msk_logrotate.conf:/etc/logrotate.conf:rw
+      - ./ws_msk_000189/etc/ws_msk_logrotate-rsyslog.conf:/etc/logrotate.d/rsyslog:rw
+      - ./ws_msk_000189/etc/ws_msk_sshd_config.conf:/etc/ssh/sshd_config:rw
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
       - wazuh_ws000189:/var/ossec/etc
       - ./ws_msk_000189/wazuh/client.keys:/var/ossec/etc/client.keys
       - ./pc_ldap/web.py:/opt/web.py
-    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    shm_size: "1gb"
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -773,12 +782,21 @@ services:
       - apparmor:unconfined      
     volumes:
       - ./ws_msk_000159/home/:/home/
-      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+      - ./ws_msk_000159/etc/ws_msk_login.defs:/etc/login.defs:rw
+      - ./ws_msk_000159/etc/ws_msk_pwquality.conf:/etc/security/pwquality.conf:rw
+      - ./ws_msk_000159/etc/ws_msk_pwhistory.conf:/etc/security/pwhistory.conf:rw
+      - ./ws_msk_000159/etc/ws_msk_faillock.conf:/etc/security/faillock.conf:rw
+      - ./ws_msk_000159/etc/ws_msk_common-auth.conf:/etc/pam.d/common-auth:rw
+      - ./ws_msk_000159/etc/ws_msk_rsyslog-50-default.conf:/etc/rsyslog.d/50-default.conf:rw
+      - ./ws_msk_000159/etc/ws_msk_logrotate.conf:/etc/logrotate.conf:rw
+      - ./ws_msk_000159/etc/ws_msk_logrotate-rsyslog.conf:/etc/logrotate.d/rsyslog:rw
+      - ./ws_msk_000159/etc/ws_msk_sshd_config.conf:/etc/ssh/sshd_config:rw      
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro
       - wazuh_ws000159:/var/ossec/etc
       - ./ws_msk_000159/wazuh/client.keys:/var/ossec/etc/client.keys
       - ./pc_ldap/web.py:/opt/web.py      
-    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    shm_size: "1gb"
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -829,12 +847,21 @@ services:
       - apparmor:unconfined    
     volumes:
       - ./ws_msk_000023/home/:/home/
-      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+      - ./ws_msk_000023/etc/ws_msk_login.defs:/etc/login.defs:rw
+      - ./ws_msk_000023/etc/ws_msk_pwquality.conf:/etc/security/pwquality.conf:rw
+      - ./ws_msk_000023/etc/ws_msk_pwhistory.conf:/etc/security/pwhistory.conf:rw
+      - ./ws_msk_000023/etc/ws_msk_faillock.conf:/etc/security/faillock.conf:rw
+      - ./ws_msk_000023/etc/ws_msk_common-auth.conf:/etc/pam.d/common-auth:rw
+      - ./ws_msk_000023/etc/ws_msk_rsyslog-50-default.conf:/etc/rsyslog.d/50-default.conf:rw
+      - ./ws_msk_000023/etc/ws_msk_logrotate.conf:/etc/logrotate.conf:rw
+      - ./ws_msk_000023/etc/ws_msk_logrotate-rsyslog.conf:/etc/logrotate.d/rsyslog:rw
+      - ./ws_msk_000023/etc/ws_msk_sshd_config.conf:/etc/ssh/sshd_config:rw      
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
       - wazuh_ws000023:/var/ossec/etc
       - ./ws_msk_000023/wazuh/client.keys:/var/ossec/etc/client.keys
       - ./pc_ldap/web.py:/opt/web.py      
-    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    shm_size: "1gb"
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -858,12 +885,21 @@ services:
       - apparmor:unconfined    
     volumes:
       - ./ws_msk_000034/home/:/home/
-      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+      - ./ws_msk_000034/etc/ws_msk_login.defs:/etc/login.defs:rw
+      - ./ws_msk_000034/etc/ws_msk_pwquality.conf:/etc/security/pwquality.conf:rw
+      - ./ws_msk_000034/etc/ws_msk_pwhistory.conf:/etc/security/pwhistory.conf:rw
+      - ./ws_msk_000034/etc/ws_msk_faillock.conf:/etc/security/faillock.conf:rw
+      - ./ws_msk_000034/etc/ws_msk_common-auth.conf:/etc/pam.d/common-auth:rw
+      - ./ws_msk_000034/etc/ws_msk_rsyslog-50-default.conf:/etc/rsyslog.d/50-default.conf:rw
+      - ./ws_msk_000034/etc/ws_msk_logrotate.conf:/etc/logrotate.conf:rw
+      - ./ws_msk_000034/etc/ws_msk_logrotate-rsyslog.conf:/etc/logrotate.d/rsyslog:rw
+      - ./ws_msk_000034/etc/ws_msk_sshd_config.conf:/etc/ssh/sshd_config:rw      
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
       - wazuh_ws000034:/var/ossec/etc
       - ./ws_msk_000034/wazuh/client.keys:/var/ossec/etc/client.keys
       - ./pc_ldap/web.py:/opt/web.py      
-    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    shm_size: "1gb"
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -887,12 +923,21 @@ services:
       - apparmor:unconfined
     volumes:
       - ./ws_msk_000046/home/:/home/
-      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+      - ./ws_msk_000046/etc/ws_msk_login.defs:/etc/login.defs:rw
+      - ./ws_msk_000046/etc/ws_msk_pwquality.conf:/etc/security/pwquality.conf:rw
+      - ./ws_msk_000046/etc/ws_msk_pwhistory.conf:/etc/security/pwhistory.conf:rw
+      - ./ws_msk_000046/etc/ws_msk_faillock.conf:/etc/security/faillock.conf:rw
+      - ./ws_msk_000046/etc/ws_msk_common-auth.conf:/etc/pam.d/common-auth:rw
+      - ./ws_msk_000046/etc/ws_msk_rsyslog-50-default.conf:/etc/rsyslog.d/50-default.conf:rw
+      - ./ws_msk_000046/etc/ws_msk_logrotate.conf:/etc/logrotate.conf:rw
+      - ./ws_msk_000046/etc/ws_msk_logrotate-rsyslog.conf:/etc/logrotate.d/rsyslog:rw
+      - ./ws_msk_000046/etc/ws_msk_sshd_config.conf:/etc/ssh/sshd_config:rw      
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
       - wazuh_ws000046:/var/ossec/etc
       - ./ws_msk_000046/wazuh/client.keys:/var/ossec/etc/client.keys
       - ./pc_ldap/web.py:/opt/web.py      
-    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    shm_size: "1gb"
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -916,12 +961,21 @@ services:
       - apparmor:unconfined
     volumes:
       - ./ws_msk_000055/home/:/home/
-      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+      - ./ws_msk_000055/etc/ws_msk_login.defs:/etc/login.defs:rw
+      - ./ws_msk_000055/etc/ws_msk_pwquality.conf:/etc/security/pwquality.conf:rw
+      - ./ws_msk_000055/etc/ws_msk_pwhistory.conf:/etc/security/pwhistory.conf:rw
+      - ./ws_msk_000055/etc/ws_msk_faillock.conf:/etc/security/faillock.conf:rw
+      - ./ws_msk_000055/etc/ws_msk_common-auth.conf:/etc/pam.d/common-auth:rw
+      - ./ws_msk_000055/etc/ws_msk_rsyslog-50-default.conf:/etc/rsyslog.d/50-default.conf:rw
+      - ./ws_msk_000055/etc/ws_msk_logrotate.conf:/etc/logrotate.conf:rw
+      - ./ws_msk_000055/etc/ws_msk_logrotate-rsyslog.conf:/etc/logrotate.d/rsyslog:rw
+      - ./ws_msk_000055/etc/ws_msk_sshd_config.conf:/etc/ssh/sshd_config:rw      
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
       - wazuh_ws000055:/var/ossec/etc
       - ./ws_msk_000055/wazuh/client.keys:/var/ossec/etc/client.keys
       - ./pc_ldap/web.py:/opt/web.py      
-    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    shm_size: "1gb"
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -945,12 +999,21 @@ services:
       - apparmor:unconfined
     volumes:
       - ./ws_msk_000019/home/:/home/
-      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+      - ./ws_msk_000019/etc/ws_msk_login.defs:/etc/login.defs:rw
+      - ./ws_msk_000019/etc/ws_msk_pwquality.conf:/etc/security/pwquality.conf:rw
+      - ./ws_msk_000019/etc/ws_msk_pwhistory.conf:/etc/security/pwhistory.conf:rw
+      - ./ws_msk_000019/etc/ws_msk_faillock.conf:/etc/security/faillock.conf:rw
+      - ./ws_msk_000019/etc/ws_msk_common-auth.conf:/etc/pam.d/common-auth:rw
+      - ./ws_msk_000019/etc/ws_msk_rsyslog-50-default.conf:/etc/rsyslog.d/50-default.conf:rw
+      - ./ws_msk_000019/etc/ws_msk_logrotate.conf:/etc/logrotate.conf:rw
+      - ./ws_msk_000019/etc/ws_msk_logrotate-rsyslog.conf:/etc/logrotate.d/rsyslog:rw
+      - ./ws_msk_000019/etc/ws_msk_sshd_config.conf:/etc/ssh/sshd_config:rw      
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
       - wazuh_ws000019:/var/ossec/etc
       - ./ws_msk_000019/wazuh/client.keys:/var/ossec/etc/client.keys
       - ./pc_ldap/web.py:/opt/web.py      
-    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    shm_size: "1gb"
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -974,12 +1037,21 @@ services:
       - apparmor:unconfined
     volumes:
       - ./ws_msk_000126/home/:/home/
-      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf      
+      - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
+      - ./ws_msk_000126/etc/ws_msk_login.defs:/etc/login.defs:rw
+      - ./ws_msk_000126/etc/ws_msk_pwquality.conf:/etc/security/pwquality.conf:rw
+      - ./ws_msk_000126/etc/ws_msk_pwhistory.conf:/etc/security/pwhistory.conf:rw
+      - ./ws_msk_000126/etc/ws_msk_faillock.conf:/etc/security/faillock.conf:rw
+      - ./ws_msk_000126/etc/ws_msk_common-auth.conf:/etc/pam.d/common-auth:rw
+      - ./ws_msk_000126/etc/ws_msk_rsyslog-50-default.conf:/etc/rsyslog.d/50-default.conf:rw
+      - ./ws_msk_000126/etc/ws_msk_logrotate.conf:/etc/logrotate.conf:rw
+      - ./ws_msk_000126/etc/ws_msk_logrotate-rsyslog.conf:/etc/logrotate.d/rsyslog:rw
+      - ./ws_msk_000126/etc/ws_msk_sshd_config.conf:/etc/ssh/sshd_config:rw      
       - ./srv_polarproxy/certs/proxy_ca.crt:/usr/local/share/ca-certificates/proxy_ca.crt:ro      
       - wazuh_ws000126:/var/ossec/etc
       - ./ws_msk_000126/wazuh/client.keys:/var/ossec/etc/client.keys
       - ./pc_ldap/web.py:/opt/web.py      
-    shm_size: "1gb" # Важно для стабильности браузеров и GUI dd    
+    shm_size: "1gb"
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -990,7 +1062,7 @@ services:
       users_net:
         ipv4_address: ${SUBNET_USERS}.126
     dns:
-      - ${SUBNET_SERVERS}.${IP_SRV_DNS} 
+      - ${SUBNET_SERVERS}.${IP_SRV_DNS}
 
   nat_cleaner:
     # САНИТАР NAT: Удаляет правила Masquerade, которые ломают Source IP в Docker Desktop (WSL)
