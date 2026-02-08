@@ -22,13 +22,33 @@ COPY wp.tar.gz /tmp/wp.tar.gz
 COPY secret.txt /tmp/secret.txt 
 
 # Настраиваем папки
-RUN mkdir -p /var/www/wordpress /var/www/other /run/php
+RUN mkdir -p /var/www/wordpress /var/www/other /run/php && \
+    chown -R www-data:www-data /var/www/other
 
 # Распаковка WP
 RUN tar -xzf /tmp/wp.tar.gz -C /var/www/wordpress --strip-components=1 && \
     chown -R www-data:www-data /var/www/wordpress
 RUN sed -i "s/define( 'DB_HOST', 'db' );/define( 'DB_HOST', 'srv_web_db' );/" /var/www/wordpress/wp-config.php && \
     sed -i "s/define( 'DB_NAME', 'wp_db' );/define( 'DB_NAME', 'wordpress' );/" /var/www/wordpress/wp-config.php
+
+# Добавляем динамическую настройку WP_HOME и WP_SITEURL
+RUN sed -i "/That's all, stop editing!/i \
+// Динамическое определение домена для локальной среды\n\
+\$protocol = (isset(\$_SERVER['HTTPS']) && \$_SERVER['HTTPS'] === 'on') ? 'https' : 'http';\n\
+\$host = \$_SERVER['HTTP_HOST'] ?? 'local.host';\n\
+\$allowed = ['127.0.0.1', 'localhost', 'local.host', 'srv_web', '192.168.204.34'];\n\
+\n\
+if (in_array(\$host, \$allowed)) {\n\
+    define('WP_HOME', \"\$protocol://\$host\");\n\
+    define('WP_SITEURL', \"\$protocol://\$host\");\n\
+} else {\n\
+    // Безопасный фолбэк\n\
+    define('WP_HOME', \"\$protocol://local.host\");\n\
+    define('WP_SITEURL', \"\$protocol://local.host\");\n\
+}\n\
+" /var/www/wordpress/wp-config.php
+
+
 
 # Копируем файлы api для порта 8080
 COPY index.html /var/www/other/index.html 

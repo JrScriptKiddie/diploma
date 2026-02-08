@@ -426,13 +426,14 @@ services:
       GATEWAY_IP: ${SUBNET_SERVERS}.${IP_FW}       
       SG_ADMINS: ${SG_CRM_ADMINS}
     volumes:
-      - espocrm_web:/var/www/html
+      - espocrm:/var/www/html
       - wazuh_srv_espocrm:/var/ossec/etc
       #/var/www/html/data/config.php
       - ./espocrm/log/apache2:/var/log/apache2
       - ./srv_espocrm/wazuh/client.keys:/var/ossec/etc/client.keys      
       - ./srv_ldap/sssd.conf:/etc/sssd_temp.conf
-      - ./srv_espocrm/config.php:/var/www/html/data/config.php
+      #- ./srv_espocrm/config.php:/var/www/html/data/config.php
+      - ./srv_espocrm/fill_db.sh:/usr/local/bin/fill_db.sh
     networks:
       servers_net:
         ipv4_address: ${SUBNET_SERVERS}.${IP_SRV_ESPOCRM}
@@ -446,6 +447,14 @@ services:
   srv_espocrm_db:
     image: mariadb:latest
     container_name: srv_espocrm_db
+    cap_add:
+      - NET_ADMIN
+    command: >
+      sh -c "
+      ip route del default 2>/dev/null || true;
+      ip route add default via ${SUBNET_SERVERS}.${IP_FW};
+      exec docker-entrypoint.sh mariadbd
+      "
     <<: *common_env_file
     environment:
       <<: *common_env
@@ -1105,5 +1114,5 @@ volumes:
   wazuh_ws000019:
   wazuh_ws000126:
   espocrm_db:
-  espocrm_web:
+  espocrm:
   srv_web_db_data:

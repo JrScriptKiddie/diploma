@@ -1,4 +1,4 @@
-FROM espocrm/espocrm:latest
+FROM espocrm/espocrm
 
 ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC
 RUN apt-get update
@@ -16,7 +16,8 @@ RUN apt-get install -y --no-install-recommends \
    openssh-client \
    openssh-server \
    curl \
-   cron   
+   cron \
+   mariadb-client   
 
 # Passwords and politics
 RUN apt-get install -y --no-install-recommends \
