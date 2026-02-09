@@ -1085,7 +1085,6 @@ services:
       iptables -t nat -D POSTROUTING -s $SUBNET_UPLINK.0/24 -j MASQUERADE
       '
 
-
   srv_mail:
     image: mailserver/docker-mailserver:latest
     container_name: srv_mail
@@ -1135,51 +1134,6 @@ services:
         ipv4_address: ${SUBNET_SERVERS}.${SRV_RC_IP}
     depends_on:
       - srv_mail
-
-  pc_attacker_mail:
-    image: mailserver/docker-mailserver:latest
-    container_name: pc_attacker_mail
-    hostname: mail.evil.com
-    extra_hosts:
-      - "mail.local.host:172.56.200.100"
-      - "local.host:172.56.200.100"
-    environment:
-      - TLS_LEVEL=plaintext
-      - ENABLE_SPAMASSASSIN=0
-      - ONE_DIR=1s
-      - DMS_DEBUG=0
-      - DEFAULT_RELAY_HOST=[172.56.200.100]:25
-      - POSTFIX_INET_PROTOCOLS=ipv4
-      - GATEWAY_IP=172.56.200.100
-    cap_add:
-      - NET_ADMIN
-    healthcheck:
-      test: ["CMD", "sh", "-c", "ip route del default; ip route add default via 172.56.200.100"]
-      interval: 10s
-      retries: 1
-    volumes:
-      - ./mail/attacker/postfix-accounts.cf:/tmp/docker-mailserver/postfix-accounts.cf
-      - ./mail/attacker/data:/var/mail
-      - ./mail/attacker/state:/var/mail-state
-    networks:
-      uplink_net:
-        ipv4_address: ${SUBNET_UPLINK}.${EXT_MAIL_IP}
-    dns:
-      - ${SUBNET_SERVERS}.${IP_FW}
-
-  pc_attacker_rc:
-    image: roundcube/roundcubemail:latest
-    container_name: pc_attacker_rc
-    ports:
-      - "${RC_PORT_EXTERNAL}:80"
-    environment:
-      - ROUNDCUBEMAIL_DB_TYPE=sqlite
-      - ROUNDCUBEMAIL_DEFAULT_HOST=pc_attacker_mail
-      - ROUNDCUBEMAIL_SMTP_SERVER=pc_attacker_mail
-    networks:
-      uplink_net:
-        ipv4_address: ${SUBNET_UPLINK}.${EXT_RC_IP}
-
 
 networks:  
   uplink_net:
