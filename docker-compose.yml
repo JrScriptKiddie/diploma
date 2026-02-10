@@ -74,7 +74,7 @@ services:
       SG_ADMINS: ${SG_NET_ADMINS}
       GATEWAY_IP: ${SUBNET_UPLINK}.${IP_ISP}
       VPN_SUBNET: 10.97.0.0/16
-      VPN_SRV_IP: ${IP_VPN}
+      VPN_SRV_IP: ${SUBNET_DMZ}.${IP_VPN}
     dns:
       - ${SUBNET_DMZ}.${IP_SRV_DNS}     
 
