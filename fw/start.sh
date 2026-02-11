@@ -48,7 +48,7 @@ done < <(ip -o -4 addr show)
 # Задаем маршруты
 echo "Adding default route via ${GATEWAY_IP} on eth_uplink"
 ip route add default via $GATEWAY_IP dev eth_uplink || true
-ip route add 10.11.0.0/16 via $VPN_SRV_IP || true
+# ip route add 10.11.0.0/16 via $VPN_SRV_IP || true
 ip route add $VPN_SUBNET via $VPN_SRV_IP || true
 
 # Load nftables rules
