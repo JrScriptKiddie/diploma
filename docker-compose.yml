@@ -591,13 +591,15 @@ services:
       <<: *common_env
       INDEXER_USERNAME: admin
       INDEXER_PASSWORD: SecretPassword
-      WAZUH_API_URL: https://${SUBNET_INFOSEC}.${IP_SRV_WAZUH_MANAGER}
+      WAZUH_API_URL: https://${SUBNET_INFOSEC}.${IP_SRV_WAZUH_MANAGER}:55000
       DASHBOARD_USERNAME: kibanaserver
       DASHBOARD_PASSWORD: kibanaserver
       API_USERNAME: wazuh-wui
       API_PASSWORD: MyS3cr37P450r.*-  
       GATEWAY_IP: ${SUBNET_INFOSEC}.${IP_FW}
-      SG_ADMINS: ${SG_INFOSEC_ADMINS}      
+      SG_ADMINS: ${SG_INFOSEC_ADMINS}
+    ports:
+      - "0.0.0.0:8443:5601" 
     volumes:
       - ./wazuh/config/wazuh_indexer_ssl_certs/wazuh.dashboard.pem:/usr/share/wazuh-dashboard/certs/wazuh-dashboard.pem
       - ./wazuh/config/wazuh_indexer_ssl_certs/wazuh.dashboard-key.pem:/usr/share/wazuh-dashboard/certs/wazuh-dashboard-key.pem
@@ -612,7 +614,7 @@ services:
       infosec_net:
         ipv4_address: ${SUBNET_INFOSEC}.${IP_SRV_WAZUH_DASHBOARD}
         aliases:
-          - wazuh.manager
+          - wazuh.dashboard
     dns:
       - ${SUBNET_SERVERS}.${IP_SRV_DNS}  
 
